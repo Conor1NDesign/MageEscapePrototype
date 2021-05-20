@@ -116,7 +116,20 @@ public class PlayerController : MonoBehaviour
         {
             RotateTowardsMovement(rotation);
         }
-        
+
+
+        //PLAYER STATE CHECKS//
+
+        if (playerState == PlayerCurrentState.Idle || playerState == PlayerCurrentState.Moving)
+            currentMoveSpeed = defaultMoveSpeed;
+
+        if (playerState == PlayerCurrentState.Falling || playerState == PlayerCurrentState.Floating)
+            currentMoveSpeed = airborneMoveSpeed;
+
+        if (playerState == PlayerCurrentState.Dead || playerState == PlayerCurrentState.Respawning || playerState == PlayerCurrentState.Casting)
+            currentMoveSpeed = 0;
+
+        //PLAYER STATE CHECKS END//
     }
 
     public void RotateTowardsMovement(Quaternion rotation)

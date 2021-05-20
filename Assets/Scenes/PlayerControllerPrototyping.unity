@@ -297,6 +297,14 @@ PrefabInstance:
       propertyPath: playerIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6309809208170730702, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
+      propertyPath: defaultMoveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309809208170730702, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
+      propertyPath: airborneMoveSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6807871483443920493, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_Name
       value: Player 2
@@ -990,7 +998,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1254
+  m_Name: pb_Mesh-17396
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1427,6 +1435,14 @@ PrefabInstance:
     - target: {fileID: 5006523028989087425, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309809208170730702, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
+      propertyPath: defaultMoveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309809208170730702, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
+      propertyPath: airborneMoveSpeed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6807871483443920493, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_Name
