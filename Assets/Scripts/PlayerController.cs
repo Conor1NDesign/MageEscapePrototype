@@ -120,12 +120,15 @@ public class PlayerController : MonoBehaviour
 
         //PLAYER STATE CHECKS//
 
+        //Checks if the Player's state is Idle or Moving, and adjusts their movement speed accordingly.
         if (playerState == PlayerCurrentState.Idle || playerState == PlayerCurrentState.Moving)
             currentMoveSpeed = defaultMoveSpeed;
 
+        //Checks if the Player's state is Falling or Floating, and adjusts their movement speed accordingly.
         if (playerState == PlayerCurrentState.Falling || playerState == PlayerCurrentState.Floating)
             currentMoveSpeed = airborneMoveSpeed;
 
+        //Checks if the Player's state is Dead, Respawning, or Casting, and adjusts their movement speed accordingly.
         if (playerState == PlayerCurrentState.Dead || playerState == PlayerCurrentState.Respawning || playerState == PlayerCurrentState.Casting)
             currentMoveSpeed = 0;
 
