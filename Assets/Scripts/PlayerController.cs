@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     */
 
     //Enum declaration for the player's current action.
-    public enum PlayerCurrentState
+    public enum PlayerStates
     {
         Idle,
         Moving,
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
     public int playerIndex = 0;
 
     [Header("Current Player State")]
-    public PlayerCurrentState playerState = PlayerCurrentState.Idle;
+    public PlayerStates playerState = PlayerStates.Idle;
 
     [Header("Character Control Variables")]
     private float currentMoveSpeed; //Private value for current movement speed, is changed based on player state.
@@ -95,6 +95,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Player " + playerIndex + " is currently:" + playerState);
+        Debug.Log("Player " + playerIndex + "'s movementVector is: " + moveDirection);
+
+        //MOVEMENT AND ROTATION//
+        
         //Sets a moveDirection variable using the X and Y values of the inputVector and translating them to the X and Z values of a Vector3.
         moveDirection = new Vector3(inputVector.x, 0, inputVector.y);
 
@@ -118,24 +123,51 @@ public class PlayerController : MonoBehaviour
         controller.Move(moveDirection * Time.deltaTime);
 
         //Checks if there is still input coming from the player. This prevents the mesh from rotating back to Y = 0 when there's no input.
-        if (moveDirection != new Vector3(0 , moveDirection.y, 0))
+        if (moveDirection != new Vector3(0, moveDirection.y, 0))
         {
             RotateTowardsMovement(rotation);
         }
 
+        //MOVEMENT AND ROTATION END//
+
+        //PLAYER STATE CHANGES//
+
+        if (controller.isGrounded && moveDirection != new Vector3 (0, moveDirection.y, 0) /* && !isDead */)
+        {
+            playerState = PlayerStates.Moving;
+        }
+
+        if (controller.isGrounded && moveDirection == new Vector3(0, moveDirection.y, 0) /* && !isDead */)
+        {
+            playerState = PlayerStates.Idle;
+        }
+
+        if (!controller.isGrounded /* && !isFloating && !isDead */)
+        {
+            playerState = PlayerStates.Falling;
+        }
+
+        
+        //if (!controller.isGrounded /* && isFloating  && !isDead */)
+        //{
+        //    playerState = PlayerStates.Floating;
+        //}
+
+
+        //PLAYER STATE CHANGES END//
 
         //PLAYER STATE CHECKS//
 
         //Checks if the Player's state is Idle or Moving, and adjusts their movement speed accordingly.
-        if (playerState == PlayerCurrentState.Idle || playerState == PlayerCurrentState.Moving)
+        if (playerState == PlayerStates.Idle || playerState == PlayerStates.Moving)
             currentMoveSpeed = defaultMoveSpeed;
 
         //Checks if the Player's state is Falling or Floating, and adjusts their movement speed accordingly.
-        if (playerState == PlayerCurrentState.Falling || playerState == PlayerCurrentState.Floating)
+        if (playerState == PlayerStates.Falling || playerState == PlayerStates.Floating)
             currentMoveSpeed = airborneMoveSpeed;
 
         //Checks if the Player's state is Dead, Respawning, or Casting, and adjusts their movement speed accordingly.
-        if (playerState == PlayerCurrentState.Dead || playerState == PlayerCurrentState.Respawning || playerState == PlayerCurrentState.Casting)
+        if (playerState == PlayerStates.Dead || playerState == PlayerStates.Respawning || playerState == PlayerStates.Casting)
             currentMoveSpeed = 0;
 
         //PLAYER STATE CHECKS END//
