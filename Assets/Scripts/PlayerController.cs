@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     /*
     * * * * * * * * * * TO DO * * * * * * * * * *
-    * - Implement gravity for CharacterController.
+    * - Gravity works, but could use adjustments
     * 
     * - Implement and update conditions for player
     *   death.
@@ -61,9 +61,6 @@ public class PlayerController : MonoBehaviour
     public float airborneMoveSpeed;
     public float rotateSpeed;
 
-    //Boolean used for checking when the player is currently touching the floor.
-    private bool isGrounded;
-
     //Variable for the CharacterController component on the object the script is attached to.
     private CharacterController controller;
 
@@ -96,23 +93,32 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    // Update is called once per frame
     void Update()
     {
         //Sets a moveDirection variable using the X and Y values of the inputVector and translating them to the X and Z values of a Vector3.
         moveDirection = new Vector3(inputVector.x, 0, inputVector.y);
+
         //Adjusts the moveDirection based on the angle of the Main Camera object.
         moveDirection = Quaternion.Euler(0, levelCamera.gameObject.transform.eulerAngles.y, 0) * moveDirection;
         //Lastly, multiplies moveDirection by moveSpeed to get a final value for the Controller's Move() method.
         moveDirection *= currentMoveSpeed;
+
+        //Translates moveDirection into a Quaternion and assigns it to the rotation variable.
+        var rotationVector = new Vector3(inputVector.x, 0, inputVector.y);
+        //Adjusts the rotationVector based on the main camera position.
+        rotationVector = Quaternion.Euler(0, levelCamera.gameObject.transform.eulerAngles.y, 0) * rotationVector;
+        //Lastly, multiplies rotationVector by currentMoveSpeed to get a final value for the RotateTowardsMovement() method.
+        rotationVector *= currentMoveSpeed;
+        var rotation = Quaternion.LookRotation(rotationVector);
+
+        //Applies gravitational force to the player.
+        moveDirection += Physics.gravity;
+        
         //Calls the Move() method on the CharacterController using the moveDirection value.
         controller.Move(moveDirection * Time.deltaTime);
-        
-        //Translates moveDirection into a Quaternion and assigns it to the rotation variable.
-        var rotation = Quaternion.LookRotation(moveDirection);
 
         //Checks if there is still input coming from the player. This prevents the mesh from rotating back to Y = 0 when there's no input.
-        if (moveDirection != new Vector3(0,0,0))
+        if (moveDirection != new Vector3(0 , moveDirection.y, 0))
         {
             RotateTowardsMovement(rotation);
         }
