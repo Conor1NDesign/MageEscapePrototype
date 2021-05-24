@@ -163,6 +163,8 @@ MonoBehaviour:
   defaultMoveSpeed: 10
   airborneMoveSpeed: 6
   rotateSpeed: 5
+  defaultGravityMultiplier: 0.25
+  gravityRampUp: 0.02
 --- !u!143 &4671339470369175106
 CharacterController:
   m_ObjectHideFlags: 0

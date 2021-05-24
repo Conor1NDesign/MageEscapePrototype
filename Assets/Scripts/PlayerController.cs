@@ -7,8 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     /*
     * * * * * * * * * * TO DO * * * * * * * * * *
-    * - Gravity works, but could use adjustments
-    * 
     * - Implement and update conditions for player
     *   death.
     *   
@@ -60,6 +58,9 @@ public class PlayerController : MonoBehaviour
     public float defaultMoveSpeed;
     public float airborneMoveSpeed;
     public float rotateSpeed;
+    public float defaultGravityMultiplier;
+    public float gravityRampUp;
+    private float gravityMultiplier;
 
     //Variable for the CharacterController component on the object the script is attached to.
     private CharacterController controller;
@@ -117,7 +118,8 @@ public class PlayerController : MonoBehaviour
         var rotation = Quaternion.LookRotation(rotationVector);
 
         //Applies gravitational force to the player.
-        moveDirection += Physics.gravity;
+        moveDirection += Physics.gravity * gravityMultiplier;
+        Debug.Log(Physics.gravity);
         
         //Calls the Move() method on the CharacterController using the moveDirection value.
         controller.Move(moveDirection * Time.deltaTime);
@@ -158,13 +160,33 @@ public class PlayerController : MonoBehaviour
 
         //PLAYER STATE CHECKS//
 
-        //Checks if the Player's state is Idle or Moving, and adjusts their movement speed accordingly.
-        if (playerState == PlayerStates.Idle || playerState == PlayerStates.Moving)
+        //Checks if the Player's state is 'Idle'.
+        if (playerState == PlayerStates.Idle)
+        {
             currentMoveSpeed = defaultMoveSpeed;
+            gravityMultiplier = defaultGravityMultiplier;
+        }
 
-        //Checks if the Player's state is Falling or Floating, and adjusts their movement speed accordingly.
-        if (playerState == PlayerStates.Falling || playerState == PlayerStates.Floating)
+        //Checks if the Player's state is 'Moving'.
+        if (playerState == PlayerStates.Moving)
+        {
+            currentMoveSpeed = defaultMoveSpeed;
+            gravityMultiplier = defaultGravityMultiplier;
+        }
+
+        //Checks if the Player's state is 'Falling'.
+        if (playerState == PlayerStates.Falling)
+        {
             currentMoveSpeed = airborneMoveSpeed;
+            gravityMultiplier += gravityRampUp;
+        }
+
+        //Checks if the Player's state is 'Floating'.
+        if (playerState == PlayerStates.Floating)
+        {
+            currentMoveSpeed = airborneMoveSpeed;
+            gravityMultiplier = 0;
+        }
 
         //Checks if the Player's state is Dead, Respawning, or Casting, and adjusts their movement speed accordingly.
         if (playerState == PlayerStates.Dead || playerState == PlayerStates.Respawning || playerState == PlayerStates.Casting)
