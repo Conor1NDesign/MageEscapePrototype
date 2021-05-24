@@ -47,18 +47,25 @@ public class PlayerController : MonoBehaviour
     };
 
 
-    [Header("PLAYER INDEX - 0 for P1, 1 for P2")]
+    [Header("PLAYER INDEX")]
+    [Tooltip("This Player's Index number. Player 1 should have index 0, and Player 2 should have index 1.")]
     public int playerIndex = 0;
 
     [Header("Current Player State")]
+    [Tooltip("The current state of the player, determines what actions they can take and adjusts some of their variables.")]
     public PlayerStates playerState = PlayerStates.Idle;
 
     [Header("Character Control Variables")]
     private float currentMoveSpeed; //Private value for current movement speed, is changed based on player state.
+    [Tooltip("The default movement speed for the player. This is used while they are grounded.")]
     public float defaultMoveSpeed;
+    [Tooltip("The movement speed for the player while they are airborne, either falling or floating due to a wind spell.")]
     public float airborneMoveSpeed;
+    [Tooltip("The speed at which the player rotates towards the direction they are moving. Values higher than 5 aren't really noticeable.")]
     public float rotateSpeed;
+    [Tooltip("The default strength of gravity, be mindful that the value of Gravity Ramp Up is added to this each frame that the player is falling.")]
     public float defaultGravityMultiplier;
+    [Tooltip("The value that gravity increases by each frame that a player is falling. Values above 0.02 can end up looking really goofy, beware.")]
     public float gravityRampUp;
     private float gravityMultiplier;
 
