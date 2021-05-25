@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 4671339470369175106}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -259,7 +259,13 @@ MonoBehaviour:
   airborneMoveSpeed: 6
   rotateSpeed: 5
   defaultGravityMultiplier: 0.25
+  maxGravityMultiplier: 2
   gravityRampUp: 0.02
+  respawnTime: 3
+  currentSpawnPoint: {fileID: 0}
+  isFloating: 0
+  isDead: 0
+  playerMesh: {fileID: 1308021681630118595}
 --- !u!143 &4671339470369175106
 CharacterController:
   m_ObjectHideFlags: 0

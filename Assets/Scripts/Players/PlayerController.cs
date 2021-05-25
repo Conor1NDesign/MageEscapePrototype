@@ -9,12 +9,14 @@ public class PlayerController : MonoBehaviour
     * * * * * * * * * * TO DO * * * * * * * * * *
     * - Implement and update conditions for player
     *   death.
+    *       - Falling implemented.
     *   
-    * - Implement conditions for Respawning and
-    *   Checkpoint assignment.
+    * - Implement conditions for Checkpoint 
+    *   assignment.
     *   
     * - Implement PlayerState transitions and 
     *   values.
+    *       - Basic states implemented.
     * * * * * * * * * * * * * * * * * * * * * * *
     * * * * * * OTHER SCRIPTS/OBJECTS * * * * * *
     * - Create and implement spellbooks.
@@ -65,9 +67,28 @@ public class PlayerController : MonoBehaviour
     public float rotateSpeed;
     [Tooltip("The default strength of gravity, be mindful that the value of Gravity Ramp Up is added to this each frame that the player is falling.")]
     public float defaultGravityMultiplier;
+    [Tooltip("The maximum strength of gravity. For example: A value of 2 would mean that that the strength can go up to double the Unity default.")]
+    public float maxGravityMultiplier = 2;
     [Tooltip("The value that gravity increases by each frame that a player is falling. Values above 0.02 can end up looking really goofy, beware.")]
     public float gravityRampUp;
     private float gravityMultiplier;
+
+    [Header("Respawning Settings")]
+    [Tooltip("The amount of time (in seconds) it takes to respawn the player when they die.")]
+    public int respawnTime = 3;
+    [Tooltip("The current location that the player will respawn at, this value should only ever be a Starting Point or a Checkpoint's Transform.")]
+    public Transform currentSpawnPoint;
+
+    [Header("Checking Player State")]
+    [Tooltip("Used to check if the player is currently under the effects of a wind spell. Should be false if they are not.")]
+    public bool isFloating;
+    [Tooltip("Used to check if the player is currently dead. Should be returned to false after they've respawned.")]
+    public bool isDead;
+    private bool isRespawning; //A bool used privately within this script to ensure that the respawn coroutine isn't called multiple times.
+
+    [Header("Miscellaneous Variables")]
+    [Tooltip("The player's mesh.")]
+    public GameObject playerMesh;
 
     //Variable for the CharacterController component on the object the script is attached to.
     private CharacterController controller;
@@ -126,7 +147,6 @@ public class PlayerController : MonoBehaviour
 
         //Applies gravitational force to the player.
         moveDirection += Physics.gravity * gravityMultiplier;
-        Debug.Log(Physics.gravity);
         
         //Calls the Move() method on the CharacterController using the moveDirection value.
         controller.Move(moveDirection * Time.deltaTime);
@@ -141,26 +161,42 @@ public class PlayerController : MonoBehaviour
 
         //PLAYER STATE CHANGES//
 
-        if (controller.isGrounded && moveDirection != new Vector3 (0, moveDirection.y, 0) /* && !isDead */)
+        //Checks if the player is grounded, has some movement input, and is not dead, before returning that they are 'Moving'.
+        if (controller.isGrounded && moveDirection != new Vector3 (0, moveDirection.y, 0) && !isDead)
         {
             playerState = PlayerStates.Moving;
         }
 
-        if (controller.isGrounded && moveDirection == new Vector3(0, moveDirection.y, 0) /* && !isDead */)
+        //Checks if the player is grounded, has NO movement input, and is not dead, before returning that they are 'Idle'.
+        if (controller.isGrounded && moveDirection == new Vector3(0, moveDirection.y, 0) && !isDead)
         {
             playerState = PlayerStates.Idle;
         }
 
-        if (!controller.isGrounded /* && !isFloating && !isDead */)
+        //Checks if the player is not grounded, is unaffected by a wind spell, and is not dead, before returning that they are 'Falling'.
+        if (!controller.isGrounded && !isFloating && !isDead)
         {
             playerState = PlayerStates.Falling;
         }
 
-        
-        //if (!controller.isGrounded /* && isFloating  && !isDead */)
-        //{
-        //    playerState = PlayerStates.Floating;
-        //}
+        //Checks if the player is not grounded, is currently influenced by a wind spell, and is not dead, before returning that they are 'Floating'.
+        if (!controller.isGrounded && isFloating && !isDead)
+        {
+            playerState = PlayerStates.Floating;
+        }
+
+        //Checks if the player has died in the last frame, and has not already had their respawn process started.
+        if (isDead && !isRespawning)
+        {
+            playerState = PlayerStates.Dead;
+        }
+
+        //Checks if the player is dead and has started their respawn process.
+        if (isDead && isRespawning)
+        {
+            playerState = PlayerStates.Respawning;
+            gameObject.transform.position = currentSpawnPoint.position;
+        }
 
 
         //PLAYER STATE CHANGES END//
@@ -185,7 +221,12 @@ public class PlayerController : MonoBehaviour
         if (playerState == PlayerStates.Falling)
         {
             currentMoveSpeed = airborneMoveSpeed;
-            gravityMultiplier += gravityRampUp;
+
+            //A statement to make sure that gravity can't go beyond a maximum value set in the inspector. This is to prevent gravity from reaching an infinite value.
+            if (gravityMultiplier < maxGravityMultiplier)
+            {
+                gravityMultiplier += gravityRampUp;
+            }
         }
 
         //Checks if the Player's state is 'Floating'.
@@ -195,11 +236,38 @@ public class PlayerController : MonoBehaviour
             gravityMultiplier = 0;
         }
 
-        //Checks if the Player's state is Dead, Respawning, or Casting, and adjusts their movement speed accordingly.
-        if (playerState == PlayerStates.Dead || playerState == PlayerStates.Respawning || playerState == PlayerStates.Casting)
+        //Checks if the Player's state is 'Dead'.
+        if (playerState == PlayerStates.Dead)
+        {
             currentMoveSpeed = 0;
+            gravityMultiplier = 0;
+            StartCoroutine(RespawnPlayer());
+        }
+
+        //Checks if the Player's state is 'Respawning'.
+        if (playerState == PlayerStates.Respawning)
+        {
+            currentMoveSpeed = 0;
+        }
+
+        //Checks if the Player's state is 'Casting'.
+        if (playerState == PlayerStates.Casting)
+        {
+            currentMoveSpeed = 0;
+        }
 
         //PLAYER STATE CHECKS END//
+    }
+
+    //Coroutine for respawning the player if they somehow die.
+    public IEnumerator RespawnPlayer()
+    {
+        playerMesh.SetActive(false);
+        isRespawning = true;
+        yield return new WaitForSeconds(respawnTime);
+        isDead = false;
+        isRespawning = false;
+        playerMesh.SetActive(true);
     }
 
     public void RotateTowardsMovement(Quaternion rotation)
