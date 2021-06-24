@@ -293,7 +293,6 @@ public class PlayerController : MonoBehaviour
         {
             // Throw a spellbook if you have one equipped
             spellbook.transform.parent = null;
-            spellbook.GetComponent<SpellbookController>().playerHolding = null;
 
             Rigidbody spellbookRB = spellbook.GetComponent<Rigidbody>();
             spellbookRB.isKinematic = false;
@@ -307,12 +306,10 @@ public class PlayerController : MonoBehaviour
             // Equip a spellbook if there's one nearby
             spellbook = nearbySpellbook;
 
-            SpellbookController spellbookController = spellbook.GetComponent<SpellbookController>();
-            playerElement = spellbookController.element;
+            playerElement = spellbook.GetComponent<SpellbookController>().element;
 
             spellbook.transform.parent = transform;
             spellbook.transform.position = spellbookEquipPoint.position;
-            spellbookController.playerHolding = gameObject;
             spellbook.GetComponent<Rigidbody>().isKinematic = true;
         }
     }
