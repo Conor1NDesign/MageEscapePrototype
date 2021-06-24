@@ -15,11 +15,16 @@ public class DeathTrigger : MonoBehaviour
                 controller.isDead = true;
             }
         }
-        /*
         else if (other.tag == "Spellbook")
         {
-            //Do a thing.
+            SpellbookController controller = other.GetComponent<SpellbookController>();
+
+            if (controller)
+            {
+                controller.Respawn();
+            }
         }
+        /*
         else
         {
             Destroy(other.gameObject);

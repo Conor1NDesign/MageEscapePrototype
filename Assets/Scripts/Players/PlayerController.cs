@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -268,6 +268,15 @@ public class PlayerController : MonoBehaviour
         {
             currentMoveSpeed = 0;
             gravityMultiplier = 0;
+            if (spellbook)
+            {
+                // Drop spellbook on death
+                spellbook.transform.parent = null;
+                spellbook.GetComponent<Rigidbody>().isKinematic = false;
+
+                playerElement = PlayerCurrentElement.None;
+                spellbook = null;
+            }
             StartCoroutine(RespawnPlayer());
         }
 
