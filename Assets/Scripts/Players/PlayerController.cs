@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -99,6 +99,10 @@ public class PlayerController : MonoBehaviour
     public GameObject playerMesh;
     [Tooltip("The player's spellbook equip point")]
     public Transform spellbookEquipPoint;
+    [Tooltip("The camera's pivot (shared for chaos)")]
+    public Transform cameraPivot;
+    [Tooltip("Camera rotation speed, limits how fast the camera will rotate")]
+    public float cameraRotateSpeed;
 
     //Variable for the CharacterController component on the object the script is attached to.
     private CharacterController controller;
@@ -106,6 +110,7 @@ public class PlayerController : MonoBehaviour
     //Variables for recieving Player Inputs, and determining a movement direction vector from them.
     private Vector3 moveDirection = Vector3.zero;
     private Vector2 inputVector = Vector2.zero;
+    private Vector2 cameraInputVector = Vector2.zero;
 
     //Variable for the camera used in each level.
     private Camera levelCamera;
@@ -131,11 +136,23 @@ public class PlayerController : MonoBehaviour
         inputVector = direction;
     }
 
+    public void SetCameraInputVector(Vector2 direction)
+    {
+        // Called by PlayerInputHandler to assign a direction for the camera to rotate
+        cameraInputVector = direction;
+    }
+
 
     void Update()
     {
         Debug.Log("Player " + playerIndex + " is currently:" + playerState);
         Debug.Log("Player " + playerIndex + "'s movementVector is: " + moveDirection);
+
+        // CAMERA ROTATION //
+
+        cameraPivot.Rotate(new Vector3(0, cameraInputVector.x * cameraRotateSpeed, 0));
+
+        // CAMERA ROTATION END //
 
         //MOVEMENT AND ROTATION//
         

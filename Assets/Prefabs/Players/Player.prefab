@@ -302,6 +302,8 @@ MonoBehaviour:
   isDead: 0
   playerMesh: {fileID: 1308021681630118595}
   spellbookEquipPoint: {fileID: 6403313315471890163}
+  cameraPivot: {fileID: 0}
+  cameraRotateSpeed: 0.3
 --- !u!143 &4671339470369175106
 CharacterController:
   m_ObjectHideFlags: 0

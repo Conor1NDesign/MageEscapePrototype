@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -40,6 +40,14 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (context.performed)
                 playerController.InteractWithSpellbook();
+        }
+    }
+
+    public void OnCameraMove(CallbackContext context)
+    {
+        if (playerController)
+        {
+            playerController.SetCameraInputVector(context.ReadValue<Vector2>());
         }
     }
 }
