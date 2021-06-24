@@ -56,13 +56,19 @@ public class PlayerController : MonoBehaviour
     [Header("Current Player State")]
     [Tooltip("The current state of the player, determines what actions they can take and adjusts some of their variables.")]
     public PlayerStates playerState = PlayerStates.Idle;
+    [Tooltip("The current spellbook element of the player")]
+    public PlayerCurrentElement playerElement = PlayerCurrentElement.None;
+    [Tooltip("The current spellbook the player is holding")]
+    public GameObject spellbook = null;
+    [HideInInspector]
+    public GameObject nearbySpellbook = null; // Nearby spellbook, to be equipped on a button press
 
     [Header("Character Control Variables")]
-    private float currentMoveSpeed; //Private value for current movement speed, is changed based on player state.
     [Tooltip("The default movement speed for the player. This is used while they are grounded.")]
     public float defaultMoveSpeed;
     [Tooltip("The movement speed for the player while they are airborne, either falling or floating due to a wind spell.")]
     public float airborneMoveSpeed;
+    private float currentMoveSpeed; //Private value for current movement speed, is changed based on player state.
     [Tooltip("The speed at which the player rotates towards the direction they are moving. Values higher than 5 aren't really noticeable.")]
     public float rotateSpeed;
     [Tooltip("The default strength of gravity, be mindful that the value of Gravity Ramp Up is added to this each frame that the player is falling.")]
@@ -72,6 +78,8 @@ public class PlayerController : MonoBehaviour
     [Tooltip("The value that gravity increases by each frame that a player is falling. Values above 0.02 can end up looking really goofy, beware.")]
     public float gravityRampUp;
     private float gravityMultiplier;
+    [Tooltip("The player's strength with throwing spellbooks")]
+    public float throwStrength;
 
     [Header("Respawning Settings")]
     [Tooltip("The amount of time (in seconds) it takes to respawn the player when they die.")]
@@ -89,6 +97,8 @@ public class PlayerController : MonoBehaviour
     [Header("Miscellaneous Variables")]
     [Tooltip("The player's mesh.")]
     public GameObject playerMesh;
+    [Tooltip("The player's spellbook equip point")]
+    public Transform spellbookEquipPoint;
 
     //Variable for the CharacterController component on the object the script is attached to.
     private CharacterController controller;
@@ -274,6 +284,56 @@ public class PlayerController : MonoBehaviour
     {
         //Rotates the Player to face the value of the rotation variable.
         gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, rotation, rotateSpeed);
+    }
+
+    // Throws the player's current spellbook
+    public void InteractWithSpellbook()
+    {
+        if (spellbook)
+        {
+            // Throw a spellbook if you have one equipped
+            spellbook.transform.parent = null;
+            spellbook.GetComponent<SpellbookController>().playerHolding = null;
+
+            Rigidbody spellbookRB = spellbook.GetComponent<Rigidbody>();
+            spellbookRB.isKinematic = false;
+            spellbookRB.AddForce(transform.forward * throwStrength, ForceMode.Impulse);
+
+            playerElement = PlayerCurrentElement.None;
+            spellbook = null;
+        }
+        else if (nearbySpellbook)
+        {
+            // Equip a spellbook if there's one nearby
+            spellbook = nearbySpellbook;
+
+            SpellbookController spellbookController = spellbook.GetComponent<SpellbookController>();
+            playerElement = spellbookController.element;
+
+            spellbook.transform.parent = transform;
+            spellbook.transform.position = spellbookEquipPoint.position;
+            spellbookController.playerHolding = gameObject;
+            spellbook.GetComponent<Rigidbody>().isKinematic = true;
+        }
+    }
+
+    // Sets the nearby spellbook when you collide with it
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Spellbook"))
+        {
+            nearbySpellbook = other.gameObject;
+        }
+    }
+
+    // Clears the nearby spellbook when you leave it
+    // yes this will leave you with no nearby spellbook if you move out of one while still in another
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Spellbook"))
+        {
+            nearbySpellbook = null;
+        }
     }
 }
 

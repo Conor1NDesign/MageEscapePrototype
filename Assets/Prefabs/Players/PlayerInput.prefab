@@ -73,6 +73,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d213dac1-e492-4e04-ae8a-3bf8f28dd019
     m_ActionName: PlayerMovement/Movement[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4236643462237625373}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnThrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4909ab55-4ad5-497c-8ee1-5bebe175324b
+    m_ActionName: PlayerMageControls/Throw[/XInputControllerWindows/buttonEast]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerMageControls

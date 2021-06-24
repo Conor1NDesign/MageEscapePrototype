@@ -33,4 +33,13 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    // Throws the player's spellbook
+    public void OnThrow(CallbackContext context)
+    {
+        if (playerController) //All player input methods need to check if playerController is NOT null otherwise Input System spits out a bunch of errors.
+        {
+            if (context.performed)
+                playerController.InteractWithSpellbook();
+        }
+    }
 }
