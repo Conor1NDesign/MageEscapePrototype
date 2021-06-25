@@ -329,6 +329,14 @@ public class PlayerController : MonoBehaviour
         }
         else if (nearbySpellbook)
         {
+            if (nearbySpellbook.transform.parent)
+            {
+                PlayerController otherPlayer = nearbySpellbook.transform.parent.GetComponent<PlayerController>();
+
+                otherPlayer.playerElement = PlayerCurrentElement.None;
+                otherPlayer.spellbook = null;
+            }
+
             // Equip a spellbook if there's one nearby
             spellbook = nearbySpellbook;
 
