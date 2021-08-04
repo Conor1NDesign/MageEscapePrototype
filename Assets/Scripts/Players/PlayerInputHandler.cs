@@ -50,4 +50,20 @@ public class PlayerInputHandler : MonoBehaviour
             playerController.SetCameraInputVector(context.ReadValue<Vector2>());
         }
     }
+
+    public void OnQuickCast(CallbackContext context)
+    {
+        if (playerController && playerController.playerElement != PlayerController.PlayerCurrentElement.None)
+        {
+            SpellFunctions.QuickCast(playerController);
+        }
+    }
+
+    public void OnHardCast(CallbackContext context)
+    {
+        if (playerController && playerController.playerElement != PlayerController.PlayerCurrentElement.None)
+        {
+            SpellFunctions.HardCast(playerController);
+        }
+    }
 }
