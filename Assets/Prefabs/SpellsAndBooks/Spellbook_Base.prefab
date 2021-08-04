@@ -4826,7 +4826,7 @@ GameObject:
   - component: {fileID: 1691479825603393514}
   - component: {fileID: 5453500895608427371}
   m_Layer: 0
-  m_Name: Spellbook
+  m_Name: Spellbook_Base
   m_TagString: Spellbook
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4971,7 +4971,8 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1718793423724875394, guid: 1cbffea08fcdfb94d90de4766d5011ca, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1cbffea08fcdfb94d90de4766d5011ca, type: 3}
 --- !u!4 &2344126246944566681 stripped
 Transform:

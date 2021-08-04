@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3760028733001289798}
   - component: {fileID: 5258507375560683697}
   - component: {fileID: 3088432546077567943}
-  - component: {fileID: 1718793423724875394}
   m_Layer: 0
   m_Name: Spellbook_Mesh
   m_TagString: Untagged
@@ -298,18 +297,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704703347124941199}
-  m_Mesh: {fileID: 0}
---- !u!64 &1718793423724875394
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1704703347124941199}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
