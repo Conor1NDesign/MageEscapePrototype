@@ -34,6 +34,7 @@ public class SpellFunctions : MonoBehaviour
     static void Flamethrower(PlayerController caster)
     {
         Debug.Log("Flamethrower");
+        caster.AttachSpell(Instantiate(caster.flamethrowerPrefab));
     }
 
     static void QuickFrost(PlayerController caster)
@@ -82,6 +83,7 @@ public class SpellFunctions : MonoBehaviour
     static void FlamethrowerEnd(PlayerController caster)
     {
         Debug.Log("Flamethrower End");
+        Destroy(caster.ClearSpell());
     }
 
     static void QuickFrostEnd(PlayerController caster)

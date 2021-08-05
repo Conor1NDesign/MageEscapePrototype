@@ -97,11 +97,17 @@ public class PlayerController : MonoBehaviour
     public bool isDead;
     private bool isRespawning; //A bool used privately within this script to ensure that the respawn coroutine isn't called multiple times.
 
+    [Header("Spell Prefabs")]
+    public GameObject flamethrowerPrefab;
+
     [Header("Miscellaneous Variables")]
     [Tooltip("The player's mesh.")]
     public GameObject playerMesh;
     [Tooltip("The player's spellbook equip point")]
     public Transform spellbookEquipPoint;
+    [Tooltip("The player's spell attach point")]
+    public Transform spellAttachPoint;
+    private GameObject attachedSpell;
     [Tooltip("The camera's pivot (shared for chaos)")]
     public Transform cameraPivot;
     [Tooltip("Camera rotation speed, limits how fast the camera will rotate")]
@@ -380,6 +386,24 @@ public class PlayerController : MonoBehaviour
         {
             nearbySpellbook = null;
         }
+    }
+
+    public void AttachSpell(GameObject spell)
+    {
+        if (attachedSpell != null)
+            return;
+
+        spell.transform.parent = spellAttachPoint;
+        spell.transform.position = spellAttachPoint.position;
+        spell.transform.rotation = spellAttachPoint.rotation;
+        attachedSpell = spell;
+    }
+
+    public GameObject ClearSpell()
+    {
+        GameObject spell = attachedSpell;
+        attachedSpell = null;
+        return spell;
     }
 }
 
