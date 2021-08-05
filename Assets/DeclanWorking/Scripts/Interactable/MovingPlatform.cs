@@ -15,7 +15,6 @@ public class MovingPlatform : MonoBehaviour
     [Tooltip("Moving back and forward when activated")]
     public bool oscillating;
     int elapsedFrames = 0;
-    bool Ocollating;
     bool ToEnd = true;
     public int numberOfSwitches;
     public int numberOfActiveSwitches;
@@ -51,16 +50,52 @@ public class MovingPlatform : MonoBehaviour
 
     bool moving;
     float counter;
+    float interpolationRatio;
     private void FixedUpdate()
     {
 
-        
-        if (moving)
+        if (oscillating)
         {
-
-            counter += Time.deltaTime;
-            if (counter > 1)
+            if (moving)
             {
+
+                counter += Time.deltaTime;
+                if (counter > 1)
+                {
+                    if (Vector3.Distance(Platform.transform.position, endPos.transform.position) <= 0.01f && ToEnd)
+                    {
+                        aa = Vector3.Distance(Platform.transform.position, endPos.transform.position);
+                        counter = 0;
+                        elapsedFrames = 0;
+                        ToEnd = false;
+                    }
+                    else if (Vector3.Distance(Platform.transform.position, startPos) <= 0.01f && !ToEnd)
+                    {
+                        aa = Vector3.Distance(Platform.transform.position, startPos);
+                        counter = 0;
+                        elapsedFrames = 0;
+                        ToEnd = true;
+                    }
+                }
+                interpolationRatio = (float)elapsedFrames / speed;
+                if (ToEnd)
+                {
+                    Platform.transform.position = Vector3.Lerp(startPos, endPos.transform.position, interpolationRatio);
+                }
+                else if (!ToEnd)
+                {
+                    Platform.transform.position = Vector3.Lerp(endPos.transform.position, startPos, interpolationRatio);
+                }
+
+                elapsedFrames = (elapsedFrames + 1) % (speed + 1);
+            }
+
+        }
+        else
+        {
+            if (moving)
+            {
+                print("a");
                 if (Vector3.Distance(Platform.transform.position, endPos.transform.position) <= 0.01f && ToEnd)
                 {
                     aa = Vector3.Distance(Platform.transform.position, endPos.transform.position);
@@ -75,20 +110,18 @@ public class MovingPlatform : MonoBehaviour
                     elapsedFrames = 0;
                     ToEnd = true;
                 }
+                interpolationRatio = (float)elapsedFrames / speed;
+                if (ToEnd)
+                {
+                    Platform.transform.position = Vector3.Lerp(startPos, endPos.transform.position, interpolationRatio);
+                }
+                elapsedFrames = (elapsedFrames + 1) % (speed + 1);
             }
-            float interpolationRatio = (float)elapsedFrames / speed;
-            if (ToEnd)
-            {
-                Platform.transform.position = Vector3.Lerp(startPos, endPos.transform.position, interpolationRatio);
-            }
-            else if (!ToEnd)
-            {
-                Platform.transform.position = Vector3.Lerp(endPos.transform.position, startPos, interpolationRatio);
-            }
-
-            elapsedFrames = (elapsedFrames + 1) % (speed + 1);
         }
+
     }
+
+
     public void Actived()
     {
 
