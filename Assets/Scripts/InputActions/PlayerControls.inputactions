@@ -28,6 +28,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Quick Cast",
+                    "type": "Button",
+                    "id": "dfd0b8c7-43fa-4a5c-8272-53f9713accd3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Hard Cast",
+                    "type": "Button",
+                    "id": "96a51e51-56ad-4db2-a7ae-5d19f7ff712d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -182,6 +198,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Camera Control",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f1e8ea0a-c5d9-47e1-8284-87737bf9469b",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Quick Cast",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6ba7ac36-840b-4b7e-80fe-12ebda074b38",
+                    "path": "<Keyboard>/F",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Hard Cast",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
