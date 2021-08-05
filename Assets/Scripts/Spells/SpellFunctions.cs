@@ -59,6 +59,7 @@ public class SpellFunctions : MonoBehaviour
     static void Fireball(PlayerController caster)
     {
         Debug.Log("Fireball Aim");
+        caster.AttachSpell(Instantiate(caster.fireballPrefab));
     }
 
     static void HardFrost(PlayerController caster)
@@ -104,6 +105,12 @@ public class SpellFunctions : MonoBehaviour
     static void FireballEnd(PlayerController caster)
     {
         Debug.Log("Fireball Shoot");
+        GameObject fireball = caster.ClearSpell();
+        if (fireball)
+        {
+            fireball.GetComponent<Rigidbody>().AddForce(caster.transform.forward * caster.fireballForce, ForceMode.Impulse);
+            Destroy(fireball, caster.fireballTime);
+        }
     }
 
     static void HardFrostEnd(PlayerController caster)

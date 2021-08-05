@@ -99,6 +99,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Spell Prefabs")]
     public GameObject flamethrowerPrefab;
+    public GameObject fireballPrefab;
+    public float fireballForce;
+    public float fireballTime;
 
     [Header("Miscellaneous Variables")]
     [Tooltip("The player's mesh.")]
@@ -214,12 +217,24 @@ public class PlayerController : MonoBehaviour
         //Checks if the player is not grounded, is unaffected by a wind spell, and is not dead, before returning that they are 'Falling'.
         if (!controller.isGrounded && !isFloating && !isDead)
         {
+            if (playerState == PlayerStates.Casting)
+            {
+                Destroy(attachedSpell);
+                attachedSpell = null;
+            }
+
             playerState = PlayerStates.Falling;
         }
 
         //Checks if the player is not grounded, is currently influenced by a wind spell, and is not dead, before returning that they are 'Floating'.
         if (!controller.isGrounded && isFloating && !isDead)
         {
+            if (playerState == PlayerStates.Casting)
+            {
+                Destroy(attachedSpell);
+                attachedSpell = null;
+            }
+
             playerState = PlayerStates.Floating;
         }
 
@@ -401,9 +416,14 @@ public class PlayerController : MonoBehaviour
 
     public GameObject ClearSpell()
     {
-        GameObject spell = attachedSpell;
-        attachedSpell = null;
-        return spell;
+        if (attachedSpell)
+        {
+            GameObject spell = attachedSpell;
+            attachedSpell = null;
+            spell.transform.parent = null;
+            return spell;
+        }
+        return null;
     }
 }
 
