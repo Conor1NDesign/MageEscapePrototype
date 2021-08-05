@@ -71,6 +71,9 @@ public class PlayerController : MonoBehaviour
     private float currentMoveSpeed; //Private value for current movement speed, is changed based on player state.
     [Tooltip("The speed at which the player rotates towards the direction they are moving. Values higher than 5 aren't really noticeable.")]
     public float rotateSpeed;
+    [Tooltip("The speed at which the player rotates when casting.")]
+    public float castingRotationSpeed;
+    private float currentRotateSpeed; //Private value for current rotation speed, is changed based on player state.
     [Tooltip("The default strength of gravity, be mindful that the value of Gravity Ramp Up is added to this each frame that the player is falling.")]
     public float defaultGravityMultiplier;
     [Tooltip("The maximum strength of gravity. For example: A value of 2 would mean that that the strength can go up to double the Unity default.")]
@@ -145,8 +148,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Player " + playerIndex + " is currently:" + playerState);
-        Debug.Log("Player " + playerIndex + "'s movementVector is: " + moveDirection);
+        //Debug.Log("Player " + playerIndex + " is currently:" + playerState);
+        //Debug.Log("Player " + playerIndex + "'s movementVector is: " + moveDirection);
 
         // CAMERA ROTATION //
 
@@ -169,8 +172,10 @@ public class PlayerController : MonoBehaviour
         //Adjusts the rotationVector based on the main camera position.
         rotationVector = Quaternion.Euler(0, levelCamera.gameObject.transform.eulerAngles.y, 0) * rotationVector;
         //Lastly, multiplies rotationVector by currentMoveSpeed to get a final value for the RotateTowardsMovement() method.
-        rotationVector *= currentMoveSpeed;
-        var rotation = Quaternion.LookRotation(rotationVector);
+        rotationVector *= defaultMoveSpeed;
+        Quaternion rotation = Quaternion.Euler(0, 0, 0);
+        if (rotationVector != Vector3.zero)
+            rotation = Quaternion.LookRotation(rotationVector);
 
         //Applies gravitational force to the player.
         moveDirection += Physics.gravity * gravityMultiplier;
@@ -179,7 +184,7 @@ public class PlayerController : MonoBehaviour
         controller.Move(moveDirection * Time.deltaTime);
 
         //Checks if there is still input coming from the player. This prevents the mesh from rotating back to Y = 0 when there's no input.
-        if (moveDirection != new Vector3(0, moveDirection.y, 0))
+        if (inputVector != new Vector2(0, 0))
         {
             RotateTowardsMovement(rotation);
         }
@@ -189,13 +194,13 @@ public class PlayerController : MonoBehaviour
         //PLAYER STATE CHANGES//
 
         //Checks if the player is grounded, has some movement input, and is not dead, before returning that they are 'Moving'.
-        if (controller.isGrounded && moveDirection != new Vector3 (0, moveDirection.y, 0) && !isDead)
+        if (controller.isGrounded && moveDirection != new Vector3 (0, moveDirection.y, 0) && !isDead && playerState != PlayerStates.Casting)
         {
             playerState = PlayerStates.Moving;
         }
 
         //Checks if the player is grounded, has NO movement input, and is not dead, before returning that they are 'Idle'.
-        if (controller.isGrounded && moveDirection == new Vector3(0, moveDirection.y, 0) && !isDead)
+        if (controller.isGrounded && moveDirection == new Vector3(0, moveDirection.y, 0) && !isDead && playerState != PlayerStates.Casting)
         {
             playerState = PlayerStates.Idle;
         }
@@ -234,6 +239,7 @@ public class PlayerController : MonoBehaviour
         if (playerState == PlayerStates.Idle)
         {
             currentMoveSpeed = defaultMoveSpeed;
+            currentRotateSpeed = rotateSpeed;
             gravityMultiplier = defaultGravityMultiplier;
         }
 
@@ -241,6 +247,7 @@ public class PlayerController : MonoBehaviour
         if (playerState == PlayerStates.Moving)
         {
             currentMoveSpeed = defaultMoveSpeed;
+            currentRotateSpeed = rotateSpeed;
             gravityMultiplier = defaultGravityMultiplier;
         }
 
@@ -248,6 +255,7 @@ public class PlayerController : MonoBehaviour
         if (playerState == PlayerStates.Falling)
         {
             currentMoveSpeed = airborneMoveSpeed;
+            currentRotateSpeed = rotateSpeed;
 
             //A statement to make sure that gravity can't go beyond a maximum value set in the inspector. This is to prevent gravity from reaching an infinite value.
             if (gravityMultiplier < maxGravityMultiplier)
@@ -260,6 +268,7 @@ public class PlayerController : MonoBehaviour
         if (playerState == PlayerStates.Floating)
         {
             currentMoveSpeed = airborneMoveSpeed;
+            currentRotateSpeed = rotateSpeed;
             gravityMultiplier = 0;
         }
 
@@ -267,6 +276,7 @@ public class PlayerController : MonoBehaviour
         if (playerState == PlayerStates.Dead)
         {
             currentMoveSpeed = 0;
+            currentRotateSpeed = 0;
             gravityMultiplier = 0;
             if (spellbook)
             {
@@ -284,12 +294,14 @@ public class PlayerController : MonoBehaviour
         if (playerState == PlayerStates.Respawning)
         {
             currentMoveSpeed = 0;
+            currentRotateSpeed = 0;
         }
 
         //Checks if the Player's state is 'Casting'.
         if (playerState == PlayerStates.Casting)
         {
             currentMoveSpeed = 0;
+            currentRotateSpeed = castingRotationSpeed;
         }
 
         //PLAYER STATE CHECKS END//
@@ -309,12 +321,15 @@ public class PlayerController : MonoBehaviour
     public void RotateTowardsMovement(Quaternion rotation)
     {
         //Rotates the Player to face the value of the rotation variable.
-        gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, rotation, rotateSpeed);
+        gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, rotation, currentRotateSpeed);
     }
 
     // Throws the player's current spellbook
     public void InteractWithSpellbook()
     {
+        if (playerState == PlayerStates.Casting)
+            return;
+
         if (spellbook)
         {
             // Throw a spellbook if you have one equipped
