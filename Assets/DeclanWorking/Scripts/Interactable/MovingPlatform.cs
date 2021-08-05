@@ -133,6 +133,8 @@ public class MovingPlatform : MonoBehaviour
     {
 
         moving = false;
+        if (numberOfSwitches == numberOfActiveSwitches)
+            moving = true;
     }
 
 
