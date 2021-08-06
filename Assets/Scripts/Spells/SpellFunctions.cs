@@ -51,6 +51,7 @@ public class SpellFunctions : MonoBehaviour
     {
         Debug.Log("Pushing Gust");
         caster.AttachSpell(Instantiate(caster.gustPrefab));
+		caster.rotationLockedBySpell = true;
     }
 
     // ----------------
@@ -107,6 +108,7 @@ public class SpellFunctions : MonoBehaviour
     static void PushingGustEnd(PlayerController caster)
     {
         Debug.Log("Pushing Gust End");
+		caster.rotationLockedBySpell = false;
         Destroy(caster.ClearSpell());
     }
 
