@@ -27842,6 +27842,38 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &575541362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1028295921625702651, guid: 4886275434865394b86095f69dfdbe48, type: 3}
+  m_PrefabInstance: {fileID: 1759225939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &575541363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575541362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d8524867f305a44e9eff394e99148fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  melted: 0
+  duration: 500
+--- !u!65 &575541364
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575541362}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4, z: 2}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!43 &578029617
 Mesh:
   m_ObjectHideFlags: 0
@@ -42202,6 +42234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IceWall
       objectReference: {fileID: 0}
+    - target: {fileID: 1028295921625702651, guid: 4886275434865394b86095f69dfdbe48, type: 3}
+      propertyPath: m_TagString
+      value: Meltable
+      objectReference: {fileID: 0}
     - target: {fileID: 4768180185190743846, guid: 4886275434865394b86095f69dfdbe48, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -43880,6 +43916,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8371511205941126897, guid: aa771bdfb3664e54ab104dbda97131a0, type: 3}
   m_PrefabInstance: {fileID: 900010637}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &900439311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1028295921625702651, guid: 4886275434865394b86095f69dfdbe48, type: 3}
+  m_PrefabInstance: {fileID: 867273535}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &900439312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900439311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d8524867f305a44e9eff394e99148fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  melted: 0
+  duration: 500
+--- !u!65 &900439313
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900439311}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4, z: 2}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!43 &901846194
 Mesh:
   m_ObjectHideFlags: 0
@@ -67313,6 +67381,51 @@ PrefabInstance:
       objectReference: {fileID: 631327160}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d39c0af3a73e4094ba2a51bf2654532c, type: 3}
+--- !u!1 &1399680961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1028295921625702651, guid: 4886275434865394b86095f69dfdbe48, type: 3}
+  m_PrefabInstance: {fileID: 1713927685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1399680962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399680961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d8524867f305a44e9eff394e99148fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  melted: 0
+  duration: 500
+--- !u!65 &1399680963
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399680961}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4, z: 2}
+  m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!65 &1399680964
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399680961}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4, z: 2}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1001 &1403878452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82163,6 +82276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IceWall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1028295921625702651, guid: 4886275434865394b86095f69dfdbe48, type: 3}
+      propertyPath: m_TagString
+      value: Meltable
+      objectReference: {fileID: 0}
     - target: {fileID: 4768180185190743846, guid: 4886275434865394b86095f69dfdbe48, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -84349,6 +84466,10 @@ PrefabInstance:
     - target: {fileID: 1028295921625702651, guid: 4886275434865394b86095f69dfdbe48, type: 3}
       propertyPath: m_Name
       value: IceWall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1028295921625702651, guid: 4886275434865394b86095f69dfdbe48, type: 3}
+      propertyPath: m_TagString
+      value: Meltable
       objectReference: {fileID: 0}
     - target: {fileID: 4768180185190743846, guid: 4886275434865394b86095f69dfdbe48, type: 3}
       propertyPath: m_Mesh
