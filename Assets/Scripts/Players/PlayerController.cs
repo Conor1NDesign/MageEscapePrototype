@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
 
     //Variables for recieving Player Inputs, and determining a movement direction vector from them.
-    private Vector3 moveDirection = Vector3.zero;
+    public Vector3 moveDirection = Vector3.zero;
     private Vector2 inputVector = Vector2.zero;
     private Vector2 cameraInputVector = Vector2.zero;
 
@@ -188,9 +188,13 @@ public class PlayerController : MonoBehaviour
 
         //Applies gravitational force to the player.
         moveDirection += Physics.gravity * gravityMultiplier;
-        
+
         //Calls the Move() method on the CharacterController using the moveDirection value.
-        controller.Move(moveDirection * Time.deltaTime);
+        //controller.Move(moveDirection * Time.deltaTime);
+        if (transform.parent == null)
+        {
+            Move(moveDirection);
+        }
 
         //Checks if there is still input coming from the player. This prevents the mesh from rotating back to Y = 0 when there's no input.
         if (inputVector != new Vector2(0, 0))
@@ -328,6 +332,10 @@ public class PlayerController : MonoBehaviour
         //PLAYER STATE CHECKS END//
     }
 
+    public void Move(Vector3 movDir)
+    {
+        controller.Move(movDir * Time.deltaTime);
+    }
     //Coroutine for respawning the player if they somehow die.
     public IEnumerator RespawnPlayer()
     {
