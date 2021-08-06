@@ -7,7 +7,12 @@ public class Fireball : MonoBehaviour
         if (!collision.gameObject.CompareTag("Spellbook"))
         {
             // Do fiery stuff
-            Debug.Log("boom");
+            //Debug.Log("boom");
+            if (collision.gameObject.CompareTag("Lightable"))
+            {
+                collision.gameObject.GetComponent<Scone>().isActivated = true;
+            }
+            
             Destroy(gameObject);
         }
     }
