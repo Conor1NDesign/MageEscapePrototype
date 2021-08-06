@@ -50,4 +50,42 @@ public class PlayerInputHandler : MonoBehaviour
             playerController.SetCameraInputVector(context.ReadValue<Vector2>());
         }
     }
+
+    public void OnQuickCast(CallbackContext context)
+    {
+        if (playerController &&
+            playerController.playerElement != PlayerController.PlayerCurrentElement.None)
+        {
+            if (context.performed &&
+                (int)playerController.playerState <= 1)
+            {
+                SpellFunctions.StartQuickCast(playerController);
+                playerController.playerState = PlayerController.PlayerStates.Casting;
+            }
+            else if (context.canceled)
+            {
+                SpellFunctions.EndQuickCast(playerController);
+                playerController.playerState = PlayerController.PlayerStates.Idle;
+            }
+        }
+    }
+
+    public void OnHardCast(CallbackContext context)
+    {
+        if (playerController &&
+            playerController.playerElement != PlayerController.PlayerCurrentElement.None)
+        {
+            if (context.performed &&
+                (int)playerController.playerState <= 1)
+            {
+                SpellFunctions.StartHardCast(playerController);
+                playerController.playerState = PlayerController.PlayerStates.Casting;
+            }
+            else if (context.canceled)
+            {
+                SpellFunctions.EndHardCast(playerController);
+                playerController.playerState = PlayerController.PlayerStates.Idle;
+            }
+        }
+    }
 }

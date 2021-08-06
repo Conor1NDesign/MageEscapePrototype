@@ -7,7 +7,7 @@ public class PortalEnableTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public GameObject portal;
@@ -27,12 +27,18 @@ public class PortalEnableTrigger : MonoBehaviour
     public int playerCount;
     private void OnTriggerEnter(Collider other)
     {
-        playerCount++;
+        if (other.tag == "Player")
+        {
+            playerCount++;
+        }
     }
 
 
     private void OnTriggerExit(Collider other)
     {
-        playerCount--;
+        if (other.tag == "Player")
+        {
+            playerCount--;
+        }
     }
 }
