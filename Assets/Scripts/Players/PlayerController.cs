@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
 	public GameObject gustPrefab;
 	public GameObject tornadoLiftPrefab;
 	[HideInInspector]
-	public bool tornadoActive;
+	public bool tornadoActive = false;
 	[HideInInspector]
 	public GameObject tornado;
     public float fireballForce;
