@@ -100,6 +100,12 @@ public class PlayerController : MonoBehaviour
     [Header("Spell Prefabs")]
     public GameObject flamethrowerPrefab;
     public GameObject fireballPrefab;
+	public GameObject gustPrefab;
+	public GameObject tornadoLiftPrefab;
+	[HideInInspector]
+	public bool tornadoActive;
+	[HideInInspector]
+	public GameObject tornado;
     public float fireballForce;
     public float fireballTime;
 
