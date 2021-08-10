@@ -3,10 +3,10 @@
 public class SpellFunctions : MonoBehaviour
 {
     delegate void SpellFunction(PlayerController caster);
-    static SpellFunction[] quickCastSpells = { Flamethrower, QuickFrost, QuickEarth, QuickWind };
-    static SpellFunction[] hardCastSpells = { Fireball, HardFrost, HardEarth, HardWind };
-    static SpellFunction[] quickCastEnd = { FlamethrowerEnd, QuickFrostEnd, QuickEarthEnd, QuickWindEnd };
-    static SpellFunction[] hardCastEnd = { FireballEnd, HardFrostEnd, HardEarthEnd, HardWindEnd };
+    static SpellFunction[] quickCastSpells = { Flamethrower, QuickFrost, QuickEarth, PushingGust };
+    static SpellFunction[] hardCastSpells = { Fireball, HardFrost, HardEarth, TornadoGust };
+    static SpellFunction[] quickCastEnd = { FlamethrowerEnd, QuickFrostEnd, QuickEarthEnd, PushingGustEnd };
+    static SpellFunction[] hardCastEnd = { FireballEnd, HardFrostEnd, HardEarthEnd, TornadoGustEnd };
 
     public static void StartQuickCast(PlayerController caster)
     {
@@ -47,9 +47,11 @@ public class SpellFunctions : MonoBehaviour
         Debug.Log("QuickEarth");
     }
 
-    static void QuickWind(PlayerController caster)
+    static void PushingGust(PlayerController caster)
     {
-        Debug.Log("QuickWind");
+        Debug.Log("Pushing Gust");
+        caster.AttachSpell(Instantiate(caster.gustPrefab));
+		caster.rotationLockedBySpell = true;
     }
 
     // ----------------
@@ -72,9 +74,15 @@ public class SpellFunctions : MonoBehaviour
         Debug.Log("HardEarth");
     }
 
-    static void HardWind(PlayerController caster)
+    static void TornadoGust(PlayerController caster)
     {
-        Debug.Log("HardWind");
+        Debug.Log("Tornado Gust");
+		if (caster.tornadoActive)
+		{
+        	Destroy(caster.tornado);
+			caster.tornado = null;
+			caster.tornadoActive = false;
+		}
     }
 
     // -----------------
@@ -97,9 +105,11 @@ public class SpellFunctions : MonoBehaviour
         Debug.Log("QuickEarthEnd");
     }
 
-    static void QuickWindEnd(PlayerController caster)
+    static void PushingGustEnd(PlayerController caster)
     {
-        Debug.Log("QuickWindEnd");
+        Debug.Log("Pushing Gust End");
+		caster.rotationLockedBySpell = false;
+        Destroy(caster.ClearSpell());
     }
 
     static void FireballEnd(PlayerController caster)
@@ -123,8 +133,8 @@ public class SpellFunctions : MonoBehaviour
         Debug.Log("HardEarthEnd");
     }
 
-    static void HardWindEnd(PlayerController caster)
+    static void TornadoGustEnd(PlayerController caster)
     {
-        Debug.Log("HardWindEnd");
+        Debug.Log("Tornado Gust End");
     }
 }
