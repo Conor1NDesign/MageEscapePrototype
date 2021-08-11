@@ -100,6 +100,14 @@ public class PlayerController : MonoBehaviour
     [Header("Spell Prefabs")]
     public GameObject flamethrowerPrefab;
     public GameObject fireballPrefab;
+	public GameObject gustPrefab;
+	public GameObject tornadoLiftPrefab;
+	[HideInInspector]
+	public bool rotationLockedBySpell = false;
+	[HideInInspector]
+	public bool tornadoActive = false;
+	[HideInInspector]
+	public GameObject tornado;
     public float fireballForce;
     public float fireballTime;
 
@@ -326,7 +334,7 @@ public class PlayerController : MonoBehaviour
         if (playerState == PlayerStates.Casting)
         {
             currentMoveSpeed = 0;
-            currentRotateSpeed = castingRotationSpeed;
+            currentRotateSpeed = rotationLockedBySpell ? 0 : castingRotationSpeed;
         }
 
         //PLAYER STATE CHECKS END//
