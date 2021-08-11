@@ -85,7 +85,11 @@ public class SpellFunctions : MonoBehaviour
         }
         else
         {
+
             caster.tornado = Instantiate(caster.tornadoLiftPrefab);
+            caster.tornado.GetComponent<PlayerController>().enabled = true;
+            caster.tornado.GetComponent<PlayerController>().playerIndex = caster.playerIndex;
+            caster.enabled = false;
             caster.AttachSpell(caster.tornado);
             caster.tornadoActive = true;
 
@@ -155,8 +159,11 @@ public class SpellFunctions : MonoBehaviour
         GameObject TornadoGustEnd = caster.ClearSpell();
         if (TornadoGustEnd)
         {
-            TornadoGustEnd.GetComponent<Rigidbody>().AddForce(caster.transform.forward * caster.tornadoForce, ForceMode.Impulse);
+            //TornadoGustEnd.GetComponent<Rigidbody>().AddForce(caster.transform.forward * caster.tornadoForce, ForceMode.Impulse);
+            TornadoGustEnd.GetComponent<PlayerController>().enabled = false; ;
+            
             Destroy(TornadoGustEnd, caster.tornadoTime);
+            caster.enabled = true;
         }
         Debug.Log("Tornado Gust End");
     }

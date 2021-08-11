@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 606243627623456979}
   - component: {fileID: 7304170746750463620}
   - component: {fileID: 1315435085972715932}
+  - component: {fileID: 8674116789547937059}
   m_Layer: 0
   m_Name: Spell_TornadoLift
   m_TagString: Untagged
@@ -76,65 +77,51 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1001 &4914832930641335472
-PrefabInstance:
+--- !u!114 &8674116789547937059
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 3333558671679232897}
-    m_Modifications:
-    - target: {fileID: 7926402364664138152, guid: 0209a80ddb15f8b4aba5a653ca6334b1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926402364664138152, guid: 0209a80ddb15f8b4aba5a653ca6334b1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926402364664138152, guid: 0209a80ddb15f8b4aba5a653ca6334b1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926402364664138152, guid: 0209a80ddb15f8b4aba5a653ca6334b1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926402364664138152, guid: 0209a80ddb15f8b4aba5a653ca6334b1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926402364664138152, guid: 0209a80ddb15f8b4aba5a653ca6334b1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926402364664138152, guid: 0209a80ddb15f8b4aba5a653ca6334b1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926402364664138152, guid: 0209a80ddb15f8b4aba5a653ca6334b1, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926402364664138152, guid: 0209a80ddb15f8b4aba5a653ca6334b1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926402364664138152, guid: 0209a80ddb15f8b4aba5a653ca6334b1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926402364664138152, guid: 0209a80ddb15f8b4aba5a653ca6334b1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926402364664138155, guid: 0209a80ddb15f8b4aba5a653ca6334b1, type: 3}
-      propertyPath: m_Name
-      value: VFX_Tornado
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0209a80ddb15f8b4aba5a653ca6334b1, type: 3}
---- !u!4 &3041269464166014232 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7926402364664138152, guid: 0209a80ddb15f8b4aba5a653ca6334b1, type: 3}
-  m_PrefabInstance: {fileID: 4914832930641335472}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2958928761701605465}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6957f07bb35a6ce47907e359b8f2102b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIndex: 0
+  playerState: 0
+  playerElement: 4
+  spellbook: {fileID: 0}
+  nearbySpellbook: {fileID: 0}
+  defaultMoveSpeed: 10
+  airborneMoveSpeed: 6
+  rotateSpeed: 5
+  castingRotationSpeed: 0.5
+  defaultGravityMultiplier: 0.25
+  maxGravityMultiplier: 2
+  gravityRampUp: 0.02
+  gravityMultiplier: 0.25
+  throwStrength: 10
+  respawnTime: 3
+  currentSpawnPoint: {fileID: 0}
+  isFloating: 0
+  isDead: 0
+  flamethrowerPrefab: {fileID: 73951560044270974, guid: 921a0c750ebdfea42bdc9be4c33bacc8, type: 3}
+  fireballPrefab: {fileID: 6383666050376671728, guid: 5053c790c51299446a2026bc0580bd3b, type: 3}
+  gustPrefab: {fileID: 7389070692657126993, guid: b916753e0ae4c57449cb14784031b8e8, type: 3}
+  tornadoLiftPrefab: {fileID: 2958928761701605465}
+  rotationLockedBySpell: 0
+  tornadoActive: 1
+  tornado: {fileID: 0}
+  fireballForce: 20
+  fireballTime: 3
+  tornadoForce: 20
+  tornadoTime: 5
+  playerMesh: {fileID: 0}
+  spellbookEquipPoint: {fileID: 0}
+  spellAttachPoint: {fileID: 0}
+  cameraPivot: {fileID: 0}
+  cameraRotateSpeed: 0.3
+  moveDirection: {x: 0, y: -2.4525, z: 0}
+  useGravity: 1
