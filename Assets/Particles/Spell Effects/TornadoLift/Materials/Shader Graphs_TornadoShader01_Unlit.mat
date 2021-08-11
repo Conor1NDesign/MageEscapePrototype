@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_TornadoShader01_Unlit
+  m_Shader: {fileID: -6465566751694194690, guid: dcc77e237b1f55b49a7876a21e7e8192, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Dissolve: 0.115
+    - Noise_Scale: 17.34
+    - Twirl_Amount: 2.2
+    - WobbleSpeed: 3.5
+    - Wobble_Amount: 0.041
+    - Wobble_Distance: 1.5
+    - Wobble_Frequency: 2.43
+    m_Colors:
+    - Colour: {r: 5.68077, g: 41.73181, b: 5.0252967, a: 1}
+    - Noise_Speed: {r: 0, g: 1, b: 0, a: 0}
+    - Twirl_Center: {r: 1, g: 4.5, b: 0, a: 0}
+    - Twirl_Speed: {r: 1, g: 0.5, b: 0, a: 0}
+    - Vector3_741C93FC: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
