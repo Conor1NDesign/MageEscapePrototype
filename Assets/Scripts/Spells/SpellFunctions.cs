@@ -51,7 +51,7 @@ public class SpellFunctions : MonoBehaviour
     {
         Debug.Log("Pushing Gust");
         caster.AttachSpell(Instantiate(caster.gustPrefab));
-		caster.rotationLockedBySpell = true;
+        caster.rotationLockedBySpell = true;
     }
 
     // ----------------
@@ -77,12 +77,19 @@ public class SpellFunctions : MonoBehaviour
     static void TornadoGust(PlayerController caster)
     {
         Debug.Log("Tornado Gust");
-		if (caster.tornadoActive)
-		{
-        	Destroy(caster.tornado);
-			caster.tornado = null;
-			caster.tornadoActive = false;
-		}
+        if (caster.tornadoActive)
+        {
+            Destroy(caster.tornado);
+            caster.tornado = null;
+            caster.tornadoActive = false;
+        }
+        else
+        {
+            caster.tornado = Instantiate(caster.tornadoLiftPrefab);
+            caster.AttachSpell(caster.tornado);
+            caster.tornadoActive = true;
+
+        }
     }
 
     // -----------------
@@ -108,7 +115,17 @@ public class SpellFunctions : MonoBehaviour
     static void PushingGustEnd(PlayerController caster)
     {
         Debug.Log("Pushing Gust End");
-		caster.rotationLockedBySpell = false;
+        caster.rotationLockedBySpell = false;
+        if (caster.playerIndex == 0)
+        {
+            GameObject.Find("Player 2").GetComponent<PlayerController>().useGravity = true;
+        }
+        else
+        if (caster.playerIndex == 1)
+        {
+            GameObject.Find("Player 1").GetComponent<PlayerController>().useGravity = true;
+        }
+
         Destroy(caster.ClearSpell());
     }
 
@@ -135,6 +152,12 @@ public class SpellFunctions : MonoBehaviour
 
     static void TornadoGustEnd(PlayerController caster)
     {
+        GameObject TornadoGustEnd = caster.ClearSpell();
+        if (TornadoGustEnd)
+        {
+            TornadoGustEnd.GetComponent<Rigidbody>().AddForce(caster.transform.forward * caster.tornadoForce, ForceMode.Impulse);
+            Destroy(TornadoGustEnd, caster.tornadoTime);
+        }
         Debug.Log("Tornado Gust End");
     }
 }

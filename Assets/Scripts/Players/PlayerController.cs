@@ -80,7 +80,8 @@ public class PlayerController : MonoBehaviour
     public float maxGravityMultiplier = 2;
     [Tooltip("The value that gravity increases by each frame that a player is falling. Values above 0.02 can end up looking really goofy, beware.")]
     public float gravityRampUp;
-    private float gravityMultiplier;
+    [HideInInspector]
+    public float gravityMultiplier;
     [Tooltip("The player's strength with throwing spellbooks")]
     public float throwStrength;
 
@@ -111,6 +112,9 @@ public class PlayerController : MonoBehaviour
     public float fireballForce;
     public float fireballTime;
 
+    public float tornadoForce;
+    public float tornadoTime;
+
     [Header("Miscellaneous Variables")]
     [Tooltip("The player's mesh.")]
     public GameObject playerMesh;
@@ -128,13 +132,15 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
 
     //Variables for recieving Player Inputs, and determining a movement direction vector from them.
+    [HideInInspector]
     public Vector3 moveDirection = Vector3.zero;
     private Vector2 inputVector = Vector2.zero;
     private Vector2 cameraInputVector = Vector2.zero;
 
     //Variable for the camera used in each level.
     private Camera levelCamera;
-
+    [HideInInspector]
+    public bool useGravity = true;
     private void Awake()
     {
         //Finds the main camera on the level, used for movement and rotation directions.
@@ -195,7 +201,10 @@ public class PlayerController : MonoBehaviour
             rotation = Quaternion.LookRotation(rotationVector);
 
         //Applies gravitational force to the player.
+        if (useGravity)
+        { 
         moveDirection += Physics.gravity * gravityMultiplier;
+        }
 
         //Calls the Move() method on the CharacterController using the moveDirection value.
         //controller.Move(moveDirection * Time.deltaTime);
