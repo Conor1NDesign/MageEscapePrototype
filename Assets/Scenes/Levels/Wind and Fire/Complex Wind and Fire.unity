@@ -14826,7 +14826,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-98518
+  m_Name: pb_Mesh-85380
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18834,6 +18834,14 @@ PrefabInstance:
     - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: tornadoTime
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
+      propertyPath: cameraRotateSpeed
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
+      propertyPath: rotateSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4500845700833580964, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: m_Name
@@ -25593,7 +25601,7 @@ PrefabInstance:
       objectReference: {fileID: 1294520670}
     - target: {fileID: 9184475786847164947, guid: 6c5ef45a62640a448831fd4de8a197e5, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c5ef45a62640a448831fd4de8a197e5, type: 3}
@@ -25625,11 +25633,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038537552}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.2686234, y: 1.6299655, z: 3.42}
-  m_Center: {x: -0.0000019454162, y: -0.31932884, z: 0.9999999}
+  m_Size: {x: 2.2686234, y: 1.8524108, z: 3.42}
+  m_Center: {x: -0.0000019321574, y: -0.20810613, z: 0.99999994}
 --- !u!114 &1038537556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42714,7 +42722,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-138024
+  m_Name: pb_Mesh-83846
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -43636,6 +43644,14 @@ PrefabInstance:
     - target: {fileID: 434623743647819082, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: tornadoTime
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 434623743647819082, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
+      propertyPath: rotateSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 434623743647819082, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
+      propertyPath: cameraRotateSpeed
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 1144634476236296169, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: m_Name

@@ -39694,6 +39694,14 @@ PrefabInstance:
       propertyPath: tornadoLiftPrefab
       value: 
       objectReference: {fileID: 2958928761701605465, guid: 506209f33eb52415fb7cfab0f2a266a3, type: 3}
+    - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
+      propertyPath: rotateSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
+      propertyPath: cameraRotateSpeed
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 4500845700833580964, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: m_Name
       value: Player 1
@@ -53747,7 +53755,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3342
+  m_Name: pb_Mesh-71148
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -73827,6 +73835,14 @@ PrefabInstance:
       propertyPath: tornadoLiftPrefab
       value: 
       objectReference: {fileID: 2958928761701605465, guid: 506209f33eb52415fb7cfab0f2a266a3, type: 3}
+    - target: {fileID: 434623743647819082, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
+      propertyPath: rotateSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 434623743647819082, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
+      propertyPath: cameraRotateSpeed
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1144634476236296169, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: m_Name
       value: Player 2
