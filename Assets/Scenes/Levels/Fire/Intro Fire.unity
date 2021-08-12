@@ -28863,7 +28863,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-5504
+  m_Name: pb_Mesh-5526
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29196,7 +29196,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-5026
+  m_Name: pb_Mesh-50474
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -39632,15 +39632,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2699594004476798728, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.36
+      value: -8.083139
       objectReference: {fileID: 0}
     - target: {fileID: 2699594004476798728, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2699594004476798728, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 36.44
+      value: 66.63
       objectReference: {fileID: 0}
     - target: {fileID: 2699594004476798728, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: m_LocalRotation.x
@@ -48628,6 +48628,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6875074927187821844, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8152913681370237725, guid: 545dd2376545f304ea40db433829b71f, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -50370,6 +50374,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal: {fileID: 1027517688}
   playerCount: 0
+--- !u!64 &980544174
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980544172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &981375153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52625,6 +52643,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3498138555027062578, guid: 6c5ef45a62640a448831fd4de8a197e5, type: 3}
   m_PrefabInstance: {fileID: 6042934}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1027517692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027517688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5847939cebc0354409256c6ba96a7bdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1027517693
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027517688}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2686229, y: 1.6814504, z: 3.42}
+  m_Center: {x: 0, y: -0.29358622, z: 1}
 --- !u!43 &1027861028
 Mesh:
   m_ObjectHideFlags: 0
@@ -53704,7 +53747,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3324
+  m_Name: pb_Mesh-48770
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -59917,7 +59960,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3778
+  m_Name: pb_Mesh-3786
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -73798,7 +73841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1504866234269728581, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8
+      value: 66.63
       objectReference: {fileID: 0}
     - target: {fileID: 1504866234269728581, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: m_LocalRotation.x
@@ -96698,6 +96741,25 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1995435372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5320933405678164608, guid: 6c5ef45a62640a448831fd4de8a197e5, type: 3}
+  m_PrefabInstance: {fileID: 6042934}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1995435376
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995435372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1653601037212190275, guid: 3f4ecd163c522994db6bde602f4d7454, type: 3}
 --- !u!1001 &1997430995
 PrefabInstance:
   m_ObjectHideFlags: 0
