@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class TriggerEnterChild : MonoBehaviour
 {
-
+    public bool parentPlayer = true;
+    
     public List<PlayerController> cc;
-    public List<PlayerController> pc;
     Vector3 velocity;
     // Start is called before the first frame update
     void Start()
@@ -40,12 +40,17 @@ public class TriggerEnterChild : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && parentPlayer)
         {
             other.gameObject.transform.parent = gameObject.transform;
-            cc.Add(other.gameObject.GetComponent<PlayerController>());
-          //  cc.Add(other.gameObject.GetComponent<CharacterController>());
+          //  cc.Add(other.gameObject.GetComponent<PlayerController>());
 
+        }
+
+        if (other.tag == "Heavy Object" && !parentPlayer)
+        {
+            print("parent");
+            other.gameObject.transform.parent = gameObject.transform;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -54,7 +59,12 @@ public class TriggerEnterChild : MonoBehaviour
         {
             other.gameObject.transform.parent = null;
             cc.Remove(other.gameObject.GetComponent<PlayerController>());
-          //  cc.Remove(other.gameObject.GetComponent<CharacterController>());
+          
+        }
+        if (other.tag == "Heavy Object" && !parentPlayer)
+        {
+            print("no parent");
+            other.gameObject.transform.parent = null;
         }
     }
 

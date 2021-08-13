@@ -17,7 +17,7 @@ public class Scone : Interactable
             foreach (var item in movingPlatforms)
             {
                 Gizmos.color = Color.red;
-                Gizmos.DrawLine(transform.position, item.transform.position);
+                Gizmos.DrawLine(transform.position, item.GetComponent<MovingPlatform>().Platform.transform.position);
             }
         }
     }
