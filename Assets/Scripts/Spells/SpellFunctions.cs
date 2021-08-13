@@ -130,7 +130,6 @@ public class SpellFunctions : MonoBehaviour
         if (fireball)
         {
             fireball.GetComponent<Rigidbody>().AddForce(caster.transform.forward * caster.fireballForce, ForceMode.Impulse);
-            Destroy(fireball, caster.fireballTime);
         }
     }
 
