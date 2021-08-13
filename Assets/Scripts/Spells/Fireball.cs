@@ -7,12 +7,17 @@ public class Fireball : MonoBehaviour
 	[Tooltip("The maximum time the fireball can fly for")]
 	public float maxTime;
 	private float age = 0.0f;
+	[HideInInspector]
+	public bool aging = false;
 
 	void Update()
 	{
-		age += Time.deltaTime;
-		if (age > maxTime)
-			Destroy(gameObject);
+		if (aging)
+		{
+			age += Time.deltaTime;
+			if (age > maxTime)
+				Destroy(gameObject);
+		}
 	}
 
     void OnCollisionEnter(Collision collision)
