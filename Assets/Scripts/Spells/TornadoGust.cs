@@ -7,6 +7,7 @@ public class TornadoGust : MonoBehaviour
     public float HieghtOfHeavyObject = 1;
     [HideInInspector]
     GameObject currentlyLifting;
+    public GameObject lockPos;
 
    
     private void Start()
@@ -19,7 +20,7 @@ public class TornadoGust : MonoBehaviour
         { 
         other.attachedRigidbody.isKinematic = true;
         currentlyLifting = other.gameObject;
-        other.transform.position += new Vector3(0, HieghtOfHeavyObject, 0);
+            other.transform.position = lockPos.transform.position;
         }
     }
 

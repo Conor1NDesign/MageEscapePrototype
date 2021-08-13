@@ -78,19 +78,12 @@ public class SpellFunctions : MonoBehaviour
     {
         Debug.Log("Tornado Gust");
 
-        // caster.tornado = Instantiate(caster.tornadoLiftPrefab);
-
         caster.tornado = Instantiate(caster.tornadoLiftPrefab, caster.spellAttachPoint.position, Quaternion.identity);
-        print("Pos Caster" + caster.transform.position);
-        print("Pos tor" + caster.tornado.transform.position);
+
         caster.tornado.transform.position = caster.transform.position;
         
-       // caster.tornado.transform.parent = null;
         caster.tornado.GetComponent<SpellCharacterController>().PlayerCon = caster;
-        //caster.AttachSpell(caster.tornado);
         caster.tornadoActive = true;
-
-        // }
     }
 
     // -----------------

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
     [SerializeField]
-    private GameObject Platform;
+    public GameObject Platform;
     Vector3 startPos;
     [SerializeField]
     private GameObject endPos = null;
