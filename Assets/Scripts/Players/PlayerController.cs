@@ -110,7 +110,6 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public GameObject tornado;
     public float fireballForce;
-    public float fireballTime;
 
     public float tornadoForce;
     public float tornadoTime;
