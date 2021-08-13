@@ -2,6 +2,7 @@
 
 public class FireballExplosion : MonoBehaviour
 {
+	[Tooltip("The amount of time the explosion is active for")]
 	public float explosionTime;
 
     void OnTriggerEnter(Collider other)
