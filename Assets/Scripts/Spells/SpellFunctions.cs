@@ -130,6 +130,7 @@ public class SpellFunctions : MonoBehaviour
         if (fireball)
         {
             fireball.GetComponent<Rigidbody>().AddForce(caster.transform.forward * caster.fireballForce, ForceMode.Impulse);
+			fireball.GetComponent<Fireball>().aging = true;
         }
     }
 

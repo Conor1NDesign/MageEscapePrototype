@@ -7,6 +7,7 @@ public class FireballExplosion : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
 	{
+		transform.root.gameObject.GetComponent<Fireball>().aging = false;
 		if (other.gameObject.CompareTag("Lightable"))
         {
             other.gameObject.GetComponent<Scone>().isActivated = true;
