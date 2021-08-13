@@ -77,19 +77,20 @@ public class SpellFunctions : MonoBehaviour
     static void TornadoGust(PlayerController caster)
     {
         Debug.Log("Tornado Gust");
-        if (caster.tornadoActive)
-        {
-            Destroy(caster.tornado);
-            caster.tornado = null;
-            caster.tornadoActive = false;
-        }
-        else
-        {
-            caster.tornado = Instantiate(caster.tornadoLiftPrefab);
-            caster.AttachSpell(caster.tornado);
-            caster.tornadoActive = true;
 
-        }
+        // caster.tornado = Instantiate(caster.tornadoLiftPrefab);
+
+        caster.tornado = Instantiate(caster.tornadoLiftPrefab, caster.spellAttachPoint.position, Quaternion.identity);
+        print("Pos Caster" + caster.transform.position);
+        print("Pos tor" + caster.tornado.transform.position);
+        caster.tornado.transform.position = caster.transform.position;
+        
+       // caster.tornado.transform.parent = null;
+        caster.tornado.GetComponent<SpellCharacterController>().PlayerCon = caster;
+        //caster.AttachSpell(caster.tornado);
+        caster.tornadoActive = true;
+
+        // }
     }
 
     // -----------------
@@ -152,12 +153,8 @@ public class SpellFunctions : MonoBehaviour
 
     static void TornadoGustEnd(PlayerController caster)
     {
-        GameObject TornadoGustEnd = caster.ClearSpell();
-        if (TornadoGustEnd)
-        {
-            TornadoGustEnd.GetComponent<Rigidbody>().AddForce(caster.transform.forward * caster.tornadoForce, ForceMode.Impulse);
-            Destroy(TornadoGustEnd, caster.tornadoTime);
-        }
-        Debug.Log("Tornado Gust End");
+        Destroy(caster.tornado);
+        caster.tornadoActive = false;
+        
     }
 }

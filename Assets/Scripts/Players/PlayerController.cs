@@ -101,14 +101,14 @@ public class PlayerController : MonoBehaviour
     [Header("Spell Prefabs")]
     public GameObject flamethrowerPrefab;
     public GameObject fireballPrefab;
-	public GameObject gustPrefab;
-	public GameObject tornadoLiftPrefab;
-	[HideInInspector]
-	public bool rotationLockedBySpell = false;
-	[HideInInspector]
-	public bool tornadoActive = false;
-	[HideInInspector]
-	public GameObject tornado;
+    public GameObject gustPrefab;
+    public GameObject tornadoLiftPrefab;
+    [HideInInspector]
+    public bool rotationLockedBySpell = false;
+    [HideInInspector]
+    public bool tornadoActive = false;
+    [HideInInspector]
+    public GameObject tornado;
     public float fireballForce;
     public float fireballTime;
 
@@ -122,7 +122,8 @@ public class PlayerController : MonoBehaviour
     public Transform spellbookEquipPoint;
     [Tooltip("The player's spell attach point")]
     public Transform spellAttachPoint;
-    private GameObject attachedSpell;
+    [HideInInspector]
+    public GameObject attachedSpell;
     [Tooltip("The camera's pivot (shared for chaos)")]
     public Transform cameraPivot;
     [Tooltip("Camera rotation speed, limits how fast the camera will rotate")]
@@ -181,14 +182,22 @@ public class PlayerController : MonoBehaviour
         // CAMERA ROTATION END //
 
         //MOVEMENT AND ROTATION//
-        
+
         //Sets a moveDirection variable using the X and Y values of the inputVector and translating them to the X and Z values of a Vector3.
         moveDirection = new Vector3(inputVector.x, 0, inputVector.y);
 
         //Adjusts the moveDirection based on the angle of the Main Camera object.
         moveDirection = Quaternion.Euler(0, levelCamera.gameObject.transform.eulerAngles.y, 0) * moveDirection;
         //Lastly, multiplies moveDirection by moveSpeed to get a final value for the Controller's Move() method.
-        moveDirection *= currentMoveSpeed;
+        if (!tornadoActive)
+        {
+
+            moveDirection *= currentMoveSpeed;
+        }
+        else
+        {
+            moveDirection *= defaultMoveSpeed;
+        }
 
         //Translates moveDirection into a Quaternion and assigns it to the rotation variable.
         var rotationVector = new Vector3(inputVector.x, 0, inputVector.y);
@@ -202,16 +211,17 @@ public class PlayerController : MonoBehaviour
 
         //Applies gravitational force to the player.
         if (useGravity)
-        { 
-        moveDirection += Physics.gravity * gravityMultiplier;
+        {
+            moveDirection += Physics.gravity * gravityMultiplier;
         }
 
         //Calls the Move() method on the CharacterController using the moveDirection value.
         //controller.Move(moveDirection * Time.deltaTime);
-        if (transform.parent == null)
+        if (transform.parent == null && !tornadoActive)
         {
             Move(moveDirection);
         }
+
 
         //Checks if there is still input coming from the player. This prevents the mesh from rotating back to Y = 0 when there's no input.
         if (inputVector != new Vector2(0, 0))
@@ -224,7 +234,7 @@ public class PlayerController : MonoBehaviour
         //PLAYER STATE CHANGES//
 
         //Checks if the player is grounded, has some movement input, and is not dead, before returning that they are 'Moving'.
-        if (controller.isGrounded && moveDirection != new Vector3 (0, moveDirection.y, 0) && !isDead && playerState != PlayerStates.Casting)
+        if (controller.isGrounded && moveDirection != new Vector3(0, moveDirection.y, 0) && !isDead && playerState != PlayerStates.Casting)
         {
             playerState = PlayerStates.Moving;
         }
@@ -342,6 +352,7 @@ public class PlayerController : MonoBehaviour
         //Checks if the Player's state is 'Casting'.
         if (playerState == PlayerStates.Casting)
         {
+
             currentMoveSpeed = 0;
             currentRotateSpeed = rotationLockedBySpell ? 0 : castingRotationSpeed;
         }
