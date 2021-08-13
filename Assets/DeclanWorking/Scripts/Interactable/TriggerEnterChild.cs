@@ -34,6 +34,7 @@ public class TriggerEnterChild : MonoBehaviour
         {
             Debug.Log(linearVel);
             item.Move((linearVel + item.moveDirection));
+            print(linearVel + item.moveDirection);
         }
 
     }
@@ -43,7 +44,7 @@ public class TriggerEnterChild : MonoBehaviour
         if (other.tag == "Player" && parentPlayer)
         {
             other.gameObject.transform.parent = gameObject.transform;
-          //  cc.Add(other.gameObject.GetComponent<PlayerController>());
+            cc.Add(other.gameObject.GetComponent<PlayerController>());
 
         }
 
