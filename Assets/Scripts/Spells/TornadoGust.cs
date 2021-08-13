@@ -8,20 +8,18 @@ public class TornadoGust : MonoBehaviour
     [HideInInspector]
     GameObject currentlyLifting;
 
-    private Rigidbody rb;
+   
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Heavy Object"))
         { 
-        
-        rb.isKinematic = true;
         other.attachedRigidbody.isKinematic = true;
         currentlyLifting = other.gameObject;
-            other.transform.position += new Vector3(0, HieghtOfHeavyObject, 0);
+        other.transform.position += new Vector3(0, HieghtOfHeavyObject, 0);
         }
     }
 
