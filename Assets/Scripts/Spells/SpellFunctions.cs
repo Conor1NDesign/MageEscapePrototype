@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class SpellFunctions : MonoBehaviour
 {
@@ -47,9 +47,6 @@ public class SpellFunctions : MonoBehaviour
         Debug.Log("Earth Platform");
 		if (caster.earthPlatform)
 			Destroy(caster.earthPlatform);
-
-		caster.earthPlatform = Instantiate(caster.earthPlatformPrefab);
-		caster.earthPlatform.transform.position = caster.transform.position + caster.transform.forward - new Vector3(0f, 0.2f, 0.0f);
     }
 
     static void PushingGust(PlayerController caster)
@@ -113,7 +110,9 @@ public class SpellFunctions : MonoBehaviour
 
     static void EarthPlatformEnd(PlayerController caster)
     {
-        Debug.Log("Earth Platform End");
+        Debug.Log("Earth Platform Place");
+		caster.earthPlatform = Instantiate(caster.earthPlatformPrefab);
+		caster.earthPlatform.transform.position = caster.transform.position + caster.transform.forward - new Vector3(0f, 0.2f, 0.0f);
     }
 
     static void PushingGustEnd(PlayerController caster)
