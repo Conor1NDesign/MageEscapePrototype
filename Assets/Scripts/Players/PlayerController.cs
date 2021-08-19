@@ -104,6 +104,8 @@ public class PlayerController : MonoBehaviour
     public GameObject gustPrefab;
     public GameObject tornadoLiftPrefab;
 	public GameObject earthPlatformPrefab;
+    public GameObject boulderTargetPrefab;
+    public GameObject boulderPrefab;
     [HideInInspector]
     public bool rotationLockedBySpell = false;
     [HideInInspector]

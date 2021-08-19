@@ -4,9 +4,9 @@ public class SpellFunctions : MonoBehaviour
 {
     delegate void SpellFunction(PlayerController caster);
     static SpellFunction[] quickCastSpells = { Flamethrower, QuickFrost, EarthPlatform, PushingGust };
-    static SpellFunction[] hardCastSpells = { Fireball, HardFrost, HardEarth, TornadoGust };
+    static SpellFunction[] hardCastSpells = { Fireball, HardFrost, SummonBoulder, TornadoGust };
     static SpellFunction[] quickCastEnd = { FlamethrowerEnd, QuickFrostEnd, EarthPlatformEnd, PushingGustEnd };
-    static SpellFunction[] hardCastEnd = { FireballEnd, HardFrostEnd, HardEarthEnd, TornadoGustEnd };
+    static SpellFunction[] hardCastEnd = { FireballEnd, HardFrostEnd, SummonBoulderEnd, TornadoGustEnd };
 
     public static void StartQuickCast(PlayerController caster)
     {
@@ -74,9 +74,14 @@ public class SpellFunctions : MonoBehaviour
         Debug.Log("HardFrost");
     }
 
-    static void HardEarth(PlayerController caster)
+    static void SummonBoulder(PlayerController caster)
     {
-        Debug.Log("HardEarth");
+        Debug.Log("Boulder Target");
+		GameObject boulderTarget = caster.boulderTargetPrefab;
+		caster.AttachSpell(Instantiate(boulderTarget));
+		boulderTarget.transform.localPosition = -caster.spellAttachPoint.transform.localPosition;
+        boulderTarget.GetComponent<SpellCharacterController>().PlayerCon = caster;
+        caster.tornadoActive = true;
     }
 
     static void TornadoGust(PlayerController caster)
@@ -144,9 +149,16 @@ public class SpellFunctions : MonoBehaviour
         Debug.Log("HardFrostEnd");
     }
 
-    static void HardEarthEnd(PlayerController caster)
+    static void SummonBoulderEnd(PlayerController caster)
     {
-        Debug.Log("HardEarthEnd");
+        Debug.Log("Summon Boulder");
+		GameObject boulder = Instantiate(caster.boulderPrefab);
+		GameObject boulderTarget = caster.ClearSpell();
+		if (!boulderTarget)
+			return;
+		
+		boulder.transform.position = boulderTarget.transform.position + new Vector3(0.0f, 3.0f, 0.0f);
+		Destroy(boulderTarget);
     }
 
     static void TornadoGustEnd(PlayerController caster)
