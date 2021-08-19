@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SpellFunctions : MonoBehaviour
 {
@@ -77,7 +77,7 @@ public class SpellFunctions : MonoBehaviour
 		GameObject boulderTarget = caster.boulderTargetPrefab;
 		caster.AttachSpell(Instantiate(boulderTarget));
 		boulderTarget.transform.localPosition = -caster.spellAttachPoint.transform.localPosition;
-        boulderTarget.GetComponent<SpellCharacterController>().PlayerCon = caster;
+        boulderTarget.GetComponent<SpellCharacterController>().playerCon = caster;
         caster.tornadoActive = true;
     }
 
@@ -89,7 +89,7 @@ public class SpellFunctions : MonoBehaviour
 
         caster.tornado.transform.position = caster.transform.position;
         
-        caster.tornado.GetComponent<SpellCharacterController>().PlayerCon = caster;
+        caster.tornado.GetComponent<SpellCharacterController>().playerCon = caster;
         caster.tornadoActive = true;
     }
 
