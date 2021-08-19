@@ -3,9 +3,9 @@
 public class SpellFunctions : MonoBehaviour
 {
     delegate void SpellFunction(PlayerController caster);
-    static SpellFunction[] quickCastSpells = { Flamethrower, QuickFrost, QuickEarth, PushingGust };
+    static SpellFunction[] quickCastSpells = { Flamethrower, QuickFrost, EarthPlatform, PushingGust };
     static SpellFunction[] hardCastSpells = { Fireball, HardFrost, HardEarth, TornadoGust };
-    static SpellFunction[] quickCastEnd = { FlamethrowerEnd, QuickFrostEnd, QuickEarthEnd, PushingGustEnd };
+    static SpellFunction[] quickCastEnd = { FlamethrowerEnd, QuickFrostEnd, EarthPlatformEnd, PushingGustEnd };
     static SpellFunction[] hardCastEnd = { FireballEnd, HardFrostEnd, HardEarthEnd, TornadoGustEnd };
 
     public static void StartQuickCast(PlayerController caster)
@@ -42,9 +42,14 @@ public class SpellFunctions : MonoBehaviour
         Debug.Log("QuickFrost");
     }
 
-    static void QuickEarth(PlayerController caster)
+    public static void EarthPlatform(PlayerController caster)
     {
-        Debug.Log("QuickEarth");
+        Debug.Log("Earth Platform");
+		if (caster.earthPlatform)
+			Destroy(caster.earthPlatform);
+
+		caster.earthPlatform = Instantiate(caster.earthPlatformPrefab);
+		caster.earthPlatform.transform.position = caster.transform.position + caster.transform.forward - new Vector3(0f, 0.2f, 0.0f);
     }
 
     static void PushingGust(PlayerController caster)
@@ -101,9 +106,9 @@ public class SpellFunctions : MonoBehaviour
         Debug.Log("QuickFrostEnd");
     }
 
-    static void QuickEarthEnd(PlayerController caster)
+    static void EarthPlatformEnd(PlayerController caster)
     {
-        Debug.Log("QuickEarthEnd");
+        Debug.Log("Earth Platform End");
     }
 
     static void PushingGustEnd(PlayerController caster)
