@@ -103,6 +103,9 @@ public class PlayerController : MonoBehaviour
     public GameObject fireballPrefab;
     public GameObject gustPrefab;
     public GameObject tornadoLiftPrefab;
+	public GameObject earthPlatformPrefab;
+    public GameObject boulderTargetPrefab;
+    public GameObject boulderPrefab;
     [HideInInspector]
     public bool rotationLockedBySpell = false;
     [HideInInspector]
@@ -121,8 +124,9 @@ public class PlayerController : MonoBehaviour
     public Transform spellbookEquipPoint;
     [Tooltip("The player's spell attach point")]
     public Transform spellAttachPoint;
-    [HideInInspector]
-    public GameObject attachedSpell;
+    private GameObject attachedSpell;
+	[HideInInspector]
+	public GameObject earthPlatform;
     [Tooltip("The camera's pivot (shared for chaos)")]
     public Transform cameraPivot;
     [Tooltip("Camera rotation speed, limits how fast the camera will rotate")]
