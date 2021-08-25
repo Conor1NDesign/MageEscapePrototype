@@ -139,6 +139,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Vector3 moveDirection = Vector3.zero;
     private Vector2 inputVector = Vector2.zero;
+	[SerializeField]
     private Vector2 cameraInputVector = Vector2.zero;
 
     //Variable for the camera used in each level.
