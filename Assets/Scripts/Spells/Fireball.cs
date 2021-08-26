@@ -25,6 +25,7 @@ public class Fireball : MonoBehaviour
         if (!collision.gameObject.CompareTag("Spellbook"))
         {
             explosion.SetActive(true);
+			GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
     }
 }
