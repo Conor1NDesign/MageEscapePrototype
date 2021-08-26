@@ -127,6 +127,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 84ea755b3a3320e49a9aa6267f0ea113, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a7eb061973a30d4fb18f05b5590cf3e, type: 2}
     - target: {fileID: 919132149155446097, guid: 84ea755b3a3320e49a9aa6267f0ea113, type: 3}
       propertyPath: m_Name
       value: Candle_Large_Mesh
