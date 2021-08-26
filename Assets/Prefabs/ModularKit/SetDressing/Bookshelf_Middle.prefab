@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1290639005109267422}
   - component: {fileID: 9156038410665168911}
   m_Layer: 0
-  m_Name: Bookshelf_Empty
+  m_Name: Bookshelf_Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 753c6dc7a03fb004ea21226e310be326, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 771148e217c95d54ba9967c7851cedf6, type: 2}
     - target: {fileID: 919132149155446097, guid: 753c6dc7a03fb004ea21226e310be326, type: 3}
       propertyPath: m_Name
       value: Bookshelf_Middle_Mesh
