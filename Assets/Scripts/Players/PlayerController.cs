@@ -127,7 +127,8 @@ public class PlayerController : MonoBehaviour
     public Transform spellbookEquipPoint;
     [Tooltip("The player's spell attach point")]
     public Transform spellAttachPoint;
-    private GameObject attachedSpell;
+    [HideInInspector]
+    public GameObject attachedSpell;
 	[HideInInspector]
 	public GameObject earthPlatform;
     [Tooltip("The camera's pivot (shared for chaos)")]
