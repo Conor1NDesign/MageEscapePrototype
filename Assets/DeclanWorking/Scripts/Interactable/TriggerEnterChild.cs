@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class TriggerEnterChild : MonoBehaviour
 {
+    [HideInInspector]
     public bool parentPlayer = true;
-
+    [HideInInspector]
     public List<PlayerController> cc;
+    [HideInInspector]
     public List<GameObject> Children;
-    // Start is called before the first frame update
+    [HideInInspector]
     public Vector3 linearVel;
 
     private Vector3 previousPosition = Vector3.zero;
@@ -18,27 +20,30 @@ public class TriggerEnterChild : MonoBehaviour
         Children = new List<GameObject>();
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     private void FixedUpdate()
     {
+
+        //Calculates the velocity of the parent object
         linearVel = (transform.position - previousPosition) / Time.fixedDeltaTime;
         previousPosition = transform.position;
 
-
+        //Add the velocity to the players move direction
         foreach (var item in cc)
         {
-            //Debug.Log(linearVel);
+
             item.Move((linearVel + item.moveDirection));
-            // print(linearVel + item.moveDirection);
+
         }
 
     }
 
+    /// <summary>
+    /// When a Player or Heavy Object enters the trigger
+    /// Get the player controller
+    /// Set the player and Heavy object as children of
+    /// the objects depending if you allow the player to become a child
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         try
@@ -73,6 +78,11 @@ public class TriggerEnterChild : MonoBehaviour
 
         }
     }
+
+    /// <summary>
+    /// If an object leaves the trigger remove it from all the list 
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
     {
         try
@@ -102,7 +112,9 @@ public class TriggerEnterChild : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// On Destroy  unpartent all the added children objects
+    /// </summary>
     private void OnDestroy()
     {
         try
@@ -110,11 +122,8 @@ public class TriggerEnterChild : MonoBehaviour
             print("DESTROY");
             foreach (var item in Children)
             {
-                if (item.tag == "Heavy Object" || item.tag == "Heavy Object")
-                {
                     print(item.name);
                     item.gameObject.transform.parent = null;
-                }
             }
         }
         catch
@@ -122,6 +131,8 @@ public class TriggerEnterChild : MonoBehaviour
             print("qqq");
         }
     }
+
+
     private void OnDisable()
     {
         cc.Clear();

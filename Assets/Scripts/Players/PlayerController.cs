@@ -103,6 +103,9 @@ public class PlayerController : MonoBehaviour
     public GameObject fireballPrefab;
     public GameObject gustPrefab;
     public GameObject tornadoLiftPrefab;
+    public GameObject frostWavePrefab;
+    public GameObject frostBeamPrefab;
+
     [HideInInspector]
     public bool rotationLockedBySpell = false;
     [HideInInspector]
