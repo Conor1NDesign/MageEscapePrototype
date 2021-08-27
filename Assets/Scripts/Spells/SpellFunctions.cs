@@ -3,10 +3,10 @@
 public class SpellFunctions : MonoBehaviour
 {
     delegate void SpellFunction(PlayerController caster);
-    static SpellFunction[] quickCastSpells = { Flamethrower, QuickFrost, EarthPlatform, PushingGust };
-    static SpellFunction[] hardCastSpells = { Fireball, HardFrost, SummonBoulder, TornadoGust };
-    static SpellFunction[] quickCastEnd = { FlamethrowerEnd, QuickFrostEnd, EarthPlatformEnd, PushingGustEnd };
-    static SpellFunction[] hardCastEnd = { FireballEnd, HardFrostEnd, SummonBoulderEnd, TornadoGustEnd };
+    static SpellFunction[] quickCastSpells = { Flamethrower, FrostWave, EarthPlatform, PushingGust };
+    static SpellFunction[] hardCastSpells = { Fireball, IceBeam, SummonBoulder, TornadoGust };
+    static SpellFunction[] quickCastEnd = { FlamethrowerEnd, FrostWaveEnd, EarthPlatformEnd, PushingGustEnd };
+    static SpellFunction[] hardCastEnd = { FireballEnd, IceBeamEnd, SummonBoulderEnd, TornadoGustEnd };
 
     public static void StartQuickCast(PlayerController caster)
     {
