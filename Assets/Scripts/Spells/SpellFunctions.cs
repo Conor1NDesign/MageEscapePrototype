@@ -37,9 +37,12 @@ public class SpellFunctions : MonoBehaviour
         caster.AttachSpell(Instantiate(caster.flamethrowerPrefab));
     }
 
-    static void QuickFrost(PlayerController caster)
+    static void FrostWave(PlayerController caster)
     {
-        Debug.Log("QuickFrost");
+        caster.AttachSpell(Instantiate(caster.frostWavePrefab));
+        caster.attachedSpell.transform.GetChild(0).Rotate(0, 0, -90);
+        caster.attachedSpell.transform.GetChild(0).Translate(0, 2, -1.8f);
+        Debug.Log("FrostWave");
     }
 
     public static void EarthPlatform(PlayerController caster)
@@ -66,9 +69,9 @@ public class SpellFunctions : MonoBehaviour
         caster.AttachSpell(Instantiate(caster.fireballPrefab));
     }
 
-    static void HardFrost(PlayerController caster)
+    static void IceBeam(PlayerController caster)
     {
-        Debug.Log("HardFrost");
+        Debug.Log("IceBeam");
     }
 
     static void SummonBoulder(PlayerController caster)
@@ -103,9 +106,10 @@ public class SpellFunctions : MonoBehaviour
         Destroy(caster.ClearSpell());
     }
 
-    static void QuickFrostEnd(PlayerController caster)
+    static void FrostWaveEnd(PlayerController caster)
     {
-        Debug.Log("QuickFrostEnd");
+        Debug.Log("FrostWaveEnd");
+        Destroy(caster.ClearSpell());
     }
 
     static void EarthPlatformEnd(PlayerController caster)
@@ -143,9 +147,9 @@ public class SpellFunctions : MonoBehaviour
         }
     }
 
-    static void HardFrostEnd(PlayerController caster)
+    static void IceBeamEnd(PlayerController caster)
     {
-        Debug.Log("HardFrostEnd");
+        Debug.Log("IceBeamEnd");
     }
 
     static void SummonBoulderEnd(PlayerController caster)
