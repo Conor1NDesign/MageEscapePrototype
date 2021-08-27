@@ -14,8 +14,8 @@ public class CameraMovement : MonoBehaviour
 	public Transform cameraTransform;
 	[Tooltip("The minimum distance from the players")]
 	public float minDistance;
-	[Tooltip("The camera's normal angle")]
-	public Quaternion cameraAngle;
+	[Tooltip("The camera's normal location")]
+	public Transform normalCameraPosition;
 	[Tooltip("The position to move to for overview mode")]
 	public Transform overviewPosition;
 	[Tooltip("Whether the camera is in overview mode")]
@@ -38,11 +38,12 @@ public class CameraMovement : MonoBehaviour
 
         transform.position = (playerOneTransform.position + playerTwoTransform.position) / 2;
 
-		Vector3 normalCameraPos = -cameraTransform.forward * Math.Max((playerOneTransform.position - playerTwoTransform.position).magnitude, minDistance);
-
 		// Set the local position of the camera
 		// This should be between the overview position (which is global) and observing the players if necessary
-		cameraTransform.localPosition = normalCameraPos * (1.0f - overviewProgress) + (overviewPosition.position - transform.position) * overviewProgress;
-		cameraTransform.rotation = Quaternion.Slerp(cameraAngle, overviewPosition.rotation, overviewProgress);
+		cameraTransform.position = ((-normalCameraPosition.forward
+			* Math.Max((playerOneTransform.position - playerTwoTransform.position).magnitude, minDistance))
+			+ transform.position) * (1.0f - overviewProgress)
+			+ overviewPosition.position * overviewProgress;
+		cameraTransform.rotation = Quaternion.Slerp(normalCameraPosition.rotation, overviewPosition.rotation, overviewProgress);
     }
 }
