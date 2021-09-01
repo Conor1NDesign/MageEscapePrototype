@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8559285499050760832}
+  - component: {fileID: 900439313}
+  - component: {fileID: 900439312}
   m_Layer: 0
   m_Name: IceWall
-  m_TagString: Untagged
+  m_TagString: Meltable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,77 +29,96 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2788685327579089451}
+  - {fileID: 2979558222682861107}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &7804555463805903458
+--- !u!65 &900439313
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028295921625702651}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4, z: 2}
+  m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &900439312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028295921625702651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d8524867f305a44e9eff394e99148fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  melted: 0
+  duration: 500
+--- !u!1001 &3374107717846583768
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 8559285499050760832}
     m_Modifications:
-    - target: {fileID: 456484219564340169, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3342976342355713348, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5230483351606496923, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
-      propertyPath: m_Name
-      value: IceWall_Mesh
-      objectReference: {fileID: 0}
-    - target: {fileID: 5403263333770864713, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 480babb695a49a348a0444df436cd50d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 5403263333770864713, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 480babb695a49a348a0444df436cd50d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5403263333770864713, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 480babb695a49a348a0444df436cd50d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5403263333770864713, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 480babb695a49a348a0444df436cd50d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5403263333770864713, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 480babb695a49a348a0444df436cd50d, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 5403263333770864713, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 480babb695a49a348a0444df436cd50d, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 5403263333770864713, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 480babb695a49a348a0444df436cd50d, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5403263333770864713, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 480babb695a49a348a0444df436cd50d, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5403263333770864713, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 480babb695a49a348a0444df436cd50d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5403263333770864713, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 480babb695a49a348a0444df436cd50d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5403263333770864713, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 480babb695a49a348a0444df436cd50d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 480babb695a49a348a0444df436cd50d, type: 3}
+      propertyPath: m_Name
+      value: IceWall_Mesh
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
---- !u!4 &2788685327579089451 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 480babb695a49a348a0444df436cd50d, type: 3}
+--- !u!4 &2979558222682861107 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5403263333770864713, guid: 1bc4803c3b952884fa64da06e223d004, type: 3}
-  m_PrefabInstance: {fileID: 7804555463805903458}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 480babb695a49a348a0444df436cd50d, type: 3}
+  m_PrefabInstance: {fileID: 3374107717846583768}
   m_PrefabAsset: {fileID: 0}

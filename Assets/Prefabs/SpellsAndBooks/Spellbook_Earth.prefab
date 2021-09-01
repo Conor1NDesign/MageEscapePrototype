@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5453500895608427361, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
       propertyPath: m_Name
-      value: EarthSpellbook
+      value: Spellbook_Earth
       objectReference: {fileID: 0}
     - target: {fileID: 5453500895608427364, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
       propertyPath: m_RootOrder
@@ -75,5 +75,9 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0.1550819
       objectReference: {fileID: 0}
+    - target: {fileID: 7105913459506488677, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3350a74a4eb966f41837c224d71789c0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}

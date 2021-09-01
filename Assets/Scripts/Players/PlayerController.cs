@@ -103,6 +103,9 @@ public class PlayerController : MonoBehaviour
     public GameObject fireballPrefab;
     public GameObject gustPrefab;
     public GameObject tornadoLiftPrefab;
+	public GameObject earthPlatformPrefab;
+    public GameObject boulderTargetPrefab;
+    public GameObject boulderPrefab;
     public GameObject frostWavePrefab;
     public GameObject frostBeamPrefab;
 
@@ -113,7 +116,6 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public GameObject tornado;
     public float fireballForce;
-    public float fireballTime;
 
     public float tornadoForce;
     public float tornadoTime;
@@ -127,6 +129,8 @@ public class PlayerController : MonoBehaviour
     public Transform spellAttachPoint;
     [HideInInspector]
     public GameObject attachedSpell;
+	[HideInInspector]
+	public GameObject earthPlatform;
     [Tooltip("The camera's pivot (shared for chaos)")]
     public Transform cameraPivot;
     [Tooltip("Camera rotation speed, limits how fast the camera will rotate")]

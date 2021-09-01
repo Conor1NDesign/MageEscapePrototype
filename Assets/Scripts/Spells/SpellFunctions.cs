@@ -3,10 +3,10 @@
 public class SpellFunctions : MonoBehaviour
 {
     delegate void SpellFunction(PlayerController caster);
-    static SpellFunction[] quickCastSpells = { Flamethrower, FrostWave, QuickEarth, PushingGust };
-    static SpellFunction[] hardCastSpells = { Fireball, IceBeam, HardEarth, TornadoGust };
-    static SpellFunction[] quickCastEnd = { FlamethrowerEnd, FrostWaveEnd, QuickEarthEnd, PushingGustEnd };
-    static SpellFunction[] hardCastEnd = { FireballEnd, IceBeamEnd, HardEarthEnd, TornadoGustEnd };
+    static SpellFunction[] quickCastSpells = { Flamethrower, FrostWave, EarthPlatform, PushingGust };
+    static SpellFunction[] hardCastSpells = { Fireball, IceBeam, SummonBoulder, TornadoGust };
+    static SpellFunction[] quickCastEnd = { FlamethrowerEnd, FrostWaveEnd, EarthPlatformEnd, PushingGustEnd };
+    static SpellFunction[] hardCastEnd = { FireballEnd, IceBeamEnd, SummonBoulderEnd, TornadoGustEnd };
 
     public static void StartQuickCast(PlayerController caster)
     {
@@ -45,9 +45,11 @@ public class SpellFunctions : MonoBehaviour
         Debug.Log("FrostWave");
     }
 
-    static void QuickEarth(PlayerController caster)
+    public static void EarthPlatform(PlayerController caster)
     {
-        Debug.Log("QuickEarth");
+        Debug.Log("Earth Platform");
+		if (caster.earthPlatform)
+			Destroy(caster.earthPlatform);
     }
 
     static void PushingGust(PlayerController caster)
@@ -72,9 +74,14 @@ public class SpellFunctions : MonoBehaviour
         Debug.Log("IceBeam");
     }
 
-    static void HardEarth(PlayerController caster)
+    static void SummonBoulder(PlayerController caster)
     {
-        Debug.Log("HardEarth");
+        Debug.Log("Boulder Target");
+		GameObject boulderTarget = caster.boulderTargetPrefab;
+		caster.AttachSpell(Instantiate(boulderTarget));
+		boulderTarget.transform.localPosition = -caster.spellAttachPoint.transform.localPosition;
+        boulderTarget.GetComponent<SpellCharacterController>().playerCon = caster;
+        caster.tornadoActive = true;
     }
 
     static void TornadoGust(PlayerController caster)
@@ -85,7 +92,7 @@ public class SpellFunctions : MonoBehaviour
 
         caster.tornado.transform.position = caster.transform.position;
         
-        caster.tornado.GetComponent<SpellCharacterController>().PlayerCon = caster;
+        caster.tornado.GetComponent<SpellCharacterController>().playerCon = caster;
         caster.tornadoActive = true;
     }
 
@@ -105,9 +112,11 @@ public class SpellFunctions : MonoBehaviour
         Destroy(caster.ClearSpell());
     }
 
-    static void QuickEarthEnd(PlayerController caster)
+    static void EarthPlatformEnd(PlayerController caster)
     {
-        Debug.Log("QuickEarthEnd");
+        Debug.Log("Earth Platform Place");
+		caster.earthPlatform = Instantiate(caster.earthPlatformPrefab);
+		caster.earthPlatform.transform.position = caster.transform.position + caster.transform.forward - new Vector3(0f, 0.2f, 0.0f);
     }
 
     static void PushingGustEnd(PlayerController caster)
@@ -134,7 +143,7 @@ public class SpellFunctions : MonoBehaviour
         if (fireball)
         {
             fireball.GetComponent<Rigidbody>().AddForce(caster.transform.forward * caster.fireballForce, ForceMode.Impulse);
-            Destroy(fireball, caster.fireballTime);
+			fireball.GetComponent<Fireball>().aging = true;
         }
     }
 
@@ -143,9 +152,16 @@ public class SpellFunctions : MonoBehaviour
         Debug.Log("IceBeamEnd");
     }
 
-    static void HardEarthEnd(PlayerController caster)
+    static void SummonBoulderEnd(PlayerController caster)
     {
-        Debug.Log("HardEarthEnd");
+        Debug.Log("Summon Boulder");
+		GameObject boulder = Instantiate(caster.boulderPrefab);
+		GameObject boulderTarget = caster.ClearSpell();
+		if (!boulderTarget)
+			return;
+		
+		boulder.transform.position = boulderTarget.transform.position + new Vector3(0.0f, 3.0f, 0.0f);
+		Destroy(boulderTarget);
     }
 
     static void TornadoGustEnd(PlayerController caster)
