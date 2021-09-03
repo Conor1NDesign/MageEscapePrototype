@@ -78,8 +78,7 @@ public class SpellFunctions : MonoBehaviour
     {
         Debug.Log("Boulder Target");
 		GameObject boulderTarget = caster.boulderTargetPrefab;
-		caster.AttachSpell(Instantiate(boulderTarget));
-		boulderTarget.transform.localPosition = -caster.spellAttachPoint.transform.localPosition;
+		caster.tornado = Instantiate(boulderTarget, caster.spellAttachPoint.position, Quaternion.identity);
         boulderTarget.GetComponent<SpellCharacterController>().playerCon = caster;
         caster.tornadoActive = true;
     }
@@ -156,12 +155,14 @@ public class SpellFunctions : MonoBehaviour
     {
         Debug.Log("Summon Boulder");
 		GameObject boulder = Instantiate(caster.boulderPrefab);
-		GameObject boulderTarget = caster.ClearSpell();
+		GameObject boulderTarget = caster.tornado;
+        caster.tornado = null;
 		if (!boulderTarget)
 			return;
 		
 		boulder.transform.position = boulderTarget.transform.position + new Vector3(0.0f, 3.0f, 0.0f);
 		Destroy(boulderTarget);
+        caster.tornadoActive = false;
     }
 
     static void TornadoGustEnd(PlayerController caster)
