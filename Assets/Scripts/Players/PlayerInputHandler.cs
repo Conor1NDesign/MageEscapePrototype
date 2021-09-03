@@ -61,11 +61,14 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 SpellFunctions.StartQuickCast(playerController);
                 playerController.playerState = PlayerController.PlayerStates.Casting;
+                playerController.castType = PlayerController.CastingType.Quick;
             }
-            else if (context.canceled)
+            else if (context.canceled &&
+                playerController.castType == PlayerController.CastingType.Quick)
             {
                 SpellFunctions.EndQuickCast(playerController);
                 playerController.playerState = PlayerController.PlayerStates.Idle;
+                playerController.castType = PlayerController.CastingType.None;
             }
         }
     }
@@ -80,11 +83,14 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 SpellFunctions.StartHardCast(playerController);
                 playerController.playerState = PlayerController.PlayerStates.Casting;
+                playerController.castType = PlayerController.CastingType.Hard;
             }
-            else if (context.canceled)
+            else if (context.canceled &&
+                playerController.castType == PlayerController.CastingType.Hard)
             {
                 SpellFunctions.EndHardCast(playerController);
                 playerController.playerState = PlayerController.PlayerStates.Idle;
+                playerController.castType = PlayerController.CastingType.None;
             }
         }
     }
