@@ -8,6 +8,7 @@ public class MainMenuButtons : MonoBehaviour
 {
     public GameObject MenuCanvas;
     public GameObject OptionsCanvas;
+    public GameObject LevelSelectCanvas;
     public GameObject ConfirmationCanvas;
     public EventSystem eventSystem;
     public GameObject[] firstSelectedButtons;
@@ -26,6 +27,15 @@ public class MainMenuButtons : MonoBehaviour
         ////------Save-------\\\\
         ////------DATA-------\\\\
     }
+
+    public void LevelSelect()
+    {
+        MenuCanvas.SetActive(false);
+        LevelSelectCanvas.SetActive(true);
+        eventSystem.SetSelectedGameObject(firstSelectedButtons[5]);
+        print("LS");
+    }
+
 
     public void Options()
     {
@@ -61,5 +71,10 @@ public class MainMenuButtons : MonoBehaviour
         ConfirmationCanvas.SetActive(false);
         eventSystem.SetSelectedGameObject(firstSelectedButtons[4]);
         print("Cancel");
+    }
+
+    public void SelectedLevel(int BuildID)
+    {
+        SceneManager.LoadScene(BuildID);
     }
 }
