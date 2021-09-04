@@ -111,6 +111,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 480babb695a49a348a0444df436cd50d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be8ad7450bdc2674eaa88f6ba09654e6, type: 2}
     - target: {fileID: 919132149155446097, guid: 480babb695a49a348a0444df436cd50d, type: 3}
       propertyPath: m_Name
       value: IceWall_Mesh

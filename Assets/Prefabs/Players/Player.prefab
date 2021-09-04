@@ -132,6 +132,8 @@ MonoBehaviour:
   earthPlatformPrefab: {fileID: 3805874247283790375, guid: 1de9de1c8c38490f586febe2f321bff7, type: 3}
   boulderTargetPrefab: {fileID: 4206366417786977483, guid: a56d2f8b83961ffde96e1029751090fb, type: 3}
   boulderPrefab: {fileID: 7846312816555395262, guid: bdc39231b32f5cf79be39ec0f309c572, type: 3}
+  frostWavePrefab: {fileID: 3197043741139943321, guid: 26ecd69d6b55f264db0cbd09ef34f8cb, type: 3}
+  frostBeamPrefab: {fileID: 0}
   rotationLockedBySpell: 0
   tornadoActive: 0
   tornado: {fileID: 0}
@@ -141,6 +143,8 @@ MonoBehaviour:
   playerMesh: {fileID: 6796998586343950999}
   spellbookEquipPoint: {fileID: 6403313315471890163}
   spellAttachPoint: {fileID: 3202153041044417969}
+  attachedSpell: {fileID: 0}
+  castType: 0
   earthPlatform: {fileID: 0}
   cameraPivot: {fileID: 0}
   cameraRotateSpeed: 0.3

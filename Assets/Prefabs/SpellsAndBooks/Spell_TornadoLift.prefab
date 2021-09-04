@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbff4191aa451ee4eb19e99d30cf8994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCon: {fileID: 0}
-  Player: {fileID: 0}
+  playerCon: {fileID: 0}
+  maxDistance: 0
 --- !u!114 &1020723857452801432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 851071324109623237, guid: 766b1276ab443df429baadd8222cf160, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 851071324109623237, guid: 766b1276ab443df429baadd8222cf160, type: 3}
       propertyPath: m_LocalPosition.z

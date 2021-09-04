@@ -48,6 +48,13 @@ public class PlayerController : MonoBehaviour
         Wind
     };
 
+    public enum CastingType
+    {
+        None,
+        Quick,
+        Hard
+    };
+
 
     [Header("PLAYER INDEX")]
     [Tooltip("This Player's Index number. Player 1 should have index 0, and Player 2 should have index 1.")]
@@ -129,6 +136,8 @@ public class PlayerController : MonoBehaviour
     public Transform spellAttachPoint;
     [HideInInspector]
     public GameObject attachedSpell;
+    [HideInInspector]
+    public CastingType castType = CastingType.None;
 	[HideInInspector]
 	public GameObject earthPlatform;
     [Tooltip("The camera's pivot (shared for chaos)")]
