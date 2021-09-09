@@ -13,6 +13,8 @@ public class WaterFreeze : MonoBehaviour
         public bool frozen;
     }
 
+    
+
     [Min(1.0f)]
     float gridSpacing = 50;
     [Min(1.0f), Tooltip("X and Z grid size, higher it is more dense the grid will be.")]
@@ -34,7 +36,6 @@ public class WaterFreeze : MonoBehaviour
     public Mesh mesh;
 
     public Material SurfaceMat;
-    //public GameObject Cube;
 
     Vector3 tempVert;
     [HideInInspector]
@@ -48,17 +49,12 @@ public class WaterFreeze : MonoBehaviour
     {
         return gridSize;
     }
-
-    //public float qqq = 1;
-    //public float offsetX = 1;
-    //public float offsetZ = 1;
     private List<Vector2Int> vertsList;
     private void OnDrawGizmosSelected()
     {
 
         WaterOffset = 4.0f / (gridSize - 1.0f);
-        //print(WaterOffset);
-        //print(gridSize);
+
         for (float y = 0; y < 0.5f; y += 0.25f)
         {
             for (float x = 0; x <= 4.0f; x += WaterOffset)
@@ -94,7 +90,7 @@ public class WaterFreeze : MonoBehaviour
         tempVert = new Vector3();
         hash = new Hash();
         hash.hashInit();
-        Application.targetFrameRate = 144;
+
         int x = -1;
         int y = -1;
         int z = -1;
@@ -106,7 +102,7 @@ public class WaterFreeze : MonoBehaviour
         gridPoints = new GridPoint[gridSize * gridSize, 3, gridSize * gridSize];
 
         WaterOffset = 4.0f / (gridSize - 1.0f);
-        print(mf.sharedMesh.vertices.Length);
+
         for (float yPos = 0; yPos < 0.5f; yPos += 0.25f)
         {
             y++;
@@ -157,7 +153,6 @@ public class WaterFreeze : MonoBehaviour
         counter += Time.deltaTime;
         if (!opt && counter < 2.0f)
         {
-            print("redo");
             hash.hashInit();
 
             verts.Clear();
@@ -217,27 +212,6 @@ public class WaterFreeze : MonoBehaviour
                         triIndex += 8;
                     }
 
-
-                    /*                   if (gridPoints[x, y + 1, z].frozen)
-                                        {
-                                            triIndex += 16;
-                                        }
-
-                                        if (gridPoints[x + 1, y + 1, z].frozen)
-                                        {
-                                            triIndex += 32;
-                                        }
-
-                                        if (gridPoints[x + 1, y + 1, z + 1].frozen)
-                                        {
-                                            triIndex += 64;
-                                        }
-
-                                        if (gridPoints[x, y + 1, z + 1].frozen)
-                                        {
-                                            triIndex += 128;
-                                        }*/
-
                     if (triIndex != 0 && triIndex != 255)
                     {
 
@@ -262,65 +236,6 @@ public class WaterFreeze : MonoBehaviour
 
                             if (valA != -1)
                             {
-                                /* switch (valA)
-                                 {
-
-
-                                     case 0:
-                                         tempVert = (corners[0] + corners[1]) / 2;
-
-                                         break;
-                                     case 1:
-                                         tempVert = (corners[1] + corners[2]) / 2;
-
-                                         break;
-                                     case 2:
-                                         tempVert = (corners[2] + corners[3]) / 2;
-
-                                         break;
-                                     case 3:
-                                         tempVert = (corners[3] + corners[0]) / 2;
-
-                                         break;
-                                     /*                                       case 4:
-                                                                                  verts.Add((corners[4] + corners[5]) / 2);
-                                                                                  print(valA);
-                                                                                  break;
-                                                                              case 5:
-                                                                                  verts.Add((corners[5] + corners[6]) / 2);
-                                                                                  print(valA);
-                                                                                  break;
-                                                                              case 6:
-                                                                                  verts.Add((corners[6] + corners[7]) / 2);
-                                                                                  print(valA);
-                                                                                  break;
-                                                                              case 7:
-                                                                                  verts.Add((corners[7] + corners[4]) / 2);
-                                                                                  print(valA);
-                                                                                  break;*/
-                                /*  case 8:
-                                      tempVert = (corners[0] + corners[4]) / 2;
-
-                                      break;
-                                  case 9:
-                                      tempVert = (corners[5] + corners[1]) / 2;
-
-                                      break;
-                                  case 10:
-                                      tempVert = (corners[2] + corners[6]) / 2;
-
-                                      break;
-                                  case 11:
-                                      tempVert = (corners[7] + corners[3]) / 2;
-
-                                      break;
-                                  default:
-                                      Debug.Log("ERROR");
-                                      return;
-                              }
-                              */
-                                //(verts.Count - 1 != -1) ? verts.Count - 1: 0
-
                                 tempVert = ReturnVert(vertsList[valA]);
                                 int tris = hash.CheckAganstHash(tempVert, verts.Count);
                                 if (tris == -1)
@@ -332,11 +247,7 @@ public class WaterFreeze : MonoBehaviour
                                     verts.Add(tempVert);
                                 }
 
-                                // verts.Add(tempVert);
                                 tri.Add(tris);
-                                //print(tris);
-
-
                             }
                             else
                             {

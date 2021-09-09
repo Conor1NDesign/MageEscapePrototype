@@ -7,7 +7,7 @@ public class SpellFunctions : MonoBehaviour
     static SpellFunction[] hardCastSpells = { Fireball, IceBeam, SummonBoulder, TornadoGust };
     static SpellFunction[] quickCastEnd = { FlamethrowerEnd, FrostWaveEnd, EarthPlatformEnd, PushingGustEnd };
     static SpellFunction[] hardCastEnd = { FireballEnd, IceBeamEnd, SummonBoulderEnd, TornadoGustEnd };
-
+    #region START CAST
     public static void StartQuickCast(PlayerController caster)
     {
         quickCastSpells[(int)caster.playerElement - 1](caster);
@@ -26,7 +26,9 @@ public class SpellFunctions : MonoBehaviour
     {
         hardCastEnd[(int)caster.playerElement - 1](caster);
     }
+    #endregion
 
+    #region QUICK CAST
     // -----------------
     // Quick Cast Spells
     // -----------------
@@ -59,6 +61,10 @@ public class SpellFunctions : MonoBehaviour
         caster.rotationLockedBySpell = true;
     }
 
+    #endregion
+
+    #region HARD CAST
+
     // ----------------
     // Hard Cast Spells
     // ----------------
@@ -78,8 +84,8 @@ public class SpellFunctions : MonoBehaviour
     static void SummonBoulder(PlayerController caster)
     {
         Debug.Log("Boulder Target");
-		GameObject boulderTarget = caster.boulderTargetPrefab;
-		caster.tornado = Instantiate(boulderTarget, caster.spellAttachPoint.position, Quaternion.identity);
+        GameObject boulderTarget = caster.boulderTargetPrefab;
+        caster.tornado = Instantiate(boulderTarget, caster.spellAttachPoint.position, Quaternion.identity);
         boulderTarget.GetComponent<SpellCharacterController>().playerCon = caster;
         caster.tornadoActive = true;
     }
@@ -91,10 +97,15 @@ public class SpellFunctions : MonoBehaviour
         caster.tornado = Instantiate(caster.tornadoLiftPrefab, caster.spellAttachPoint.position, Quaternion.identity);
 
         caster.tornado.transform.position = caster.transform.position;
-        
+
         caster.tornado.GetComponent<SpellCharacterController>().playerCon = caster;
         caster.tornadoActive = true;
     }
+
+    #endregion
+
+    #region END CAST
+
 
     // -----------------
     // Spell Endings
@@ -115,8 +126,8 @@ public class SpellFunctions : MonoBehaviour
     static void EarthPlatformEnd(PlayerController caster)
     {
         Debug.Log("Earth Platform Place");
-		caster.earthPlatform = Instantiate(caster.earthPlatformPrefab);
-		caster.earthPlatform.transform.position = caster.transform.position + caster.transform.forward - new Vector3(0f, 0.2f, 0.0f);
+        caster.earthPlatform = Instantiate(caster.earthPlatformPrefab);
+        caster.earthPlatform.transform.position = caster.transform.position + caster.transform.forward - new Vector3(0f, 0.2f, 0.0f);
     }
 
     static void PushingGustEnd(PlayerController caster)
@@ -143,7 +154,7 @@ public class SpellFunctions : MonoBehaviour
         if (fireball)
         {
             fireball.GetComponent<Rigidbody>().AddForce(caster.transform.forward * caster.fireballForce, ForceMode.Impulse);
-			fireball.GetComponent<Fireball>().aging = true;
+            fireball.GetComponent<Fireball>().aging = true;
         }
     }
 
@@ -156,14 +167,14 @@ public class SpellFunctions : MonoBehaviour
     static void SummonBoulderEnd(PlayerController caster)
     {
         Debug.Log("Summon Boulder");
-		GameObject boulder = Instantiate(caster.boulderPrefab);
-		GameObject boulderTarget = caster.tornado;
+        GameObject boulder = Instantiate(caster.boulderPrefab);
+        GameObject boulderTarget = caster.tornado;
         caster.tornado = null;
-		if (!boulderTarget)
-			return;
-		
-		boulder.transform.position = boulderTarget.transform.position + new Vector3(0.0f, 3.0f, 0.0f);
-		Destroy(boulderTarget);
+        if (!boulderTarget)
+            return;
+
+        boulder.transform.position = boulderTarget.transform.position + new Vector3(0.0f, 3.0f, 0.0f);
+        Destroy(boulderTarget);
         caster.tornadoActive = false;
     }
 
@@ -171,6 +182,7 @@ public class SpellFunctions : MonoBehaviour
     {
         Destroy(caster.tornado);
         caster.tornadoActive = false;
-        
-    }
+
+    } 
+    #endregion
 }

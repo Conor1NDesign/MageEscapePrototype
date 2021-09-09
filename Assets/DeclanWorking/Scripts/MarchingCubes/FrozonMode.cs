@@ -30,24 +30,6 @@ public class FrozonMode : MonoBehaviour
         Cone = colliderTracker.BoxedCone;
         marchingCubeManager = FindObjectOfType<MarchingCubesMangaer>();
         WaterTilesNeeded = new int[marchingCubeManager.WaterTiles.Length];
-        #region
-        // dirty = false;
-        // frozonMode = FindObjectsOfType<WaterFreeze>();
-        // WaterTilesColliders = new BoxCollider[WaterTiles.Length];
-        // MC = new GameObject[WaterTiles.Length];
-        // WaterTilesNeeded = new int[WaterTiles.Length];
-        // //frozonMode = new WaterFreeze[WaterTiles.Length];
-        //
-        //
-        //
-        // for (int i = 0; i < WaterTiles.Length; i++)
-        // {
-        //     WaterTilesColliders[i] = WaterTiles[i].GetComponent<BoxCollider>();
-        //     //frozonMode[i] = WaterTiles[i].GetComponent<WaterFreeze>();
-        //     frozonMode[i].mesh = new Mesh();
-        //     frozonMode[i].GroundMesh = new GameObject("Mesh ", typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider));
-        // }
-        #endregion
     }
 
 
