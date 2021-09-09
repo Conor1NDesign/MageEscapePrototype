@@ -71,6 +71,7 @@ public class SpellFunctions : MonoBehaviour
 
     static void IceBeam(PlayerController caster)
     {
+        caster.AttachSpell(Instantiate(caster.frostBeamPrefab));
         Debug.Log("IceBeam");
     }
 
@@ -148,6 +149,7 @@ public class SpellFunctions : MonoBehaviour
 
     static void IceBeamEnd(PlayerController caster)
     {
+        Destroy(caster.ClearSpell());
         Debug.Log("IceBeamEnd");
     }
 
