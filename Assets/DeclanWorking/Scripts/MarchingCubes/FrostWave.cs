@@ -21,13 +21,24 @@ public class FrostWave : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // if (!other.CompareTag("Spellbook"))
-        //{
+
         print(other.tag);
         if (other.CompareTag("Water"))
         {
-            print("ICE ICE BABY");
             frozenMode.MarchTheCubes();
+            return;
         }
+        else if (other.CompareTag("Lightable"))
+        {
+            other.GetComponent<Scone>().isActivated = false;
+            return;
+        }
+        SpinningBlade sb = other.GetComponent<SpinningBlade>();
+        if (sb!= null)
+        {
+            sb.isSlowed = true;
+            sb.counter = 0;
+        }
+
     }
 }
