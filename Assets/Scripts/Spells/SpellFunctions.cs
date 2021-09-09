@@ -126,8 +126,10 @@ public class SpellFunctions : MonoBehaviour
     static void EarthPlatformEnd(PlayerController caster)
     {
         Debug.Log("Earth Platform Place");
-        caster.earthPlatform = Instantiate(caster.earthPlatformPrefab);
+		caster.earthPlatform.transform.position = caster.transform.position + caster.transform.forward * 1.6f - new Vector3(0f, 0.1f, 0.0f);
+		caster.earthPlatform = Instantiate(caster.earthPlatformPrefab);
         caster.earthPlatform.transform.position = caster.transform.position + caster.transform.forward - new Vector3(0f, 0.2f, 0.0f);
+        caster.earthPlatform = Instantiate(caster.earthPlatformPrefab);
     }
 
     static void PushingGustEnd(PlayerController caster)
