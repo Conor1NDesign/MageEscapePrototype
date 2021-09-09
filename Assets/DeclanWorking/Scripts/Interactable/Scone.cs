@@ -10,6 +10,7 @@ public class Scone : Interactable
     bool hasMovingPlatforms = false;
     bool hasSetSwitchActive = false;
     public MovingPlatform[] movingPlatforms;
+    public GameObject particles;
     private void OnDrawGizmos()
     {
         if (movingPlatforms.Length != 0)
@@ -35,7 +36,7 @@ public class Scone : Interactable
     {
         if (isActivated)
         {
-
+            particles.gameObject.SetActive(true);
             if (hasMovingPlatforms)
             {
                 if (hasSetSwitchActive == false)
@@ -52,6 +53,7 @@ public class Scone : Interactable
         }
         else
         {
+            particles.gameObject.SetActive(false);
             if (hasMovingPlatforms)
             {
 

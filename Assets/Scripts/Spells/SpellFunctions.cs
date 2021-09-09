@@ -40,8 +40,8 @@ public class SpellFunctions : MonoBehaviour
     static void FrostWave(PlayerController caster)
     {
         caster.AttachSpell(Instantiate(caster.frostWavePrefab));
-        caster.attachedSpell.transform.GetChild(0).Rotate(0, 0, -90);
-        caster.attachedSpell.transform.GetChild(0).Translate(0, 2, -1.8f);
+        //caster.attachedSpell.transform.GetChild(0).Rotate(0, 0, -90);
+        //caster.attachedSpell.transform.GetChild(0).Translate(2, -2, 0);
         Debug.Log("FrostWave");
     }
 
