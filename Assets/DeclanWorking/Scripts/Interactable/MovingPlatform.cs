@@ -30,7 +30,7 @@ public class MovingPlatform : MonoBehaviour
         {
             Gizmos.DrawLine(startPos, endPos.transform.position);
         }
-        print(startPos);
+       
     }
     // Start is called before the first frame update
     void Start()
@@ -95,7 +95,7 @@ public class MovingPlatform : MonoBehaviour
         {
             if (moving)
             {
-                print("a");
+               
                 if (Vector3.Distance(Platform.transform.position, endPos.transform.position) <= 0.01f && ToEnd)
                 {
                     aa = Vector3.Distance(Platform.transform.position, endPos.transform.position);

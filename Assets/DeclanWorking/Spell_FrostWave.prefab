@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3790637246653405568}
   - component: {fileID: 5336588934166466568}
   - component: {fileID: 3143285488375839926}
+  - component: {fileID: 2193114394282487419}
   m_Layer: 0
   m_Name: Spell_FrostWave
   m_TagString: Untagged
@@ -71,8 +72,22 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.866891, y: 2.9689274, z: 5.193594}
-  m_Center: {x: -0.98440504, y: 0.9844637, z: -0.0746603}
+  m_Size: {x: 5.866891, y: 2.9689274, z: 5.79}
+  m_Center: {x: 0, y: 0, z: 2.51}
+--- !u!114 &2193114394282487419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3197043741139943321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c060441a2491c4ea23d208ad5bf6fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerColour: {r: 0.6694629, g: 1, b: 0, a: 0.08627451}
+  triggerWireColour: {r: 0.17895675, g: 1, b: 0, a: 0}
 --- !u!1001 &4012864269860249290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -196,7 +211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4475723213284502399, guid: 419d38dca25f92745b95eec8a89e2e90, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 419d38dca25f92745b95eec8a89e2e90, type: 3}
