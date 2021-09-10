@@ -158,6 +158,9 @@ public class PlayerController : MonoBehaviour
     private Camera levelCamera;
     [HideInInspector]
     public bool useGravity = true;
+
+
+    public Animator animator;
     private void Awake()
     {
         //Finds the main camera on the level, used for movement and rotation directions.
@@ -306,6 +309,7 @@ public class PlayerController : MonoBehaviour
         //Checks if the Player's state is 'Idle'.
         if (playerState == PlayerStates.Idle)
         {
+            animator.SetInteger("State", (int)playerState);
             currentMoveSpeed = defaultMoveSpeed;
             currentRotateSpeed = rotateSpeed;
             gravityMultiplier = defaultGravityMultiplier;
@@ -314,6 +318,7 @@ public class PlayerController : MonoBehaviour
         //Checks if the Player's state is 'Moving'.
         if (playerState == PlayerStates.Moving)
         {
+            animator.SetInteger("State", (int)playerState);
             currentMoveSpeed = defaultMoveSpeed;
             currentRotateSpeed = rotateSpeed;
             gravityMultiplier = defaultGravityMultiplier;

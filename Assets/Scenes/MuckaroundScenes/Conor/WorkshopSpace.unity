@@ -469,6 +469,10 @@ PrefabInstance:
       propertyPath: currentSpawnPoint
       value: 
       objectReference: {fileID: 1211897150}
+    - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1875577301}
     - target: {fileID: 4500845700833580964, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: m_Name
       value: Player 1
@@ -8528,6 +8532,11 @@ MonoBehaviour:
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
   aa: 0
+--- !u!95 &1875577301 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6242796743844612295, guid: af0468904fb76b948b97a93195ae5834, type: 3}
+  m_PrefabInstance: {fileID: 15984653}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1877090583
 PrefabInstance:
   m_ObjectHideFlags: 0

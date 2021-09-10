@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5006523028989087425, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 5006523028989087425, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_LocalPosition.y
@@ -203,6 +203,10 @@ PrefabInstance:
       propertyPath: cameraPivot
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6309809208170730702, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 6242796743844612295}
     - target: {fileID: 6682559666589489026, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -221,3 +225,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
+--- !u!95 &6242796743844612295 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3940230532217626894, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
+  m_PrefabInstance: {fileID: 6921008272806259145}
+  m_PrefabAsset: {fileID: 0}
