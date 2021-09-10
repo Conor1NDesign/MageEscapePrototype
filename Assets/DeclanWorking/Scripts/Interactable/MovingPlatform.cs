@@ -18,7 +18,7 @@ public class MovingPlatform : MonoBehaviour
     bool ToEnd = true;
     public int numberOfSwitches;
     public int numberOfActiveSwitches;
-    public float aa;
+    
 
     private void OnDrawGizmosSelected()
     {
@@ -64,14 +64,14 @@ public class MovingPlatform : MonoBehaviour
                 {
                     if (Vector3.Distance(Platform.transform.position, endPos.transform.position) <= 0.01f && ToEnd)
                     {
-                        aa = Vector3.Distance(Platform.transform.position, endPos.transform.position);
+                        
                         counter = 0;
                         elapsedFrames = 0;
                         ToEnd = false;
                     }
                     else if (Vector3.Distance(Platform.transform.position, startPos) <= 0.01f && !ToEnd)
                     {
-                        aa = Vector3.Distance(Platform.transform.position, startPos);
+                        
                         counter = 0;
                         elapsedFrames = 0;
                         ToEnd = true;
@@ -98,14 +98,14 @@ public class MovingPlatform : MonoBehaviour
                
                 if (Vector3.Distance(Platform.transform.position, endPos.transform.position) <= 0.01f && ToEnd)
                 {
-                    aa = Vector3.Distance(Platform.transform.position, endPos.transform.position);
+                    
                     counter = 0;
                     elapsedFrames = 0;
                     ToEnd = false;
                 }
                 else if (Vector3.Distance(Platform.transform.position, startPos) <= 0.01f && !ToEnd)
                 {
-                    aa = Vector3.Distance(Platform.transform.position, startPos);
+                    
                     counter = 0;
                     elapsedFrames = 0;
                     ToEnd = true;

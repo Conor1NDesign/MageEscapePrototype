@@ -12,6 +12,10 @@ public class FireballExplosion : MonoBehaviour
         {
             other.gameObject.GetComponent<Scone>().isActivated = true;
         }
+		if (other.gameObject.CompareTag("Meltable"))
+		{
+			other.gameObject.GetComponent<WaterWheel>().isFrozen = false;
+		}
 
 		Destroy(transform.root.gameObject, explosionTime);
 	}
