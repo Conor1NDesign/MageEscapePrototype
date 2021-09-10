@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1402136857114846152}
   - component: {fileID: 4266326383456688836}
   - component: {fileID: 9184475786847164947}
+  - component: {fileID: 8383506408916713466}
   m_Layer: 0
   m_Name: ExitTile_PortalFrame
   m_TagString: Untagged
@@ -42,11 +43,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3311309237521340793}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 0.25, z: 4}
-  m_Center: {x: 0, y: -0.125, z: 0}
+  m_Size: {x: 4, y: 3.5051913, z: 4}
+  m_Center: {x: 0, y: 1.5025957, z: 0}
 --- !u!65 &9184475786847164947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60,6 +61,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0.5, z: 1.5}
+--- !u!114 &8383506408916713466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3311309237521340793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37015b969f4652940bbb8fff7bb49cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portal: {fileID: 4980491814631698024}
+  playerCount: 0
 --- !u!1001 &2839626393308321610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115,20 +130,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7094897579412101567, guid: 73d1a398d9934944a990aa06afd8392f, type: 3}
-      propertyPath: m_BoundingSphereOverride.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7094897579412101567, guid: 73d1a398d9934944a990aa06afd8392f, type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7094897579412101567, guid: 73d1a398d9934944a990aa06afd8392f, type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: -3.2701973e-16
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73d1a398d9934944a990aa06afd8392f, type: 3}
+--- !u!1 &4980491814631698024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7094897579270060322, guid: 73d1a398d9934944a990aa06afd8392f, type: 3}
+  m_PrefabInstance: {fileID: 2839626393308321610}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4980491814631698028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7094897579270060326, guid: 73d1a398d9934944a990aa06afd8392f, type: 3}
