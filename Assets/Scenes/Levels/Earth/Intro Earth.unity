@@ -1661,7 +1661,7 @@ Transform:
   - {fileID: 1300870583}
   - {fileID: 1384378578}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &161333801
 MonoBehaviour:
@@ -1677,7 +1677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Platform: {fileID: 226250823}
   endPos: {fileID: 1523691258}
-  speed: 200
+  speed: 100
   oscillating: 0
   numberOfSwitches: 2
   numberOfActiveSwitches: 0
@@ -1808,6 +1808,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6560067993133019414, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
+      propertyPath: spellbookRespawnPoint
+      value: 
+      objectReference: {fileID: 2079890654}
     - target: {fileID: 6560067993133019415, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
       propertyPath: m_Name
       value: Spellbook_Earth
@@ -1988,6 +1992,28 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &221174103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7634879175815328169, guid: 868a393e4baade448897d69b2bbff259, type: 3}
+  m_PrefabInstance: {fileID: 1708910537}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &221174106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221174103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f837b13f29a7074e8126cee581dff82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSpeed: 400
+  slowedSpeed: 50
+  slowEffectDuration: 5
+  isSlowed: 0
+  counter: 0
 --- !u!1 &226250823 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6372820306588002128, guid: 0e05c82170823164b9307dfa9ac7ab3c, type: 3}
@@ -6656,7 +6682,7 @@ Transform:
   - {fileID: 1145809955}
   - {fileID: 1451863371}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &625637184
 MonoBehaviour:
@@ -6672,7 +6698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Platform: {fileID: 1672262933}
   endPos: {fileID: 915703550}
-  speed: 200
+  speed: 100
   oscillating: 0
   numberOfSwitches: 2
   numberOfActiveSwitches: 0
@@ -8904,7 +8930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6560067993133019410, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6560067993133019410, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8918,6 +8944,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6560067993133019414, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
+      propertyPath: spellbookRespawnPoint
+      value: 
+      objectReference: {fileID: 1415730669}
     - target: {fileID: 6560067993133019415, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
       propertyPath: m_Name
       value: Spellbook_Earth (1)
@@ -9697,7 +9727,7 @@ Transform:
   - {fileID: 1296603927}
   - {fileID: 485194905}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &852914069
 MonoBehaviour:
@@ -9713,7 +9743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Platform: {fileID: 676226134}
   endPos: {fileID: 1991092727}
-  speed: 200
+  speed: 100
   oscillating: 0
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
@@ -9749,7 +9779,7 @@ Transform:
   - {fileID: 409407515}
   - {fileID: 369497875}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &861240492
 MonoBehaviour:
@@ -9765,7 +9795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Platform: {fileID: 985269261}
   endPos: {fileID: 613882099}
-  speed: 200
+  speed: 100
   oscillating: 0
   numberOfSwitches: 2
   numberOfActiveSwitches: 0
@@ -10737,7 +10767,7 @@ Transform:
   - {fileID: 1307685852}
   - {fileID: 363265910}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &980627860
 MonoBehaviour:
@@ -10753,7 +10783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Platform: {fileID: 1221410705}
   endPos: {fileID: 890864368}
-  speed: 200
+  speed: 100
   oscillating: 0
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
@@ -14203,7 +14233,7 @@ Transform:
   - {fileID: 808200052}
   - {fileID: 1708910538}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1198083552
 PrefabInstance:
@@ -16966,7 +16996,7 @@ Transform:
   - {fileID: 604374339}
   - {fileID: 928710164}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1388198928
 MonoBehaviour:
@@ -16982,7 +17012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Platform: {fileID: 182634177}
   endPos: {fileID: 1250898598}
-  speed: 200
+  speed: 100
   oscillating: 0
   numberOfSwitches: 2
   numberOfActiveSwitches: 0
@@ -17057,6 +17087,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1682741701747177749, guid: d39c0af3a73e4094ba2a51bf2654532c, type: 3}
   m_PrefabInstance: {fileID: 1393067970}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1415730668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1415730669}
+  m_Layer: 0
+  m_Name: Earthbook respawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1415730669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415730668}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.75, y: 0, z: 1.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1416172239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18314,7 +18374,7 @@ Transform:
   - {fileID: 87202011}
   - {fileID: 1165872369}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1492754659
 MonoBehaviour:
@@ -18330,7 +18390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Platform: {fileID: 919082492}
   endPos: {fileID: 773765324}
-  speed: 200
+  speed: 100
   oscillating: 0
   numberOfSwitches: 2
   numberOfActiveSwitches: 0
@@ -19430,7 +19490,7 @@ Transform:
   - {fileID: 824438041}
   - {fileID: 118823600}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1617481091
 MonoBehaviour:
@@ -19446,7 +19506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Platform: {fileID: 1096879786}
   endPos: {fileID: 533881350}
-  speed: 200
+  speed: 100
   oscillating: 0
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
@@ -22304,6 +22364,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1682741701747177749, guid: d39c0af3a73e4094ba2a51bf2654532c, type: 3}
   m_PrefabInstance: {fileID: 1802826059}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1804823767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7634879175815328169, guid: 868a393e4baade448897d69b2bbff259, type: 3}
+  m_PrefabInstance: {fileID: 808200051}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1804823770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804823767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f837b13f29a7074e8126cee581dff82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSpeed: 400
+  slowedSpeed: 50
+  slowEffectDuration: 5
+  isSlowed: 0
+  counter: 0
 --- !u!1001 &1805452682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22789,7 +22871,7 @@ Transform:
   - {fileID: 599838540}
   - {fileID: 1423238191}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1850742870
 MonoBehaviour:
@@ -22805,7 +22887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Platform: {fileID: 473163786}
   endPos: {fileID: 1768193233}
-  speed: 200
+  speed: 100
   oscillating: 0
   numberOfSwitches: 2
   numberOfActiveSwitches: 0
@@ -25097,6 +25179,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa771bdfb3664e54ab104dbda97131a0, type: 3}
+--- !u!1 &2079890653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2079890654}
+  m_Layer: 0
+  m_Name: Earthbook respawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2079890654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079890653}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7, y: 0, z: -8.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2083742484
 PrefabInstance:
   m_ObjectHideFlags: 0
