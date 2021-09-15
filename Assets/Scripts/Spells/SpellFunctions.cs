@@ -80,7 +80,8 @@ public class SpellFunctions : MonoBehaviour
         Debug.Log("Boulder Target");
 		GameObject boulderTarget = caster.boulderTargetPrefab;
 		caster.tornado = Instantiate(boulderTarget, caster.spellAttachPoint.position, Quaternion.identity);
-        boulderTarget.GetComponent<SpellCharacterController>().playerCon = caster;
+        boulderTarget.GetComponent<SpellCharacterController>().playerCasting = caster;
+        boulderTarget.GetComponent<CharacterController>().detectCollisions = false;
         caster.tornadoActive = true;
     }
 
@@ -92,7 +93,7 @@ public class SpellFunctions : MonoBehaviour
 
         caster.tornado.transform.position = caster.transform.position;
         
-        caster.tornado.GetComponent<SpellCharacterController>().playerCon = caster;
+        caster.tornado.GetComponent<SpellCharacterController>().playerCasting = caster;
         caster.tornadoActive = true;
     }
 
