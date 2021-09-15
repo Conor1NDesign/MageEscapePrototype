@@ -22,7 +22,7 @@ public class FrostWave : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        
+
         if (other.CompareTag("Water"))
         {
             frozenMode.MarchTheCubes(true);
@@ -38,11 +38,12 @@ public class FrostWave : MonoBehaviour
         {
             other.GetComponent<WaterWheel>().isFrozen = true;
         }
+        
         SpinningBlade sb = other.GetComponent<SpinningBlade>();
         if (sb!= null)
         {
             sb.isSlowed = true;
-            sb.counter = 0;
+            sb.counter = 0.0f;
         }
 
     }

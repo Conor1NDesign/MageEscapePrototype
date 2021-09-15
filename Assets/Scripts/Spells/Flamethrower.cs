@@ -36,6 +36,12 @@ public class Flamethrower : MonoBehaviour
                 frozenMode.MarchTheCubes(false);
                 print("Defrost");
             }
+
+            SpinningBlade sb = other.GetComponent<SpinningBlade>();
+            if (sb != null)
+            {
+                sb.isSlowed = false;
+            }
         }
     }
 }
