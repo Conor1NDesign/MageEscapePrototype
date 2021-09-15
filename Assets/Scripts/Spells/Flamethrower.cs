@@ -23,7 +23,14 @@ public class Flamethrower : MonoBehaviour
                     other.gameObject.GetComponent<WaterWheel>().isFrozen = false;
                 }
             }
-
+            if (other.CompareTag("Lightable"))
+            {
+                if (other.gameObject.GetComponent<Scone>() != null)
+                {
+                    other.gameObject.GetComponent<Scone>().isActivated = true;
+                }
+            }
+            
             if (other.CompareTag("Water"))
             {
                 frozenMode.MarchTheCubes(false);
