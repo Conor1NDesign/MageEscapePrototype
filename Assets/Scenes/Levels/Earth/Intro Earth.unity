@@ -3717,7 +3717,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressurePlate
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 172462781, guid: 545dd2376545f304ea40db433829b71f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 545dd2376545f304ea40db433829b71f, type: 3}
 --- !u!1 &377212785
 GameObject:
@@ -7285,7 +7286,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressurePlate (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 172462781, guid: 545dd2376545f304ea40db433829b71f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 545dd2376545f304ea40db433829b71f, type: 3}
 --- !u!4 &688515203 stripped
 Transform:
@@ -7347,7 +7349,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressurePlate (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 172462781, guid: 545dd2376545f304ea40db433829b71f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 545dd2376545f304ea40db433829b71f, type: 3}
 --- !u!1001 &696265945
 PrefabInstance:
@@ -8337,7 +8340,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressurePlate (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 172462781, guid: 545dd2376545f304ea40db433829b71f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 545dd2376545f304ea40db433829b71f, type: 3}
 --- !u!4 &748857306 stripped
 Transform:
