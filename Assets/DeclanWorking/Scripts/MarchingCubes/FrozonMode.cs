@@ -23,7 +23,7 @@ public class FrozonMode : MonoBehaviour
     private MarchingCubesMangaer marchingCubeManager;
     private ColliderTracker colliderTracker;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         //colliderTracker = FindObjectOfType<ColliderTracker>();
         colliderTracker = gameObject.GetComponentInChildren<ColliderTracker>();
@@ -31,28 +31,35 @@ public class FrozonMode : MonoBehaviour
         Cone = colliderTracker.BoxedCone;
         marchingCubeManager = FindObjectOfType<MarchingCubesMangaer>();
         WaterTilesNeeded = new int[marchingCubeManager.WaterTiles.Length];
+
+        
+    }
+    private void Start()
+    {
+
     }
 
 
 
 
-
     // Update is called once per frame
-    public void MarchTheCubes(bool freeze)
+    public void MarchTheCubes(bool freezing)
     {
 
         int count = -1;
 
-        foreach (var item in marchingCubeManager.WaterTilesColliders)
+        if (marchingCubeManager != null)
         {
-            count++;
-            if (Incapsulating.bounds.Intersects(item.bounds))
+            foreach (var item in marchingCubeManager.WaterTilesColliders)
             {
-                WaterTilesNeeded[count] = count;
-
+                count++;
+                if (Incapsulating.bounds.Intersects(item.bounds))
+                {
+                    WaterTilesNeeded[count] = count;
+                }
             }
-
         }
+
 
         dirty = false;
         int q = 0;
@@ -65,7 +72,7 @@ public class FrozonMode : MonoBehaviour
                 {
                     for (int x = 0; x < marchingCubeManager.WaterTiles[items].GetGridSize(); x++)
                     {
-                        if (Incapsulating.bounds.Contains(marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].pos) && marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].frozen == freeze)
+                        if (Incapsulating.bounds.Contains(marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].pos) && !marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].frozen && freezing)
                         {
                             foreach (BoxCollider item in Cone)
                             {
@@ -76,12 +83,13 @@ public class FrozonMode : MonoBehaviour
                                 }
                             }
                         }
-                        else if (Incapsulating.bounds.Contains(marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].pos) && marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].frozen == freeze)
+                       else if (Incapsulating.bounds.Contains(marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].pos) && marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].frozen == true && !freezing)
                         {
                             foreach (BoxCollider item in Cone)
                             {
                                 if (item.bounds.Contains(marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].pos))
                                 {
+                                    print("Defrosting");
                                     marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].frozen = false;
                                     dirty = true;
                                 }

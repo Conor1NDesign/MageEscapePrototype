@@ -6,7 +6,7 @@ public class Flamethrower : MonoBehaviour
 
     private void Start()
     {
-        frozenMode = GetComponent<FrozonMode>();
+        frozenMode = GetComponentInChildren<FrozonMode>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -26,7 +26,8 @@ public class Flamethrower : MonoBehaviour
 
             if (other.CompareTag("Water"))
             {
-                frozenMode.MarchTheCubes(true);
+                frozenMode.MarchTheCubes(false);
+                print("Defrost");
             }
         }
     }

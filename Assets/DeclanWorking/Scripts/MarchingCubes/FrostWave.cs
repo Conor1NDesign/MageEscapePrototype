@@ -25,7 +25,8 @@ public class FrostWave : MonoBehaviour
         
         if (other.CompareTag("Water"))
         {
-            frozenMode.MarchTheCubes(false);
+            frozenMode.MarchTheCubes(true);
+            print("Freeeeze");
             return;
         }
         else if (other.CompareTag("Lightable"))

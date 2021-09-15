@@ -6,11 +6,11 @@ public class MarchingCubesMangaer : MonoBehaviour
 {
 
     public float yOffsetOfMesh = 0.5f;
-    [HideInInspector]
+    //[HideInInspector]
     public WaterFreeze[] WaterTiles;
-    [HideInInspector]
+   // [HideInInspector]
     public BoxCollider[] WaterTilesColliders;
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject IceMeshes;
     void Start()
     {

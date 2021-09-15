@@ -158,6 +158,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4288097184829008838}
     m_Modifications:
+    - target: {fileID: -4349915147531137930, guid: 419d38dca25f92745b95eec8a89e2e90, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2674024358990924458, guid: 419d38dca25f92745b95eec8a89e2e90, type: 3}
       propertyPath: m_Name
       value: Spell_FrostWave_WaterChecker
@@ -168,7 +172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3339377686871347216, guid: 419d38dca25f92745b95eec8a89e2e90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3339377686871347216, guid: 419d38dca25f92745b95eec8a89e2e90, type: 3}
       propertyPath: m_LocalPosition.z
@@ -206,7 +210,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1424718175607023513, guid: 419d38dca25f92745b95eec8a89e2e90, type: 3}
+    - {fileID: -4349915147531137930, guid: 419d38dca25f92745b95eec8a89e2e90, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 419d38dca25f92745b95eec8a89e2e90, type: 3}
 --- !u!4 &4662820319897553505 stripped
 Transform:
