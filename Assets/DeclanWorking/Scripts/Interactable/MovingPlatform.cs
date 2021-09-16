@@ -18,7 +18,10 @@ public class MovingPlatform : MonoBehaviour
     bool ToEnd = true;
     public int numberOfSwitches;
     public int numberOfActiveSwitches;
-    
+    [HideInInspector]
+    public bool resetting;
+
+
 
     private void OnDrawGizmosSelected()
     {
@@ -53,6 +56,11 @@ public class MovingPlatform : MonoBehaviour
     float interpolationRatio;
     private void FixedUpdate()
     {
+        if (resetting)
+        {
+            
+            Reset();
+        }
 
         if (oscillating)
         {
@@ -137,6 +145,14 @@ public class MovingPlatform : MonoBehaviour
             moving = true;
     }
 
-
+    public void Reset()
+    {
+        numberOfActiveSwitches = 99;
+        moving = false;
+        interpolationRatio = (float)elapsedFrames / speed;
+        Platform.transform.position = Vector3.Lerp(Platform.transform.position, startPos, interpolationRatio);
+        print(startPos);
+        elapsedFrames = (elapsedFrames + 1) % (speed + 1);
+    }
 
 }

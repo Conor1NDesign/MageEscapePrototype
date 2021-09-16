@@ -59,7 +59,6 @@ public class PlayerController : MonoBehaviour
     [Header("PLAYER INDEX")]
     [Tooltip("This Player's Index number. Player 1 should have index 0, and Player 2 should have index 1.")]
     public int playerIndex = 0;
-    private static PlayerController[] playerControllers = new PlayerController[2];
 
     [Header("Current Player State")]
     [Tooltip("The current state of the player, determines what actions they can take and adjusts some of their variables.")]
@@ -162,6 +161,7 @@ public class PlayerController : MonoBehaviour
 
 
     public Animator animator;
+    GameObject interactable;
     private void Awake()
     {
         //Finds the main camera on the level, used for movement and rotation directions.
@@ -169,19 +169,12 @@ public class PlayerController : MonoBehaviour
 
         //Finds the Character Controller component on the object this script is attached to.
         controller = GetComponent<CharacterController>();
-        
-        playerControllers[playerIndex] = this;
     }
 
     public int GetPlayerIndex()
     {
         //Returns the playerIndex value assigned in the inspector when called. Currently used to prevent multiple input devices controlling the same character.
         return playerIndex;
-    }
-
-    public static PlayerController GetPlayerByIndex(int index)
-    {
-        return playerControllers[index];
     }
 
     public void SetInputVector(Vector2 direction)
@@ -199,6 +192,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        
         //Debug.Log("Player " + playerIndex + " is currently:" + playerState);
         //Debug.Log("Player " + playerIndex + "'s movementVector is: " + moveDirection);
 
@@ -348,6 +342,7 @@ public class PlayerController : MonoBehaviour
         //Checks if the Player's state is 'Floating'.
         if (playerState == PlayerStates.Floating)
         {
+            animator.SetInteger("State", (int)playerState);
             currentMoveSpeed = airborneMoveSpeed;
             currentRotateSpeed = rotateSpeed;
             gravityMultiplier = 0;
@@ -399,10 +394,28 @@ public class PlayerController : MonoBehaviour
         playerMesh.SetActive(false);
         isRespawning = true;
         yield return new WaitForSeconds(respawnTime);
-        isDead = false;
+        //isDead = false;
         isRespawning = false;
         playerMesh.SetActive(true);
     }
+
+    public void Interact(bool active)
+    {
+        if (interactable != null)
+        {
+            if (active)
+            {
+                interactable.GetComponent<Lever>().isActive = true;
+                print("DOWN DOWN");
+            }
+            else
+            {
+                interactable.GetComponent<Lever>().isActive = false;
+                print("UP UP");
+            }
+        }
+    }
+
 
     public void RotateTowardsMovement(Quaternion rotation)
     {
@@ -455,6 +468,10 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Spellbook"))
         {
             nearbySpellbook = other.gameObject;
+        }
+        if (other.CompareTag("Interactable"))
+        {
+            interactable = other.gameObject;
         }
     }
 
