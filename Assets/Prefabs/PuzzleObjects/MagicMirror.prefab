@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2863598931198393309}
   m_Layer: 0
   m_Name: MagicMirror
-  m_TagString: Untagged
+  m_TagString: MM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4346295983212314688}
   m_Layer: 0
   m_Name: MirrorCollider
-  m_TagString: Untagged
+  m_TagString: MM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,6 +144,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6d04c654a9b303f45bb4856d010073b2, type: 3}
       propertyPath: m_Name
       value: MagicMirror_Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6d04c654a9b303f45bb4856d010073b2, type: 3}
+      propertyPath: m_TagString
+      value: MM
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d04c654a9b303f45bb4856d010073b2, type: 3}

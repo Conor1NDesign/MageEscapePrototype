@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class MagicMirror : MonoBehaviour
 {
-
-    RaycastHit hit;
-
     public LineRenderer beamRenderer;
 
     List<Vector3> beamIndices = new List<Vector3>();
@@ -22,16 +19,7 @@ public class MagicMirror : MonoBehaviour
     {
         beamIndices.Clear();
         beamIndices.Add(beamRenderer.transform.parent.position);
-        CastBeam(beamRenderer.transform.position, Vector3.down, beamRenderer);
-
-        // if (hit.collider.tag == "MM")
-        // {
-        //     //Vector3.Reflect(Vector3.down, hit.normal);
-        //     // Mathf.Acos((x/hit.distance))
-        // }
-
-
-
+        CastBeam(beamRenderer.transform.position, transform.root.forward, beamRenderer);
     }
 
     void CastBeam(Vector3 pos, Vector3 dir, LineRenderer beam)
@@ -63,41 +51,53 @@ public class MagicMirror : MonoBehaviour
     }
 
 
-private void CheckHit(RaycastHit hitInfo, Vector3 dir)
-{
-    print(hitInfo.transform.name);
-    if (hitInfo.transform.tag == "MM")
+    private void CheckHit(RaycastHit hitInfo, Vector3 dir)
     {
-        beamIndices.Add(hitInfo.point);
-        CastBeam(hitInfo.point, Vector3.Reflect(dir, hitInfo.normal), beamRenderer);
-        print(hitInfo.normal);
+        if (hitInfo.transform.tag == "MM")
+        {
+            beamIndices.Add(hitInfo.point);
+            CastBeam(hitInfo.point, Vector3.Reflect(dir, hitInfo.normal), beamRenderer);
+            
 
-    }
-    else
-    {
-        beamIndices.Add(hitInfo.point);
-        UpdateBeam();
-    }
-}
+        }
+        else
+        {
+            beamIndices.Add(hitInfo.point);
+            UpdateBeam();
+            Collider[] col = Physics.OverlapBox(hitInfo.point, new Vector3(0.5f, 0.5f, 0.5f), Quaternion.identity);
+            foreach (var item in col)
+            {
+                if (item.tag == "Lightable")
+                {
+                    item.GetComponent<Scone>().isActivated = false;
+                }
+                if (item.tag == "Meltable")
+                {
+                    item.GetComponent<WaterWheel>().isFrozen = true;
+                }
+            }
 
-void UpdateBeam()
-{
-    int count = 0;
-    beamRenderer.positionCount = beamIndices.Count;
-    foreach (var item in beamIndices)
-    {
-        beamRenderer.SetPosition(count, item);
-        count++;
+        }
     }
-}
 
-private void OnDrawGizmos()
-{
-    foreach (var item in beamIndices)
+    void UpdateBeam()
     {
-        Gizmos.DrawCube(item, Vector3.one);
+        int count = 0;
+        beamRenderer.positionCount = beamIndices.Count;
+        foreach (var item in beamIndices)
+        {
+            beamRenderer.SetPosition(count, item);
+            count++;
+        }
     }
-}
+
+    private void OnDrawGizmos()
+    {
+        foreach (var item in beamIndices)
+        {
+            Gizmos.DrawCube(item, Vector3.one);
+        }
+    }
 }
 
 

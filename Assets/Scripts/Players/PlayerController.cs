@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
     [Header("PLAYER INDEX")]
     [Tooltip("This Player's Index number. Player 1 should have index 0, and Player 2 should have index 1.")]
     public int playerIndex = 0;
+    private static PlayerController[] playerControllers = new PlayerController[2];
 
     [Header("Current Player State")]
     [Tooltip("The current state of the player, determines what actions they can take and adjusts some of their variables.")]
@@ -158,6 +159,9 @@ public class PlayerController : MonoBehaviour
     private Camera levelCamera;
     [HideInInspector]
     public bool useGravity = true;
+
+
+    public Animator animator;
     private void Awake()
     {
         //Finds the main camera on the level, used for movement and rotation directions.
@@ -165,12 +169,19 @@ public class PlayerController : MonoBehaviour
 
         //Finds the Character Controller component on the object this script is attached to.
         controller = GetComponent<CharacterController>();
+        
+        playerControllers[playerIndex] = this;
     }
 
     public int GetPlayerIndex()
     {
         //Returns the playerIndex value assigned in the inspector when called. Currently used to prevent multiple input devices controlling the same character.
         return playerIndex;
+    }
+
+    public static PlayerController GetPlayerByIndex(int index)
+    {
+        return playerControllers[index];
     }
 
     public void SetInputVector(Vector2 direction)
@@ -306,6 +317,7 @@ public class PlayerController : MonoBehaviour
         //Checks if the Player's state is 'Idle'.
         if (playerState == PlayerStates.Idle)
         {
+            animator.SetInteger("State", (int)playerState);
             currentMoveSpeed = defaultMoveSpeed;
             currentRotateSpeed = rotateSpeed;
             gravityMultiplier = defaultGravityMultiplier;
@@ -314,6 +326,7 @@ public class PlayerController : MonoBehaviour
         //Checks if the Player's state is 'Moving'.
         if (playerState == PlayerStates.Moving)
         {
+            animator.SetInteger("State", (int)playerState);
             currentMoveSpeed = defaultMoveSpeed;
             currentRotateSpeed = rotateSpeed;
             gravityMultiplier = defaultGravityMultiplier;

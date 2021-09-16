@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class MarchingCubesMangaer : MonoBehaviour
 {
+
+    public float yOffsetOfMesh = 0.5f;
     //[HideInInspector]
     public WaterFreeze[] WaterTiles;
    // [HideInInspector]
     public BoxCollider[] WaterTilesColliders;
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject IceMeshes;
     void Start()
     {
@@ -22,6 +24,7 @@ public class MarchingCubesMangaer : MonoBehaviour
             WaterTiles[i].mesh = new Mesh();
             WaterTiles[i].GroundMesh = new GameObject("Mesh ", typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider));
             WaterTiles[i].GroundMesh.transform.parent = IceMeshes.transform;
+            WaterTiles[i].GroundMesh.transform.position = new Vector3(WaterTiles[i].GroundMesh.transform.position.x, yOffsetOfMesh, WaterTiles[i].GroundMesh.transform.position.z);
         }
 
     }

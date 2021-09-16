@@ -26,8 +26,11 @@ public class TornadoGust : MonoBehaviour
     }
     private void OnDestroy()
     {
+        if (currentlyLifting != null)
+        { 
         currentlyLifting.GetComponent<Rigidbody>().isKinematic = false;
         currentlyLifting = null;
+        }
     }
 
 
