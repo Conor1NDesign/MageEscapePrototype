@@ -21,8 +21,6 @@ public class FrostWave : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-
         if (other.CompareTag("Water"))
         {
             frozenMode.MarchTheCubes(true);
@@ -45,6 +43,5 @@ public class FrostWave : MonoBehaviour
             sb.isSlowed = true;
             sb.counter = 0.0f;
         }
-
     }
 }

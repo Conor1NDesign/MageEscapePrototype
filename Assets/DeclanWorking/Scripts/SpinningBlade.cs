@@ -17,10 +17,12 @@ public class SpinningBlade : MonoBehaviour
 
     MeshFilter[] children;
     public Mesh brokenBlades;
+    Transform blade;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
