@@ -82,10 +82,13 @@ public class SpellFunctions : MonoBehaviour
     static void SummonBoulder(PlayerController caster)
     {
         Debug.Log("Boulder Target");
-        GameObject boulderTarget = caster.boulderTargetPrefab;
-        caster.tornado = Instantiate(boulderTarget, caster.spellAttachPoint.position, Quaternion.identity);
-        boulderTarget.GetComponent<SpellCharacterController>().playerCon = caster;
+		GameObject boulderTarget = caster.boulderTargetPrefab;
+		caster.tornado = Instantiate(boulderTarget, caster.spellAttachPoint.position, Quaternion.identity);
+        boulderTarget.GetComponent<SpellCharacterController>().playerCasting = caster;
+        boulderTarget.GetComponent<CharacterController>().detectCollisions = false;
         caster.tornadoActive = true;
+        //Physics.IgnoreCollision(boulderTarget.GetComponent<Collider>(), PlayerController.GetPlayerByIndex(0).GetComponent<Collider>());
+        //Physics.IgnoreCollision(boulderTarget.GetComponent<Collider>(), PlayerController.GetPlayerByIndex(1).GetComponent<Collider>());
     }
 
     static void TornadoGust(PlayerController caster)
@@ -95,8 +98,8 @@ public class SpellFunctions : MonoBehaviour
         caster.tornado = Instantiate(caster.tornadoLiftPrefab, caster.spellAttachPoint.position, Quaternion.identity);
 
         caster.tornado.transform.position = caster.transform.position;
-
-        caster.tornado.GetComponent<SpellCharacterController>().playerCon = caster;
+        
+        caster.tornado.GetComponent<SpellCharacterController>().playerCasting = caster;
         caster.tornadoActive = true;
     }
 
