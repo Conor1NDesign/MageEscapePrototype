@@ -18,58 +18,48 @@ public class FrozonMode : MonoBehaviour
     //MeshCollider[] WaterTilesNeeded;
     int[] WaterTilesNeeded;
 
-   // public LineRenderer lineRenderer;
+    // public LineRenderer lineRenderer;
 
     private MarchingCubesMangaer marchingCubeManager;
     private ColliderTracker colliderTracker;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        colliderTracker = FindObjectOfType<ColliderTracker>();
+        //colliderTracker = FindObjectOfType<ColliderTracker>();
+        colliderTracker = gameObject.GetComponentInChildren<ColliderTracker>();
         Incapsulating = colliderTracker.Incapsulating;
         Cone = colliderTracker.BoxedCone;
         marchingCubeManager = FindObjectOfType<MarchingCubesMangaer>();
         WaterTilesNeeded = new int[marchingCubeManager.WaterTiles.Length];
-        #region
-        // dirty = false;
-        // frozonMode = FindObjectsOfType<WaterFreeze>();
-        // WaterTilesColliders = new BoxCollider[WaterTiles.Length];
-        // MC = new GameObject[WaterTiles.Length];
-        // WaterTilesNeeded = new int[WaterTiles.Length];
-        // //frozonMode = new WaterFreeze[WaterTiles.Length];
-        //
-        //
-        //
-        // for (int i = 0; i < WaterTiles.Length; i++)
-        // {
-        //     WaterTilesColliders[i] = WaterTiles[i].GetComponent<BoxCollider>();
-        //     //frozonMode[i] = WaterTiles[i].GetComponent<WaterFreeze>();
-        //     frozonMode[i].mesh = new Mesh();
-        //     frozonMode[i].GroundMesh = new GameObject("Mesh ", typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider));
-        // }
-        #endregion
+
+        
+    }
+    private void Start()
+    {
+
     }
 
 
 
 
-
     // Update is called once per frame
-    public void MarchTheCubes()
+    public void MarchTheCubes(bool freezing)
     {
 
         int count = -1;
-        
-        foreach (var item in marchingCubeManager.WaterTilesColliders)
-        {
-            count++;
-            if (Incapsulating.bounds.Intersects(item.bounds))
-            {
-                WaterTilesNeeded[count] = count;
-                
-            }
 
+        if (marchingCubeManager != null)
+        {
+            foreach (var item in marchingCubeManager.WaterTilesColliders)
+            {
+                count++;
+                if (Incapsulating.bounds.Intersects(item.bounds))
+                {
+                    WaterTilesNeeded[count] = count;
+                }
+            }
         }
+
 
         dirty = false;
         int q = 0;
@@ -82,7 +72,7 @@ public class FrozonMode : MonoBehaviour
                 {
                     for (int x = 0; x < marchingCubeManager.WaterTiles[items].GetGridSize(); x++)
                     {
-                        if (Incapsulating.bounds.Contains(marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].pos) && !marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].frozen)
+                        if (Incapsulating.bounds.Contains(marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].pos) && !marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].frozen && freezing)
                         {
                             foreach (BoxCollider item in Cone)
                             {
@@ -93,36 +83,48 @@ public class FrozonMode : MonoBehaviour
                                 }
                             }
                         }
+                       else if (Incapsulating.bounds.Contains(marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].pos) && marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].frozen == true && !freezing)
+                        {
+                            foreach (BoxCollider item in Cone)
+                            {
+                                if (item.bounds.Contains(marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].pos))
+                                {
+                                    print("Defrosting");
+                                    marchingCubeManager.WaterTiles[items].gridPoints[x, y, z].frozen = false;
+                                    dirty = true;
+                                }
+                            }
+                        }
                     }
+
                 }
 
+
+
+
+
+                if (dirty)
+                {
+
+
+                    marchingCubeManager.WaterTiles[items].MarchingCubes();
+
+
+                    marchingCubeManager.WaterTiles[items].mesh.vertices = marchingCubeManager.WaterTiles[items].verts.ToArray();
+                    marchingCubeManager.WaterTiles[items].mesh.triangles = marchingCubeManager.WaterTiles[items].tri.ToArray();
+
+                    marchingCubeManager.WaterTiles[items].GroundMesh.GetComponent<MeshRenderer>().material = marchingCubeManager.WaterTiles[items].SurfaceMat;
+                    marchingCubeManager.WaterTiles[items].GroundMesh.GetComponent<MeshRenderer>().receiveShadows = false;
+                    marchingCubeManager.WaterTiles[items].GroundMesh.GetComponent<MeshCollider>().sharedMesh = marchingCubeManager.WaterTiles[items].mesh;
+                    marchingCubeManager.WaterTiles[items].mesh.RecalculateNormals();
+                    marchingCubeManager.WaterTiles[items].GroundMesh.GetComponent<MeshFilter>().mesh = marchingCubeManager.WaterTiles[items].mesh;
+                }
+                q++;
             }
-
-
-
-
-
-            if (dirty)
-            {
-
-
-                marchingCubeManager.WaterTiles[items].MarchingCubes();
-
-
-                marchingCubeManager.WaterTiles[items].mesh.vertices = marchingCubeManager.WaterTiles[items].verts.ToArray();
-                marchingCubeManager.WaterTiles[items].mesh.triangles = marchingCubeManager.WaterTiles[items].tri.ToArray();
-
-                marchingCubeManager.WaterTiles[items].GroundMesh.GetComponent<MeshRenderer>().material = marchingCubeManager.WaterTiles[items].SurfaceMat;
-                marchingCubeManager.WaterTiles[items].GroundMesh.GetComponent<MeshRenderer>().receiveShadows = false;
-                marchingCubeManager.WaterTiles[items].GroundMesh.GetComponent<MeshCollider>().sharedMesh = marchingCubeManager.WaterTiles[items].mesh;
-                marchingCubeManager.WaterTiles[items].mesh.RecalculateNormals();
-                marchingCubeManager.WaterTiles[items].GroundMesh.GetComponent<MeshFilter>().mesh = marchingCubeManager.WaterTiles[items].mesh;
-            }
-            q++;
+            WaterTilesNeeded = new int[marchingCubeManager.WaterTiles.Length];
         }
-        WaterTilesNeeded = new int[marchingCubeManager.WaterTiles.Length];
-    }
 
+    }
 }
 
 

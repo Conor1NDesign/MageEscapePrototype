@@ -21,11 +21,10 @@ public class FrostWave : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-        print(other.tag);
         if (other.CompareTag("Water"))
         {
-            frozenMode.MarchTheCubes();
+            frozenMode.MarchTheCubes(true);
+            print("Freeeeze");
             return;
         }
         else if (other.CompareTag("Lightable"))
@@ -33,12 +32,16 @@ public class FrostWave : MonoBehaviour
             other.GetComponent<Scone>().isActivated = false;
             return;
         }
+        else if (other.CompareTag("Meltable"))
+        {
+            other.GetComponent<WaterWheel>().isFrozen = true;
+        }
+        
         SpinningBlade sb = other.GetComponent<SpinningBlade>();
         if (sb!= null)
         {
             sb.isSlowed = true;
-            sb.counter = 0;
+            sb.counter = 0.0f;
         }
-
     }
 }

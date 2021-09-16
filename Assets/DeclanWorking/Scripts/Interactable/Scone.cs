@@ -47,7 +47,7 @@ public class Scone : Interactable
                         hasSetSwitchActive = true;
                     }
                     Activated(movingPlatforms);
-                    //print("activated");
+                    
                 }
             }
         }
@@ -65,7 +65,7 @@ public class Scone : Interactable
                         hasSetSwitchActive = false;
                     }
                     Deactivated(movingPlatforms);
-                    print("deactivated");
+                   
                 }
             }
         }

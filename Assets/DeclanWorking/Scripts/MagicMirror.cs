@@ -71,6 +71,10 @@ public class MagicMirror : MonoBehaviour
                 {
                     item.GetComponent<Scone>().isActivated = false;
                 }
+                if (item.tag == "Meltable")
+                {
+                    item.GetComponent<WaterWheel>().isFrozen = true;
+                }
             }
 
         }
