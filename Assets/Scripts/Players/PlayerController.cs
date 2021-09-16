@@ -394,7 +394,7 @@ public class PlayerController : MonoBehaviour
         playerMesh.SetActive(false);
         isRespawning = true;
         yield return new WaitForSeconds(respawnTime);
-        //isDead = false;
+        isDead = false;
         isRespawning = false;
         playerMesh.SetActive(true);
     }
