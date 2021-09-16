@@ -1483,7 +1483,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressurePlate (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 172462781, guid: 545dd2376545f304ea40db433829b71f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 545dd2376545f304ea40db433829b71f, type: 3}
 --- !u!4 &149214660 stripped
 Transform:
@@ -21660,7 +21661,7 @@ PrefabInstance:
     - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: tornadoLiftPrefab
       value: 
-      objectReference: {fileID: 2958928761701605465, guid: 506209f33eb52415fb7cfab0f2a266a3, type: 3}
+      objectReference: {fileID: 8168083631311108467, guid: 6fa99432d3f732f46949b689a4c81c25, type: 3}
     - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: rotateSpeed
       value: 10
@@ -21669,6 +21670,10 @@ PrefabInstance:
       propertyPath: cameraRotateSpeed
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
+      propertyPath: earthPlatformPrefab
+      value: 
+      objectReference: {fileID: 3805874247283790375, guid: 1de9de1c8c38490f586febe2f321bff7, type: 3}
     - target: {fileID: 4500845700833580964, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: m_Name
       value: Player 1
@@ -22791,7 +22796,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressurePlate (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 172462781, guid: 545dd2376545f304ea40db433829b71f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 545dd2376545f304ea40db433829b71f, type: 3}
 --- !u!4 &1820132532 stripped
 Transform:
@@ -23941,7 +23947,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1952287398}
-  - component: {fileID: 1952287397}
   m_Layer: 0
   m_Name: Non-MovingPlatforms
   m_TagString: Untagged
@@ -23949,24 +23954,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1952287397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952287396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeef624e051f6c746b58013e06fd1dfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Platform: {fileID: 0}
-  endPos: {fileID: 0}
-  speed: 500
-  oscillating: 1
-  numberOfSwitches: 0
-  numberOfActiveSwitches: 0
 --- !u!4 &1952287398
 Transform:
   m_ObjectHideFlags: 0
