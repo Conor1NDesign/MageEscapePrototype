@@ -2279,7 +2279,6 @@ MonoBehaviour:
   oscillating: 1
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
-  aa: 0
 --- !u!4 &288871992 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8371511205941126897, guid: aa771bdfb3664e54ab104dbda97131a0, type: 3}
@@ -5522,6 +5521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 955f9674a7e025544949b1a4a88545f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yOffsetOfMesh: 0
   WaterTiles: []
   WaterTilesColliders: []
   IceMeshes: {fileID: 0}
@@ -6398,6 +6398,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2832226717584091224, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5affedb775b7747409df357035910160, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d746a804eb3f08843996c07e083233d7, type: 3}
 --- !u!1 &1305460508
@@ -8771,7 +8775,6 @@ MonoBehaviour:
   oscillating: 1
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
-  aa: 0
 --- !u!95 &1875577301 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6242796743844612295, guid: af0468904fb76b948b97a93195ae5834, type: 3}
@@ -9798,7 +9801,6 @@ MonoBehaviour:
   oscillating: 1
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
-  aa: 0
 --- !u!1001 &6802222032132378956
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -98,6 +98,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3776cd16c981a334188f47b757a402fe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5affedb775b7747409df357035910160, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 3776cd16c981a334188f47b757a402fe, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5affedb775b7747409df357035910160, type: 2}
     - target: {fileID: 919132149155446097, guid: 3776cd16c981a334188f47b757a402fe, type: 3}
       propertyPath: m_Name
       value: SpinningBlades_BrokenBlade_Mesh
@@ -160,6 +168,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0276b215068a9034cb016447b358ab12, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5affedb775b7747409df357035910160, type: 2}
     - target: {fileID: 919132149155446097, guid: 0276b215068a9034cb016447b358ab12, type: 3}
       propertyPath: m_Name
       value: SpinningBlades_Post_Mesh
