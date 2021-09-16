@@ -7,7 +7,7 @@ using UnityEngine;
 public abstract class Interactable : MonoBehaviour
 {
 
-
+    
     public void Activated(MovingPlatform[] objects)
     {
         
@@ -16,6 +16,19 @@ public abstract class Interactable : MonoBehaviour
             item.Actived();
         }
     }
+    public void Activated(List<MovingPlatform> objects)
+    {
+
+        foreach (var item in objects)
+        {
+            if (item.numberOfActiveSwitches == item.numberOfSwitches)
+            { 
+
+            item.Actived();
+            }
+        }
+    }
+
 
     public void Activated(Scone[] objects)
     {

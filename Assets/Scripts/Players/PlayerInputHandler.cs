@@ -43,6 +43,22 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    public void OnInteract(CallbackContext context)
+    {
+        if (playerController) //All player input methods need to check if playerController is NOT null otherwise Input System spits out a bunch of errors.
+        {
+            if (context.performed)
+            {
+                playerController.Interact(true);
+            }
+            else
+            {
+                playerController.Interact(false);                
+            }
+        }
+    }
+
+
     public void OnCameraMove(CallbackContext context)
     {
         if (playerController)
