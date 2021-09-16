@@ -97,6 +97,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 028bc3404d77a6940953aafd7ea538fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5affedb775b7747409df357035910160, type: 2}
     - target: {fileID: 919132149155446097, guid: 028bc3404d77a6940953aafd7ea538fd, type: 3}
       propertyPath: m_Name
       value: Switch_Lever_Lever_Mesh
@@ -159,6 +163,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: cb72c5479b1e2d342aa0c734e5bd34a0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5affedb775b7747409df357035910160, type: 2}
     - target: {fileID: 919132149155446097, guid: cb72c5479b1e2d342aa0c734e5bd34a0, type: 3}
       propertyPath: m_Name
       value: Switch_Lever_Base_Mesh
