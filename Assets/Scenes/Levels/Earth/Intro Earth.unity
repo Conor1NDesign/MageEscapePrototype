@@ -1682,6 +1682,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 2
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!1001 &161703050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6767,6 +6768,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 2
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!1001 &628968583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9631,6 +9633,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!1 &861240490
 GameObject:
   m_ObjectHideFlags: 0
@@ -9682,6 +9685,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 2
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!1001 &865208598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10674,6 +10678,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!1001 &983092206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15262,6 +15267,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2072150007}
     m_Modifications:
+    - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
+      propertyPath: m_Size.z
+      value: 8.18017
+      objectReference: {fileID: 0}
+    - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
+      propertyPath: m_Center.z
+      value: -1.9428921
+      objectReference: {fileID: 0}
     - target: {fileID: 6485394911824437492, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.75
@@ -16794,6 +16807,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 2
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!1001 &1390558864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18228,6 +18242,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 2
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!1 &1500872739
 GameObject:
   m_ObjectHideFlags: 0
@@ -19338,6 +19353,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!4 &1619683566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
@@ -22641,6 +22657,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 2
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!1001 &1852789147
 PrefabInstance:
   m_ObjectHideFlags: 0
