@@ -14484,6 +14484,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!4 &577749304
 Transform:
   m_ObjectHideFlags: 0
@@ -18748,7 +18749,7 @@ PrefabInstance:
     - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: tornadoLiftPrefab
       value: 
-      objectReference: {fileID: 2958928761701605465, guid: 506209f33eb52415fb7cfab0f2a266a3, type: 3}
+      objectReference: {fileID: 8168083631311108467, guid: 6fa99432d3f732f46949b689a4c81c25, type: 3}
     - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: tornadoForce
       value: 20
@@ -19861,6 +19862,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!4 &752937477
 Transform:
   m_ObjectHideFlags: 0
@@ -31548,6 +31550,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!43 &1397736162
 Mesh:
   m_ObjectHideFlags: 0
@@ -43332,7 +43335,7 @@ PrefabInstance:
     - target: {fileID: 434623743647819082, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: tornadoLiftPrefab
       value: 
-      objectReference: {fileID: 2958928761701605465, guid: 506209f33eb52415fb7cfab0f2a266a3, type: 3}
+      objectReference: {fileID: 8168083631311108467, guid: 6fa99432d3f732f46949b689a4c81c25, type: 3}
     - target: {fileID: 434623743647819082, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: tornadoForce
       value: 20
@@ -45894,6 +45897,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!43 &2106934314
 Mesh:
   m_ObjectHideFlags: 0
