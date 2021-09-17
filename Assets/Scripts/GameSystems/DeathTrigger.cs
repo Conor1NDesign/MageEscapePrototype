@@ -24,6 +24,11 @@ public class DeathTrigger : MonoBehaviour
                 controller.Respawn();
             }
         }
+        else if (other.tag == "Heavy Object")
+        {
+            other.GetComponent<RespawnHeavyObject>().Respawn();
+        }
+
         /*
         else
         {
