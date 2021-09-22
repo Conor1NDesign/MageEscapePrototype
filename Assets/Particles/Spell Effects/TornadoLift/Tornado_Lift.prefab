@@ -4825,7 +4825,7 @@ GameObject:
   - component: {fileID: 851071324779836309}
   - component: {fileID: 851071324779836310}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Leaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4854,7 +4854,7 @@ ParticleSystem:
   m_GameObject: {fileID: 851071324779836304}
   serializedVersion: 6
   lengthInSec: 37.05
-  simulationSpeed: 1
+  simulationSpeed: 0.69
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -5097,7 +5097,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.56
+      scalar: 0.16
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5419,7 +5419,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: -0.1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -6787,7 +6787,7 @@ ParticleSystem:
     radial:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.87
+      scalar: -0.07
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -7504,7 +7504,7 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.8
+      scalar: 1.32
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8755,7 +8755,7 @@ ParticleSystem:
         m_RotationOrder: 4
     maxLights: 20
   TrailModule:
-    enabled: 1
+    enabled: 0
     mode: 0
     ratio: 1
     lifetime:
@@ -9588,8 +9588,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 86d6ea98fb0e7754d9811d683849b55c, type: 2}
-  - {fileID: 2100000, guid: 86d6ea98fb0e7754d9811d683849b55c, type: 2}
+  - {fileID: 2100000, guid: e23ae6586a80d4d45b94371eb781916a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
