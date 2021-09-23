@@ -109,6 +109,7 @@ public class PlayerController : MonoBehaviour
     public GameObject flamethrowerPrefab;
     public GameObject fireballPrefab;
     public GameObject gustPrefab;
+    public GameObject tornadoTargetPrefab;
     public GameObject tornadoLiftPrefab;
 	public GameObject earthPlatformPrefab;
     public GameObject boulderTargetPrefab;

@@ -11,6 +11,7 @@ public class Scone : Interactable
     bool hasSetSwitchActive = false;
     public MovingPlatform[] movingPlatforms;
     public GameObject particles;
+    public Material NonEmmisive;
     private void OnDrawGizmos()
     {
         if (movingPlatforms.Length != 0)
@@ -29,6 +30,7 @@ public class Scone : Interactable
         {
             hasMovingPlatforms = true;
         }
+
     }
 
     // Update is called once per frame
@@ -50,6 +52,7 @@ public class Scone : Interactable
                     
                 }
             }
+            
         }
         else
         {

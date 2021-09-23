@@ -79,7 +79,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.74, z: 1}
+  m_Size: {x: 2, y: 3.74, z: 2}
   m_Center: {x: 0, y: 0.55, z: 0}
 --- !u!143 &5344862978389545577
 CharacterController:
@@ -92,13 +92,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 0.14
-  m_Radius: 0.8
+  m_Height: 3.31
+  m_Radius: 0.64
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 5, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3758494738033220874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HieghtOfHeavyObject: 3
   lockPos: {fileID: 2337028486989818252}
+  maxAirTime: 0.5
 --- !u!114 &3062916061101157902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbff4191aa451ee4eb19e99d30cf8994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCon: {fileID: 0}
+  playerCasting: {fileID: 0}
+  useGravity: 1
   maxDistance: 0
 --- !u!114 &1020723857452801432
 MonoBehaviour:
