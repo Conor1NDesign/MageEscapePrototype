@@ -4793,7 +4793,7 @@ ParticleSystemRenderer:
   m_MaxParticleSize: 0.92
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
-  m_LengthScale: -10.31
+  m_LengthScale: -10.12
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
@@ -11107,8 +11107,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
-    tilesX: 4
-    tilesY: 4
+    tilesX: 8
+    tilesY: 8
     animationType: 0
     rowIndex: 0
     cycles: 1
@@ -14401,7 +14401,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e3de97450dba3704b8ea62a7b8890fd8, type: 2}
+  - {fileID: 2100000, guid: 16e4d34f6dd04724ba54eec717a3bf48, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
