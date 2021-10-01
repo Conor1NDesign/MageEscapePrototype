@@ -18290,6 +18290,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 620961531}
     m_Modifications:
+    - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
+      propertyPath: m_Size.z
+      value: 7.956844
+      objectReference: {fileID: 0}
+    - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
+      propertyPath: m_Center.z
+      value: -1.831228
+      objectReference: {fileID: 0}
     - target: {fileID: 6485394911824437492, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -24554,6 +24562,7 @@ MonoBehaviour:
   oscillating: 1
   numberOfSwitches: 0
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!4 &499415418
 Transform:
   m_ObjectHideFlags: 0
@@ -29550,6 +29559,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!43 &630097650
 Mesh:
   m_ObjectHideFlags: 0
@@ -50708,6 +50718,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!43 &1001823861
 Mesh:
   m_ObjectHideFlags: 0
@@ -65316,6 +65327,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!1001 &1345901697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69931,6 +69943,7 @@ MonoBehaviour:
   oscillating: 0
   numberOfSwitches: 1
   numberOfActiveSwitches: 0
+  resetting: 0
 --- !u!1001 &1437221749
 PrefabInstance:
   m_ObjectHideFlags: 0
