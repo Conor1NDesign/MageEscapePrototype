@@ -36,7 +36,9 @@ public class SpellFunctions : MonoBehaviour
     static void Flamethrower(PlayerController caster)
     {
         Debug.Log("Flamethrower");
-        caster.AttachSpell(Instantiate(caster.flamethrowerPrefab));
+        GameObject flamethrower = Instantiate(caster.flamethrowerPrefab);
+        caster.AttachSpell(flamethrower);
+        flamethrower.GetComponent<Flamethrower>().playerCasting = caster;
     }
 
     static void FrostWave(PlayerController caster)
