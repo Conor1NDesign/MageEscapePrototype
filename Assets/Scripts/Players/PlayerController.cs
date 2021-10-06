@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Miscellaneous Variables")]
     [Tooltip("The player's mesh.")]
-    public GameObject playerMesh;
+    public SkinnedMeshRenderer playerMesh;
     [Tooltip("The player's spellbook equip point")]
     public Transform spellbookEquipPoint;
     [Tooltip("The player's spell attach point")]
@@ -330,6 +330,7 @@ public class PlayerController : MonoBehaviour
         //Checks if the Player's state is 'Falling'.
         if (playerState == PlayerStates.Falling)
         {
+            animator.SetInteger("State", (int)playerState);
             currentMoveSpeed = airborneMoveSpeed;
             currentRotateSpeed = rotateSpeed;
 
@@ -352,6 +353,7 @@ public class PlayerController : MonoBehaviour
         //Checks if the Player's state is 'Dead'.
         if (playerState == PlayerStates.Dead)
         {
+            animator.SetInteger("State", (int)playerState);
             currentMoveSpeed = 0;
             currentRotateSpeed = 0;
             gravityMultiplier = 0;
@@ -370,6 +372,7 @@ public class PlayerController : MonoBehaviour
         //Checks if the Player's state is 'Respawning'.
         if (playerState == PlayerStates.Respawning)
         {
+            animator.SetInteger("State", (int)playerState);
             currentMoveSpeed = 0;
             currentRotateSpeed = 0;
         }
@@ -377,7 +380,7 @@ public class PlayerController : MonoBehaviour
         //Checks if the Player's state is 'Casting'.
         if (playerState == PlayerStates.Casting)
         {
-
+            animator.SetInteger("State", (int)playerState);
             currentMoveSpeed = 0;
             currentRotateSpeed = rotationLockedBySpell ? 0 : castingRotationSpeed;
         }
@@ -392,12 +395,12 @@ public class PlayerController : MonoBehaviour
     //Coroutine for respawning the player if they somehow die.
     public IEnumerator RespawnPlayer()
     {
-        playerMesh.SetActive(false);
+        playerMesh.enabled = false;
         isRespawning = true;
         yield return new WaitForSeconds(respawnTime);
         isDead = false;
         isRespawning = false;
-        playerMesh.SetActive(true);
+        playerMesh.enabled = true;
     }
 
     public void Interact(bool active)

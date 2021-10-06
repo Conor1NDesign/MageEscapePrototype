@@ -147,6 +147,7 @@ MonoBehaviour:
   flamethrowerPrefab: {fileID: 73951560044270974, guid: 921a0c750ebdfea42bdc9be4c33bacc8, type: 3}
   fireballPrefab: {fileID: 6383666050376671728, guid: 5053c790c51299446a2026bc0580bd3b, type: 3}
   gustPrefab: {fileID: 7389070692657126993, guid: b916753e0ae4c57449cb14784031b8e8, type: 3}
+  tornadoTargetPrefab: {fileID: 0}
   tornadoLiftPrefab: {fileID: 8168083631311108467, guid: 6fa99432d3f732f46949b689a4c81c25, type: 3}
   earthPlatformPrefab: {fileID: 3805874247283790375, guid: 1de9de1c8c38490f586febe2f321bff7, type: 3}
   boulderTargetPrefab: {fileID: 4206366417786977483, guid: a56d2f8b83961ffde96e1029751090fb, type: 3}
@@ -159,7 +160,7 @@ MonoBehaviour:
   fireballForce: 20
   tornadoForce: 0
   tornadoTime: 0
-  playerMesh: {fileID: 6796998586343950999}
+  playerMesh: {fileID: 5559395143307194628}
   spellbookEquipPoint: {fileID: 6403313315471890163}
   spellAttachPoint: {fileID: 3202153041044417969}
   attachedSpell: {fileID: 0}
@@ -557,5 +558,10 @@ GameObject:
 --- !u!4 &6131680164468052013 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cb5a0d604125fa141a245617825fd50f, type: 3}
+  m_PrefabInstance: {fileID: 5949998249335076806}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &5559395143307194628 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2284542787498755778, guid: cb5a0d604125fa141a245617825fd50f, type: 3}
   m_PrefabInstance: {fileID: 5949998249335076806}
   m_PrefabAsset: {fileID: 0}
