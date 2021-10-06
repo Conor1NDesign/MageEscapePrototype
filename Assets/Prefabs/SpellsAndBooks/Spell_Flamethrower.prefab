@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd082e18dd8cc294e9928d6129d2ab3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCasting: {fileID: 0}
 --- !u!54 &7045652355306148771
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -164,7 +165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674024358990924458, guid: 419d38dca25f92745b95eec8a89e2e90, type: 3}
       propertyPath: m_Name
-      value: Spell_FrostWave_WaterChecker
+      value: Spell_Flamethrower_WaterChecker
       objectReference: {fileID: 0}
     - target: {fileID: 3339377686871347216, guid: 419d38dca25f92745b95eec8a89e2e90, type: 3}
       propertyPath: m_LocalPosition.x
