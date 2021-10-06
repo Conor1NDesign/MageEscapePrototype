@@ -97,13 +97,19 @@ public class SpellFunctions : MonoBehaviour
     static void TornadoGust(PlayerController caster)
     {
         Debug.Log("Tornado Gust");
-
-        caster.tornado = Instantiate(caster.tornadoLiftPrefab, caster.spellAttachPoint.position, Quaternion.identity);
-
-        caster.tornado.transform.position = caster.transform.position;
-        
-        caster.tornado.GetComponent<SpellCharacterController>().playerCasting = caster;
+        if (caster.tornadoActive == true)
+        {
+           
+            caster.tornadoActive = false;
+        }
+        else
+        { 
+        GameObject tornadoTarget = caster.boulderTargetPrefab;
+        caster.tornado = Instantiate(tornadoTarget, caster.spellAttachPoint.position, Quaternion.identity);
+        tornadoTarget.GetComponent<SpellCharacterController>().playerCasting = caster;
+        //tornadoTarget.GetComponent<CharacterController>().detectCollisions = false;
         caster.tornadoActive = true;
+        }
     }
 
     #endregion
@@ -184,8 +190,25 @@ public class SpellFunctions : MonoBehaviour
 
     static void TornadoGustEnd(PlayerController caster)
     {
-        Destroy(caster.tornado);
-        caster.tornadoActive = false;
+        if (caster.tornadoActive)
+        {
+            GameObject tornado = Instantiate(caster.tornadoLiftPrefab, caster.tornado.transform.position, Quaternion.identity);
+            GameObject tornadoTarget = caster.tornado;
+            caster.tornado = null;
+            if (!tornadoTarget)
+                return;
+
+            tornadoTarget.transform.position = tornadoTarget.transform.position + new Vector3(0.0f, 3.0f, 0.0f);
+            Destroy(tornadoTarget);
+            caster.tornado = tornado;
+            caster.tornado.GetComponent<SpellCharacterController>().playerCasting = caster;
+            caster.tornado.GetComponent<TornadoGust>().caster = caster;
+        }
+        else
+        {
+            Destroy(caster.tornado);
+            caster.tornado = null;
+        }
 
     } 
     #endregion
