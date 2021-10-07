@@ -8,20 +8,26 @@ public class IceWall : MonoBehaviour
     public bool melted;
     public float duration;
     float timeElapsed;
-    Vector3 endpos;
-    // Start is called before the first frame update
+    Vector3 endScale;
+    
     void Start()
     {
-        endpos = transform.position - new Vector3(0, 5, 0);
+        endScale = new Vector3(1, 0.2f, 1);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (melted)
         {
-            transform.position = Vector3.Lerp(transform.position, endpos, timeElapsed/duration);
+            transform.localScale = Vector3.Lerp(new Vector3(1, 1, 1), endScale, timeElapsed/duration);
             timeElapsed += Time.deltaTime;
+        }
+
+        if (timeElapsed > duration)
+        {
+            melted = false;
+            transform.localScale = new Vector3(1, 1, 1);
+            gameObject.SetActive(false);
         }
     }
 }
