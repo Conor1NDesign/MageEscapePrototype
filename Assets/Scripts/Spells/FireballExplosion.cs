@@ -17,9 +17,6 @@ public class FireballExplosion : MonoBehaviour
 		transform.root.gameObject.GetComponent<Fireball>().aging = false;
 		if (other.CompareTag("Meltable"))
         {
-            IceWall iceWall = other.gameObject.GetComponent<IceWall>();
-            if (iceWall)
-                iceWall.melted = true;
             WaterWheel waterWheel = other.gameObject.GetComponent<WaterWheel>();
             if (waterWheel)
                 waterWheel.isFrozen = false;
