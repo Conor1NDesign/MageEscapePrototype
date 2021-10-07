@@ -147,6 +147,12 @@ public class PlayerController : MonoBehaviour
     public Transform cameraPivot;
     [Tooltip("Camera rotation speed, limits how fast the camera will rotate")]
     public float cameraRotateSpeed;
+    [Tooltip("The minimum time between quick spell casts")]
+    public float quickCastCooldown;
+    [Tooltip("The minimum time between hard spell casts")]
+    public float hardCastCooldown;
+    [HideInInspector]
+    public float currentCooldown;
 
     //Variable for the CharacterController component on the object the script is attached to.
     private CharacterController controller;
@@ -195,7 +201,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
+        currentCooldown -= Time.deltaTime;
         //Debug.Log("Player " + playerIndex + " is currently:" + playerState);
         //Debug.Log("Player " + playerIndex + "'s movementVector is: " + moveDirection);
 

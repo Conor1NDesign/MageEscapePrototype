@@ -157,6 +157,7 @@ MonoBehaviour:
   rotationLockedBySpell: 0
   tornadoActive: 0
   tornado: {fileID: 0}
+  boulder: {fileID: 0}
   fireballForce: 20
   tornadoForce: 0
   tornadoTime: 0
@@ -168,6 +169,9 @@ MonoBehaviour:
   earthPlatform: {fileID: 0}
   cameraPivot: {fileID: 0}
   cameraRotateSpeed: 0.3
+  quickCastCooldown: 1
+  hardCastCooldown: 3
+  currentCooldown: 0
   moveDirection: {x: 0, y: 0, z: 0}
   useGravity: 1
   animator: {fileID: 3940230532217626894}

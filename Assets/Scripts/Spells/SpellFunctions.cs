@@ -10,12 +10,20 @@ public class SpellFunctions : MonoBehaviour
     #region START CAST
     public static void StartQuickCast(PlayerController caster)
     {
-        quickCastSpells[(int)caster.playerElement - 1](caster);
+        if (caster.currentCooldown < 0.0f || (int)caster.playerElement == 3)
+        {
+            caster.currentCooldown = caster.quickCastCooldown;
+            quickCastSpells[(int)caster.playerElement - 1](caster);
+        }
     }
 
     public static void StartHardCast(PlayerController caster)
     {
-        hardCastSpells[(int)caster.playerElement - 1](caster);
+        if (caster.currentCooldown < 0.0f)
+        {
+            caster.currentCooldown = caster.hardCastCooldown;
+            hardCastSpells[(int)caster.playerElement - 1](caster);
+        }
     }
     public static void EndQuickCast(PlayerController caster)
     {
@@ -131,7 +139,9 @@ public class SpellFunctions : MonoBehaviour
     {
         Debug.Log("Flamethrower End");
         GameObject flamethrower = caster.ClearSpell();
-        Flamethrower flamethrowerScript = flamethrower.GetComponent<Flamethrower>();
+        Flamethrower flamethrowerScript = null;
+        if (flamethrower)
+            flamethrowerScript = flamethrower.GetComponent<Flamethrower>();
         if (flamethrowerScript && flamethrowerScript.iceWall)
             flamethrowerScript.iceWall.melting = false;
         Destroy(flamethrower);
@@ -189,12 +199,12 @@ public class SpellFunctions : MonoBehaviour
     static void SummonBoulderEnd(PlayerController caster)
     {
         Debug.Log("Summon Boulder");
-        GameObject boulder = Instantiate(caster.boulderPrefab);
         GameObject boulderTarget = caster.tornado;
         caster.tornado = null;
         if (!boulderTarget)
             return;
 
+        GameObject boulder = Instantiate(caster.boulderPrefab);
         boulder.transform.position = boulderTarget.transform.position + new Vector3(0.0f, 3.0f, 0.0f);
         Destroy(boulderTarget);
         caster.tornadoActive = false;
