@@ -4,6 +4,8 @@ public class Flamethrower : MonoBehaviour
 {
     [HideInInspector]
     public PlayerController playerCasting;
+    [HideInInspector]
+    public IceWall iceWall;
 
     private FrozonMode frozenMode;
 
@@ -18,7 +20,10 @@ public class Flamethrower : MonoBehaviour
         {
             IceWall iceWall = other.gameObject.GetComponent<IceWall>();
             if (iceWall)
-                iceWall.melted = true;
+            {
+                iceWall.melting = true;
+                this.iceWall = iceWall;
+            }
             WaterWheel waterWheel = other.gameObject.GetComponent<WaterWheel>();
             if (waterWheel)
                 waterWheel.isFrozen = false;
@@ -47,6 +52,16 @@ public class Flamethrower : MonoBehaviour
             SpellbookController spellbook = other.gameObject.GetComponent<SpellbookController>();
             if (spellbook && spellbook.playerHolding != playerCasting)
                 spellbook.burning = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        IceWall iceWall = other.gameObject.GetComponent<IceWall>();
+        if (iceWall)
+        {
+            iceWall.melting = false;
+            this.iceWall = null;
         }
     }
 }

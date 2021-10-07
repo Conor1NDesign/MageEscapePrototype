@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class IceWall : MonoBehaviour
 {
-
-    public bool melted;
+    public bool melting;
     public float duration;
     float timeElapsed;
     Vector3 endScale;
@@ -17,7 +16,7 @@ public class IceWall : MonoBehaviour
 
     void Update()
     {
-        if (melted)
+        if (melting)
         {
             transform.localScale = Vector3.Lerp(new Vector3(1, 1, 1), endScale, timeElapsed/duration);
             timeElapsed += Time.deltaTime;
@@ -25,7 +24,7 @@ public class IceWall : MonoBehaviour
 
         if (timeElapsed > duration)
         {
-            melted = false;
+            melting = false;
             transform.localScale = new Vector3(1, 1, 1);
             gameObject.SetActive(false);
         }

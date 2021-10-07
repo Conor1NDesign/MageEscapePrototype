@@ -130,7 +130,11 @@ public class SpellFunctions : MonoBehaviour
     static void FlamethrowerEnd(PlayerController caster)
     {
         Debug.Log("Flamethrower End");
-        Destroy(caster.ClearSpell());
+        GameObject flamethrower = caster.ClearSpell();
+        Flamethrower flamethrowerScript = flamethrower.GetComponent<Flamethrower>();
+        if (flamethrowerScript && flamethrowerScript.iceWall)
+            flamethrowerScript.iceWall.melting = false;
+        Destroy(flamethrower);
     }
 
     static void FrostWaveEnd(PlayerController caster)
