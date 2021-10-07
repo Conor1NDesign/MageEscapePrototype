@@ -35,10 +35,7 @@ public class TornadoGust : MonoBehaviour
                 caster.tornadoActive = false;
                 caster.tornado = null;
                 Destroy(gameObject);
-                
             }
-
-
         }
     }
     private void OnTriggerEnter(Collider other)
