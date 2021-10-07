@@ -34,6 +34,13 @@ public class SpellbookController : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        SpinningBlade sb = other.GetComponent<SpinningBlade>();
+        if (sb)
+            Respawn();
+    }
+
     public void Respawn()
     {
         if (playerHolding)
