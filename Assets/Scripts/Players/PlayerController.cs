@@ -357,15 +357,8 @@ public class PlayerController : MonoBehaviour
             currentMoveSpeed = 0;
             currentRotateSpeed = 0;
             gravityMultiplier = 0;
-            if (spellbook)
-            {
-                // Drop spellbook on death
-                spellbook.transform.parent = null;
-                spellbook.GetComponent<Rigidbody>().isKinematic = false;
-
-                playerElement = PlayerCurrentElement.None;
-                spellbook = null;
-            }
+            // Drop spellbook on death
+            DropSpellbook();
             StartCoroutine(RespawnPlayer());
         }
 
@@ -436,23 +429,17 @@ public class PlayerController : MonoBehaviour
         if (spellbook)
         {
             // Throw a spellbook if you have one equipped
-            spellbook.transform.parent = null;
-
             Rigidbody spellbookRB = spellbook.GetComponent<Rigidbody>();
-            spellbookRB.isKinematic = false;
-            spellbookRB.AddForce(transform.forward * throwStrength, ForceMode.Impulse);
+            DropSpellbook();
 
-            playerElement = PlayerCurrentElement.None;
-            spellbook = null;
+            spellbookRB.AddForce(transform.forward * throwStrength, ForceMode.Impulse);
         }
         else if (nearbySpellbook)
         {
             if (nearbySpellbook.transform.parent)
             {
                 PlayerController otherPlayer = nearbySpellbook.transform.parent.GetComponent<PlayerController>();
-
-                otherPlayer.playerElement = PlayerCurrentElement.None;
-                otherPlayer.spellbook = null;
+                otherPlayer.DropSpellbook();
             }
 
             // Equip a spellbook if there's one nearby
@@ -463,6 +450,7 @@ public class PlayerController : MonoBehaviour
             spellbook.transform.parent = transform;
             spellbook.transform.position = spellbookEquipPoint.position;
             spellbook.GetComponent<Rigidbody>().isKinematic = true;
+            spellbook.GetComponent<SpellbookController>().playerHolding = this;
         }
     }
 
@@ -510,6 +498,20 @@ public class PlayerController : MonoBehaviour
             return spell;
         }
         return null;
+    }
+
+    public void DropSpellbook()
+    {
+        if (spellbook)
+        {
+            // Drop spellbook on death
+            spellbook.transform.parent = null;
+            spellbook.GetComponent<Rigidbody>().isKinematic = false;
+            spellbook.GetComponent<SpellbookController>().playerHolding = null;
+
+            playerElement = PlayerCurrentElement.None;
+            spellbook = null;
+        }
     }
 }
 
