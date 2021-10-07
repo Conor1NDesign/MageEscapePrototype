@@ -92,8 +92,12 @@ public class SpellFunctions : MonoBehaviour
         boulderTarget.GetComponent<SpellCharacterController>().playerCasting = caster;
         boulderTarget.GetComponent<CharacterController>().detectCollisions = false;
         caster.tornadoActive = true;
-        //Physics.IgnoreCollision(boulderTarget.GetComponent<Collider>(), PlayerController.GetPlayerByIndex(0).GetComponent<Collider>());
-        //Physics.IgnoreCollision(boulderTarget.GetComponent<Collider>(), PlayerController.GetPlayerByIndex(1).GetComponent<Collider>());
+        
+        if (caster.boulder)
+        {
+            Destroy(caster.boulder);
+            caster.boulder = null;
+        }
     }
 
     static void TornadoGust(PlayerController caster)
@@ -188,6 +192,8 @@ public class SpellFunctions : MonoBehaviour
         boulder.transform.position = boulderTarget.transform.position + new Vector3(0.0f, 3.0f, 0.0f);
         Destroy(boulderTarget);
         caster.tornadoActive = false;
+        caster.boulder = boulder;
+        boulder.GetComponent<Boulder>().playerCasting = caster;
     }
 
     static void TornadoGustEnd(PlayerController caster)

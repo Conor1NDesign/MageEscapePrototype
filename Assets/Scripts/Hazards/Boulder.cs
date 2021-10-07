@@ -5,6 +5,7 @@ using UnityEngine;
 public class Boulder : MonoBehaviour
 {
     public SphereCollider triggerCollider;
+    public PlayerController playerCasting;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -26,5 +27,12 @@ public class Boulder : MonoBehaviour
         {
             triggerCollider.enabled = false;
         }
+    }
+
+    public void Respawn() // Actually a destruction but named to match the spellbooks
+    {
+        playerCasting.boulder = null;
+
+        Destroy(gameObject);
     }
 }

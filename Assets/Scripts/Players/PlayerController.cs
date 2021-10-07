@@ -123,6 +123,8 @@ public class PlayerController : MonoBehaviour
     public bool tornadoActive = false;
     [HideInInspector]
     public GameObject tornado;
+    [HideInInspector]
+    public GameObject boulder;
     public float fireballForce;
 
     public float tornadoForce;
