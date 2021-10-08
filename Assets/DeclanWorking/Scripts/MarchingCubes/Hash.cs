@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hash : MonoBehaviour
+public class Hash
 {
     //25 buckets
     List<Vert>[] vert = new List<Vert>[25];

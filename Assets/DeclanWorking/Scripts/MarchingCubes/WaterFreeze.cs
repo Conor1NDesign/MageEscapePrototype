@@ -15,8 +15,8 @@ public class WaterFreeze : MonoBehaviour
 
     
 
-    [Min(1.0f)]
-    float gridSpacing = 50;
+    //[Min(1.0f)]
+    //float gridSpacing = 50;
     [Min(1.0f), Tooltip("X and Z grid size, higher it is more dense the grid will be.")]
     public int gridSize;
 
@@ -240,7 +240,7 @@ public class WaterFreeze : MonoBehaviour
                                 int tris = hash.CheckAganstHash(tempVert, verts.Count);
                                 if (tris == -1)
                                 {
-                                    int xasd = 0;
+                                    //int xasd = 0;
                                 }
                                 if (tris == verts.Count)
                                 {
