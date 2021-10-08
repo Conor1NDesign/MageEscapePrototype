@@ -10,7 +10,8 @@ public class SpellFunctions : MonoBehaviour
     #region START CAST
     public static void StartQuickCast(PlayerController caster)
     {
-        if (caster.currentCooldown < 0.0f || (int)caster.playerElement == 3)
+        if (caster.currentCooldown < 0.0f ||
+            caster.playerElement == PlayerController.PlayerCurrentElement.Earth)
         {
             caster.currentCooldown = caster.quickCastCooldown;
             quickCastSpells[(int)caster.playerElement - 1](caster);
@@ -113,16 +114,14 @@ public class SpellFunctions : MonoBehaviour
         Debug.Log("Tornado Gust");
         if (caster.tornadoActive == true)
         {
-           
             caster.tornadoActive = false;
         }
         else
         { 
-        GameObject tornadoTarget = caster.boulderTargetPrefab;
-        caster.tornado = Instantiate(tornadoTarget, caster.spellAttachPoint.position, Quaternion.identity);
-        tornadoTarget.GetComponent<SpellCharacterController>().playerCasting = caster;
-        //tornadoTarget.GetComponent<CharacterController>().detectCollisions = false;
-        caster.tornadoActive = true;
+            GameObject tornadoTarget = caster.boulderTargetPrefab;
+            caster.tornado = Instantiate(tornadoTarget, caster.spellAttachPoint.position, Quaternion.identity);
+            tornadoTarget.GetComponent<SpellCharacterController>().playerCasting = caster;
+            caster.tornadoActive = true;
         }
     }
 
@@ -227,11 +226,14 @@ public class SpellFunctions : MonoBehaviour
             caster.tornado = tornado;
             caster.tornado.GetComponent<SpellCharacterController>().playerCasting = caster;
             caster.tornado.GetComponent<TornadoGust>().caster = caster;
+            caster.playerState = PlayerController.PlayerStates.Casting;
+            caster.currentCooldown = 0.0f;
         }
         else
         {
             Destroy(caster.tornado);
             caster.tornado = null;
+            caster.playerState = PlayerController.PlayerStates.Idle;
         }
 
     } 

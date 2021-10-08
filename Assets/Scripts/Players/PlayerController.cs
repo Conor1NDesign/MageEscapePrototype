@@ -282,6 +282,8 @@ public class PlayerController : MonoBehaviour
             {
                 Destroy(attachedSpell);
                 attachedSpell = null;
+                Destroy(tornado);
+                tornado = null;
             }
 
             playerState = PlayerStates.Falling;
@@ -294,6 +296,8 @@ public class PlayerController : MonoBehaviour
             {
                 Destroy(attachedSpell);
                 attachedSpell = null;
+                Destroy(tornado);
+                tornado = null;
             }
 
             playerState = PlayerStates.Floating;

@@ -95,7 +95,8 @@ public class PlayerInputHandler : MonoBehaviour
             playerController.playerElement != PlayerController.PlayerCurrentElement.None)
         {
             if (context.performed &&
-                (int)playerController.playerState <= 1)
+                ((int)playerController.playerState <= 1 ||
+                playerController.playerElement == PlayerController.PlayerCurrentElement.Wind && playerController.playerState == PlayerController.PlayerStates.Casting))
             {
                 SpellFunctions.StartHardCast(playerController);
                 playerController.playerState = PlayerController.PlayerStates.Casting;
@@ -105,7 +106,8 @@ public class PlayerInputHandler : MonoBehaviour
                 playerController.castType == PlayerController.CastingType.Hard)
             {
                 SpellFunctions.EndHardCast(playerController);
-                playerController.playerState = PlayerController.PlayerStates.Idle;
+                if (playerController.playerElement != PlayerController.PlayerCurrentElement.Wind)
+                    playerController.playerState = PlayerController.PlayerStates.Idle;
                 playerController.castType = PlayerController.CastingType.None;
             }
         }
