@@ -24,8 +24,8 @@ public class CameraMovement : MonoBehaviour
 	public float overviewProgress = 0.0f;
 
 
-    void Update()
-    {
+	void Update()
+	{
 		if (overviewMode && overviewProgress < 1.0f)
 			overviewProgress += Time.deltaTime;
 		else if (!overviewMode && overviewProgress > 0.0f)
@@ -36,7 +36,7 @@ public class CameraMovement : MonoBehaviour
 		if (overviewProgress < 0.0f)
 			overviewProgress = 0.0f;
 
-        transform.position = (playerOneTransform.position + playerTwoTransform.position) / 2;
+		transform.position = (playerOneTransform.position + playerTwoTransform.position) / 2;
 
 		// Set the local position of the camera
 		// This should be between the overview position (which is global) and observing the players if necessary
@@ -45,5 +45,5 @@ public class CameraMovement : MonoBehaviour
 			+ transform.position) * (1.0f - overviewProgress)
 			+ overviewPosition.position * overviewProgress;
 		cameraTransform.rotation = Quaternion.Slerp(normalCameraPosition.rotation, overviewPosition.rotation, overviewProgress);
-    }
+	}
 }

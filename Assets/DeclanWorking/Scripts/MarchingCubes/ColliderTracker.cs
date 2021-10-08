@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ColliderTracker : MonoBehaviour
 {
-    public BoxCollider Incapsulating;
-    public BoxCollider[] BoxedCone;
+	public BoxCollider Incapsulating;
+	public BoxCollider[] BoxedCone;
 }

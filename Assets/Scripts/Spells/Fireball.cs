@@ -20,12 +20,12 @@ public class Fireball : MonoBehaviour
 		}
 	}
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (!collision.gameObject.CompareTag("Spellbook"))
-        {
-            explosion.SetActive(true);
+	void OnCollisionEnter(Collision collision)
+	{
+		if (!collision.gameObject.CompareTag("Spellbook"))
+		{
+			explosion.SetActive(true);
 			GetComponent<Rigidbody>().velocity = Vector3.zero;
-        }
-    }
+		}
+	}
 }
