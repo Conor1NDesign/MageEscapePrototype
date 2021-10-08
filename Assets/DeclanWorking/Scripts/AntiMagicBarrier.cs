@@ -23,17 +23,9 @@ public class AntiMagicBarrier : MonoBehaviour
     {
         if (other.CompareTag("Spellbook"))
         {
-            foreach (var item in casters)
-            {
-                if (item.spellbook == other.gameObject)
-                {
-                    other.attachedRigidbody.isKinematic = false;
-                    item.spellbook = null;
-                    item.playerElement = PlayerController.PlayerCurrentElement.None;
-                }
-            }
-                    other.transform.parent = null;
-                    other.GetComponent<SpellbookController>().Respawn();
+            SpellbookController spellbook = other.GetComponent<SpellbookController>();
+            if (spellbook)
+                spellbook.Respawn();
         }
 
         if (other.gameObject.layer == 8)
@@ -42,7 +34,6 @@ public class AntiMagicBarrier : MonoBehaviour
             caster.tornadoActive = false;
             caster.tornado = null;
             Destroy(other.gameObject);
-
         }
     }
 }
