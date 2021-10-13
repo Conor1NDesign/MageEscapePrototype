@@ -5,16 +5,47 @@ public class FireballExplosion : MonoBehaviour
 	[Tooltip("The amount of time the explosion is active for")]
 	public float explosionTime;
 
-    void OnTriggerEnter(Collider other)
+	private FrozonMode frozenMode;
+
+	private void Start()
+	{
+		frozenMode = GetComponentInChildren<FrozonMode>();
+	}
+
+	void OnTriggerEnter(Collider other)
 	{
 		transform.root.gameObject.GetComponent<Fireball>().aging = false;
-		if (other.gameObject.CompareTag("Lightable"))
-        {
-            other.gameObject.GetComponent<Scone>().isActivated = true;
-        }
-		if (other.gameObject.CompareTag("Meltable"))
+		if (other.CompareTag("Meltable"))
 		{
-			other.gameObject.GetComponent<WaterWheel>().isFrozen = false;
+			WaterWheel waterWheel = other.gameObject.GetComponent<WaterWheel>();
+			if (waterWheel)
+				waterWheel.isFrozen = false;
+		}
+		if (other.CompareTag("Lightable"))
+		{
+			Sconce sconce = other.gameObject.GetComponent<Sconce>();
+			if (sconce)
+				sconce.isActivated = true;
+		}
+		
+		if (other.CompareTag("Water"))
+		{
+			frozenMode.MarchTheCubes(false);
+			print("Defrost");
+		}
+		
+		SpinningBlade sb = other.GetComponent<SpinningBlade>();
+		if (sb != null)
+		{
+			sb.isSlowed = false;
+		}
+
+		if (other.CompareTag("Spellbook"))
+		{
+			Debug.Log("nyaa");
+			SpellbookController spellbook = other.gameObject.GetComponent<SpellbookController>();
+			if (spellbook)
+				spellbook.burning = true;
 		}
 
 		Destroy(transform.root.gameObject, explosionTime);
