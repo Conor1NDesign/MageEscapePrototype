@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1900838983566710336}
   m_Layer: 0
   m_Name: WallTile_Thick
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,9 +96,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8086327e597011545ac82a60977a9b23, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a60ab0d2cec0b914bb7331573820e4d8, type: 2}
     - target: {fileID: 919132149155446097, guid: 8086327e597011545ac82a60977a9b23, type: 3}
       propertyPath: m_Name
       value: WallTile_Thick_Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8086327e597011545ac82a60977a9b23, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8086327e597011545ac82a60977a9b23, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8086327e597011545ac82a60977a9b23, type: 3}
