@@ -612,7 +612,7 @@ PrefabInstance:
     - target: {fileID: 1951744548589562981, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
       propertyPath: Barrier
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1157408224}
     - target: {fileID: 1951744548589562981, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
       propertyPath: BarrierCollider.Array.data[1]
       value: 
@@ -37326,6 +37326,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
   m_PrefabInstance: {fileID: 1150177207}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1157408224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3411179591842701630, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+  m_PrefabInstance: {fileID: 32488226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1158863610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49485,6 +49490,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8371511205941126897, guid: aa771bdfb3664e54ab104dbda97131a0, type: 3}
   m_PrefabInstance: {fileID: 1560795529}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1562013248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3411179591842701630, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+  m_PrefabInstance: {fileID: 2118649280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1563047516
 Mesh:
   m_ObjectHideFlags: 0
@@ -57355,7 +57365,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-310878
+  m_Name: pb_Mesh-354562
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -61209,6 +61219,10 @@ PrefabInstance:
     - target: {fileID: 1144634476236296169, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: m_Name
       value: Player 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246102405507499974, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
+      propertyPath: m_SlopeLimit
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1504866234269728581, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: m_LocalPosition.x
@@ -65284,7 +65298,7 @@ PrefabInstance:
     - target: {fileID: 1951744548589562981, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
       propertyPath: Barrier
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1562013248}
     - target: {fileID: 1951744548589562981, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
       propertyPath: BarrierCollider.Array.data[1]
       value: 
