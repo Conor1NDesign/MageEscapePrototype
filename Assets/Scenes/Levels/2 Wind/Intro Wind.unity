@@ -3531,6 +3531,35 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &85275932 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6875074927187821844, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+  m_PrefabInstance: {fileID: 1794318859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &85275933 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2022180382343280039, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+  m_PrefabInstance: {fileID: 1794318859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &85275934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85275932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fca8410f32098c84c96ffeaff36dea29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActivated: 1
+  downwardOffset: 0.5
+  speedOfCompression: 1
+  movingPlatforms:
+  - {fileID: 2038098742}
+  - {fileID: 742445370}
+  - {fileID: 1777272857}
 --- !u!1001 &90656732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6238,6 +6267,7 @@ Transform:
   - {fileID: 1922908577}
   - {fileID: 374799438}
   - {fileID: 642815179}
+  - {fileID: 85275933}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17013,6 +17043,7 @@ MonoBehaviour:
   isActivated: 1
   movingPlatforms:
   - {fileID: 1726936293}
+  AntiMagicBarrier: []
   particles: {fileID: 1005879831}
   NonEmmisive: {fileID: 0}
 --- !u!1001 &460169101
@@ -29285,8 +29316,8 @@ MonoBehaviour:
   endPos: {fileID: 918117779}
   speed: 200
   oscillating: 0
-  numberOfSwitches: 0
-  numberOfActiveSwitches: 0
+  numberOfSwitches: 1
+  numberOfActiveSwitches: 1
   resetting: 0
 --- !u!4 &750426679 stripped
 Transform:
@@ -65198,6 +65229,7 @@ MonoBehaviour:
   isActivated: 1
   movingPlatforms:
   - {fileID: 1883961871}
+  AntiMagicBarrier: []
   particles: {fileID: 740276641}
   NonEmmisive: {fileID: 0}
 --- !u!1001 &1658206998
@@ -69458,8 +69490,8 @@ MonoBehaviour:
   endPos: {fileID: 1233398205}
   speed: 200
   oscillating: 0
-  numberOfSwitches: 0
-  numberOfActiveSwitches: 0
+  numberOfSwitches: 1
+  numberOfActiveSwitches: 1
   resetting: 0
 --- !u!1001 &1778869503
 PrefabInstance:
@@ -69791,6 +69823,84 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
   m_PrefabInstance: {fileID: 1793418049}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1794318859
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 170989501}
+    m_Modifications:
+    - target: {fileID: 172462781, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: movingPlatforms.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 172462781, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: isActivated
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022180382343280039, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022180382343280039, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022180382343280039, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022180382343280039, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022180382343280039, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022180382343280039, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022180382343280039, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022180382343280039, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022180382343280039, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022180382343280039, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022180382343280039, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4995326393354477726, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 809126182}
+    - target: {fileID: 6875074927187821844, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_Name
+      value: PressurePlate (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875074927187821844, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152913681370237725, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 809126182}
+    m_RemovedComponents:
+    - {fileID: 172462781, guid: 545dd2376545f304ea40db433829b71f, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 545dd2376545f304ea40db433829b71f, type: 3}
 --- !u!1001 &1795073960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79505,8 +79615,8 @@ MonoBehaviour:
   endPos: {fileID: 1810899238}
   speed: 200
   oscillating: 0
-  numberOfSwitches: 0
-  numberOfActiveSwitches: 0
+  numberOfSwitches: 1
+  numberOfActiveSwitches: 1
   resetting: 0
 --- !u!43 &2038597117
 Mesh:
