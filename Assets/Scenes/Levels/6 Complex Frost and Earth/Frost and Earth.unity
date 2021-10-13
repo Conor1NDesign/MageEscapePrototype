@@ -11061,7 +11061,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1548
+  m_Name: pb_Mesh-232812
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16097,6 +16097,7 @@ MonoBehaviour:
   - {fileID: 1325180093}
   - {fileID: 858318928}
   - {fileID: 1916592938}
+  AntiMagicBarrier: []
   particles: {fileID: 837323038}
   NonEmmisive: {fileID: 0}
 --- !u!1001 &1084975260
@@ -18876,18 +18877,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1590397517}
     m_Modifications:
     - target: {fileID: 606305788133406196, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
-      propertyPath: m_SelectedFaces.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 606305788133406196, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
-      propertyPath: m_SelectedEdges.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 606305788133406196, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
-      propertyPath: m_SelectedVertices.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 606305788133406196, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1664010652}
@@ -21625,6 +21614,7 @@ MonoBehaviour:
   movingPlatforms:
   - {fileID: 218923977}
   - {fileID: 1213965984}
+  AntiMagicBarrier: []
   particles: {fileID: 1386194739}
   NonEmmisive: {fileID: 0}
 --- !u!4 &1387340099 stripped
@@ -21850,7 +21840,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6082
+  m_Name: pb_Mesh-237388
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25325,7 +25315,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1848
+  m_Name: pb_Mesh-233114
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25747,7 +25737,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-5068
+  m_Name: pb_Mesh-236364
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28875,7 +28865,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3860
+  m_Name: pb_Mesh-235154
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

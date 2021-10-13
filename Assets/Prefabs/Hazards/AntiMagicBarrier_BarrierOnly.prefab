@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2639872238423551012}
   - component: {fileID: 1750840219575813990}
+  - component: {fileID: 828155113546720910}
   m_Layer: 0
   m_Name: AntiMagicBarrier_BarrierOnly
   m_TagString: Untagged
@@ -45,6 +46,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 3, z: 0}
   m_Center: {x: 0, y: 1.75, z: 0}
+--- !u!114 &828155113546720910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8583869343724583417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f41769afdb466f47aa609fba033c299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfRequiredSwitches: 0
+  numberofActiveSwitch: 0
+  Barrier: {fileID: 0}
+  BarrierCollider: []
 --- !u!1001 &5164752013439385252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99,6 +116,18 @@ PrefabInstance:
     - target: {fileID: 3772138922170211768, guid: 6d8009cbd76bb924daf4c3ed94370394, type: 3}
       propertyPath: m_Name
       value: AntiMagicBarrier_BarrierOnly_Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748534249976089424, guid: 6d8009cbd76bb924daf4c3ed94370394, type: 3}
+      propertyPath: m_SelectedFaces.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748534249976089424, guid: 6d8009cbd76bb924daf4c3ed94370394, type: 3}
+      propertyPath: m_SelectedEdges.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748534249976089424, guid: 6d8009cbd76bb924daf4c3ed94370394, type: 3}
+      propertyPath: m_SelectedVertices.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5748534249976089424, guid: 6d8009cbd76bb924daf4c3ed94370394, type: 3}
       propertyPath: m_Mesh
