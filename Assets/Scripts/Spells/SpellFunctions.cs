@@ -118,7 +118,7 @@ public class SpellFunctions : MonoBehaviour
 		}
 		else
 		{ 
-			GameObject tornadoTarget = caster.boulderTargetPrefab;
+			GameObject tornadoTarget = caster.tornadoTargetPrefab;
 			caster.tornado = Instantiate(tornadoTarget, caster.spellAttachPoint.position, Quaternion.identity);
 			tornadoTarget.GetComponent<SpellCharacterController>().playerCasting = caster;
 			caster.tornadoActive = true;
