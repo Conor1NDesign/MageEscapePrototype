@@ -2085,7 +2085,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6560067993133019410, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.14
+      value: -10.639999
       objectReference: {fileID: 0}
     - target: {fileID: 6560067993133019410, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2093,7 +2093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6560067993133019410, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.64
+      value: -8.639999
       objectReference: {fileID: 0}
     - target: {fileID: 6560067993133019410, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8571,8 +8571,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  downwardOffset: 0.5
-  speedOfCompression: 1
+  downwardOffset: 0.1
+  speedOfCompression: 100
   movingPlatforms:
   - {fileID: 1850742870}
   - {fileID: 1492754659}
@@ -14768,7 +14768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1504866234269728581, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.66
+      value: -8.41
       objectReference: {fileID: 0}
     - target: {fileID: 1504866234269728581, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: m_LocalRotation.x
@@ -15288,8 +15288,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  downwardOffset: 0.5
-  speedOfCompression: 1
+  downwardOffset: 0.1
+  speedOfCompression: 100
   movingPlatforms:
   - {fileID: 1850742870}
   - {fileID: 1492754659}
@@ -18615,7 +18615,7 @@ MonoBehaviour:
   endPos: {fileID: 773765324}
   speed: 100
   oscillating: 0
-  numberOfSwitches: 2
+  numberOfSwitches: 4
   numberOfActiveSwitches: 0
   resetting: 0
 --- !u!1 &1500872739
@@ -22118,7 +22118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2699594004476798728, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.594
+      value: -8.594002
       objectReference: {fileID: 0}
     - target: {fileID: 2699594004476798728, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: m_LocalRotation.x
@@ -23859,7 +23859,7 @@ MonoBehaviour:
   endPos: {fileID: 1768193233}
   speed: 100
   oscillating: 0
-  numberOfSwitches: 2
+  numberOfSwitches: 4
   numberOfActiveSwitches: 0
   resetting: 0
 --- !u!1001 &1852789147

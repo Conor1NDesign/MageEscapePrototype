@@ -102,6 +102,8 @@ public class PlayerController : MonoBehaviour
 	[Tooltip("Used to check if the player is currently dead. Should be returned to false after they've respawned.")]
 	public bool isDead;
 	private bool isRespawning; //A bool used privately within this script to ensure that the respawn coroutine isn't called multiple times.
+	[HideInInspector]
+	public bool isHardCasting;
 
 	[Header("Spell Prefabs")]
 	public GameObject flamethrowerPrefab;
@@ -514,6 +516,14 @@ public class PlayerController : MonoBehaviour
 	{
 		if (spellbook)
 		{
+			if (playerState == PlayerStates.Casting)
+			{
+				if (isHardCasting)
+					SpellFunctions.EndHardCast(this);
+				else
+					SpellFunctions.EndQuickCast(this);
+			}
+
 			// Drop spellbook on death
 			spellbook.transform.parent = null;
 			spellbook.GetComponent<Rigidbody>().isKinematic = false;
