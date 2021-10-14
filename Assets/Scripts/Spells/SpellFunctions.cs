@@ -15,6 +15,7 @@ public class SpellFunctions : MonoBehaviour
 		{
 			caster.currentCooldown = caster.quickCastCooldown;
 			quickCastSpells[(int)caster.playerElement - 1](caster);
+			caster.isHardCasting = false;
 		}
 	}
 
@@ -24,6 +25,7 @@ public class SpellFunctions : MonoBehaviour
 		{
 			caster.currentCooldown = caster.hardCastCooldown;
 			hardCastSpells[(int)caster.playerElement - 1](caster);
+			caster.isHardCasting = true;
 		}
 	}
 	public static void EndQuickCast(PlayerController caster)
