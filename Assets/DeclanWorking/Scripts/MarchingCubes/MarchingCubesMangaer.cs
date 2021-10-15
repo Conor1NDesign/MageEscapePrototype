@@ -14,12 +14,14 @@ public class MarchingCubesMangaer : MonoBehaviour
 		WaterTiles = FindObjectsOfType<WaterFreeze>();
 		WaterTilesColliders = new BoxCollider[WaterTiles.Length];
 		IceMeshes = new GameObject("Ice Mesh");
+		IceMeshes.tag = "Ice";
 
 		for (int i = 0; i < WaterTiles.Length; i++)
 		{
 			WaterTilesColliders[i] = WaterTiles[i].transform.parent.GetComponent<BoxCollider>();
 			WaterTiles[i].mesh = new Mesh();
 			WaterTiles[i].GroundMesh = new GameObject("Mesh ", typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider));
+			WaterTiles[i].GroundMesh.tag = "Ice";
 			WaterTiles[i].GroundMesh.transform.parent = IceMeshes.transform;
 			WaterTiles[i].GroundMesh.transform.position = new Vector3(WaterTiles[i].GroundMesh.transform.position.x, yOffsetOfMesh, WaterTiles[i].GroundMesh.transform.position.z);
 		}

@@ -108,7 +108,7 @@ public class TriggerEnterChild : MonoBehaviour
 	{
 		try
 		{
-			print("DESTROY");
+			
 			foreach (var item in Children)
 			{
 				print(item.name);
@@ -117,7 +117,7 @@ public class TriggerEnterChild : MonoBehaviour
 		}
 		catch
 		{
-			print("qqq");
+			print("ERROR");
 		}
 	}
 

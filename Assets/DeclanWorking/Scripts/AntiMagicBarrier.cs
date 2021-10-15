@@ -3,28 +3,65 @@
 public class AntiMagicBarrier : MonoBehaviour
 {
 
-	PlayerController[] casters;
+    PlayerController[] casters;
+    public int numberOfRequiredSwitches;
+    public int numberofActiveSwitch;
 
-	void Start()
-	{
-		casters = FindObjectsOfType<PlayerController>();
-	}
+    public GameObject Barrier;
+    public BoxCollider[] BarrierCollider;
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.CompareTag("Spellbook"))
-		{
-			SpellbookController spellbook = other.GetComponent<SpellbookController>();
-			if (spellbook)
-				spellbook.Respawn();
-		}
+    void Start()
+    {
+        casters = FindObjectsOfType<PlayerController>();
+    }
 
-		if (other.gameObject.layer == 8)
-		{
-			PlayerController caster = other.GetComponent<SpellCharacterController>().playerCasting;
-			caster.tornadoActive = false;
-			caster.tornado = null;
-			Destroy(other.gameObject);
-		}
-	}
+    private void Update()
+    {
+        if (numberofActiveSwitch == numberOfRequiredSwitches)
+        {
+            Activate();
+        }
+        else
+        {
+            Deactivate();
+        }
+    }
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Spellbook"))
+        {
+            SpellbookController spellbook = other.GetComponent<SpellbookController>();
+            if (spellbook)
+                spellbook.Respawn();
+        }
+
+        if (other.gameObject.layer == 8)
+        {
+            PlayerController caster = other.GetComponent<SpellCharacterController>().playerCasting;
+            caster.tornadoActive = false;
+            caster.tornado = null;
+            Destroy(other.gameObject);
+        }
+    }
+
+    public void Activate()
+    {
+        Barrier.SetActive(true);
+        foreach (var item in BarrierCollider)
+        {
+            item.enabled = true;
+        }
+
+    }
+    public void Deactivate()
+    {
+        Barrier.SetActive(false);
+        foreach (var item in BarrierCollider)
+        {
+            item.enabled = false;
+        }
+    }
 }

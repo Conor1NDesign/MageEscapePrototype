@@ -52,6 +52,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "StartButton",
+                    "type": "Button",
+                    "id": "c2845beb-e8b5-4ef0-8178-898d5c765126",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -272,6 +280,28 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "62124574-b2aa-4f71-9559-cf1c856d440a",
+                    "path": "<Keyboard>/Escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "StartButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "70ddbdeb-b798-4e05-a9e2-bdbea4add19b",
+                    "path": "<Gamepad>/Start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "StartButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
