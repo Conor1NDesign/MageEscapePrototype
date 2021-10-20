@@ -19225,7 +19225,7 @@ MonoBehaviour:
   movingPlatforms:
   - {fileID: 1726936293}
   AntiMagicBarrier: []
-  particles: {fileID: 1005879831}
+  particles: {fileID: 848388086}
   NonEmmisive: {fileID: 0}
 --- !u!4 &456937433 stripped
 Transform:
@@ -32416,11 +32416,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e10b707781ba2b24d86b3665bcb0e5a0, type: 3}
---- !u!1 &740276641 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6063410508653330173, guid: d746a804eb3f08843996c07e083233d7, type: 3}
-  m_PrefabInstance: {fileID: 874416487}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &742445369 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6372820306588002128, guid: 0e05c82170823164b9307dfa9ac7ab3c, type: 3}
@@ -36969,6 +36964,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
   m_PrefabInstance: {fileID: 1395852623}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &848388086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2751526543652233045, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+  m_PrefabInstance: {fileID: 885626}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &849115324
 Mesh:
@@ -43627,11 +43627,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8371511205941126897, guid: aa771bdfb3664e54ab104dbda97131a0, type: 3}
   m_PrefabInstance: {fileID: 106101262}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1005879831 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6063410508653330173, guid: d746a804eb3f08843996c07e083233d7, type: 3}
-  m_PrefabInstance: {fileID: 885626}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1006515279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48570,6 +48565,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e10b707781ba2b24d86b3665bcb0e5a0, type: 3}
+--- !u!1 &1150786406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2751526543652233045, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+  m_PrefabInstance: {fileID: 874416487}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1153051813
 Mesh:
   m_ObjectHideFlags: 0
@@ -71989,7 +71989,7 @@ MonoBehaviour:
   movingPlatforms:
   - {fileID: 1883961871}
   AntiMagicBarrier: []
-  particles: {fileID: 740276641}
+  particles: {fileID: 1150786406}
   NonEmmisive: {fileID: 0}
 --- !u!1001 &1658206998
 PrefabInstance:

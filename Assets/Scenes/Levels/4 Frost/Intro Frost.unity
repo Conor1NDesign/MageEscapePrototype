@@ -3503,7 +3503,7 @@ MonoBehaviour:
   - {fileID: 1815567824}
   - {fileID: 1366713831}
   AntiMagicBarrier: []
-  particles: {fileID: 597483357}
+  particles: {fileID: 344900580}
   NonEmmisive: {fileID: 0}
 --- !u!1001 &163648176
 PrefabInstance:
@@ -7110,11 +7110,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1682741701747177749, guid: d39c0af3a73e4094ba2a51bf2654532c, type: 3}
   m_PrefabInstance: {fileID: 306107161}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &308613643 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6063410508653330173, guid: d746a804eb3f08843996c07e083233d7, type: 3}
-  m_PrefabInstance: {fileID: 871362826}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &308846599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7307,6 +7302,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6147183761577222138, guid: 4c40f50bb2f08694cac77b6aa9ad8733, type: 3}
   m_PrefabInstance: {fileID: 313112809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &316845186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2751526543652233045, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+  m_PrefabInstance: {fileID: 591422654}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &321270951
 PrefabInstance:
@@ -7723,6 +7723,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2229012561860378992, guid: e10b707781ba2b24d86b3665bcb0e5a0, type: 3}
   m_PrefabInstance: {fileID: 342419422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &344900580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2751526543652233045, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+  m_PrefabInstance: {fileID: 1363272000}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &346191195
 PrefabInstance:
@@ -13198,11 +13203,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1044412544209714949, guid: d746a804eb3f08843996c07e083233d7, type: 3}
   m_PrefabInstance: {fileID: 591422654}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &591422656 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6063410508653330173, guid: d746a804eb3f08843996c07e083233d7, type: 3}
-  m_PrefabInstance: {fileID: 591422654}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &591422657 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1044412544209714948, guid: d746a804eb3f08843996c07e083233d7, type: 3}
@@ -13225,7 +13225,7 @@ MonoBehaviour:
   - {fileID: 232558398}
   - {fileID: 355124948}
   AntiMagicBarrier: []
-  particles: {fileID: 591422656}
+  particles: {fileID: 316845186}
   NonEmmisive: {fileID: 0}
 --- !u!1001 &592261501
 PrefabInstance:
@@ -13366,11 +13366,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
   m_PrefabInstance: {fileID: 593362732}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &597483357 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6063410508653330173, guid: d746a804eb3f08843996c07e083233d7, type: 3}
-  m_PrefabInstance: {fileID: 1363272000}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &597996513
 PrefabInstance:
@@ -15558,6 +15553,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1682741701747177749, guid: d39c0af3a73e4094ba2a51bf2654532c, type: 3}
   m_PrefabInstance: {fileID: 708063180}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &708295615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2751526543652233045, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+  m_PrefabInstance: {fileID: 871362826}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &711833405
 PrefabInstance:
@@ -30339,7 +30339,7 @@ MonoBehaviour:
   - {fileID: 1815567824}
   - {fileID: 1366713831}
   AntiMagicBarrier: []
-  particles: {fileID: 308613643}
+  particles: {fileID: 708295615}
   NonEmmisive: {fileID: 0}
 --- !u!1001 &1412810214
 PrefabInstance:

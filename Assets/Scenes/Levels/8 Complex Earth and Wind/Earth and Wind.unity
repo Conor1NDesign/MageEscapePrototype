@@ -7249,6 +7249,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1682741701747177749, guid: d39c0af3a73e4094ba2a51bf2654532c, type: 3}
   m_PrefabInstance: {fileID: 255807040}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &437935693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2751526543652233045, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+  m_PrefabInstance: {fileID: 663775544}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &438070419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8557,6 +8562,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8371511205941126897, guid: aa771bdfb3664e54ab104dbda97131a0, type: 3}
   m_PrefabInstance: {fileID: 506070633}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &518698885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2751526543652233045, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+  m_PrefabInstance: {fileID: 1160765282}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &521964829
 PrefabInstance:
@@ -10265,7 +10275,7 @@ MonoBehaviour:
   movingPlatforms:
   - {fileID: 324763513}
   AntiMagicBarrier: []
-  particles: {fileID: 0}
+  particles: {fileID: 1718749964}
   NonEmmisive: {fileID: 0}
 --- !u!1001 &622972366
 PrefabInstance:
@@ -11130,7 +11140,7 @@ MonoBehaviour:
   - {fileID: 793693751}
   - {fileID: 197922373}
   AntiMagicBarrier: []
-  particles: {fileID: 0}
+  particles: {fileID: 437935693}
   NonEmmisive: {fileID: 0}
 --- !u!4 &667940447 stripped
 Transform:
@@ -19214,7 +19224,7 @@ MonoBehaviour:
   - {fileID: 793693751}
   - {fileID: 197922373}
   AntiMagicBarrier: []
-  particles: {fileID: 0}
+  particles: {fileID: 518698885}
   NonEmmisive: {fileID: 0}
 --- !u!1001 &1163103723
 PrefabInstance:
@@ -30531,6 +30541,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8371511205941126897, guid: aa771bdfb3664e54ab104dbda97131a0, type: 3}
   m_PrefabInstance: {fileID: 317635645}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1718749964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2751526543652233045, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+  m_PrefabInstance: {fileID: 622525830}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1718990690
 PrefabInstance:
