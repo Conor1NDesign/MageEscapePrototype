@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PuzzleKit_Material
+  m_Name: PressurePlate_Footprints
   m_Shader: {fileID: 4800000, guid: 0e9d5a909a1f7e84882a534d0d11e49f, type: 3}
   m_ShaderKeywords: _GLOSSYREFLECTIONS_OFF _METALLICGLOSSMAP _METALLICSPECGLOSSMAP
     _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP
@@ -38,7 +38,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 5e1db0c36a1e2e74abf46ab47e461d18, type: 3}
+        m_Texture: {fileID: 2800000, guid: 96920eec11032fe4e9ace335b40ba147, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -54,15 +54,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 8f702803beaaa8e44a1330b4fa082ad0, type: 3}
+        m_Texture: {fileID: 2800000, guid: c44a264298cf966428e7967410c677d3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b82b352c5e59cbf4b8464128cf452edd, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9c0608cedcf712546a30e631e519fe04, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 68240141a43e44844982bda93b094968, type: 3}
+        m_Texture: {fileID: 2800000, guid: 386fc5c89f6f7804f9b73329362473dc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
