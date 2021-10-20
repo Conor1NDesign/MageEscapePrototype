@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2226528595150785989, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
+      propertyPath: m_Name
+      value: Spellbook_Ice_Particles
+      objectReference: {fileID: 0}
     - target: {fileID: 5453500895608427360, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
       propertyPath: element
       value: 2
@@ -69,11 +73,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.25
+      value: 0.96
       objectReference: {fileID: 0}
     - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.18
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
       propertyPath: InitialModule.maxNumParticles
@@ -89,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 0.5
+      value: 0.59
       objectReference: {fileID: 0}
     - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
       propertyPath: ColorModule.enabled
@@ -141,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
       propertyPath: ShapeModule.type
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
@@ -150,6 +154,58 @@ PrefabInstance:
     - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
       propertyPath: ShapeModule.radiusThickness
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
+      propertyPath: InitialModule.startSize.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
+      propertyPath: InitialModule.startLifetime.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
+      propertyPath: ClampVelocityModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501811267060135961, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
+      propertyPath: ClampVelocityModule.dampen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175281482822358573, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175281482822358573, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175281482822358573, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6175281482822358573, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.119
       objectReference: {fileID: 0}
     - target: {fileID: 6894033331079773935, guid: b45bff97c06c69a4fb3b93ff86d0c4c0, type: 3}
       propertyPath: m_SortingOrder
