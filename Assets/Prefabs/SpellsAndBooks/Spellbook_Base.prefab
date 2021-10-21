@@ -4862,6 +4862,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: 0
   spellbookRespawnPoint: {fileID: 5453500895608427364}
+  burnTime: 2
+  burning: 0
+  playerHolding: {fileID: 0}
 --- !u!65 &5453500895608427367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4886,8 +4889,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4, y: 1.2, z: 2.4}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 3, y: 3, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5453500895608427371
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4913,7 +4916,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 19c86d19614f131408a302257ed5414f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19c86d19614f131408a302257ed5414f, type: 3}
       propertyPath: m_LocalPosition.y
