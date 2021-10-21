@@ -12,7 +12,7 @@ public class TutorialTextAnCamera : MonoBehaviour
     public string[] UIText;
 
     public bool requiresBook;
-    public GameObject bookToTrigger;
+    private GameObject bookToTrigger;
 
     [HideInInspector]
     public string CurrentUIText;
@@ -36,6 +36,10 @@ public class TutorialTextAnCamera : MonoBehaviour
 
     void Start()
     {
+        if (requiresBook)
+        {
+            bookToTrigger = gameObject;
+        }
         players = FindObjectsOfType<PlayerController>();
         mainCamera = Camera.main.gameObject;
         gameManager = GameObject.Find("GameManager");
@@ -96,8 +100,8 @@ public class TutorialTextAnCamera : MonoBehaviour
                 }
                 foreach (var item in players)
                 {
-                    item.playerState = PlayerController.PlayerStates.Idle;
                     item.enabled = false;
+                    item.animator.SetInteger("State", (int)0);
                 }
                 if (useCameraPoint)
                 {
