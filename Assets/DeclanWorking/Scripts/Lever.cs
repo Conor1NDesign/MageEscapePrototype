@@ -2,28 +2,33 @@
 
 public class Lever : Interactable
 {
+
+	public bool IsResetSwitch;
 	public bool isActive;
 	public List<MovingPlatform> movingPlatforms;
 	bool isactivated;
 	
 	void Update()
 	{
-		/*
-		 NEED TO DO
-		ANIMATION
-		Functionallity
-		 
-		 */
+
 		if (isActive)
 		{
 			foreach (var item in movingPlatforms)
 			{
-				item.resetting = true;
-				//item.numberOfActiveSwitches++;
-				//print("down");
-				//isactivated = true;
+				if (IsResetSwitch)
+				{
+					item.resetting = true;
+				}
+				else
+				{
+					item.numberOfActiveSwitches++;
+				}
+
+
+
 			}
-		   // Activated(movingPlatforms);
+		   
+			Activated(movingPlatforms);
 		}
 		else
 		{
