@@ -71,13 +71,10 @@ public class PlayerInputHandler : MonoBehaviour
                             else
                             {
                                 ttac.EndSequence();
+                                ttac = null;
                             }
                         }
 
-                    }
-                    else
-                    {
-                        ttac = null;
                     }
                 }
             }

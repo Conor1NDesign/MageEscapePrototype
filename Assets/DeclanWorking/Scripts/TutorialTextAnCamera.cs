@@ -10,14 +10,22 @@ public class TutorialTextAnCamera : MonoBehaviour
     public GameObject cameraPoint;
 
     public string[] UIText;
+
     [HideInInspector]
     public string CurrentUIText;
+
     GameObject mainCamera;
+
     public GameObject Canvas;
+
     [HideInInspector]
     public TextMeshProUGUI text;
+
     int index;
+
     GameObject gameManager;
+
+    int playerInTrigger;
 
     [HideInInspector]
     public PlayerController[] players;
@@ -35,20 +43,12 @@ public class TutorialTextAnCamera : MonoBehaviour
         text = Canvas.GetComponentInChildren<TextMeshProUGUI>();
     }
 
-    int counter;
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
-    int playerInTrigger;
+    
     private void OnTriggerEnter(Collider other)
     {
-
         if (!AlreadyTriggered)
         {
+            index = 0;
             if (other.CompareTag("Player"))
             {
                 playerInTrigger++;
@@ -74,11 +74,6 @@ public class TutorialTextAnCamera : MonoBehaviour
             text.text = UIText[0];
             Canvas.SetActive(true);
         }
-
-
-
-
-
     }
 
     private void OnTriggerExit(Collider other)
@@ -91,7 +86,7 @@ public class TutorialTextAnCamera : MonoBehaviour
 
     public string nextText()
     {
-        print("aaaaa");
+        
         index++;
         if (index != UIText.Length)
         {
