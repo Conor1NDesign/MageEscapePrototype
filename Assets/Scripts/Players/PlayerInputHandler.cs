@@ -8,18 +8,21 @@ public class PlayerInputHandler : MonoBehaviour
     //Variables grabbed on Awake that allow input to be recieved by the script, and send actions and instructions to their assigned player object.
     private PlayerInput playerInput;
     private PlayerController playerController;
-
+    private GameObject gameManager;
+    private TutorialTextAnCamera ttac;
     private void Awake()
     {
         //Gets the Player Input component on the object this script is attatched to.
         playerInput = GetComponent<PlayerInput>();
         //Gets the Player Index from playerInput.
         var index = playerInput.playerIndex;
-
         //Finds all objects with PlayerControllers, and then assigns the object with this script to the one that shares an identical playerIndex.
         //This prevents multiple players from somehow controlling the same player.
         var playerControllers = FindObjectsOfType<PlayerController>();
         playerController = playerControllers.FirstOrDefault(m => m.GetPlayerIndex() == index);
+
+
+        gameManager = GameObject.Find("GameManager");
     }
 
     public void OnMove(CallbackContext context)
@@ -45,6 +48,40 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (playerController) //All player input methods need to check if playerController is NOT null otherwise Input System spits out a bunch of errors.
         {
+
+            if (context.performed)
+            {
+                if (gameManager.GetComponent<TutorialManager>() != null)
+                {
+                    if (gameManager.GetComponent<TutorialManager>().ttac != null)
+                    {
+                        if (ttac == null)
+                        {
+                            ttac = gameManager.GetComponent<TutorialManager>().ttac;
+                        }
+
+
+                        if (ttac != false)
+                        {
+                            ttac.CurrentUIText = ttac.nextText();
+                            if (ttac.CurrentUIText != "")
+                            {
+                                ttac.text.text = ttac.CurrentUIText;
+                            }
+                            else
+                            {
+                                ttac.EndSequence();
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        ttac = null;
+                    }
+                }
+            }
+
             if (context.performed)
             {
                 playerController.Interact(true);
@@ -110,13 +147,13 @@ public class PlayerInputHandler : MonoBehaviour
             }
         }
     }
-  //  int counter = 0;
+
     public void OnPause(CallbackContext context)
     {
         if (context.performed)
         {
             if (playerController) //All player input methods need to check if playerController is NOT null otherwise Input System spits out a bunch of errors.
-            { 
+            {
                 FindObjectOfType<PauseMenu>().Pause();
             }
         }

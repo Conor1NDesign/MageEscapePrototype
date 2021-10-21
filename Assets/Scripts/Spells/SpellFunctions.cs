@@ -113,7 +113,7 @@ public class SpellFunctions : MonoBehaviour
 
 	static void TornadoGust(PlayerController caster)
 	{
-		Debug.Log("Tornado Gust");
+
 		if (caster.tornadoActive == true)
 		{
 			caster.tornadoActive = false;

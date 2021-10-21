@@ -24,7 +24,7 @@ public class SpellCharacterController : MonoBehaviour
 		if (playerCasting)
 		{
 			Vector3 movDir = new Vector3(playerCasting.moveDirection.x, useGravity ? playerCasting.moveDirection.y : 0, playerCasting.moveDirection.z);
-			print(movDir);
+
 			spell.Move(movDir * Time.deltaTime);
 
 			// Limit the spell to a radius around the player if necessary

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8371511205941126897}
   - component: {fileID: 7526439264512543823}
   - component: {fileID: 2477629134406633158}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FloorTile_Water
   m_TagString: Water
   m_Icon: {fileID: 0}
@@ -83,7 +83,6 @@ MonoBehaviour:
   corners: []
   mesh: {fileID: 0}
   SurfaceMat: {fileID: 2100000, guid: a1dac07f667c52445b5baf47c6cc821f, type: 2}
-  hash: {fileID: 0}
   GroundMesh: {fileID: 0}
 --- !u!1001 &6480510989009612795
 PrefabInstance:
@@ -143,6 +142,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3a15379b21762d34c866bf0c77167659, type: 3}
       propertyPath: m_Name
       value: FloorTile_Basic_Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3a15379b21762d34c866bf0c77167659, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a15379b21762d34c866bf0c77167659, type: 3}
