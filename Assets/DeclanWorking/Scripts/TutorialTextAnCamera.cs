@@ -59,6 +59,7 @@ public class TutorialTextAnCamera : MonoBehaviour
                     foreach (var item in players)
                     {
                         item.enabled = false;
+                        item.animator.SetInteger("State", (int)0);
                     }
                     if (useCameraPoint)
                     {
@@ -95,6 +96,7 @@ public class TutorialTextAnCamera : MonoBehaviour
                 }
                 foreach (var item in players)
                 {
+                    item.playerState = PlayerController.PlayerStates.Idle;
                     item.enabled = false;
                 }
                 if (useCameraPoint)
