@@ -22,7 +22,7 @@ public class DeathTrigger : MonoBehaviour
 				controller.Respawn();
 			}
 		}
-		else if (other.tag == "Heavy Object")
+		else if (other.tag == "Heavy Object" || other.tag == "MM")
 		{
 			RespawnHeavyObject heavyObject = other.GetComponent<RespawnHeavyObject>();
 			Boulder boulder = other.GetComponent<Boulder>();

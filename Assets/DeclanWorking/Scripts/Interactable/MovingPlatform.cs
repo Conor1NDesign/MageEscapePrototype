@@ -125,7 +125,6 @@ public class MovingPlatform : MonoBehaviour
 		moving = false;
 		interpolationRatio = (float)elapsedFrames / speed;
 		Platform.transform.position = Vector3.Lerp(Platform.transform.position, startPos, interpolationRatio);
-		print(startPos);
 		elapsedFrames = (elapsedFrames + 1) % (speed + 1);
 	}
 }

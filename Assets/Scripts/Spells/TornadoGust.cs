@@ -23,7 +23,7 @@ public class TornadoGust : MonoBehaviour
     {
         if (cc.isGrounded)
         {
-            print("Grounded");
+
             counter = 0.0f;
         }
         else
@@ -40,12 +40,16 @@ public class TornadoGust : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("Heavy Object"))
+        if (other.CompareTag("Heavy Object") || other.CompareTag("MM"))
         {
-            // cc.center = new Vector3(0, -5, 0);
-            other.attachedRigidbody.isKinematic = true;
-            currentlyLifting = other.gameObject;
-            other.transform.position = lockPos.transform.position;
+            if (currentlyLifting == null && other.name != "MirrorCollider")
+            {
+
+                other.attachedRigidbody.isKinematic = true;
+                currentlyLifting = other.gameObject;
+                other.transform.position = lockPos.transform.position;
+            }
+
         }
     }
     private void OnDestroy()
@@ -54,7 +58,9 @@ public class TornadoGust : MonoBehaviour
         if (currentlyLifting != null)
         {
             currentlyLifting.GetComponent<Rigidbody>().isKinematic = false;
+
             currentlyLifting = null;
+            //currentlyLifting.transform.parent = null;
         }
     }
 
