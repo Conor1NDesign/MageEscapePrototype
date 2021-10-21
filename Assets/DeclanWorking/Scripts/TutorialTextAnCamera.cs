@@ -10,13 +10,16 @@ public class TutorialTextAnCamera : MonoBehaviour
     public GameObject cameraPoint;
 
     public string[] UIText;
+    [HideInInspector]
     public string CurrentUIText;
     GameObject mainCamera;
     public GameObject Canvas;
+    [HideInInspector]
     public TextMeshProUGUI text;
     int index;
     GameObject gameManager;
 
+    [HideInInspector]
     public PlayerController[] players;
     bool AlreadyTriggered = false;
 
