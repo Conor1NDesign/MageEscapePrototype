@@ -11,6 +11,9 @@ public class TutorialTextAnCamera : MonoBehaviour
 
     public string[] UIText;
 
+    public bool requiresBook;
+    public GameObject bookToTrigger;
+
     [HideInInspector]
     public string CurrentUIText;
 
@@ -43,39 +46,69 @@ public class TutorialTextAnCamera : MonoBehaviour
         text = Canvas.GetComponentInChildren<TextMeshProUGUI>();
     }
 
-    
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if (!AlreadyTriggered)
+        if (requiresBook)
         {
-            index = 0;
-            if (other.CompareTag("Player"))
+            if (!AlreadyTriggered)
             {
-                playerInTrigger++;
-            }
-
-            if (requiresBothPlayers)
-            {
-                if (playerInTrigger != 2)
+                if (bookToTrigger.transform.parent != null)
                 {
-                    return;
+                    index = 0;
+
+                    foreach (var item in players)
+                    {
+                        item.enabled = false;
+                    }
+                    if (useCameraPoint)
+                    {
+                        cameraPoint.SetActive(true);
+                        mainCamera.SetActive(false);
+                    }
+                    gameManager.GetComponent<TutorialManager>().ttac = gameObject.GetComponent<TutorialTextAnCamera>();
+                    text.text = UIText[0];
+                    Canvas.SetActive(true);
+                    AlreadyTriggered = true;
                 }
             }
-            foreach (var item in players)
-            {
-                item.enabled = false;
-            }
-            if (useCameraPoint)
-            {
-                cameraPoint.SetActive(true);
-                mainCamera.SetActive(false);
-            }
-            gameManager.GetComponent<TutorialManager>().ttac = gameObject.GetComponent<TutorialTextAnCamera>();
-            text.text = UIText[0];
-            Canvas.SetActive(true);
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && !requiresBook)
+        {
+            if (!AlreadyTriggered)
+            {
+                index = 0;
+                if (other.CompareTag("Player"))
+                {
+                    playerInTrigger++;
+                }
+
+                if (requiresBothPlayers)
+                {
+                    if (playerInTrigger != 2)
+                    {
+                        return;
+                    }
+                }
+                foreach (var item in players)
+                {
+                    item.enabled = false;
+                }
+                if (useCameraPoint)
+                {
+                    cameraPoint.SetActive(true);
+                    mainCamera.SetActive(false);
+                }
+                gameManager.GetComponent<TutorialManager>().ttac = gameObject.GetComponent<TutorialTextAnCamera>();
+                text.text = UIText[0];
+                Canvas.SetActive(true);
+            }
+        }
+
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -86,7 +119,7 @@ public class TutorialTextAnCamera : MonoBehaviour
 
     public string nextText()
     {
-        
+
         index++;
         if (index != UIText.Length)
         {
