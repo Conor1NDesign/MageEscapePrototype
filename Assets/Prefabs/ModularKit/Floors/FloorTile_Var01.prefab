@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3a15379b21762d34c866bf0c77167659, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f69c0b00024e5634e84ef13840153278, type: 2}
     - target: {fileID: 919132149155446097, guid: 3a15379b21762d34c866bf0c77167659, type: 3}
       propertyPath: m_Name
       value: FloorTile_Basic_Mesh
