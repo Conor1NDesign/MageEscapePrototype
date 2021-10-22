@@ -91,6 +91,7 @@ public class PlayerInputHandler : MonoBehaviour
                                 if (ttac.CurrentUIText != "")
                                 {
                                     ttac.text.text = ttac.CurrentUIText;
+                                    ttac.CheckIfCamNeedsToBeChanged();
                                 }
                                 else
                                 {
