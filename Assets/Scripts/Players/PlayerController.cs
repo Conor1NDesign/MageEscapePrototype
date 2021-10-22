@@ -546,6 +546,9 @@ public class PlayerController : MonoBehaviour
 					SpellFunctions.EndQuickCast(this);
 			}
 
+			if (playerState == PlayerStates.Throwing)
+				playerState = PlayerStates.Idle;
+
 			// Drop spellbook on death
 			spellbook.transform.parent = null;
 			spellbook.GetComponent<Rigidbody>().isKinematic = false;
