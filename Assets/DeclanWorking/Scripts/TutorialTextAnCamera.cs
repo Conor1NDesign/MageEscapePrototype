@@ -34,6 +34,11 @@ public class TutorialTextAnCamera : MonoBehaviour
     public PlayerController[] players;
     bool AlreadyTriggered = false;
 
+
+    [Header("TriggerSequence")]
+    public GameObject[] nextTrigger;
+    public GameObject[] triggerOff;
+
     void Start()
     {
         if (requiresBook)
@@ -48,6 +53,14 @@ public class TutorialTextAnCamera : MonoBehaviour
             gameManager.AddComponent<TutorialManager>();
         }
         text = Canvas.GetComponentInChildren<TextMeshProUGUI>();
+        if (nextTrigger != null)
+        {
+            foreach (var trigger in nextTrigger)
+            {
+
+                trigger.SetActive(false);
+            }
+        }
     }
 
     private void Update()
@@ -151,6 +164,23 @@ public class TutorialTextAnCamera : MonoBehaviour
         Canvas.SetActive(false);
         AlreadyTriggered = true;
         gameManager.GetComponent<TutorialManager>().ttac = null;
+        if (nextTrigger != null)
+        {
+            foreach (var trigger in nextTrigger)
+            {
+
+                trigger.SetActive(true);
+            }
+        }
+
+        if (triggerOff != null)
+        {
+            foreach (var trigger in triggerOff)
+            {
+
+                trigger.SetActive(false);
+            }
+        }
     }
 
 
