@@ -39,8 +39,13 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (playerController) //All player input methods need to check if playerController is NOT null otherwise Input System spits out a bunch of errors.
         {
-            if (context.performed)
-                playerController.InteractWithSpellbook();
+            if (gameManager.GetComponent<TutorialManager>().ttac == null)
+            {
+                if (context.performed)
+                    playerController.InteractWithSpellbook(false);
+                else if (context.canceled)
+                    playerController.InteractWithSpellbook(true);
+            }
         }
     }
 
@@ -71,13 +76,10 @@ public class PlayerInputHandler : MonoBehaviour
                             else
                             {
                                 ttac.EndSequence();
+                                ttac = null;
                             }
                         }
 
-                    }
-                    else
-                    {
-                        ttac = null;
                     }
                 }
             }

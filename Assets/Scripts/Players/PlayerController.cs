@@ -33,7 +33,8 @@ public class PlayerController : MonoBehaviour
 		Floating,
 		Casting,
 		Dead,
-		Respawning
+		Respawning,
+		Throwing
 	};
 
 	//Enum declaration for the player's current spellbook element (or lack thereof, if they have no book currently)
@@ -87,8 +88,11 @@ public class PlayerController : MonoBehaviour
 	public float gravityRampUp;
 	[HideInInspector]
 	public float gravityMultiplier;
-	[Tooltip("The player's strength with throwing spellbooks")]
+	[Tooltip("The player's max strength with throwing spellbooks")]
 	public float throwStrength;
+	[Tooltip("The speed at which the throw strength grows to that maximum")]
+	public float throwStrengthGrowth = 1.0f;
+	private float currentThrowStrength;
 
 	[Header("Respawning Settings")]
 	[Tooltip("The amount of time (in seconds) it takes to respawn the player when they die.")]
@@ -219,7 +223,7 @@ public class PlayerController : MonoBehaviour
 		//Adjusts the moveDirection based on the angle of the Main Camera object.
 		moveDirection = Quaternion.Euler(0, levelCamera.gameObject.transform.eulerAngles.y, 0) * moveDirection;
 		//Lastly, multiplies moveDirection by moveSpeed to get a final value for the Controller's Move() method.
-		if (!tornadoActive)
+		if (!(tornadoActive || playerState == PlayerStates.Throwing))
 		{
 
 			moveDirection *= currentMoveSpeed;
@@ -247,7 +251,7 @@ public class PlayerController : MonoBehaviour
 
 		//Calls the Move() method on the CharacterController using the moveDirection value.
 		//controller.Move(moveDirection * Time.deltaTime);
-		if (transform.parent == null && !tornadoActive)
+		if (transform.parent == null && !(tornadoActive || playerState == PlayerStates.Throwing))
 		{
 			Move(moveDirection);
 		}
@@ -264,13 +268,13 @@ public class PlayerController : MonoBehaviour
 		//PLAYER STATE CHANGES//
 
 		//Checks if the player is grounded, has some movement input, and is not dead, before returning that they are 'Moving'.
-		if (controller.isGrounded && moveDirection != new Vector3(0, moveDirection.y, 0) && !isDead && playerState != PlayerStates.Casting)
+		if (controller.isGrounded && moveDirection != new Vector3(0, moveDirection.y, 0) && !isDead && playerState != PlayerStates.Casting && playerState != PlayerStates.Throwing)
 		{
 			playerState = PlayerStates.Moving;
 		}
 
 		//Checks if the player is grounded, has NO movement input, and is not dead, before returning that they are 'Idle'.
-		if (controller.isGrounded && moveDirection == new Vector3(0, moveDirection.y, 0) && !isDead && playerState != PlayerStates.Casting)
+		if (controller.isGrounded && moveDirection == new Vector3(0, moveDirection.y, 0) && !isDead && playerState != PlayerStates.Casting && playerState != PlayerStates.Throwing)
 		{
 			playerState = PlayerStates.Idle;
 		}
@@ -390,6 +394,17 @@ public class PlayerController : MonoBehaviour
 			currentRotateSpeed = rotationLockedBySpell ? 0 : castingRotationSpeed;
 		}
 
+		//Checks if the player is throwing their book
+		if (playerState == PlayerStates.Throwing)
+		{
+			animator.SetInteger("State", (int)playerState);
+			currentMoveSpeed = 0;
+			currentRotateSpeed = rotateSpeed;
+			currentThrowStrength += Time.deltaTime * throwStrengthGrowth;
+			if (currentThrowStrength > throwStrength)
+				currentThrowStrength = throwStrength;
+		}
+
 		//PLAYER STATE CHECKS END//
 	}
 
@@ -433,18 +448,25 @@ public class PlayerController : MonoBehaviour
 	}
 
 	// Throws the player's current spellbook
-	public void InteractWithSpellbook()
+	public void InteractWithSpellbook(bool endThrow)
 	{
 		if (playerState == PlayerStates.Casting)
 			return;
 
 		if (spellbook)
 		{
-			// Throw a spellbook if you have one equipped
-			Rigidbody spellbookRB = spellbook.GetComponent<Rigidbody>();
-			DropSpellbook();
+			if (endThrow && playerState == PlayerStates.Throwing)
+			{
+				playerState = PlayerStates.Idle;
+				// Throw a spellbook if you have one equipped
+				Rigidbody spellbookRB = spellbook.GetComponent<Rigidbody>();
+				DropSpellbook();
 
-			spellbookRB.AddForce(transform.forward * throwStrength, ForceMode.Impulse);
+				spellbookRB.AddForce(transform.forward * currentThrowStrength, ForceMode.Impulse);
+			} else if (!endThrow) {
+				playerState = PlayerStates.Throwing;
+				currentThrowStrength = 0.0f;
+			}
 		}
 		else if (nearbySpellbook)
 		{

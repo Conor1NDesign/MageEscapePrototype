@@ -10,18 +10,36 @@ public class TutorialTextAnCamera : MonoBehaviour
     public GameObject cameraPoint;
 
     public string[] UIText;
+
+    public bool requiresBook;
+    private GameObject bookToTrigger;
+
+    [HideInInspector]
     public string CurrentUIText;
+
     GameObject mainCamera;
+
     public GameObject Canvas;
+
+    [HideInInspector]
     public TextMeshProUGUI text;
+
     int index;
+
     GameObject gameManager;
 
+    int playerInTrigger;
+
+    [HideInInspector]
     public PlayerController[] players;
     bool AlreadyTriggered = false;
 
     void Start()
     {
+        if (requiresBook)
+        {
+            bookToTrigger = gameObject;
+        }
         players = FindObjectsOfType<PlayerController>();
         mainCamera = Camera.main.gameObject;
         gameManager = GameObject.Find("GameManager");
@@ -32,52 +50,71 @@ public class TutorialTextAnCamera : MonoBehaviour
         text = Canvas.GetComponentInChildren<TextMeshProUGUI>();
     }
 
-    int counter;
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
-    }
-
-
-    int playerInTrigger;
-    private void OnTriggerEnter(Collider other)
-    {
-
-        if (!AlreadyTriggered)
+        if (requiresBook)
         {
-            if (other.CompareTag("Player"))
+            if (!AlreadyTriggered)
             {
-                playerInTrigger++;
-            }
-
-            if (requiresBothPlayers)
-            {
-                if (playerInTrigger != 2)
+                if (bookToTrigger.transform.parent != null)
                 {
-                    return;
+                    index = 0;
+
+                    foreach (var item in players)
+                    {
+                        item.enabled = false;
+                        item.animator.SetInteger("State", (int)0);
+                    }
+                    if (useCameraPoint)
+                    {
+                        cameraPoint.SetActive(true);
+                        mainCamera.SetActive(false);
+                    }
+                    gameManager.GetComponent<TutorialManager>().ttac = gameObject.GetComponent<TutorialTextAnCamera>();
+                    text.text = UIText[0];
+                    Canvas.SetActive(true);
+                    AlreadyTriggered = true;
                 }
             }
-            foreach (var item in players)
-            {
-                item.enabled = false;
-            }
-            if (useCameraPoint)
-            {
-                cameraPoint.SetActive(true);
-                mainCamera.SetActive(false);
-            }
-            gameManager.GetComponent<TutorialManager>().ttac = gameObject.GetComponent<TutorialTextAnCamera>();
-            text.text = UIText[0];
-            Canvas.SetActive(true);
         }
-
-
-
-
-
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && !requiresBook)
+        {
+            if (!AlreadyTriggered)
+            {
+                index = 0;
+                if (other.CompareTag("Player"))
+                {
+                    playerInTrigger++;
+                }
+
+                if (requiresBothPlayers)
+                {
+                    if (playerInTrigger != 2)
+                    {
+                        return;
+                    }
+                }
+                foreach (var item in players)
+                {
+                    item.enabled = false;
+                    item.animator.SetInteger("State", (int)0);
+                }
+                if (useCameraPoint)
+                {
+                    cameraPoint.SetActive(true);
+                    mainCamera.SetActive(false);
+                }
+                gameManager.GetComponent<TutorialManager>().ttac = gameObject.GetComponent<TutorialTextAnCamera>();
+                text.text = UIText[0];
+                Canvas.SetActive(true);
+            }
+        }
+
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -88,7 +125,7 @@ public class TutorialTextAnCamera : MonoBehaviour
 
     public string nextText()
     {
-        print("aaaaa");
+
         index++;
         if (index != UIText.Length)
         {
