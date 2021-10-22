@@ -338,7 +338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -370}
+  m_AnchoredPosition: {x: 0, y: -250}
   m_SizeDelta: {x: 1126, y: 235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &19630429
@@ -1293,8 +1293,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 8
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0, y: 1.75, z: 0}
+      m_Extent: {x: 2, y: 1.5, z: 0.00000013113416}
   m_Shapes:
     vertices: []
     shapes: []
@@ -2768,6 +2768,7 @@ GameObject:
   - component: {fileID: 97858267}
   - component: {fileID: 97858269}
   - component: {fileID: 97858268}
+  - component: {fileID: 97858270}
   m_Layer: 0
   m_Name: Trigger05
   m_TagString: Untagged
@@ -2816,6 +2817,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 16, y: 4, z: 4}
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &97858270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97858266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945ce88a8034b1141a204202f6d40e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiresBothPlayers: 0
+  useCameraPoint: 0
+  cameraPoint: {fileID: 0}
+  UIText:
+  - Excellent! Now, you must find a way to get the book across to your partner...
+    A shame we don't have any Teleportation Scrolls laying about...
+  requiresBook: 0
+  CurrentUIText: 
+  Canvas: {fileID: 1211994966}
+  text: {fileID: 0}
+  players: []
+  nextTrigger:
+  - {fileID: 1905884110}
+  triggerOff:
+  - {fileID: 520497113}
+  spellCanvas: {fileID: 780816710}
 --- !u!1001 &102421274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2890,6 +2919,7 @@ GameObject:
   - component: {fileID: 102972976}
   - component: {fileID: 102972975}
   - component: {fileID: 102972974}
+  - component: {fileID: 102972977}
   m_Layer: 0
   m_Name: CameraFocus07
   m_TagString: Untagged
@@ -2993,6 +3023,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!95 &102972977
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102972972}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 68557a8a1048be844aa7d7bdcd21deac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &105803793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3184,7 +3233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2699594004476798728, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2699594004476798728, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3443,6 +3492,9 @@ MonoBehaviour:
   Canvas: {fileID: 1211994966}
   text: {fileID: 0}
   players: []
+  nextTrigger: []
+  triggerOff: []
+  spellCanvas: {fileID: 780816710}
 --- !u!1 &117758723 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9010426423907965765, guid: 6b566eff8c9321c4b80662f7d694b6a6, type: 3}
@@ -3736,7 +3788,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -370}
+  m_AnchoredPosition: {x: 0, y: -250}
   m_SizeDelta: {x: 1126, y: 235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &123750220
@@ -5188,7 +5240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -370}
+  m_AnchoredPosition: {x: 0, y: -250}
   m_SizeDelta: {x: 1126, y: 235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &184046427
@@ -6447,6 +6499,7 @@ GameObject:
   - component: {fileID: 231220319}
   - component: {fileID: 231220318}
   - component: {fileID: 231220317}
+  - component: {fileID: 231220320}
   m_Layer: 0
   m_Name: CameraFocus04
   m_TagString: Untagged
@@ -6550,6 +6603,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!95 &231220320
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231220315}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9c5c0a559ca9764c8e3f2d512f6aab0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &231483756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7115,6 +7187,7 @@ GameObject:
   - component: {fileID: 253904132}
   - component: {fileID: 253904131}
   - component: {fileID: 253904130}
+  - component: {fileID: 253904133}
   m_Layer: 0
   m_Name: CameraFocus10
   m_TagString: Untagged
@@ -7218,6 +7291,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!95 &253904133
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253904128}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d953c112821b6444c96c384223f9b13e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &254341060 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9010426423907965765, guid: 6b566eff8c9321c4b80662f7d694b6a6, type: 3}
@@ -7440,6 +7532,8 @@ Transform:
   - {fileID: 1853259763}
   - {fileID: 704349973}
   - {fileID: 520497114}
+  - {fileID: 1905884111}
+  - {fileID: 1456473960}
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7663,7 +7757,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -370}
+  m_AnchoredPosition: {x: 0, y: -250}
   m_SizeDelta: {x: 1126, y: 235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &266591239
@@ -8155,8 +8249,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 8
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0, y: 1.75, z: 0}
+      m_Extent: {x: 2, y: 1.5, z: 0.00000013113416}
   m_Shapes:
     vertices: []
     shapes: []
@@ -13258,6 +13352,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 89122256}
     m_Modifications:
+    - target: {fileID: 910045828545505830, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 910045828545505830, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.00000008940697
+      objectReference: {fileID: 0}
+    - target: {fileID: 910045828545505830, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180
+      objectReference: {fileID: 0}
     - target: {fileID: 1951744548589562981, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
       propertyPath: Barrier
       value: 
@@ -13318,6 +13424,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1451526267}
+    - target: {fileID: 8728209415295957551, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 06dfc31a5785ab342917f28c9bbd83e3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
 --- !u!1 &492416534 stripped
@@ -14230,7 +14340,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520497113}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: 0, z: 53}
+  m_LocalPosition: {x: 6, y: 0, z: 52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 257693351}
@@ -14275,7 +14385,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 16, y: 4, z: 2}
+  m_Size: {x: 16, y: 4, z: 4}
   m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &523552204
 PrefabInstance:
@@ -15138,6 +15248,7 @@ GameObject:
   - component: {fileID: 564990284}
   - component: {fileID: 564990283}
   - component: {fileID: 564990282}
+  - component: {fileID: 564990285}
   m_Layer: 0
   m_Name: CameraFocus06
   m_TagString: Untagged
@@ -15241,6 +15352,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!95 &564990285
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564990280}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce6cd9f13812a3d478f9bf946a169bd1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &566961125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15315,6 +15445,7 @@ GameObject:
   - component: {fileID: 569196217}
   - component: {fileID: 569196216}
   - component: {fileID: 569196215}
+  - component: {fileID: 569196218}
   m_Layer: 0
   m_Name: CameraFocus01
   m_TagString: Untagged
@@ -15418,6 +15549,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!95 &569196218
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569196213}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3a35992eb55e2040ac36943cfd790b1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &571252661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17982,7 +18132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
       propertyPath: m_Center.x
-      value: 3.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
       propertyPath: m_Center.y
@@ -17994,7 +18144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
       propertyPath: m_Size.x
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
       propertyPath: m_Size.y
@@ -18510,7 +18660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704349972}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 48}
+  m_LocalPosition: {x: 10, y: 0, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 257693351}
@@ -18555,7 +18705,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 4, z: 4}
+  m_Size: {x: 8, y: 4, z: 8}
   m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &707219817
 GameObject:
@@ -21099,6 +21249,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1044412544209714949, guid: d746a804eb3f08843996c07e083233d7, type: 3}
   m_PrefabInstance: {fileID: 1785729408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &780816710 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6371342952666435553, guid: bb749de5ed9bb5a4ba97d8fb778b0c14, type: 3}
+  m_PrefabInstance: {fileID: 1753996506}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &785343831
 PrefabInstance:
@@ -27162,6 +27317,7 @@ GameObject:
   - component: {fileID: 947833015}
   - component: {fileID: 947833014}
   - component: {fileID: 947833013}
+  - component: {fileID: 947833016}
   m_Layer: 0
   m_Name: CameraFocus05
   m_TagString: Untagged
@@ -27265,6 +27421,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!95 &947833016
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947833011}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1b80fc5065b94e54788c9b5e3e4fd13a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &951973968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30332,6 +30507,7 @@ GameObject:
   - component: {fileID: 1041153156}
   - component: {fileID: 1041153158}
   - component: {fileID: 1041153157}
+  - component: {fileID: 1041153159}
   m_Layer: 0
   m_Name: Trigger07
   m_TagString: Untagged
@@ -30380,6 +30556,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 4, z: 16}
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &1041153159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041153155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945ce88a8034b1141a204202f6d40e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiresBothPlayers: 0
+  useCameraPoint: 1
+  cameraPoint: {fileID: 947833011}
+  UIText:
+  - I created these Anti-Magic Barriers to keep would-be thieves from stealing Spellbooks
+    from our Tower... They now seem to be in your way.
+  - They won't harm you two, but they will destroy any Spellbooks, and most Magic
+    that passes through.
+  requiresBook: 0
+  CurrentUIText: 
+  Canvas: {fileID: 1211994966}
+  text: {fileID: 0}
+  players: []
+  nextTrigger: []
+  triggerOff: []
+  spellCanvas: {fileID: 780816710}
 --- !u!1001 &1041369013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33597,6 +33801,7 @@ GameObject:
   - component: {fileID: 1142034465}
   - component: {fileID: 1142034464}
   - component: {fileID: 1142034463}
+  - component: {fileID: 1142034466}
   m_Layer: 0
   m_Name: CameraFocus02
   m_TagString: Untagged
@@ -33700,6 +33905,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!95 &1142034466
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142034461}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e04ea2b1931e3ba40b752f64cce1c303, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1142037974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35692,6 +35916,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 89122256}
     m_Modifications:
+    - target: {fileID: 910045828545505830, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 910045828545505830, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.00000017881393
+      objectReference: {fileID: 0}
+    - target: {fileID: 910045828545505830, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180
+      objectReference: {fileID: 0}
     - target: {fileID: 1951744548589562981, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
       propertyPath: Barrier
       value: 
@@ -41176,6 +41412,7 @@ GameObject:
   - component: {fileID: 1376864666}
   - component: {fileID: 1376864668}
   - component: {fileID: 1376864667}
+  - component: {fileID: 1376864669}
   m_Layer: 0
   m_Name: Trigger09
   m_TagString: Untagged
@@ -41224,6 +41461,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 4, z: 12}
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &1376864669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376864665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945ce88a8034b1141a204202f6d40e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiresBothPlayers: 0
+  useCameraPoint: 1
+  cameraPoint: {fileID: 102972972}
+  UIText:
+  - Often you'll find yourselves needing two separate elements to solve a problem.
+    You'll need to work together to make it through!
+  - The FLAMETHROWER spell fires a stream of flames forth from your fingertips! The
+    flames can melt through ice, and ignite Brazier.
+  - And the FIREBALL spell works in a similar fashion, but over a longer, and more
+    precise distance!
+  - Experiment with your FROST SPELLS and the two FIRE SPELLS to navigate through
+    this next room!
+  requiresBook: 0
+  CurrentUIText: 
+  Canvas: {fileID: 1211994966}
+  text: {fileID: 0}
+  players: []
+  nextTrigger: []
+  triggerOff: []
+  spellCanvas: {fileID: 780816710}
 --- !u!1001 &1377003240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42121,7 +42390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -370}
+  m_AnchoredPosition: {x: 0, y: -250}
   m_SizeDelta: {x: 1126, y: 235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1404260332
@@ -42544,6 +42813,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 871298787}
+    - target: {fileID: 8728209415295957551, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 06dfc31a5785ab342917f28c9bbd83e3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
 --- !u!1001 &1414230407
@@ -44384,6 +44657,80 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
   m_PrefabInstance: {fileID: 1455169121}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1456473956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1456473960}
+  - component: {fileID: 1456473959}
+  - component: {fileID: 1456473958}
+  - component: {fileID: 1456473957}
+  m_Layer: 0
+  m_Name: UITrigger06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1456473957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456473956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bcf5293a53874340b30ced999054756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linkedUIElement: {fileID: 184046427}
+  fadeSpeed: 0.01
+--- !u!114 &1456473958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456473956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c060441a2491c4ea23d208ad5bf6fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerColour: {r: 1, g: 0.5400758, b: 0, a: 0.078431375}
+  triggerWireColour: {r: 1, g: 0.4957481, b: 0, a: 1}
+--- !u!65 &1456473959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456473956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4, z: 24}
+  m_Center: {x: 0, y: 2, z: 0}
+--- !u!4 &1456473960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456473956}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 44.05, y: 0, z: 54}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 257693351}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1456829192
 GameObject:
   m_ObjectHideFlags: 0
@@ -44956,6 +45303,10 @@ MonoBehaviour:
   Canvas: {fileID: 1211994966}
   text: {fileID: 0}
   players: []
+  nextTrigger:
+  - {fileID: 1541669439}
+  triggerOff: []
+  spellCanvas: {fileID: 780816710}
 --- !u!1001 &1468722881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45512,6 +45863,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8371511205941126897, guid: aa771bdfb3664e54ab104dbda97131a0, type: 3}
   m_PrefabInstance: {fileID: 1481096818}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1484936872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4369463060973694638, guid: 7d498a910a58c1040a13795d09241779, type: 3}
+  m_PrefabInstance: {fileID: 231483756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1484936878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484936872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945ce88a8034b1141a204202f6d40e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiresBothPlayers: 0
+  useCameraPoint: 0
+  cameraPoint: {fileID: 0}
+  UIText:
+  - Frost Spells can freeze your surroundings very quickly! Try using a Frost Wave
+    to get across the water here!
+  - The second Frost Spell sends forth a powerful Ice Beam that can reflect off of
+    mirrors, too!
+  requiresBook: 1
+  CurrentUIText: 
+  Canvas: {fileID: 1211994966}
+  text: {fileID: 0}
+  players: []
+  nextTrigger:
+  - {fileID: 1456473956}
+  triggerOff: []
+  spellCanvas: {fileID: 780816710}
 --- !u!1001 &1485937680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46082,6 +46467,7 @@ GameObject:
   - component: {fileID: 1500406018}
   - component: {fileID: 1500406017}
   - component: {fileID: 1500406016}
+  - component: {fileID: 1500406019}
   m_Layer: 0
   m_Name: CameraFocus08
   m_TagString: Untagged
@@ -46185,6 +46571,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!95 &1500406019
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500406014}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ab82a210e95b2424d832ab5f251baa07, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1504105226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47120,7 +47525,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1541669439}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6}
+  m_LocalPosition: {x: 0, y: 0, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 257693351}
@@ -47165,7 +47570,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12, y: 4, z: 8}
+  m_Size: {x: 12, y: 4, z: 12}
   m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &1542769659
 PrefabInstance:
@@ -47923,6 +48328,7 @@ GameObject:
   - component: {fileID: 1576000378}
   - component: {fileID: 1576000377}
   - component: {fileID: 1576000376}
+  - component: {fileID: 1576000379}
   m_Layer: 0
   m_Name: CameraFocus09
   m_TagString: Untagged
@@ -48026,6 +48432,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!95 &1576000379
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576000374}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9710dce962b52734c8f1628382868011, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1576688877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50828,6 +51253,45 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
   m_PrefabInstance: {fileID: 1693740727}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1693969843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5045437296858801004, guid: 2b798526b57dad04da851d3823fb5d6d, type: 3}
+  m_PrefabInstance: {fileID: 1516478843}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1693969849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693969843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945ce88a8034b1141a204202f6d40e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiresBothPlayers: 0
+  useCameraPoint: 0
+  cameraPoint: {fileID: 0}
+  UIText:
+  - I'm sure you both remember, but every Spellbook within the Tower holds 2 Spells
+    that correspond with the Book's Element.
+  - Wind Spells focus on manipulating one another, and the objects around you. The
+    strong gusts can lift heavy things, push people, and extinguish fire!
+  - Try using a Pushing Gust spell to push your partner over the gap! If you fall,
+    the Resurrection Stone will regenerate you!
+  - You can also use Tornado Lift to pick up and move heavy objects! A Tornado can't
+    pick up other mages however! I added that to the spell for safety!
+  requiresBook: 1
+  CurrentUIText: 
+  Canvas: {fileID: 1211994966}
+  text: {fileID: 0}
+  players: []
+  nextTrigger:
+  - {fileID: 520497113}
+  triggerOff:
+  - {fileID: 704349972}
+  spellCanvas: {fileID: 780816710}
 --- !u!1001 &1700811591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52402,7 +52866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6371342952666435553, guid: bb749de5ed9bb5a4ba97d8fb778b0c14, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb749de5ed9bb5a4ba97d8fb778b0c14, type: 3}
@@ -53640,6 +54104,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 89122256}
     m_Modifications:
+    - target: {fileID: 910045828545505830, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 910045828545505830, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.00000058114523
+      objectReference: {fileID: 0}
+    - target: {fileID: 910045828545505830, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180
+      objectReference: {fileID: 0}
     - target: {fileID: 1951744548589562981, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
       propertyPath: Barrier
       value: 
@@ -54038,6 +54514,7 @@ GameObject:
   - component: {fileID: 1811471658}
   - component: {fileID: 1811471660}
   - component: {fileID: 1811471659}
+  - component: {fileID: 1811471661}
   m_Layer: 0
   m_Name: Trigger03
   m_TagString: Untagged
@@ -54086,6 +54563,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12, y: 4, z: 4}
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &1811471661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811471657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945ce88a8034b1141a204202f6d40e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiresBothPlayers: 0
+  useCameraPoint: 1
+  cameraPoint: {fileID: 2117210710}
+  UIText:
+  - Ah, a Resurrection Stone! Should you somehow perish within the tower, you'll
+    rematerialise here after a brief moment!
+  - And look there! One of my many Spellbooks! This one is attuned to the element
+    of WIND! You should be able to use it to cross the chasm
+  requiresBook: 0
+  CurrentUIText: 
+  Canvas: {fileID: 1211994966}
+  text: {fileID: 0}
+  players: []
+  nextTrigger: []
+  triggerOff: []
+  spellCanvas: {fileID: 780816710}
 --- !u!1001 &1814273621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54345,6 +54850,7 @@ GameObject:
   - component: {fileID: 1817016438}
   - component: {fileID: 1817016440}
   - component: {fileID: 1817016439}
+  - component: {fileID: 1817016441}
   m_Layer: 0
   m_Name: Trigger10
   m_TagString: Untagged
@@ -54393,6 +54899,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12, y: 4, z: 4}
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &1817016441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817016437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945ce88a8034b1141a204202f6d40e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiresBothPlayers: 0
+  useCameraPoint: 0
+  cameraPoint: {fileID: 0}
+  UIText:
+  - Ah, Earth Spells! This element focuses on creating Earthen matter to help navigate
+    difficult areas!
+  - 'The Summon: Platform Spell can help you cross these dangerous chasms. '
+  - 'And the Summon: Boulder Spell can activate distant or hard-to-reach Pressure
+    Plates! '
+  requiresBook: 0
+  CurrentUIText: 
+  Canvas: {fileID: 1211994966}
+  text: {fileID: 0}
+  players: []
+  nextTrigger: []
+  triggerOff: []
+  spellCanvas: {fileID: 780816710}
 --- !u!1001 &1818438153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55675,7 +56210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1504866234269728581, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1504866234269728581, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: m_LocalPosition.z
@@ -57348,6 +57883,80 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
   m_PrefabInstance: {fileID: 1904090315}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1905884110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1905884111}
+  - component: {fileID: 1905884114}
+  - component: {fileID: 1905884113}
+  - component: {fileID: 1905884112}
+  m_Layer: 0
+  m_Name: UITrigger05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1905884111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905884110}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6, y: 0, z: 52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 257693351}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1905884112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905884110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bcf5293a53874340b30ced999054756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linkedUIElement: {fileID: 1404260332}
+  fadeSpeed: 0.01
+--- !u!114 &1905884113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905884110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c060441a2491c4ea23d208ad5bf6fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerColour: {r: 1, g: 0.5400758, b: 0, a: 0.078431375}
+  triggerWireColour: {r: 1, g: 0.4957481, b: 0, a: 1}
+--- !u!65 &1905884114
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905884110}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16, y: 4, z: 4}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &1906551065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57771,6 +58380,7 @@ GameObject:
   - component: {fileID: 1911577404}
   - component: {fileID: 1911577406}
   - component: {fileID: 1911577405}
+  - component: {fileID: 1911577407}
   m_Layer: 0
   m_Name: Trigger11
   m_TagString: Untagged
@@ -57819,6 +58429,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12, y: 4, z: 4}
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &1911577407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911577403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945ce88a8034b1141a204202f6d40e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiresBothPlayers: 0
+  useCameraPoint: 1
+  cameraPoint: {fileID: 253904128}
+  UIText:
+  - You've made it! This is an Exit Portal! It will take you further down into the
+    Tower, through the rest of the Trials I have left for you...
+  - 'These Exit Portals will only activate when both of you stand together before
+    them. Now that you''re here, it is time for you both to venture forth... '
+  - However... This means it is the last time you will speak to me, My Apprentices...
+  - 'I have taught you both as best as I could, and I can only hope you''re ready
+    for what the outside world has to offer you. Whatever happens, never forget... '
+  - I'll always be with you both in spirit. Take care, My Children...
+  requiresBook: 0
+  CurrentUIText: 
+  Canvas: {fileID: 1211994966}
+  text: {fileID: 0}
+  players: []
+  nextTrigger: []
+  triggerOff: []
+  spellCanvas: {fileID: 780816710}
 --- !u!1001 &1913639877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58268,6 +58910,7 @@ GameObject:
   - component: {fileID: 1931521714}
   - component: {fileID: 1931521716}
   - component: {fileID: 1931521715}
+  - component: {fileID: 1931521717}
   m_Layer: 0
   m_Name: Trigger06
   m_TagString: Untagged
@@ -58283,7 +58926,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931521713}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22, y: 0, z: 54}
+  m_LocalPosition: {x: 18.25, y: 0, z: 54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1177281303}
@@ -58316,6 +58959,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 4, z: 16}
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &1931521717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931521713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945ce88a8034b1141a204202f6d40e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiresBothPlayers: 0
+  useCameraPoint: 0
+  cameraPoint: {fileID: 0}
+  UIText:
+  - I've got it! Oh... You already made it across? How did you... You didn't throw
+    my book, did you? You're handling dangerous magic there!
+  requiresBook: 0
+  CurrentUIText: 
+  Canvas: {fileID: 1211994966}
+  text: {fileID: 0}
+  players: []
+  nextTrigger: []
+  triggerOff: []
+  spellCanvas: {fileID: 780816710}
 --- !u!1001 &1933093851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60698,6 +61367,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4924606098013644555, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 06dfc31a5785ab342917f28c9bbd83e3, type: 2}
     - target: {fileID: 7619567133834881778, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -63466,6 +64139,7 @@ GameObject:
   - component: {fileID: 2117210714}
   - component: {fileID: 2117210713}
   - component: {fileID: 2117210712}
+  - component: {fileID: 2117210715}
   m_Layer: 0
   m_Name: CameraFocus03
   m_TagString: Untagged
@@ -63569,6 +64243,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!95 &2117210715
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117210710}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 076172fcc6a045d4e84e159beb5b5739, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2120934851
 GameObject:
   m_ObjectHideFlags: 0
@@ -63690,7 +64383,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
       propertyPath: m_Center.x
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
       propertyPath: m_Center.y
@@ -63702,7 +64395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
       propertyPath: m_Size.x
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
       propertyPath: m_Size.y

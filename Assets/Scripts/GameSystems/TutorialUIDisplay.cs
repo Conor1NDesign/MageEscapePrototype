@@ -50,4 +50,11 @@ public class TutorialUIDisplay : MonoBehaviour
             linkedUIElement.color = tempColor;
         }
     }
+
+    public void OnDisable()
+    {
+        var tempColor = linkedUIElement.color;
+        tempColor.a = 0;
+        linkedUIElement.color = tempColor;
+    }
 }

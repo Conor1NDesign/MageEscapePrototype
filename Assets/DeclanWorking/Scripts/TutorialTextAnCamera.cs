@@ -39,6 +39,8 @@ public class TutorialTextAnCamera : MonoBehaviour
     public GameObject[] nextTrigger;
     public GameObject[] triggerOff;
 
+    public GameObject spellCanvas;
+
     void Start()
     {
         if (requiresBook)
@@ -86,6 +88,7 @@ public class TutorialTextAnCamera : MonoBehaviour
                     gameManager.GetComponent<TutorialManager>().ttac = gameObject.GetComponent<TutorialTextAnCamera>();
                     text.text = UIText[0];
                     Canvas.SetActive(true);
+                    spellCanvas.SetActive(false);
                     AlreadyTriggered = true;
                 }
             }
@@ -124,6 +127,7 @@ public class TutorialTextAnCamera : MonoBehaviour
                 gameManager.GetComponent<TutorialManager>().ttac = gameObject.GetComponent<TutorialTextAnCamera>();
                 text.text = UIText[0];
                 Canvas.SetActive(true);
+                spellCanvas.SetActive(false);
             }
         }
 
@@ -181,6 +185,8 @@ public class TutorialTextAnCamera : MonoBehaviour
                 trigger.SetActive(false);
             }
         }
+
+        spellCanvas.SetActive(true);
     }
 
 
