@@ -6,8 +6,12 @@ using TMPro;
 public class TutorialTextAnCamera : MonoBehaviour
 {
     public bool requiresBothPlayers;
+
+    [Header("Camera")]
     public bool useCameraPoint;
-    public GameObject cameraPoint;
+    public GameObject[] cameraPoint;
+    public int[] cameraSwapOnTextBoxNum;
+    private int camIndex = 0;
 
     public string[] UIText;
 
@@ -88,7 +92,7 @@ public class TutorialTextAnCamera : MonoBehaviour
                     }
                     if (useCameraPoint)
                     {
-                        cameraPoint.SetActive(true);
+                        cameraPoint[0].SetActive(true);
                         mainCamera.SetActive(false);
                     }
                     gameManager.GetComponent<TutorialManager>().ttac = gameObject.GetComponent<TutorialTextAnCamera>();
@@ -126,7 +130,7 @@ public class TutorialTextAnCamera : MonoBehaviour
                 }
                 if (useCameraPoint)
                 {
-                    cameraPoint.SetActive(true);
+                    cameraPoint[0].SetActive(true);
                     mainCamera.SetActive(false);
                 }
                 gameManager.GetComponent<TutorialManager>().ttac = gameObject.GetComponent<TutorialTextAnCamera>();
@@ -166,10 +170,11 @@ public class TutorialTextAnCamera : MonoBehaviour
         }
         if (useCameraPoint)
         {
-            cameraPoint.SetActive(false);
+            cameraPoint[camIndex].SetActive(false);
             mainCamera.SetActive(true);
         }
         Canvas.SetActive(false);
+
         AlreadyTriggered = true;
         gameManager.GetComponent<TutorialManager>().ttac = null;
         if (nextTrigger.Length != 0)
@@ -190,11 +195,16 @@ public class TutorialTextAnCamera : MonoBehaviour
             }
         }
     }
-    private void OnDisable()
+    public void CheckIfCamNeedsToBeChanged()
     {
+        if (cameraSwapOnTextBoxNum[camIndex] == index)
+        {
 
+            cameraPoint[camIndex+1].SetActive(true);
+            cameraPoint[camIndex].SetActive(false);
+            camIndex++;
+        }
     }
-
 }
 
 public class TutorialManager : MonoBehaviour
