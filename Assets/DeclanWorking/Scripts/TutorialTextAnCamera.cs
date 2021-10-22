@@ -41,6 +41,14 @@ public class TutorialTextAnCamera : MonoBehaviour
 
     public GameObject spellCanvas;
 
+    private void Awake()
+    {
+        gameManager = GameObject.Find("GameManager");
+        if (gameManager.GetComponent<TutorialManager>() == null)
+        {
+            gameManager.AddComponent<TutorialManager>();
+        }
+    }
     void Start()
     {
         if (requiresBook)
@@ -49,13 +57,13 @@ public class TutorialTextAnCamera : MonoBehaviour
         }
         players = FindObjectsOfType<PlayerController>();
         mainCamera = Camera.main.gameObject;
-        gameManager = GameObject.Find("GameManager");
-        if (gameManager.GetComponent<TutorialManager>() == null)
-        {
-            gameManager.AddComponent<TutorialManager>();
-        }
+        /*        gameManager = GameObject.Find("GameManager");
+                if (gameManager.GetComponent<TutorialManager>() == null)
+                {
+                    gameManager.AddComponent<TutorialManager>();
+                }*/
         text = Canvas.GetComponentInChildren<TextMeshProUGUI>();
-        if (nextTrigger != null)
+        if (nextTrigger.Length != 0)
         {
             foreach (var trigger in nextTrigger)
             {
@@ -168,7 +176,7 @@ public class TutorialTextAnCamera : MonoBehaviour
         Canvas.SetActive(false);
         AlreadyTriggered = true;
         gameManager.GetComponent<TutorialManager>().ttac = null;
-        if (nextTrigger != null)
+        if (nextTrigger.Length != 0)
         {
             foreach (var trigger in nextTrigger)
             {
@@ -177,7 +185,7 @@ public class TutorialTextAnCamera : MonoBehaviour
             }
         }
 
-        if (triggerOff != null)
+        if (triggerOff.Length != 0)
         {
             foreach (var trigger in triggerOff)
             {
@@ -188,7 +196,10 @@ public class TutorialTextAnCamera : MonoBehaviour
 
         spellCanvas.SetActive(true);
     }
+    private void OnDisable()
+    {
 
+    }
 
 }
 

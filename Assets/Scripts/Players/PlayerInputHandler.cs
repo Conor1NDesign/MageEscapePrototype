@@ -2,6 +2,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
+using UnityEngine.SceneManagement;
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerInputHandler : MonoBehaviour
     private PlayerController playerController;
     private GameObject gameManager;
     private TutorialTextAnCamera ttac;
+    private bool inTutorial = false;
     private void Awake()
     {
         //Gets the Player Input component on the object this script is attatched to.
@@ -21,9 +23,14 @@ public class PlayerInputHandler : MonoBehaviour
         var playerControllers = FindObjectsOfType<PlayerController>();
         playerController = playerControllers.FirstOrDefault(m => m.GetPlayerIndex() == index);
 
+        if (SceneManager.GetActiveScene().name == "00 - Tutorial Level")
+        {
+            inTutorial = true;
+        }
 
         gameManager = GameObject.Find("GameManager");
     }
+
 
     public void OnMove(CallbackContext context)
     {
@@ -39,13 +46,24 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (playerController) //All player input methods need to check if playerController is NOT null otherwise Input System spits out a bunch of errors.
         {
-            if (gameManager.GetComponent<TutorialManager>().ttac == null)
+            if (inTutorial)
+            {
+                if (gameManager.GetComponent<TutorialManager>().ttac == null)
+                {
+                    if (context.performed)
+                        playerController.InteractWithSpellbook(false);
+                    else if (context.canceled)
+                        playerController.InteractWithSpellbook(true);
+                }
+            }
+            else
             {
                 if (context.performed)
                     playerController.InteractWithSpellbook(false);
                 else if (context.canceled)
                     playerController.InteractWithSpellbook(true);
             }
+
         }
     }
 
@@ -53,33 +71,35 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (playerController) //All player input methods need to check if playerController is NOT null otherwise Input System spits out a bunch of errors.
         {
-
-            if (context.performed)
+            if (inTutorial)
             {
-                if (gameManager.GetComponent<TutorialManager>() != null)
+                if (context.performed)
                 {
-                    if (gameManager.GetComponent<TutorialManager>().ttac != null)
+                    if (gameManager.GetComponent<TutorialManager>() != null)
                     {
-                        if (ttac == null)
+                        if (gameManager.GetComponent<TutorialManager>().ttac != null)
                         {
-                            ttac = gameManager.GetComponent<TutorialManager>().ttac;
-                        }
-
-
-                        if (ttac != false)
-                        {
-                            ttac.CurrentUIText = ttac.nextText();
-                            if (ttac.CurrentUIText != "")
+                            if (ttac == null)
                             {
-                                ttac.text.text = ttac.CurrentUIText;
+                                ttac = gameManager.GetComponent<TutorialManager>().ttac;
                             }
-                            else
-                            {
-                                ttac.EndSequence();
-                                ttac = null;
-                            }
-                        }
 
+
+                            if (ttac != false)
+                            {
+                                ttac.CurrentUIText = ttac.nextText();
+                                if (ttac.CurrentUIText != "")
+                                {
+                                    ttac.text.text = ttac.CurrentUIText;
+                                }
+                                else
+                                {
+                                    ttac.EndSequence();
+                                    ttac = null;
+                                }
+                            }
+
+                        }
                     }
                 }
             }
