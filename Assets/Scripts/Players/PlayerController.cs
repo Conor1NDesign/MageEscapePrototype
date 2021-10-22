@@ -491,9 +491,11 @@ public class PlayerController : MonoBehaviour
 	// Sets the nearby spellbook when you collide with it
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag("Spellbook"))
+		Transform collidedBook = other.transform.parent;
+
+		if (collidedBook && collidedBook.CompareTag("Spellbook"))
 		{
-			nearbySpellbook = other.gameObject;
+			nearbySpellbook = collidedBook.gameObject;
 		}
 		if (other.CompareTag("Interactable"))
 		{
@@ -505,7 +507,9 @@ public class PlayerController : MonoBehaviour
 	// yes this will leave you with no nearby spellbook if you move out of one while still in another
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.CompareTag("Spellbook"))
+		Transform collidedBook = other.transform.parent;
+
+		if (collidedBook && collidedBook.CompareTag("Spellbook"))
 		{
 			nearbySpellbook = null;
 		}
