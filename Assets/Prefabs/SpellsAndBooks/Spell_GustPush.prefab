@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2338052310108330210}
   - component: {fileID: 3604188758589272650}
   - component: {fileID: 8630809574285763483}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spell_GustPush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4827,7 +4827,7 @@ GameObject:
   - component: {fileID: 2000533425760695323}
   - component: {fileID: 1288940309673062910}
   - component: {fileID: 4248646905165480194}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spell_GustPush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4891,6 +4891,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gustSpeedModifier: 2
   inBeam: []
+  ignore:
+    serializedVersion: 2
+    m_Bits: 2052
 --- !u!114 &4248646905165480194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4964,6 +4967,10 @@ PrefabInstance:
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
       value: 0.2055664
       objectReference: {fileID: 0}
+    - target: {fileID: 1022106346167244545, guid: 58c745c97273daa4d9f3859169b2116c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2799303377528574711, guid: 58c745c97273daa4d9f3859169b2116c, type: 3}
       propertyPath: m_Name
       value: Pushing_Gust
@@ -4971,6 +4978,18 @@ PrefabInstance:
     - target: {fileID: 3836637544791122634, guid: 58c745c97273daa4d9f3859169b2116c, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2799303377528574711, guid: 58c745c97273daa4d9f3859169b2116c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3629789280181342675, guid: 58c745c97273daa4d9f3859169b2116c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106543332128194917, guid: 58c745c97273daa4d9f3859169b2116c, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4550254363913148289, guid: 58c745c97273daa4d9f3859169b2116c, type: 3}
       propertyPath: m_LocalPosition.x
