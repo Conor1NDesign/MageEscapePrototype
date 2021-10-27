@@ -8702,7 +8702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6371342952666435553, guid: bb749de5ed9bb5a4ba97d8fb778b0c14, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb749de5ed9bb5a4ba97d8fb778b0c14, type: 3}
@@ -10111,6 +10111,10 @@ PrefabInstance:
     - target: {fileID: 8183637530860243847, guid: ff9fd73a453183e45a7402dbcc7f13e3, type: 3}
       propertyPath: m_Name
       value: Canvas_TutorialPopups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8183637530860243847, guid: ff9fd73a453183e45a7402dbcc7f13e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8183637530860243963, guid: ff9fd73a453183e45a7402dbcc7f13e3, type: 3}
       propertyPath: m_LocalPosition.x
