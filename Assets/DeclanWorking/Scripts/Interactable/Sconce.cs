@@ -89,4 +89,5 @@ public class Sconce : Interactable
         }
 
     }
+
 }

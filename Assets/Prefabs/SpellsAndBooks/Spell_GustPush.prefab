@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2338052310108330210}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spell_GustPush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 8442549817880235294}
   - component: {fileID: 2000533425760695323}
   - component: {fileID: 1288940309673062910}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spell_GustPush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,9 +115,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2338052310108330210}
     m_Modifications:
+    - target: {fileID: 1022106346167244545, guid: 58c745c97273daa4d9f3859169b2116c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2799303377528574711, guid: 58c745c97273daa4d9f3859169b2116c, type: 3}
       propertyPath: m_Name
       value: Pushing_Gust
+      objectReference: {fileID: 0}
+    - target: {fileID: 2799303377528574711, guid: 58c745c97273daa4d9f3859169b2116c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3629789280181342675, guid: 58c745c97273daa4d9f3859169b2116c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106543332128194917, guid: 58c745c97273daa4d9f3859169b2116c, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4550254363913148289, guid: 58c745c97273daa4d9f3859169b2116c, type: 3}
       propertyPath: m_LocalPosition.x

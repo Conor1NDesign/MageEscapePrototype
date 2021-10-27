@@ -12,11 +12,29 @@ public class PushingGust : MonoBehaviour
 	{
 		inBeam = new List<GameObject>();
 	}
-	private void OnTriggerEnter(Collider other)
+
+	RaycastHit RayHit;
+
+
+		
+
+    private void OnTriggerEnter(Collider other)
 	{
+			
 		if (other.CompareTag("Lightable"))
 		{
-			other.gameObject.GetComponent<Sconce>().isActivated = false;
+
+			if (Physics.Linecast(other.transform.position + new Vector3(0,1,0), transform.parent.position, out RayHit) && RayHit.collider.gameObject.CompareTag("Player"))
+			{
+
+				print("sight");
+				other.gameObject.GetComponent<Sconce>().isActivated = false;
+			}
+			else
+			{
+				print(RayHit.collider.name);
+				print("nosight");
+			}
 		}
 
 		if (other.CompareTag("Heavy Object"))
@@ -32,6 +50,7 @@ public class PushingGust : MonoBehaviour
 	}
 	private void OnTriggerStay(Collider other)
 	{
+		Debug.DrawLine(other.transform.position + new Vector3(0, 1, 0), transform.parent.position);
 		if (other.CompareTag("Player"))
 		{
 			// other.gameObject.transform.parent = gameObject.transform;
