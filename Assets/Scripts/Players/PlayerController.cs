@@ -483,6 +483,7 @@ public class PlayerController : MonoBehaviour
 
 			spellbook.transform.parent = spellbookEquipPoint;
 			spellbook.transform.position = spellbookEquipPoint.position;
+			spellbook.transform.rotation = spellbookEquipPoint.rotation;
 			spellbook.GetComponent<Rigidbody>().isKinematic = true;
 			spellbook.GetComponent<SpellbookController>().playerHolding = this;
 		}
