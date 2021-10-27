@@ -709,6 +709,10 @@ PrefabInstance:
       propertyPath: numberOfRequiredSwitches
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 697321618, guid: 65ff531837ddf13429b97451bcb4b57c, type: 3}
+      propertyPath: Barrier
+      value: 
+      objectReference: {fileID: 28816865}
     - target: {fileID: 5575444321554461585, guid: 65ff531837ddf13429b97451bcb4b57c, type: 3}
       propertyPath: m_Name
       value: AntiMagicBarrier_BothSides
@@ -770,6 +774,11 @@ PrefabInstance:
 --- !u!4 &28816864 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6855115964645750354, guid: 65ff531837ddf13429b97451bcb4b57c, type: 3}
+  m_PrefabInstance: {fileID: 28816863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &28816865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3882162503618923251, guid: 65ff531837ddf13429b97451bcb4b57c, type: 3}
   m_PrefabInstance: {fileID: 28816863}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &29289836
@@ -38935,7 +38944,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20138
+  m_Name: pb_Mesh-18710
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
