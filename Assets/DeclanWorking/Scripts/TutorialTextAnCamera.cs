@@ -61,11 +61,7 @@ public class TutorialTextAnCamera : MonoBehaviour
         }
         players = FindObjectsOfType<PlayerController>();
         mainCamera = Camera.main.gameObject;
-        /*        gameManager = GameObject.Find("GameManager");
-                if (gameManager.GetComponent<TutorialManager>() == null)
-                {
-                    gameManager.AddComponent<TutorialManager>();
-                }*/
+
         text = Canvas.GetComponentInChildren<TextMeshProUGUI>();
         if (nextTrigger.Length != 0)
         {
@@ -174,7 +170,11 @@ public class TutorialTextAnCamera : MonoBehaviour
         }
         if (useCameraPoint)
         {
-            cameraPoint[camIndex].SetActive(false);
+            foreach (var item in cameraPoint)
+            {
+            item.SetActive(false);
+
+            }
             mainCamera.SetActive(true);
         }
         Canvas.SetActive(false);
@@ -203,12 +203,15 @@ public class TutorialTextAnCamera : MonoBehaviour
     }
     public void CheckIfCamNeedsToBeChanged()
     {
-        if (cameraSwapOnTextBoxNum[camIndex] == index)
+        if (cameraSwapOnTextBoxNum.Length != 0)
         {
+            if (cameraSwapOnTextBoxNum[camIndex] == index)
+            {
 
-            cameraPoint[camIndex+1].SetActive(true);
-            cameraPoint[camIndex].SetActive(false);
-            camIndex++;
+                cameraPoint[camIndex + 1].SetActive(true);
+                cameraPoint[camIndex].SetActive(false);
+                camIndex++;
+            }
         }
     }
 }
