@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3790637246653405568}
   - component: {fileID: 5336588934166466568}
   - component: {fileID: 3143285488375839926}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spell_FrostWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,6 +60,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frozenMode: {fileID: 3790637246653405568}
+  ignore:
+    serializedVersion: 2
+    m_Bits: 2052
 --- !u!65 &3143285488375839926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -80,6 +83,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4350829081234424806}
     m_Modifications:
+    - target: {fileID: 7707857983484919085, guid: e3b3daa425d7b7745aba5aafafa829d3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551308197944699140, guid: e3b3daa425d7b7745aba5aafafa829d3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551308198039151662, guid: e3b3daa425d7b7745aba5aafafa829d3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8551308198581351148, guid: e3b3daa425d7b7745aba5aafafa829d3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -127,6 +142,10 @@ PrefabInstance:
     - target: {fileID: 8551308198581351151, guid: e3b3daa425d7b7745aba5aafafa829d3, type: 3}
       propertyPath: m_Name
       value: Frost_Wave_Particle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551308198581351151, guid: e3b3daa425d7b7745aba5aafafa829d3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3b3daa425d7b7745aba5aafafa829d3, type: 3}

@@ -21,9 +21,7 @@ GameObject:
   - component: {fileID: 473110201571545810}
   - component: {fileID: 6537743355473916751}
   - component: {fileID: 1559012256}
-  - component: {fileID: -4349915147531137930}
-  - component: {fileID: -1424718175607023513}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spell_FrostWave_WaterChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,28 +209,3 @@ MonoBehaviour:
   - {fileID: 4411182594403310624}
   - {fileID: 473110201571545810}
   - {fileID: 6537743355473916751}
---- !u!114 &-4349915147531137930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2674024358990924458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8b54deadc4df540ac3f2f9e7f38282, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frozenMode: {fileID: -1424718175607023513}
---- !u!114 &-1424718175607023513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2674024358990924458}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 039a01cdbfd84084bb0e214d0e792edd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

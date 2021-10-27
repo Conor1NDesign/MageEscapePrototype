@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2000533425760695323}
   - component: {fileID: 1288940309673062910}
   - component: {fileID: 4248646905165480194}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spell_GustPush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +109,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gustSpeedModifier: 2
   inBeam: []
+  ignore:
+    serializedVersion: 2
+    m_Bits: 2052
 --- !u!114 &4248646905165480194
 MonoBehaviour:
   m_ObjectHideFlags: 0
