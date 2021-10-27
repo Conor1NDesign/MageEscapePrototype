@@ -481,8 +481,8 @@ public class PlayerController : MonoBehaviour
 
 			playerElement = spellbook.GetComponent<SpellbookController>().element;
 
-			spellbook.transform.parent = transform;
-			spellbook.transform.position = spellbookEquipPoint.position;
+			spellbook.transform.parent = spellbookEquipPoint;
+			spellbook.transform.position = new Vector3();//spellbookEquipPoint.position;
 			spellbook.GetComponent<Rigidbody>().isKinematic = true;
 			spellbook.GetComponent<SpellbookController>().playerHolding = this;
 		}
