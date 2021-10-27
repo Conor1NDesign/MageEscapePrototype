@@ -7,7 +7,7 @@ public class TriggerEnterChild : MonoBehaviour
     public bool parentPlayer = true;
     [HideInInspector]
     public List<PlayerController> cc;
-    //[HideInInspector]
+    [HideInInspector]
     public List<GameObject> Children;
     [HideInInspector]
     public Vector3 linearVel;
@@ -28,12 +28,12 @@ public class TriggerEnterChild : MonoBehaviour
         linearVel = (transform.position - previousPosition) / Time.fixedDeltaTime;
         previousPosition = transform.position;
 
-        if (Children.Count == 0)
+        if (!hasChild)
         {
             bc.enabled = true;
         }
         else
-        { 
+        {
             bc.enabled = false;
         }
 
@@ -106,10 +106,12 @@ public class TriggerEnterChild : MonoBehaviour
     {
         try
         {
+            
             if (!other.CompareTag("Spellbook") && !other.isTrigger)
             {
                 if (other.tag == "Player")
                 {
+
                     other.gameObject.transform.parent = null;
                     cc.Remove(other.gameObject.GetComponent<PlayerController>());
                     Children.Remove(other.gameObject);
