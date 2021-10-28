@@ -11,18 +11,35 @@ public class FrostWave : MonoBehaviour
 		colliderTracker = FindObjectOfType<ColliderTracker>();
 	}
 
+	RaycastHit RayHit;
+	public LayerMask ignore;
+
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Water"))
 		{
-			frozenMode.MarchTheCubes(true);
-			print("Freeeeze");
-			return;
+
+			if (Physics.Linecast(transform.position, other.transform.position, out RayHit, ~ignore))
+			{
+				if (RayHit.collider.CompareTag("Water"))
+				{
+					frozenMode.MarchTheCubes(true);
+					print("Freeeeze");
+					return;
+				}
+			}
+
 		}
 		else if (other.CompareTag("Lightable"))
 		{
-			other.GetComponent<Sconce>().isActivated = false;
-			return;
+			if (Physics.Linecast(transform.position, other.transform.position, out RayHit, ~ignore))
+			{
+				if (RayHit.collider.CompareTag("Lightable"))
+				{
+					other.gameObject.GetComponent<Sconce>().isActivated = false;
+					return;
+				}
+			}
 		}
 		else if (other.CompareTag("Meltable"))
 		{
@@ -35,5 +52,9 @@ public class FrostWave : MonoBehaviour
 			sb.isSlowed = true;
 			sb.counter = 0.0f;
 		}
+	}
+    private void OnTriggerStay(Collider other)
+    {
+		Debug.DrawLine(transform.position, other.transform.position);
 	}
 }

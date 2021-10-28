@@ -70,7 +70,7 @@ public class SpellFunctions : MonoBehaviour
 
 	static void PushingGust(PlayerController caster)
 	{
-		Debug.Log("Pushing Gust");
+
 		caster.AttachSpell(Instantiate(caster.gustPrefab));
 		caster.rotationLockedBySpell = true;
 	}
@@ -158,14 +158,14 @@ public class SpellFunctions : MonoBehaviour
 	{
 		Debug.Log("Earth Platform Place");
 		caster.earthPlatform = Instantiate(caster.earthPlatformPrefab);
-		caster.earthPlatform.transform.position = caster.transform.position + caster.transform.forward * 1.6f - new Vector3(0f, 0.1f, 0.0f);
+		caster.earthPlatform.transform.position = caster.transform.position + caster.transform.forward * caster.earthPlatformForwardness - new Vector3(0f, 0.1f, 0.0f);
 		caster.earthPlatform.transform.rotation = caster.transform.rotation;
 		caster.earthPlatform.GetComponent<EarthPlatform>().playerCasting = caster;
 	}
 
 	static void PushingGustEnd(PlayerController caster)
 	{
-		Debug.Log("Pushing Gust End");
+
 		caster.rotationLockedBySpell = false;
 		if (caster.playerIndex == 0)
 		{
