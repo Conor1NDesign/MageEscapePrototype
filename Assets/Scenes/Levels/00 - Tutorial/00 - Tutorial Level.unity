@@ -222,7 +222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6560067993133019410, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
       propertyPath: m_RootOrder
-      value: 27
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 6560067993133019410, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -236,6 +236,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6560067993133019414, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
+      propertyPath: spellbookRespawnPoint
+      value: 
+      objectReference: {fileID: 2079363656}
     - target: {fileID: 6560067993133019415, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
       propertyPath: m_Name
       value: Spellbook_Earth02
@@ -331,14 +335,14 @@ RectTransform:
   m_GameObject: {fileID: 19630427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 1750520687}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -250}
+  m_AnchoredPosition: {x: 0, y: -410.4831}
   m_SizeDelta: {x: 1126, y: 235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &19630429
@@ -702,13 +706,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 89122256}
     m_Modifications:
     - target: {fileID: 697321618, guid: 65ff531837ddf13429b97451bcb4b57c, type: 3}
-      propertyPath: Barrier
-      value: 
-      objectReference: {fileID: 520415508}
-    - target: {fileID: 697321618, guid: 65ff531837ddf13429b97451bcb4b57c, type: 3}
       propertyPath: numberOfRequiredSwitches
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 697321618, guid: 65ff531837ddf13429b97451bcb4b57c, type: 3}
+      propertyPath: Barrier
+      value: 
+      objectReference: {fileID: 28816865}
     - target: {fileID: 5575444321554461585, guid: 65ff531837ddf13429b97451bcb4b57c, type: 3}
       propertyPath: m_Name
       value: AntiMagicBarrier_BothSides
@@ -716,11 +720,11 @@ PrefabInstance:
     - target: {fileID: 5656388186416389147, guid: 65ff531837ddf13429b97451bcb4b57c, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 39336420}
+      objectReference: {fileID: 1298266426}
     - target: {fileID: 5784825237730768403, guid: 65ff531837ddf13429b97451bcb4b57c, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 39336420}
+      objectReference: {fileID: 1298266426}
     - target: {fileID: 6855115964645750354, guid: 65ff531837ddf13429b97451bcb4b57c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 41.5
@@ -770,6 +774,11 @@ PrefabInstance:
 --- !u!4 &28816864 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6855115964645750354, guid: 65ff531837ddf13429b97451bcb4b57c, type: 3}
+  m_PrefabInstance: {fileID: 28816863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &28816865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3882162503618923251, guid: 65ff531837ddf13429b97451bcb4b57c, type: 3}
   m_PrefabInstance: {fileID: 28816863}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &29289836
@@ -1276,170 +1285,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
   m_PrefabInstance: {fileID: 38558199}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &39336420
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20138
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 12
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0, y: 1.75, z: 0}
-      m_Extent: {x: 2, y: 1.5, z: 0.00000013113416}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000001000200010003000200040005000600050007000600
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 24
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 40
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 384
-    _typelessdata: 000000c00000803e000000000000000000000000000080bf000080bf00000000000000000000803f01006d3f8c19933d000000c000005040000000000000000000000000000080bf000080bf00000000000000000000803ffeff6c3f6c036c3f000000400000803e000000000000000000000000000080bf000080bf00000000000000000000803ff8ff973d8c19933d0000004000005040000000000000000000000000000080bf000080bf00000000000000000000803f1000983d6c036c3f000000400000803ee2cd0c34e2cd8cb3000000000000803f000080bf00000000e2cd8cb3000080bf1000903dfcc0953d0000004000005040e2cd0c34e2cd8cb3000000000000803f000080bf00000000e2cd8cb3000080bf1000903d96b96c3f000000c00000803ee2cd0cb4e2cd8cb3000000000000803f000080bf00000000e2cd8cb3000080bf00006e3ffcc0953d000000c000005040e2cd0cb4e2cd8cb3000000000000803f000080bf00000000e2cd8cb3000080bf00006e3f96b96c3f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 1.75, z: 0}
-    m_Extent: {x: 2, y: 1.5, z: 0.00000013113416}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1001 &45748850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2501,6 +2346,7 @@ Transform:
   - {fileID: 313246726}
   - {fileID: 1140706136}
   - {fileID: 2103730681}
+  - {fileID: 2639872236932491985}
   m_Father: {fileID: 1541002231}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2831,7 +2677,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiresBothPlayers: 0
   useCameraPoint: 0
-  cameraPoint: {fileID: 0}
+  cameraPoint: []
+  cameraSwapOnTextBoxNum: 
   UIText:
   - Excellent! Now, you must find a way to get the book across to your partner...
     A shame we don't have any Teleportation Scrolls laying about...
@@ -2844,6 +2691,7 @@ MonoBehaviour:
   - {fileID: 1905884110}
   triggerOff:
   - {fileID: 520497113}
+  - {fileID: 8583869343043026700}
   spellCanvas: {fileID: 780816710}
 --- !u!1001 &102421274
 PrefabInstance:
@@ -3432,7 +3280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116814152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 12}
+  m_LocalPosition: {x: 0, y: 0, z: 12.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1177281303}
@@ -3463,7 +3311,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 4, z: 2}
+  m_Size: {x: 20, y: 4, z: 1}
   m_Center: {x: 0, y: 2, z: 0}
 --- !u!114 &116814156
 MonoBehaviour:
@@ -3479,7 +3327,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiresBothPlayers: 1
   useCameraPoint: 1
-  cameraPoint: {fileID: 1142034461}
+  cameraPoint:
+  - {fileID: 1142034461}
+  cameraSwapOnTextBoxNum: 
   UIText:
   - Wonderful! Many of the Tower's walls can be moved by simple mechanisms like these.
   - Runed Walls like these are linked to different requirements in the Tower...
@@ -3781,14 +3631,14 @@ RectTransform:
   m_GameObject: {fileID: 123695010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 1750520687}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -250}
+  m_AnchoredPosition: {x: 0, y: -410.4831}
   m_SizeDelta: {x: 1126, y: 235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &123750220
@@ -5233,14 +5083,14 @@ RectTransform:
   m_GameObject: {fileID: 184046425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 1750520687}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -250}
+  m_AnchoredPosition: {x: 0, y: -410.4831}
   m_SizeDelta: {x: 1126, y: 235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &184046427
@@ -5412,13 +5262,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4076534371245634873, guid: ff9fd73a453183e45a7402dbcc7f13e3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 81fde97a6d2961947b833cf14258f6b2, type: 2}
+    - target: {fileID: 4076534371245634873, guid: ff9fd73a453183e45a7402dbcc7f13e3, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8183637530551643148, guid: ff9fd73a453183e45a7402dbcc7f13e3, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8183637530710719065, guid: ff9fd73a453183e45a7402dbcc7f13e3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8183637530860243847, guid: ff9fd73a453183e45a7402dbcc7f13e3, type: 3}
       propertyPath: m_Name
@@ -6659,7 +6517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4369463060973694635, guid: 7d498a910a58c1040a13795d09241779, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4369463060973694635, guid: 7d498a910a58c1040a13795d09241779, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6677,6 +6535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spellbook_Frost01
       objectReference: {fileID: 0}
+    - target: {fileID: 4369463060973694639, guid: 7d498a910a58c1040a13795d09241779, type: 3}
+      propertyPath: spellbookRespawnPoint
+      value: 
+      objectReference: {fileID: 1067837484}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d498a910a58c1040a13795d09241779, type: 3}
 --- !u!1001 &233993389
@@ -7750,14 +7612,14 @@ RectTransform:
   m_GameObject: {fileID: 266591237}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 1750520687}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -250}
+  m_AnchoredPosition: {x: 0, y: -410.4831}
   m_SizeDelta: {x: 1126, y: 235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &266591239
@@ -10580,6 +10442,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trig10_WaterWheel
       objectReference: {fileID: 0}
+    - target: {fileID: 1306430850684266241, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: m_TagString
+      value: Meltable
+      objectReference: {fileID: 0}
     - target: {fileID: 5149566854030442682, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
       propertyPath: m_LocalPosition.x
       value: 96.5
@@ -13082,7 +12948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4369463060973694635, guid: 7d498a910a58c1040a13795d09241779, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 4369463060973694635, guid: 7d498a910a58c1040a13795d09241779, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13100,6 +12966,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spellbook_Frost02
       objectReference: {fileID: 0}
+    - target: {fileID: 4369463060973694639, guid: 7d498a910a58c1040a13795d09241779, type: 3}
+      propertyPath: spellbookRespawnPoint
+      value: 
+      objectReference: {fileID: 787689386}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d498a910a58c1040a13795d09241779, type: 3}
 --- !u!1001 &481202647
@@ -14308,11 +14178,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &520415508 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3882162503618923251, guid: 65ff531837ddf13429b97451bcb4b57c, type: 3}
-  m_PrefabInstance: {fileID: 28816863}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &520497113
 GameObject:
   m_ObjectHideFlags: 0
@@ -14720,7 +14585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6560067993133019410, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6560067993133019410, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14734,6 +14599,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6560067993133019414, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
+      propertyPath: spellbookRespawnPoint
+      value: 
+      objectReference: {fileID: 1552099304}
     - target: {fileID: 6560067993133019415, guid: 27f2d4beab8ad724b8f8fad1a8c2b855, type: 3}
       propertyPath: m_Name
       value: Spellbook_Earth01
@@ -21565,6 +21434,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
   m_PrefabInstance: {fileID: 787518212}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &787689385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 787689386}
+  m_Layer: 0
+  m_Name: BookSpawn03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &787689386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787689385}
+  m_LocalRotation: {x: 0.23582058, y: 0, z: 0, w: 0.9717967}
+  m_LocalPosition: {x: 44, y: 2, z: 55.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 27.28, y: 0, z: 0}
 --- !u!1001 &789316272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21798,7 +21697,7 @@ MonoBehaviour:
   endPos: {fileID: 795977016}
   speed: 120
   oscillating: 0
-  numberOfSwitches: 6
+  numberOfSwitches: 2
   numberOfActiveSwitches: 0
   resetting: 0
 --- !u!1001 &797259182
@@ -26312,6 +26211,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
   m_PrefabInstance: {fileID: 928969625}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &933233715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 933233716}
+  m_Layer: 0
+  m_Name: BookSpawn01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &933233716
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933233715}
+  m_LocalRotation: {x: 0.1667495, y: -0.68716305, z: 0.16675001, w: 0.6871651}
+  m_LocalPosition: {x: 13.25, y: 2.25, z: 52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 27.28, y: -90, z: 0}
 --- !u!1001 &933235309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30570,7 +30499,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiresBothPlayers: 0
   useCameraPoint: 1
-  cameraPoint: {fileID: 947833011}
+  cameraPoint:
+  - {fileID: 947833011}
+  cameraSwapOnTextBoxNum: 
   UIText:
   - I created these Anti-Magic Barriers to keep would-be thieves from stealing Spellbooks
     from our Tower... They now seem to be in your way.
@@ -31274,6 +31205,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2229012561860378992, guid: e10b707781ba2b24d86b3665bcb0e5a0, type: 3}
   m_PrefabInstance: {fileID: 1066962885}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1067837483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1067837484}
+  m_Layer: 0
+  m_Name: BookSpawn02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1067837484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067837483}
+  m_LocalRotation: {x: 0, y: -0.9717967, z: 0.23582058, w: 0}
+  m_LocalPosition: {x: 44, y: 2, z: 53.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 27.28, y: -180, z: 0}
 --- !u!1001 &1068039329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37315,7 +37276,7 @@ MonoBehaviour:
   endPos: {fileID: 1228596362}
   speed: 120
   oscillating: 0
-  numberOfSwitches: 6
+  numberOfSwitches: 2
   numberOfActiveSwitches: 0
   resetting: 0
 --- !u!1001 &1228833969
@@ -38416,6 +38377,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3584384540282075554, guid: e20bda5b1c0ed1043be4a3e92c75529a, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584384540282075554, guid: e20bda5b1c0ed1043be4a3e92c75529a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6875074927187821844, guid: e20bda5b1c0ed1043be4a3e92c75529a, type: 3}
       propertyPath: m_Name
       value: Trig02_PressurePlate02
@@ -38969,6 +38938,170 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6372820306588002128, guid: 0e05c82170823164b9307dfa9ac7ab3c, type: 3}
   m_PrefabInstance: {fileID: 443683184}
   m_PrefabAsset: {fileID: 0}
+--- !u!43 &1298266426
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: pb_Mesh-18710
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 12
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 1.75, z: 0}
+      m_Extent: {x: 2, y: 1.5, z: 0.00000013113416}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000001000200010003000200040005000600050007000600
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 24
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 40
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 384
+    _typelessdata: 000000c00000803e000000000000000000000000000080bf000080bf00000000000000000000803f01006d3f8c19933d000000c000005040000000000000000000000000000080bf000080bf00000000000000000000803ffeff6c3f6c036c3f000000400000803e000000000000000000000000000080bf000080bf00000000000000000000803ff8ff973d8c19933d0000004000005040000000000000000000000000000080bf000080bf00000000000000000000803f1000983d6c036c3f000000400000803ee2cd0c34e2cd8cb3000000000000803f000080bf00000000e2cd8cb3000080bf1000903dfcc0953d0000004000005040e2cd0c34e2cd8cb3000000000000803f000080bf00000000e2cd8cb3000080bf1000903d96b96c3f000000c00000803ee2cd0cb4e2cd8cb3000000000000803f000080bf00000000e2cd8cb3000080bf00006e3ffcc0953d000000c000005040e2cd0cb4e2cd8cb3000000000000803f000080bf00000000e2cd8cb3000080bf00006e3f96b96c3f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 1.75, z: 0}
+    m_Extent: {x: 2, y: 1.5, z: 0.00000013113416}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1001 &1301413588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41475,7 +41608,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiresBothPlayers: 0
   useCameraPoint: 1
-  cameraPoint: {fileID: 102972972}
+  cameraPoint:
+  - {fileID: 102972972}
+  cameraSwapOnTextBoxNum: 
   UIText:
   - Often you'll find yourselves needing two separate elements to solve a problem.
     You'll need to work together to make it through!
@@ -42383,14 +42518,14 @@ RectTransform:
   m_GameObject: {fileID: 1404260330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 1750520687}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -250}
+  m_AnchoredPosition: {x: 0, y: -410.4831}
   m_SizeDelta: {x: 1126, y: 235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1404260332
@@ -44301,6 +44436,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3584384540282075554, guid: e20bda5b1c0ed1043be4a3e92c75529a, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584384540282075554, guid: e20bda5b1c0ed1043be4a3e92c75529a, type: 3}
+      propertyPath: m_Size.z
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6875074927187821844, guid: e20bda5b1c0ed1043be4a3e92c75529a, type: 3}
       propertyPath: m_Name
       value: Trig02_PressurePlate01
@@ -45292,7 +45435,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiresBothPlayers: 1
   useCameraPoint: 1
-  cameraPoint: {fileID: 569196213}
+  cameraPoint:
+  - {fileID: 569196213}
+  - {fileID: 1142034461}
+  cameraSwapOnTextBoxNum: 02000000
   UIText:
   - My faithful students! You wish to leave our home at long last, no doubt?
   - You must be wary, there are many mechanisms in place within these walls, understanding
@@ -45731,7 +45877,7 @@ MonoBehaviour:
   endPos: {fileID: 1479527616}
   speed: 120
   oscillating: 0
-  numberOfSwitches: 6
+  numberOfSwitches: 2
   numberOfActiveSwitches: 0
   resetting: 0
 --- !u!1001 &1479596745
@@ -45881,8 +46027,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiresBothPlayers: 0
-  useCameraPoint: 0
-  cameraPoint: {fileID: 0}
+  useCameraPoint: 1
+  cameraPoint:
+  - {fileID: 564990280}
+  cameraSwapOnTextBoxNum: 
   UIText:
   - Frost Spells can freeze your surroundings very quickly! Try using a Frost Wave
     to get across the water here!
@@ -46893,6 +47041,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spellbook_Wind01
       objectReference: {fileID: 0}
+    - target: {fileID: 5045437296858801005, guid: 2b798526b57dad04da851d3823fb5d6d, type: 3}
+      propertyPath: spellbookRespawnPoint
+      value: 
+      objectReference: {fileID: 933233716}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b798526b57dad04da851d3823fb5d6d, type: 3}
 --- !u!1001 &1519752864
@@ -47758,6 +47910,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
   m_PrefabInstance: {fileID: 1546301440}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1552099303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1552099304}
+  m_Layer: 0
+  m_Name: BookSpawn05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1552099304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552099303}
+  m_LocalRotation: {x: 0.16675054, y: -0.687163, z: 0.16675006, w: 0.68716496}
+  m_LocalPosition: {x: 109.25, y: 2, z: -8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 27.28, y: -90, z: 0}
 --- !u!1001 &1558287786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50183,6 +50365,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
   m_PrefabInstance: {fileID: 1655505092}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1655551031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1655551032}
+  m_Layer: 0
+  m_Name: BookSpawn04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1655551032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655551031}
+  m_LocalRotation: {x: 0.23582058, y: 0, z: 0, w: 0.9717967}
+  m_LocalPosition: {x: 80, y: 2, z: 20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 27.28, y: 0, z: 0}
 --- !u!1001 &1655853623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51272,7 +51484,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiresBothPlayers: 0
   useCameraPoint: 0
-  cameraPoint: {fileID: 0}
+  cameraPoint: []
+  cameraSwapOnTextBoxNum: 
   UIText:
   - I'm sure you both remember, but every Spellbook within the Tower holds 2 Spells
     that correspond with the Book's Element.
@@ -54104,6 +54317,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 89122256}
     m_Modifications:
+    - target: {fileID: 72130976842156203, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 910045828545505830, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
       propertyPath: m_LocalRotation.y
       value: -1
@@ -54120,9 +54337,17 @@ PrefabInstance:
       propertyPath: Barrier
       value: 
       objectReference: {fileID: 806712642}
+    - target: {fileID: 3411179591842701630, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4836962730082379462, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
       propertyPath: m_Name
       value: AntiMagicBarrier_OneSide
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836962730082379462, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5400119547392728542, guid: c0fd785069ed6364eb39749993bdabed, type: 3}
       propertyPath: m_Mesh
@@ -54577,7 +54802,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiresBothPlayers: 0
   useCameraPoint: 1
-  cameraPoint: {fileID: 2117210710}
+  cameraPoint:
+  - {fileID: 2117210710}
+  - {fileID: 231220315}
+  cameraSwapOnTextBoxNum: 01000000
   UIText:
   - Ah, a Resurrection Stone! Should you somehow perish within the tower, you'll
     rematerialise here after a brief moment!
@@ -54912,8 +55140,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiresBothPlayers: 0
-  useCameraPoint: 0
-  cameraPoint: {fileID: 0}
+  useCameraPoint: 1
+  cameraPoint:
+  - {fileID: 1500406014}
+  - {fileID: 1576000374}
+  cameraSwapOnTextBoxNum: 02000000
   UIText:
   - Ah, Earth Spells! This element focuses on creating Earthen matter to help navigate
     difficult areas!
@@ -55555,7 +55786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
       propertyPath: m_Center.z
-      value: -4
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
       propertyPath: m_Size.x
@@ -55806,6 +56037,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trig11_WaterWheel
       objectReference: {fileID: 0}
+    - target: {fileID: 1306430850684266241, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: m_TagString
+      value: Meltable
+      objectReference: {fileID: 0}
     - target: {fileID: 5149566854030442682, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
       propertyPath: m_LocalPosition.x
       value: 96.5
@@ -56002,6 +56237,10 @@ PrefabInstance:
     - target: {fileID: 1306430850684266241, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
       propertyPath: m_Name
       value: Trig09_WaterWheel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1306430850684266241, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: m_TagString
+      value: Meltable
       objectReference: {fileID: 0}
     - target: {fileID: 5149566854030442682, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57771,6 +58010,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4915615362056712720, guid: 991c318e866bcc24ea3373b2f73daa2c, type: 3}
+      propertyPath: spellbookRespawnPoint
+      value: 
+      objectReference: {fileID: 1655551032}
     - target: {fileID: 4915615362056712721, guid: 991c318e866bcc24ea3373b2f73daa2c, type: 3}
       propertyPath: m_Name
       value: Spellbook_Fire01
@@ -57805,7 +58048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4915615362056712724, guid: 991c318e866bcc24ea3373b2f73daa2c, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 4915615362056712724, guid: 991c318e866bcc24ea3373b2f73daa2c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -58443,7 +58686,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiresBothPlayers: 0
   useCameraPoint: 1
-  cameraPoint: {fileID: 253904128}
+  cameraPoint:
+  - {fileID: 253904128}
+  cameraSwapOnTextBoxNum: 
   UIText:
   - You've made it! This is an Exit Portal! It will take you further down into the
     Tower, through the rest of the Trials I have left for you...
@@ -58973,7 +59218,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiresBothPlayers: 0
   useCameraPoint: 0
-  cameraPoint: {fileID: 0}
+  cameraPoint: []
+  cameraSwapOnTextBoxNum: 
   UIText:
   - I've got it! Oh... You already made it across? How did you... You didn't throw
     my book, did you? You're handling dangerous magic there!
@@ -62062,6 +62308,95 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
   m_PrefabInstance: {fileID: 2036160068}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2036352757
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 89122256}
+    m_Modifications:
+    - target: {fileID: 828155113546720910, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: BarrierCollider.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 828155113546720910, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: Barrier
+      value: 
+      objectReference: {fileID: 8583869343043026700}
+    - target: {fileID: 828155113546720910, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: BarrierCollider.Array.data[0]
+      value: 
+      objectReference: {fileID: 1750840219456291219}
+    - target: {fileID: 1306486842348321818, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639872238423551012, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639872238423551012, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.279
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639872238423551012, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 58.142
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639872238423551012, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639872238423551012, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639872238423551012, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639872238423551012, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0000014603139
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639872238423551012, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639872238423551012, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639872238423551012, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639872238423551012, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639872238423551012, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.5068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924606098013644555, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 06dfc31a5785ab342917f28c9bbd83e3, type: 2}
+    - target: {fileID: 7619567133834881778, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583869343724583417, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_Name
+      value: AntiMagicBarrier_BarrierOnly (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612702186117300474, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
 --- !u!1001 &2036551027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63290,6 +63625,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
   m_PrefabInstance: {fileID: 2074917193}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2079363655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2079363656}
+  m_Layer: 0
+  m_Name: BookSpawn06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2079363656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079363655}
+  m_LocalRotation: {x: -0.16674963, y: -0.6871669, z: 0.16675103, w: -0.687161}
+  m_LocalPosition: {x: 98.75, y: 2, z: -8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: 27.28, y: -270, z: 0}
 --- !u!1001 &2082883066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64831,4 +65196,19 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2335460010628937989, guid: 851dc1a17349fbb4cb2dec0d2f17e50a, type: 3}
   m_PrefabInstance: {fileID: 2142916175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1750840219456291219 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 1750840219575813990, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+  m_PrefabInstance: {fileID: 2036352757}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2639872236932491985 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2639872238423551012, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+  m_PrefabInstance: {fileID: 2036352757}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8583869343043026700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8583869343724583417, guid: fa204a63723dc024fa80a60c1e292e1d, type: 3}
+  m_PrefabInstance: {fileID: 2036352757}
   m_PrefabAsset: {fileID: 0}

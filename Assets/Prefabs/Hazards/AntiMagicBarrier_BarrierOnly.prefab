@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2639872238423551012}
   - component: {fileID: 1750840219575813990}
   - component: {fileID: 828155113546720910}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: AntiMagicBarrier_BarrierOnly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,6 +116,10 @@ PrefabInstance:
     - target: {fileID: 3772138922170211768, guid: 6d8009cbd76bb924daf4c3ed94370394, type: 3}
       propertyPath: m_Name
       value: AntiMagicBarrier_BarrierOnly_Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 3772138922170211768, guid: 6d8009cbd76bb924daf4c3ed94370394, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5748534249976089424, guid: 6d8009cbd76bb924daf4c3ed94370394, type: 3}
       propertyPath: m_SelectedFaces.Array.size

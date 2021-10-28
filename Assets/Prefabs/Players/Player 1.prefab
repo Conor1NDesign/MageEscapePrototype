@@ -141,31 +141,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5006523028989087425, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -8.083139
       objectReference: {fileID: 0}
     - target: {fileID: 5006523028989087425, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.321
       objectReference: {fileID: 0}
     - target: {fileID: 5006523028989087425, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -8.344
       objectReference: {fileID: 0}
     - target: {fileID: 5006523028989087425, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5006523028989087425, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5006523028989087425, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5006523028989087425, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5006523028989087425, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_RootOrder
@@ -177,7 +177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5006523028989087425, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5006523028989087425, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -211,6 +211,22 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 6242796743844612295}
+    - target: {fileID: 6309809208170730702, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
+      propertyPath: rotateSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309809208170730702, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
+      propertyPath: throwStrengthGrowth
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309809208170730702, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
+      propertyPath: tornadoLiftPrefab
+      value: 
+      objectReference: {fileID: 8168083631311108467, guid: 6fa99432d3f732f46949b689a4c81c25, type: 3}
+    - target: {fileID: 6309809208170730702, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
+      propertyPath: cameraRotateSpeed
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6682559666589489026, guid: ee84166361dace54ea1ef9b5de150670, type: 3}
       propertyPath: m_Mesh
       value: 
