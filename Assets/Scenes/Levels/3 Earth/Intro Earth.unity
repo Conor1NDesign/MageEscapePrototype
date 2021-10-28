@@ -23558,26 +23558,6 @@ PrefabInstance:
       propertyPath: cameraPivot
       value: 
       objectReference: {fileID: 377212787}
-    - target: {fileID: 434623743647819082, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
-      propertyPath: gustPrefab
-      value: 
-      objectReference: {fileID: 7389070692657126993, guid: b916753e0ae4c57449cb14784031b8e8, type: 3}
-    - target: {fileID: 434623743647819082, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
-      propertyPath: tornadoLiftPrefab
-      value: 
-      objectReference: {fileID: 2958928761701605465, guid: 506209f33eb52415fb7cfab0f2a266a3, type: 3}
-    - target: {fileID: 434623743647819082, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
-      propertyPath: rotateSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 434623743647819082, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
-      propertyPath: cameraRotateSpeed
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 434623743647819082, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
-      propertyPath: playerIndex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1144634476236296169, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: m_Name
       value: Player 2
@@ -23625,18 +23605,6 @@ PrefabInstance:
     - target: {fileID: 1504866234269728581, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2141808798068231818, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5677113730741621498, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8130630786157857689, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
@@ -25317,11 +25285,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
       propertyPath: m_Size.z
-      value: 8.18017
+      value: 9.169865
       objectReference: {fileID: 0}
     - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
       propertyPath: m_Center.z
-      value: -1.9428921
+      value: 2.1131172
+      objectReference: {fileID: 0}
+    - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
+      propertyPath: m_Size.x
+      value: 8.605582
+      objectReference: {fileID: 0}
+    - target: {fileID: 856021626835151845, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
+      propertyPath: m_Center.x
+      value: 6.330974
       objectReference: {fileID: 0}
     - target: {fileID: 2784767123521184375, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -34753,10 +34729,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3183343917677713095, guid: af0468904fb76b948b97a93195ae5834, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: currentSpawnPoint
       value: 
@@ -34765,53 +34737,9 @@ PrefabInstance:
       propertyPath: cameraPivot
       value: 
       objectReference: {fileID: 377212787}
-    - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
-      propertyPath: gustPrefab
-      value: 
-      objectReference: {fileID: 7389070692657126993, guid: b916753e0ae4c57449cb14784031b8e8, type: 3}
-    - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
-      propertyPath: tornadoLiftPrefab
-      value: 
-      objectReference: {fileID: 8168083631311108467, guid: 6fa99432d3f732f46949b689a4c81c25, type: 3}
-    - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
-      propertyPath: rotateSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
-      propertyPath: cameraRotateSpeed
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
-      propertyPath: earthPlatformPrefab
-      value: 
-      objectReference: {fileID: 3805874247283790375, guid: 1de9de1c8c38490f586febe2f321bff7, type: 3}
-    - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
-      propertyPath: playerIndex
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4500845700833580964, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: m_Name
       value: Player 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500845700833580964, guid: af0468904fb76b948b97a93195ae5834, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702167248787608532, guid: af0468904fb76b948b97a93195ae5834, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7014610215870699424, guid: af0468904fb76b948b97a93195ae5834, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226768722740292362, guid: af0468904fb76b948b97a93195ae5834, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 9177651527431850679, guid: af0468904fb76b948b97a93195ae5834, type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af0468904fb76b948b97a93195ae5834, type: 3}

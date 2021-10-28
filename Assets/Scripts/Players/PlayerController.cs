@@ -129,10 +129,15 @@ public class PlayerController : MonoBehaviour
 	public GameObject tornado;
 	[HideInInspector]
 	public GameObject boulder;
+	[Tooltip("The force at which the fireball is launched")]
 	public float fireballForce;
 
+	[Tooltip("The force is with you (actually this is an unused variable)")]
 	public float tornadoForce;
 	public float tornadoTime;
+
+	[Tooltip("The distance forward that the earth platform is placed")]
+	public float earthPlatformForwardness = 2.0f;
 
 	[Header("Miscellaneous Variables")]
 	[Tooltip("The player's mesh.")]
@@ -483,6 +488,7 @@ public class PlayerController : MonoBehaviour
 
 			spellbook.transform.parent = spellbookEquipPoint;
 			spellbook.transform.position = spellbookEquipPoint.position;
+			spellbook.transform.rotation = spellbookEquipPoint.rotation;
 			spellbook.GetComponent<Rigidbody>().isKinematic = true;
 			spellbook.GetComponent<SpellbookController>().playerHolding = this;
 		}
