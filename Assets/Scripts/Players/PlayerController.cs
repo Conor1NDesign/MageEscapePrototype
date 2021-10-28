@@ -178,6 +178,9 @@ public class PlayerController : MonoBehaviour
 	public bool useGravity = true;
 
 
+
+	public SpellSounds AudioManager;
+
 	public Animator animator;
 	GameObject interactable;
 	private void Awake()
@@ -187,6 +190,14 @@ public class PlayerController : MonoBehaviour
 
 		//Finds the Character Controller component on the object this script is attached to.
 		controller = GetComponent<CharacterController>();
+
+		//Finds the spell audio controller
+		AudioManager = FindObjectOfType<SpellSounds>();
+
+		if (AudioManager == null)
+		{
+			Debug.LogError("OI MATE ADD A SpellSounds Script to GameManager, don't come bitching to me ~Declan");
+		}
 	}
 
 	public int GetPlayerIndex()

@@ -7,8 +7,10 @@ public class SpellFunctions : MonoBehaviour
 	static SpellFunction[] hardCastSpells = { Fireball, IceBeam, SummonBoulder, TornadoGust };
 	static SpellFunction[] quickCastEnd = { FlamethrowerEnd, FrostWaveEnd, EarthPlatformEnd, PushingGustEnd };
 	static SpellFunction[] hardCastEnd = { FireballEnd, IceBeamEnd, SummonBoulderEnd, TornadoGustEnd };
-	#region START CAST
-	public static void StartQuickCast(PlayerController caster)
+
+
+    #region START CAST
+    public static void StartQuickCast(PlayerController caster)
 	{
 		if (caster.currentCooldown < 0.0f ||
 			caster.playerElement == PlayerController.PlayerCurrentElement.Earth)
@@ -47,9 +49,14 @@ public class SpellFunctions : MonoBehaviour
 	static void Flamethrower(PlayerController caster)
 	{
 		Debug.Log("Flamethrower");
+
+		
 		GameObject flamethrower = Instantiate(caster.flamethrowerPrefab);
 		caster.AttachSpell(flamethrower);
 		flamethrower.GetComponent<Flamethrower>().playerCasting = caster;
+		caster.attachedSpell.GetComponent<AudioSource>().clip = caster.AudioManager.flameThrowerLoop;
+		caster.attachedSpell.GetComponent<AudioSource>().volume = 0.13f;
+		caster.attachedSpell.GetComponent<AudioSource>().Play();
 	}
 
 	static void FrostWave(PlayerController caster)
@@ -85,8 +92,10 @@ public class SpellFunctions : MonoBehaviour
 
 	static void Fireball(PlayerController caster)
 	{
-		Debug.Log("Fireball Aim");
+		
 		caster.AttachSpell(Instantiate(caster.fireballPrefab));
+		caster.attachedSpell.GetComponent<AudioSource>().clip = caster.AudioManager.fireBallLoop;
+		caster.attachedSpell.GetComponent<AudioSource>().Play();
 	}
 
 	static void IceBeam(PlayerController caster)
@@ -141,6 +150,8 @@ public class SpellFunctions : MonoBehaviour
 			flamethrowerScript = flamethrower.GetComponent<Flamethrower>();
 		if (flamethrowerScript && flamethrowerScript.iceWall)
 			flamethrowerScript.iceWall.melting = false;
+
+		flamethrower.GetComponent<AudioSource>().Stop();
 		Destroy(flamethrower);
 	}
 
@@ -184,6 +195,9 @@ public class SpellFunctions : MonoBehaviour
 		{
 			fireball.GetComponent<Rigidbody>().AddForce(caster.transform.forward * caster.fireballForce, ForceMode.Impulse);
 			fireball.GetComponent<Fireball>().aging = true;
+			fireball.GetComponent<AudioSource>().Stop();
+			fireball.GetComponent<AudioSource>().clip = caster.AudioManager.fireBall;
+			fireball.GetComponent<AudioSource>().Play();
 		}
 	}
 
