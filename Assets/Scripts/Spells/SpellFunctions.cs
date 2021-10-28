@@ -93,37 +93,14 @@ public class SpellFunctions : MonoBehaviour
     static void Fireball(PlayerController caster)
     {
 
-	static void SummonBoulder(PlayerController caster)
-	{
-		Debug.Log("Boulder Target");
-		caster.tornado = Instantiate(caster.boulderTargetPrefab, caster.spellAttachPoint.position, Quaternion.identity);
-		caster.tornado.GetComponent<SpellCharacterController>().playerCasting = caster;
-		caster.tornadoActive = true;
-		
-		if (caster.boulder)
-		{
-			Destroy(caster.boulder);
-			caster.boulder = null;
-		}
-	}
+
         caster.AttachSpell(Instantiate(caster.fireballPrefab));
         caster.attachedSpell.GetComponent<AudioSource>().clip = caster.AudioManager.fireBallLoop;
         caster.attachedSpell.GetComponent<AudioSource>().Play();
     }
 
-	static void TornadoGust(PlayerController caster)
-	{
-		if (caster.tornadoActive == true)
-		{
-			caster.tornadoActive = false;
-		}
-		else
-		{
-			caster.tornado = Instantiate(caster.tornadoTargetPrefab, caster.spellAttachPoint.position, Quaternion.identity);
-			caster.tornado.GetComponent<SpellCharacterController>().playerCasting = caster;
-			caster.tornadoActive = true;
-		}
-	}
+
+
     static void IceBeam(PlayerController caster)
     {
         caster.AttachSpell(Instantiate(caster.frostBeamPrefab));
@@ -133,10 +110,8 @@ public class SpellFunctions : MonoBehaviour
     static void SummonBoulder(PlayerController caster)
     {
         Debug.Log("Boulder Target");
-        GameObject boulderTarget = caster.boulderTargetPrefab;
-        caster.tornado = Instantiate(boulderTarget, caster.spellAttachPoint.position, Quaternion.identity);
-        boulderTarget.GetComponent<SpellCharacterController>().playerCasting = caster;
-        boulderTarget.GetComponent<CharacterController>().detectCollisions = false;
+        caster.tornado = Instantiate(caster.boulderTargetPrefab, caster.spellAttachPoint.position, Quaternion.identity);
+        caster.tornado.GetComponent<SpellCharacterController>().playerCasting = caster;
         caster.tornadoActive = true;
 
         if (caster.boulder)
@@ -148,16 +123,14 @@ public class SpellFunctions : MonoBehaviour
 
     static void TornadoGust(PlayerController caster)
     {
-
         if (caster.tornadoActive == true)
         {
             caster.tornadoActive = false;
         }
         else
         {
-            GameObject tornadoTarget = caster.tornadoTargetPrefab;
-            caster.tornado = Instantiate(tornadoTarget, caster.spellAttachPoint.position, Quaternion.identity);
-            tornadoTarget.GetComponent<SpellCharacterController>().playerCasting = caster;
+            caster.tornado = Instantiate(caster.tornadoTargetPrefab, caster.spellAttachPoint.position, Quaternion.identity);
+            caster.tornado.GetComponent<SpellCharacterController>().playerCasting = caster;
             caster.tornadoActive = true;
         }
     }
