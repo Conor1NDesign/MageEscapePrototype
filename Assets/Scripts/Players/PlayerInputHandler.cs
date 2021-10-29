@@ -54,7 +54,7 @@ public class PlayerInputHandler : MonoBehaviour
                     if (context.performed)
                         playerController.InteractWithSpellbook(false);
                     else if (context.canceled)
-                        playerController.InteractWithSpellbook(true);
+                        playerController.animator.speed = 1;
                 }
             }
             else
@@ -62,7 +62,7 @@ public class PlayerInputHandler : MonoBehaviour
                 if (context.performed)
                     playerController.InteractWithSpellbook(false);
                 else if (context.canceled)
-                    playerController.InteractWithSpellbook(true);
+                    playerController.animator.speed = 1;
             }
 
         }

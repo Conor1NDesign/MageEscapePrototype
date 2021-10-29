@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Animations;
 
 public class PlayerController : MonoBehaviour
 {
@@ -478,11 +479,13 @@ public class PlayerController : MonoBehaviour
 			if (endThrow && playerState == PlayerStates.Throwing)
 			{
 				playerState = PlayerStates.Idle;
+				animator.speed = 1;
 				// Throw a spellbook if you have one equipped
 				Rigidbody spellbookRB = spellbook.GetComponent<Rigidbody>();
 				DropSpellbook();
 
 				spellbookRB.AddForce(transform.forward * currentThrowStrength, ForceMode.Impulse);
+				//spellbookRB.AddForce(transform.up * (currentThrowStrength / 4), ForceMode.Impulse);
 			} else if (!endThrow) {
 				playerState = PlayerStates.Throwing;
 				currentThrowStrength = 0.0f;
