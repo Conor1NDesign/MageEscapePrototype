@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -183,6 +184,9 @@ public class PlayerController : MonoBehaviour
 
 	public Animator animator;
 	GameObject interactable;
+
+	public string inputDevice;
+
 	private void Awake()
 	{
 		//Finds the main camera on the level, used for movement and rotation directions.

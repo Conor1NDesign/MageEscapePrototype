@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class SpellBookUI : MonoBehaviour
 {
@@ -12,6 +13,20 @@ public class SpellBookUI : MonoBehaviour
 	public Sprite[] WindIcons;
 	public Sprite[] EarthIcons;
 	public Sprite EmptyIcon;
+
+	public Sprite fKeyIcon;
+	public Sprite rKeyIcon;
+
+	public Image p1QCIcon;
+	public Image p1HCIcon;
+
+	public Image p2QCIcon;
+	public Image p2HCIcon;
+
+	public Image p1QCCooldownMask;
+	public Image p1HCCooldownMask;
+	public Image p2QCCooldownMask;
+	public Image p2HCCooldownMask;
 
 	private GameObject Canv;
 
@@ -70,6 +85,24 @@ public class SpellBookUI : MonoBehaviour
 			default:
 				SetPlayerUINone(P2BookInfo);
 				break;
+		}
+
+		p1QCCooldownMask.fillAmount = (p1.currentCooldown / p1.quickCastCooldown);
+		p1HCCooldownMask.fillAmount = (p1.currentCooldown / p1.hardCastCooldown);
+
+		p2QCCooldownMask.fillAmount = (p2.currentCooldown / p2.quickCastCooldown);
+		p2HCCooldownMask.fillAmount = (p2.currentCooldown / p2.hardCastCooldown);
+
+		if (p1.inputDevice == "Keyboard")
+		{
+			p1QCIcon.sprite = rKeyIcon;
+			p1HCIcon.sprite = fKeyIcon;
+		}
+
+		if (p2.inputDevice == "Keyboard")
+		{
+			p2QCIcon.sprite = rKeyIcon;
+			p2HCIcon.sprite = fKeyIcon;
 		}
 	}
 

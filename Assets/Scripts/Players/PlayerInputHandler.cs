@@ -22,6 +22,7 @@ public class PlayerInputHandler : MonoBehaviour
         //This prevents multiple players from somehow controlling the same player.
         var playerControllers = FindObjectsOfType<PlayerController>();
         playerController = playerControllers.FirstOrDefault(m => m.GetPlayerIndex() == index);
+        playerController.inputDevice = playerInput.currentControlScheme;
 
         if (SceneManager.GetActiveScene().name == "00 - Tutorial Level")
         {
