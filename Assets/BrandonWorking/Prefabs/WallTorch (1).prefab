@@ -127,9 +127,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.57854116, b: 0.24056602, a: 1}
+  m_Color: {r: 1, g: 0.7172957, b: 0.23921567, a: 1}
   m_Intensity: 0.7
-  m_Range: 10.2
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -220,9 +220,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.57854116, b: 0.24056602, a: 1}
-  m_Intensity: 0.7
-  m_Range: 10.2
+  m_Color: {r: 0.9622642, g: 0.7574715, b: 0.41304737, a: 1}
+  m_Intensity: 0.8
+  m_Range: 7
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 228435564146580887}
-  minIntensity: 0.6
+  minIntensity: 0.8
   maxIntensity: 1
   updateSpeed: 0.07
 --- !u!1 &7308067784683218811
