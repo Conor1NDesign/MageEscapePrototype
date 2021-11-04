@@ -76,6 +76,11 @@ public class PlayerController : MonoBehaviour
 	[Tooltip("How long the player can be on fire before dying")]
 	public float maxFireTime;
 	private float fireTime;
+	[SerializeField]
+	[Tooltip("Whether the player is chilled")]
+	private bool chilled = false;
+	[Tooltip("The change in speed of the chill effect, 0 = not moving, 1 = normal speed")]
+	public float chillSpeedFactor;
 
 	[Header("Character Control Variables")]
 	[Tooltip("The default movement speed for the player. This is used while they are grounded.")]
@@ -440,6 +445,9 @@ public class PlayerController : MonoBehaviour
 				currentThrowStrength = throwStrength;
 		}
 
+		if (chilled)
+			currentMoveSpeed *= chillSpeedFactor;
+
 		//PLAYER STATE CHECKS END//
 	}
 
@@ -607,7 +615,16 @@ public class PlayerController : MonoBehaviour
 		{
 			onFire = newOnFireness;
 			fireTime = maxFireTime;
+			if (newOnFireness)
+				chilled = false;
 		}
+	}
+
+	public void SetChilled(bool newChilledness)
+	{
+		chilled = newChilledness;
+		if (newChilledness)
+			onFire = false;
 	}
 }
 
