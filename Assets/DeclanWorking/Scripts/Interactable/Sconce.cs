@@ -10,6 +10,11 @@ public class Sconce : Interactable
     bool hasAntiMagicBarrier;
     public GameObject particles;
     public Material NonEmmisive;
+
+    public AudioClip light;
+    public AudioClip putOut;
+    AudioSource al;
+
     private void OnDrawGizmos()
     {
         if (movingPlatforms.Length != 0)
@@ -24,6 +29,8 @@ public class Sconce : Interactable
 
     void Start()
     {
+
+        al = GetComponent<AudioSource>();
         if (movingPlatforms.Length != 0)
         {
             hasMovingPlatforms = true;
@@ -38,6 +45,13 @@ public class Sconce : Interactable
     {
         if (isActivated)
         {
+            if (particles.gameObject.activeSelf == false)
+            {
+                al.clip = light;
+                al.Play();
+            }
+
+
             particles.gameObject.SetActive(true);
             if (hasSetSwitchActive == false)
             {
@@ -63,6 +77,13 @@ public class Sconce : Interactable
         }
         else
         {
+
+            if (particles.gameObject.activeSelf == true)
+            {
+                al.clip = putOut;
+                al.Play();
+            }
+
             particles.gameObject.SetActive(false);
             if (hasSetSwitchActive == true)
             {
