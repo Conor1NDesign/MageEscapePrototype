@@ -14,7 +14,9 @@ public class FireballExplosion : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		transform.root.gameObject.GetComponent<Fireball>().aging = false;
+		Fireball fireball = transform.parent.gameObject.GetComponent<Fireball>();
+		fireball.aging = false;
+
 		if (other.CompareTag("Meltable"))
 		{
 			WaterWheel waterWheel = other.gameObject.GetComponent<WaterWheel>();
@@ -42,12 +44,18 @@ public class FireballExplosion : MonoBehaviour
 
 		if (other.CompareTag("Spellbook"))
 		{
-			Debug.Log("nyaa");
 			SpellbookController spellbook = other.gameObject.GetComponent<SpellbookController>();
 			if (spellbook)
 				spellbook.burning = true;
 		}
 
-		Destroy(transform.root.gameObject, explosionTime);
+		if (other.CompareTag("Player"))
+		{
+			PlayerController playerController = other.GetComponent<PlayerController>();
+			if (playerController && playerController != fireball.caster)
+				playerController.isDead = true;
+		}
+		
+		Destroy(transform.parent.gameObject, explosionTime);
 	}
 }
