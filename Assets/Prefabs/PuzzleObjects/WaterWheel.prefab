@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8028334603302957622}
   - component: {fileID: 5637788386929084205}
   - component: {fileID: 1989674990}
+  - component: {fileID: 3050603479972564598}
   m_Layer: 0
   m_Name: WaterWheel
   m_TagString: Untagged
@@ -82,7 +83,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306430850684266241}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6579e919e0128f3438701b8e87bc196c, type: 3}
   m_Name: 
@@ -95,6 +96,22 @@ MonoBehaviour:
   - {fileID: 0}
   AntiMagicBarrier:
   - {fileID: 0}
+--- !u!54 &3050603479972564598
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306430850684266241}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &5572862359804549154
 PrefabInstance:
   m_ObjectHideFlags: 0
