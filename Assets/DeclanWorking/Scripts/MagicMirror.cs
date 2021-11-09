@@ -66,11 +66,15 @@ public class MagicMirror : MonoBehaviour
 			{
 				if (item.tag == "Lightable")
 				{
-					item.GetComponent<Sconce>().isActivated = false;
+					Sconce sconce = item.GetComponent<Sconce>();
+					if (sconce)
+						sconce.isActivated = false;
 				}
 				if (item.tag == "Meltable")
 				{
-					item.GetComponent<WaterWheel>().isFrozen = true;
+					WaterWheel wheel = item.GetComponent<WaterWheel>();
+					if (wheel)
+						wheel.isFrozen = true;
 				}
 			}
 

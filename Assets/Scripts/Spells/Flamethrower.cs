@@ -39,9 +39,6 @@ public class Flamethrower : MonoBehaviour
         }
         if (other.CompareTag("Lightable"))
         {
-
-
-
             if (Physics.Linecast(transform.position, other.transform.position, out RayHit, ~ignore))
             {
                 if (RayHit.collider.CompareTag("Lightable"))
@@ -79,6 +76,13 @@ public class Flamethrower : MonoBehaviour
             if (spellbook && spellbook.playerHolding != playerCasting)
                 spellbook.burning = true;
         }
+
+		if (other.CompareTag("Player"))
+		{
+			PlayerController playerController = other.GetComponent<PlayerController>();
+			if (playerController)
+				playerController.SetOnFire(true);
+		}
     }
 
     private void OnTriggerExit(Collider other)

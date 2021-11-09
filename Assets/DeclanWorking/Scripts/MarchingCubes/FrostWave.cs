@@ -52,6 +52,13 @@ public class FrostWave : MonoBehaviour
 			sb.isSlowed = true;
 			sb.counter = 0.0f;
 		}
+
+		if (other.CompareTag("Player"))
+		{
+			PlayerController playerController = other.GetComponent<PlayerController>();
+			if (playerController)
+				playerController.SetChilled(true);
+		}
 	}
     private void OnTriggerStay(Collider other)
     {

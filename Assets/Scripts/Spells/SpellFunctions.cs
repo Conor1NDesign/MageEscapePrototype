@@ -99,6 +99,7 @@ public class SpellFunctions : MonoBehaviour
     {
 
         caster.AttachSpell(Instantiate(caster.fireballPrefab));
+		caster.attachedSpell.GetComponent<Fireball>().caster = caster;
 
         if (caster.AudioManager != null)
         {
