@@ -17,9 +17,11 @@ public class SpinningBlade : MonoBehaviour
 	public Mesh brokenBlades;
 	Transform blade;
 
+	AudioSource al;
+
 	void Start()
 	{
-		
+		al = GetComponent<AudioSource>();
 	}
 
 	void Update()
@@ -70,7 +72,7 @@ public class SpinningBlade : MonoBehaviour
 		if (other.CompareTag("Heavy Object"))
 		{
 			gameObject.GetComponentsInChildren<MeshFilter>()[1].sharedMesh = brokenBlades;
-
+			al.Stop();
 			gameObject.GetComponent<BoxCollider>().enabled = false;
 		}
 	}

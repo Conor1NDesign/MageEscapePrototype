@@ -10,19 +10,51 @@ public class AntiMagicBarrier : MonoBehaviour
     public GameObject Barrier;
     public BoxCollider[] BarrierCollider;
 
+    [Header("If there is more than one Barrier only check this on one")]
+    public bool DoesItNeedSound = false;
+    AudioSource al;
+
+
+    void Awake()
+    {
+        al = GetComponent<AudioSource>();
+
+    }
+
     void Start()
     {
         casters = FindObjectsOfType<PlayerController>();
+        if (DoesItNeedSound)
+        {
+            al.Play();
+        }
     }
 
     private void Update()
     {
         if (numberofActiveSwitch == numberOfRequiredSwitches)
         {
+            if (Barrier.activeSelf == false)
+            {
+                if (DoesItNeedSound)
+                {
+                    al.Play();
+                }
+            }
             Activate();
+
+
         }
         else
         {
+
+            if (Barrier.activeSelf == true)
+            {
+                if (DoesItNeedSound)
+                {
+                    al.Stop();
+                }
+            }
             Deactivate();
         }
     }

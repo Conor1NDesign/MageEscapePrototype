@@ -15,10 +15,10 @@ public class WaterWheel : Interactable
     bool hasSetSwitchActive;
     bool hasAntiMagicBarrier;
 
-
+    AudioSource al;
     void Start()
     {
-
+        al = GetComponent<AudioSource>();
         if (movingPlatforms.Length != 0)
         {
             hasMovingPlatforms = true;
@@ -37,9 +37,9 @@ public class WaterWheel : Interactable
         {
             if (hasSetSwitchActive == false)
             {
+                    al.Play();
                 if (hasMovingPlatforms)
                 {
-
                     foreach (var item in movingPlatforms)
                     {
                         item.numberOfActiveSwitches++;
@@ -65,6 +65,7 @@ public class WaterWheel : Interactable
         {
             if (hasSetSwitchActive == true)
             {
+                al.Stop();
                 if (hasMovingPlatforms)
                 {
                     foreach (var item in movingPlatforms)
