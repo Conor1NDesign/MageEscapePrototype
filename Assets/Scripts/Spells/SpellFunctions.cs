@@ -59,7 +59,7 @@ public class SpellFunctions : MonoBehaviour
         if (caster.AudioManager != null)
         {
             caster.attachedSpell.GetComponent<AudioSource>().clip = caster.AudioManager.flameThrowerLoop;
-            caster.attachedSpell.GetComponent<AudioSource>().volume = 0.13f;
+            caster.attachedSpell.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Sound");
             caster.attachedSpell.GetComponent<AudioSource>().Play();
         }
     }
@@ -70,7 +70,7 @@ public class SpellFunctions : MonoBehaviour
         if (caster.AudioManager != null)
         {
             caster.attachedSpell.GetComponent<AudioSource>().clip = caster.AudioManager.FrostWave;
-            caster.attachedSpell.GetComponent<AudioSource>().volume = 0.13f;
+            caster.attachedSpell.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Sound");
             caster.attachedSpell.GetComponent<AudioSource>().loop = true;
             caster.attachedSpell.GetComponent<AudioSource>().Play();
         }
@@ -94,7 +94,7 @@ public class SpellFunctions : MonoBehaviour
         if (caster.AudioManager != null)
         {
             caster.attachedSpell.GetComponent<AudioSource>().clip = caster.AudioManager.PushingGust;
-            caster.attachedSpell.GetComponent<AudioSource>().volume = 0.13f;
+            caster.attachedSpell.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Sound");
             caster.attachedSpell.GetComponent<AudioSource>().loop = true;
             caster.attachedSpell.GetComponent<AudioSource>().Play();
         }
@@ -118,6 +118,7 @@ public class SpellFunctions : MonoBehaviour
         if (caster.AudioManager != null)
         {
             caster.attachedSpell.GetComponent<AudioSource>().clip = caster.AudioManager.fireBallLoop;
+            caster.attachedSpell.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Sound");
             caster.attachedSpell.GetComponent<AudioSource>().Play();
         }
     }
@@ -128,7 +129,7 @@ public class SpellFunctions : MonoBehaviour
         if (caster.AudioManager != null)
         {
             caster.attachedSpell.GetComponent<AudioSource>().clip = caster.AudioManager.IceBeam;
-            caster.attachedSpell.GetComponent<AudioSource>().volume = 0.13f;
+            caster.attachedSpell.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Sound");
             caster.attachedSpell.GetComponent<AudioSource>().loop = true;
             caster.attachedSpell.GetComponent<AudioSource>().Play();
         }
@@ -211,7 +212,7 @@ public class SpellFunctions : MonoBehaviour
         if (caster.AudioManager != null)
         {
             caster.earthPlatform.GetComponent<AudioSource>().clip = caster.AudioManager.Platform;
-            caster.earthPlatform.GetComponent<AudioSource>().volume = 0.13f;
+            caster.earthPlatform.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Sound");
             caster.earthPlatform.GetComponent<AudioSource>().Play();
         }
     }
@@ -275,7 +276,7 @@ public class SpellFunctions : MonoBehaviour
         if (caster.AudioManager != null)
         {
             caster.boulder.GetComponent<AudioSource>().clip = caster.AudioManager.Boulder;
-            caster.boulder.GetComponent<AudioSource>().volume = 0.13f;
+            caster.boulder.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Sound"); 
             caster.boulder.GetComponent<AudioSource>().Play();
         }
     }
@@ -304,7 +305,7 @@ public class SpellFunctions : MonoBehaviour
             if (caster.AudioManager != null)
             {
                 caster.tornado.GetComponent<AudioSource>().clip = caster.AudioManager.Tornado;
-                caster.tornado.GetComponent<AudioSource>().volume = 0.13f;
+                caster.tornado.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Sound");
                 caster.tornado.GetComponent<AudioSource>().loop = true;
                 caster.tornado.GetComponent<AudioSource>().Play();
             }
