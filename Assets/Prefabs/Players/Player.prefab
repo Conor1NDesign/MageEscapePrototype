@@ -5079,7 +5079,7 @@ MonoBehaviour:
   tornadoForce: 0
   tornadoTime: 0
   earthPlatformForwardness: 2
-  playerMesh: {fileID: 0}
+  playerMesh: {fileID: 5559395143307194628}
   spellbookEquipPoint: {fileID: 3635151182888519296}
   spellAttachPoint: {fileID: 3202153041044417969}
   attachedSpell: {fileID: 0}
@@ -6220,6 +6220,11 @@ GameObject:
 --- !u!4 &6131680164468052013 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cb5a0d604125fa141a245617825fd50f, type: 3}
+  m_PrefabInstance: {fileID: 5949998249335076806}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &5559395143307194628 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2284542787498755778, guid: cb5a0d604125fa141a245617825fd50f, type: 3}
   m_PrefabInstance: {fileID: 5949998249335076806}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &5415313743166556174 stripped
