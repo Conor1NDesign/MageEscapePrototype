@@ -3081,6 +3081,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: AntiMagicBarrier.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
       propertyPath: movingPlatforms.Array.data[0]
       value: 
       objectReference: {fileID: 2142982761}
@@ -3088,6 +3092,10 @@ PrefabInstance:
       propertyPath: movingPlatforms.Array.data[1]
       value: 
       objectReference: {fileID: 1338519030}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: isActivated
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d746a804eb3f08843996c07e083233d7, type: 3}
 --- !u!4 &84531293 stripped
@@ -7009,6 +7017,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: AntiMagicBarrier.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
       propertyPath: movingPlatforms.Array.data[0]
       value: 
       objectReference: {fileID: 2142982761}
@@ -7016,6 +7028,10 @@ PrefabInstance:
       propertyPath: movingPlatforms.Array.data[1]
       value: 
       objectReference: {fileID: 1338519030}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: isActivated
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d746a804eb3f08843996c07e083233d7, type: 3}
 --- !u!4 &214389555 stripped
@@ -38436,6 +38452,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: AntiMagicBarrier.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
       propertyPath: movingPlatforms.Array.data[0]
       value: 
       objectReference: {fileID: 2142982761}
@@ -38443,6 +38463,10 @@ PrefabInstance:
       propertyPath: movingPlatforms.Array.data[1]
       value: 
       objectReference: {fileID: 1338519030}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: isActivated
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d746a804eb3f08843996c07e083233d7, type: 3}
 --- !u!4 &1067544254 stripped
@@ -59888,6 +59912,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: movingPlatforms.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
       propertyPath: AntiMagicBarrier.Array.data[0]
       value: 
       objectReference: {fileID: 406334460}
@@ -59895,6 +59923,10 @@ PrefabInstance:
       propertyPath: AntiMagicBarrier.Array.data[1]
       value: 
       objectReference: {fileID: 661554691}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: isActivated
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d746a804eb3f08843996c07e083233d7, type: 3}
 --- !u!4 &1723057494 stripped
@@ -65386,7 +65418,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh404616
+  m_Name: pb_Mesh72814
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
