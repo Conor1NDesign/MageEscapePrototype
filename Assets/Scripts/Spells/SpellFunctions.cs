@@ -67,7 +67,13 @@ public class SpellFunctions : MonoBehaviour
     static void FrostWave(PlayerController caster)
     {
         caster.AttachSpell(Instantiate(caster.frostWavePrefab));
-        Debug.Log("FrostWave");
+        if (caster.AudioManager != null)
+        {
+            caster.attachedSpell.GetComponent<AudioSource>().clip = caster.AudioManager.FrostWave;
+            caster.attachedSpell.GetComponent<AudioSource>().volume = 0.13f;
+            caster.attachedSpell.GetComponent<AudioSource>().loop = true;
+            caster.attachedSpell.GetComponent<AudioSource>().Play();
+        }
     }
 
     public static void EarthPlatform(PlayerController caster)
@@ -85,6 +91,14 @@ public class SpellFunctions : MonoBehaviour
 
         caster.AttachSpell(Instantiate(caster.gustPrefab));
         caster.rotationLockedBySpell = true;
+        if (caster.AudioManager != null)
+        {
+            caster.attachedSpell.GetComponent<AudioSource>().clip = caster.AudioManager.PushingGust;
+            caster.attachedSpell.GetComponent<AudioSource>().volume = 0.13f;
+            caster.attachedSpell.GetComponent<AudioSource>().loop = true;
+            caster.attachedSpell.GetComponent<AudioSource>().Play();
+        }
+
     }
 
     #endregion
@@ -110,7 +124,13 @@ public class SpellFunctions : MonoBehaviour
     static void IceBeam(PlayerController caster)
     {
         caster.AttachSpell(Instantiate(caster.frostBeamPrefab));
-        Debug.Log("IceBeam");
+        if (caster.AudioManager != null)
+        {
+            caster.attachedSpell.GetComponent<AudioSource>().clip = caster.AudioManager.IceBeam;
+            caster.attachedSpell.GetComponent<AudioSource>().volume = 0.13f;
+            caster.attachedSpell.GetComponent<AudioSource>().loop = true;
+            caster.attachedSpell.GetComponent<AudioSource>().Play();
+        }
     }
 
     static void SummonBoulder(PlayerController caster)
@@ -138,6 +158,7 @@ public class SpellFunctions : MonoBehaviour
             caster.tornado = Instantiate(caster.tornadoTargetPrefab, caster.spellAttachPoint.position, Quaternion.identity);
             caster.tornado.GetComponent<SpellCharacterController>().playerCasting = caster;
             caster.tornadoActive = true;
+
         }
     }
 
@@ -185,6 +206,13 @@ public class SpellFunctions : MonoBehaviour
         caster.earthPlatform.transform.position = caster.transform.position + caster.transform.forward * caster.earthPlatformForwardness - new Vector3(0f, 0.1f, 0.0f);
         caster.earthPlatform.transform.rotation = caster.transform.rotation;
         caster.earthPlatform.GetComponent<EarthPlatform>().playerCasting = caster;
+
+        if (caster.AudioManager != null)
+        {
+            caster.earthPlatform.GetComponent<AudioSource>().clip = caster.AudioManager.Platform;
+            caster.earthPlatform.GetComponent<AudioSource>().volume = 0.13f;
+            caster.earthPlatform.GetComponent<AudioSource>().Play();
+        }
     }
 
     static void PushingGustEnd(PlayerController caster)
@@ -242,6 +270,13 @@ public class SpellFunctions : MonoBehaviour
         caster.tornadoActive = false;
         caster.boulder = boulder;
         boulder.GetComponent<Boulder>().playerCasting = caster;
+
+        if (caster.AudioManager != null)
+        {
+            caster.boulder.GetComponent<AudioSource>().clip = caster.AudioManager.Boulder;
+            caster.boulder.GetComponent<AudioSource>().volume = 0.13f;
+            caster.boulder.GetComponent<AudioSource>().Play();
+        }
     }
 
     static void TornadoGustEnd(PlayerController caster)
@@ -252,7 +287,10 @@ public class SpellFunctions : MonoBehaviour
             GameObject tornadoTarget = caster.tornado;
             caster.tornado = null;
             if (!tornadoTarget)
+            { 
                 return;
+            }
+
 
             tornadoTarget.transform.position = tornadoTarget.transform.position + new Vector3(0.0f, 3.0f, 0.0f);
             Destroy(tornadoTarget);
@@ -261,6 +299,14 @@ public class SpellFunctions : MonoBehaviour
             caster.tornado.GetComponent<TornadoGust>().caster = caster;
             caster.playerState = PlayerController.PlayerStates.Casting;
             caster.currentCooldown = 0.0f;
+
+            if (caster.AudioManager != null)
+            {
+                caster.tornado.GetComponent<AudioSource>().clip = caster.AudioManager.Tornado;
+                caster.tornado.GetComponent<AudioSource>().volume = 0.13f;
+                caster.tornado.GetComponent<AudioSource>().loop = true;
+                caster.tornado.GetComponent<AudioSource>().Play();
+            }
         }
         else
         {

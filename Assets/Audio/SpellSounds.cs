@@ -8,36 +8,30 @@ public class SpellSounds : MonoBehaviour
     public AudioClip fireBallLoop;
     public AudioClip fireBall;
 
+
     [Header("FlameThrower")]
     public AudioClip flameThrowerLoop;
 
 
     [Header("Ice Beam")]
-    public bool WIP2;
-
+    public AudioClip IceBeam;
 
 
     [Header("Frost Wave")]
-    public bool WIP3;
+    public AudioClip FrostWave;
 
 
     [Header("Tornado")]
-    public bool WIP4;
+    public AudioClip Tornado;
 
 
     [Header("Pushing Gust")]
-    public bool WIP5;
+    public AudioClip PushingGust;
 
     [Header("Boulder")]
-    public bool WIP6;
+    public AudioClip Boulder;
 
 
     [Header("PlatformSummon")]
-    public bool WIP7;
-
-    private void Start()
-    {
-        
-    }
-
+    public AudioClip Platform;
 }
