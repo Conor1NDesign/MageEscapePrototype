@@ -565,6 +565,10 @@ public class PlayerController : MonoBehaviour
 		{
 			nearbySpellbook = null;
 		}
+		if (interactable && other.CompareTag("Interactable"))
+		{
+			interactable = null;
+		}
 	}
 
 	public void AttachSpell(GameObject spell)
