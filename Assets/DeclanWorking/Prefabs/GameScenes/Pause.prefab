@@ -2868,7 +2868,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 504359376}
+        m_TargetAssemblyTypeName: Options, Assembly-CSharp
+        m_MethodName: OnDrag
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3938449969167631886
 GameObject:
   m_ObjectHideFlags: 0
@@ -3472,6 +3484,7 @@ GameObject:
   - component: {fileID: 3938449969686881336}
   - component: {fileID: 3938449969686881337}
   - component: {fileID: 3938449969686881342}
+  - component: {fileID: 504359376}
   m_Layer: 5
   m_Name: Options Menu
   m_TagString: Untagged
@@ -3565,6 +3578,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &504359376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3938449969686881340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b700949eac532141b44b686061ea057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 3938449969008880389}
 --- !u!1 &3938449969757828360
 GameObject:
   m_ObjectHideFlags: 0
