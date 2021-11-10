@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Animations;
@@ -70,6 +70,21 @@ public class PlayerController : MonoBehaviour
 	public GameObject spellbook = null;
 	[HideInInspector]
 	public GameObject nearbySpellbook = null; // Nearby spellbook, to be equipped on a button press
+	[SerializeField]
+	[Tooltip("Whether the player is on fire")]
+	private bool onFire = false;
+	[Tooltip("How long the player can be on fire before dying")]
+	public float maxFireTime;
+	private float fireTime;
+	[Tooltip("The child object with the fire particle effect on it")]
+	public GameObject fireParticles;
+	[SerializeField]
+	[Tooltip("Whether the player is chilled")]
+	private bool chilled = false;
+	[Tooltip("The change in speed of the chill effect, 0 = not moving, 1 = normal speed")]
+	public float chillSpeedFactor;
+	[Tooltip("The child object with the chill particle effect on it")]
+	public GameObject chillParticles;
 
 	[Header("Character Control Variables")]
 	[Tooltip("The default movement speed for the player. This is used while they are grounded.")]
@@ -288,6 +303,14 @@ public class PlayerController : MonoBehaviour
 
 		//PLAYER STATE CHANGES//
 
+		// Checks if the player is on fire
+		if (onFire)
+		{
+			fireTime -= Time.deltaTime;
+			if (fireTime < 0.0f)
+				isDead = true;
+		}
+
 		//Checks if the player is grounded, has some movement input, and is not dead, before returning that they are 'Moving'.
 		if (controller.isGrounded && moveDirection != new Vector3(0, moveDirection.y, 0) && !isDead && playerState != PlayerStates.Casting && playerState != PlayerStates.Throwing)
 		{
@@ -332,6 +355,7 @@ public class PlayerController : MonoBehaviour
 		if (isDead && !isRespawning)
 		{
 			playerState = PlayerStates.Dead;
+			onFire = false;
 		}
 
 		//Checks if the player is dead and has started their respawn process.
@@ -340,7 +364,6 @@ public class PlayerController : MonoBehaviour
 			playerState = PlayerStates.Respawning;
 			gameObject.transform.position = currentSpawnPoint.position;
 		}
-
 
 		//PLAYER STATE CHANGES END//
 
@@ -426,6 +449,9 @@ public class PlayerController : MonoBehaviour
 				currentThrowStrength = throwStrength;
 		}
 
+		if (chilled)
+			currentMoveSpeed *= chillSpeedFactor;
+
 		//PLAYER STATE CHECKS END//
 	}
 
@@ -436,6 +462,8 @@ public class PlayerController : MonoBehaviour
 	//Coroutine for respawning the player if they somehow die.
 	public IEnumerator RespawnPlayer()
 	{
+		fireParticles.SetActive(false);
+		chillParticles.SetActive(false);
 		playerMesh.enabled = false;
 		isRespawning = true;
 		yield return new WaitForSeconds(respawnTime);
@@ -584,6 +612,30 @@ public class PlayerController : MonoBehaviour
 
 			playerElement = PlayerCurrentElement.None;
 			spellbook = null;
+		}
+	}
+
+	public void SetOnFire(bool newOnFireness)
+	{
+		if (onFire != newOnFireness)
+		{
+			onFire = newOnFireness;
+			fireTime = maxFireTime;
+			if (newOnFireness) {
+				chilled = false;
+				chillParticles.SetActive(false);
+				fireParticles.SetActive(true);
+			}
+		}
+	}
+
+	public void SetChilled(bool newChilledness)
+	{
+		chilled = newChilledness;
+		if (newChilledness) {
+			onFire = false;
+			fireParticles.SetActive(false);
+			chillParticles.SetActive(true);
 		}
 	}
 }

@@ -9,6 +9,8 @@ public class Fireball : MonoBehaviour
 	private float age = 0.0f;
 	[HideInInspector]
 	public bool aging = false;
+	[HideInInspector]
+	public PlayerController caster;
 
 	void Update()
 	{
