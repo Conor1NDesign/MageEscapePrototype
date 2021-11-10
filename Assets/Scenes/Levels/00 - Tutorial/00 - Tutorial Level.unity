@@ -2690,7 +2690,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh112702
+  m_Name: pb_Mesh526900
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2854,7 +2854,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh102968
+  m_Name: pb_Mesh517162
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3544,7 +3544,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh103098
+  m_Name: pb_Mesh517292
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4219,6 +4219,7 @@ GameObject:
   - component: {fileID: 102972976}
   - component: {fileID: 102972974}
   - component: {fileID: 102972977}
+  - component: {fileID: 102972975}
   m_Layer: 0
   m_Name: CameraFocus07
   m_TagString: Untagged
@@ -4271,6 +4272,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!81 &102972975
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102972972}
+  m_Enabled: 1
 --- !u!20 &102972976
 Camera:
   m_ObjectHideFlags: 0
@@ -8558,6 +8567,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: AntiMagicBarrier.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
       propertyPath: isActivated
       value: 1
       objectReference: {fileID: 0}
@@ -8569,6 +8582,10 @@ PrefabInstance:
       propertyPath: movingPlatforms.Array.data[1]
       value: 
       objectReference: {fileID: 1195294211}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: NonEmmisive
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a644c683db1f79458512d6774ec6bec, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d746a804eb3f08843996c07e083233d7, type: 3}
 --- !u!1 &194144532
@@ -9324,6 +9341,7 @@ GameObject:
   - component: {fileID: 231220319}
   - component: {fileID: 231220317}
   - component: {fileID: 231220320}
+  - component: {fileID: 231220318}
   m_Layer: 0
   m_Name: CameraFocus04
   m_TagString: Untagged
@@ -9376,6 +9394,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!81 &231220318
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231220315}
+  m_Enabled: 1
 --- !u!20 &231220319
 Camera:
   m_ObjectHideFlags: 0
@@ -10265,6 +10291,7 @@ GameObject:
   - component: {fileID: 253904132}
   - component: {fileID: 253904130}
   - component: {fileID: 253904133}
+  - component: {fileID: 253904131}
   m_Layer: 0
   m_Name: CameraFocus10
   m_TagString: Untagged
@@ -10317,6 +10344,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!81 &253904131
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253904128}
+  m_Enabled: 1
 --- !u!20 &253904132
 Camera:
   m_ObjectHideFlags: 0
@@ -15146,6 +15181,122 @@ PrefabInstance:
       objectReference: {fileID: 387183177}
     - target: {fileID: 1989674990, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: MaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: MinDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].value
+      value: 0.40285873
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outWeight
+      value: 0.25837773
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inSlope
+      value: -0.21566796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outSlope
+      value: -0.21566796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: 0.23390567
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
+      value: 0.15788558
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].time
+      value: 0.33094788
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].value
+      value: 0.1204834
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inSlope
+      value: -0.4063928
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outSlope
+      value: -0.4063928
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].inSlope
+      value: -0.3417061
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].outSlope
+      value: -0.3417061
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33491653
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].outWeight
+      value: 0.29788598
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].inSlope
+      value: -0.4308014
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].outSlope
+      value: -0.4308014
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].inWeight
+      value: 0.21808086
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1306430850684266241, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
@@ -20677,7 +20828,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh111496
+  m_Name: pb_Mesh525694
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20906,7 +21057,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh107120
+  m_Name: pb_Mesh521314
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22655,6 +22806,7 @@ GameObject:
   - component: {fileID: 564990284}
   - component: {fileID: 564990282}
   - component: {fileID: 564990285}
+  - component: {fileID: 564990283}
   m_Layer: 0
   m_Name: CameraFocus06
   m_TagString: Untagged
@@ -22707,6 +22859,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!81 &564990283
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564990280}
+  m_Enabled: 1
 --- !u!20 &564990284
 Camera:
   m_ObjectHideFlags: 0
@@ -22851,6 +23011,7 @@ GameObject:
   - component: {fileID: 569196217}
   - component: {fileID: 569196215}
   - component: {fileID: 569196218}
+  - component: {fileID: 569196216}
   m_Layer: 0
   m_Name: CameraFocus01
   m_TagString: Untagged
@@ -22903,6 +23064,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!81 &569196216
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569196213}
+  m_Enabled: 1
 --- !u!20 &569196217
 Camera:
   m_ObjectHideFlags: 0
@@ -26873,6 +27042,7 @@ GameObject:
   m_Component:
   - component: {fileID: 695997347}
   - component: {fileID: 695997346}
+  - component: {fileID: 695997348}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -26910,6 +27080,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &695997348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695997345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22c3cad133abd2444b327b2fa1001184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireBallLoop: {fileID: 8300000, guid: 2b0ee840414e7b945964dd70842db149, type: 3}
+  fireBall: {fileID: 8300000, guid: 8b66b6a2d332da54385cd30941df0e78, type: 3}
+  flameThrowerLoop: {fileID: 8300000, guid: da8fb1357cbd6454cb06053a3f8fdb4a, type: 3}
+  IceBeam: {fileID: 8300000, guid: aadd45e4bf4765946bb15d47ef7a8449, type: 3}
+  FrostWave: {fileID: 8300000, guid: b50c9d0756d3bef46ae91e25aa4a8e56, type: 3}
+  Tornado: {fileID: 8300000, guid: 8f08e1ec601ca144db89cefac049c54f, type: 3}
+  PushingGust: {fileID: 8300000, guid: 19a10ff87f4f9864db3000a59dbbf7a2, type: 3}
+  Boulder: {fileID: 8300000, guid: 89ac24a9cccaa26429e2130e23f9ce9e, type: 3}
+  Platform: {fileID: 8300000, guid: 72588d7f27dc9ba48ae204aaf3359cc1, type: 3}
 --- !u!1001 &696163728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39633,6 +39824,7 @@ GameObject:
   - component: {fileID: 947833015}
   - component: {fileID: 947833013}
   - component: {fileID: 947833016}
+  - component: {fileID: 947833014}
   m_Layer: 0
   m_Name: CameraFocus05
   m_TagString: Untagged
@@ -39685,6 +39877,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!81 &947833014
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947833011}
+  m_Enabled: 1
 --- !u!20 &947833015
 Camera:
   m_ObjectHideFlags: 0
@@ -42242,7 +42442,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh106548
+  m_Name: pb_Mesh520742
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -46817,7 +47017,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh112370
+  m_Name: pb_Mesh526568
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -47513,7 +47713,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh102854
+  m_Name: pb_Mesh517048
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -48902,6 +49102,7 @@ GameObject:
   - component: {fileID: 1142034465}
   - component: {fileID: 1142034463}
   - component: {fileID: 1142034466}
+  - component: {fileID: 1142034464}
   m_Layer: 0
   m_Name: CameraFocus02
   m_TagString: Untagged
@@ -48954,6 +49155,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!81 &1142034464
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142034461}
+  m_Enabled: 1
 --- !u!20 &1142034465
 Camera:
   m_ObjectHideFlags: 0
@@ -53540,6 +53749,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: AntiMagicBarrier.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
       propertyPath: isActivated
       value: 0
       objectReference: {fileID: 0}
@@ -53547,6 +53760,10 @@ PrefabInstance:
       propertyPath: movingPlatforms.Array.data[0]
       value: 
       objectReference: {fileID: 1017019570}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: NonEmmisive
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a644c683db1f79458512d6774ec6bec, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d746a804eb3f08843996c07e083233d7, type: 3}
 --- !u!1001 &1231993258
@@ -55835,7 +56052,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh102038
+  m_Name: pb_Mesh516232
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -60315,7 +60532,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh124090
+  m_Name: pb_Mesh538300
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -61736,7 +61953,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh121798
+  m_Name: pb_Mesh536008
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -66509,6 +66726,7 @@ GameObject:
   - component: {fileID: 1500406018}
   - component: {fileID: 1500406016}
   - component: {fileID: 1500406019}
+  - component: {fileID: 1500406017}
   m_Layer: 0
   m_Name: CameraFocus08
   m_TagString: Untagged
@@ -66561,6 +66779,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!81 &1500406017
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500406014}
+  m_Enabled: 1
 --- !u!20 &1500406018
 Camera:
   m_ObjectHideFlags: 0
@@ -69253,6 +69479,7 @@ GameObject:
   - component: {fileID: 1576000378}
   - component: {fileID: 1576000376}
   - component: {fileID: 1576000379}
+  - component: {fileID: 1576000377}
   m_Layer: 0
   m_Name: CameraFocus09
   m_TagString: Untagged
@@ -69305,6 +69532,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!81 &1576000377
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576000374}
+  m_Enabled: 1
 --- !u!20 &1576000378
 Camera:
   m_ObjectHideFlags: 0
@@ -70128,7 +70363,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh123618
+  m_Name: pb_Mesh537828
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -73248,7 +73483,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh103520
+  m_Name: pb_Mesh517714
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -76575,6 +76810,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: AntiMagicBarrier.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
       propertyPath: isActivated
       value: 1
       objectReference: {fileID: 0}
@@ -76594,6 +76833,10 @@ PrefabInstance:
       propertyPath: movingPlatforms.Array.data[3]
       value: 
       objectReference: {fileID: 369058521}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: NonEmmisive
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a644c683db1f79458512d6774ec6bec, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d746a804eb3f08843996c07e083233d7, type: 3}
 --- !u!1001 &1786312326
@@ -79489,6 +79732,122 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: MaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: MinDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].value
+      value: 0.40285873
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outWeight
+      value: 0.25837773
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inSlope
+      value: -0.21566796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outSlope
+      value: -0.21566796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: 0.23390567
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
+      value: 0.15788558
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].time
+      value: 0.33094788
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].value
+      value: 0.1204834
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inSlope
+      value: -0.4063928
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outSlope
+      value: -0.4063928
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].inSlope
+      value: -0.3417061
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].outSlope
+      value: -0.3417061
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33491653
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].outWeight
+      value: 0.29788598
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].inSlope
+      value: -0.4308014
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].outSlope
+      value: -0.4308014
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].inWeight
+      value: 0.21808086
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1306430850684266241, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
       propertyPath: m_Name
       value: Trig11_WaterWheel
@@ -79704,6 +80063,122 @@ PrefabInstance:
       objectReference: {fileID: 937277507}
     - target: {fileID: 1989674990, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: MaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: MinDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].value
+      value: 0.40285873
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outWeight
+      value: 0.25837773
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inSlope
+      value: -0.21566796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outSlope
+      value: -0.21566796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: 0.23390567
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
+      value: 0.15788558
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].time
+      value: 0.33094788
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].value
+      value: 0.1204834
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inSlope
+      value: -0.4063928
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outSlope
+      value: -0.4063928
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].inSlope
+      value: -0.3417061
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].outSlope
+      value: -0.3417061
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33491653
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].outWeight
+      value: 0.29788598
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].inSlope
+      value: -0.4308014
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].outSlope
+      value: -0.4308014
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].inWeight
+      value: 0.21808086
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059388736, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1306430850684266241, guid: 11cf017899ffdc0438f3b92e4f155138, type: 3}
@@ -82993,7 +83468,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh113172
+  m_Name: pb_Mesh527374
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -85170,6 +85645,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: AntiMagicBarrier.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
       propertyPath: isActivated
       value: 1
       objectReference: {fileID: 0}
@@ -85189,6 +85668,10 @@ PrefabInstance:
       propertyPath: movingPlatforms.Array.data[3]
       value: 
       objectReference: {fileID: 369058521}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: NonEmmisive
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a644c683db1f79458512d6774ec6bec, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d746a804eb3f08843996c07e083233d7, type: 3}
 --- !u!1001 &1949127993
@@ -88841,7 +89324,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh119156
+  m_Name: pb_Mesh533366
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -91836,6 +92319,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: AntiMagicBarrier.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
       propertyPath: isActivated
       value: 1
       objectReference: {fileID: 0}
@@ -91847,6 +92334,10 @@ PrefabInstance:
       propertyPath: movingPlatforms.Array.data[1]
       value: 
       objectReference: {fileID: 1195294211}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: NonEmmisive
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a644c683db1f79458512d6774ec6bec, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d746a804eb3f08843996c07e083233d7, type: 3}
 --- !u!4 &2103730681 stripped
@@ -92334,6 +92825,7 @@ GameObject:
   - component: {fileID: 2117210714}
   - component: {fileID: 2117210712}
   - component: {fileID: 2117210715}
+  - component: {fileID: 2117210713}
   m_Layer: 0
   m_Name: CameraFocus03
   m_TagString: Untagged
@@ -92386,6 +92878,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!81 &2117210713
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117210710}
+  m_Enabled: 1
 --- !u!20 &2117210714
 Camera:
   m_ObjectHideFlags: 0
