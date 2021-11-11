@@ -182,4 +182,29 @@ public class PlayerInputHandler : MonoBehaviour
             }
         }
     }
+
+	public void OnRespawnPlayer(CallbackContext context) {
+		if (playerController) {
+			if (context.performed)
+			{
+				playerController.currentManualRespawnTime = playerController.manualRespawnTime;
+				playerController.manuallyRespawning = true;
+			}
+			else if (context.canceled)
+				playerController.manuallyRespawning = false;
+		}
+	}
+
+	public void OnRespawnBooks(CallbackContext context) {
+		if (playerController)
+		{
+			if (context.performed)
+			{
+				playerController.currentManualBookRespawnTime = playerController.manualRespawnTime;
+				playerController.manuallyRespawningBooks = true;
+			}
+			if (context.canceled)
+				playerController.manuallyRespawningBooks = false;
+		}
+	}
 }

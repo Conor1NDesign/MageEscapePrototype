@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Animations;
@@ -116,6 +117,13 @@ public class PlayerController : MonoBehaviour
 	public int respawnTime = 3;
 	[Tooltip("The current location that the player will respawn at, this value should only ever be a Starting Point or a Checkpoint's Transform.")]
 	public Transform currentSpawnPoint;
+	[Tooltip("The amount of time it takes to activate the manual respawn")]
+	public float manualRespawnTime;
+	[HideInInspector]
+	public bool manuallyRespawning = false;
+	[HideInInspector]
+	public float currentManualRespawnTime;
+
 
 	[Header("Checking Player State")]
 	[Tooltip("Used to check if the player is currently under the effects of a wind spell. Should be false if they are not.")]
@@ -202,6 +210,12 @@ public class PlayerController : MonoBehaviour
 	GameObject interactable;
 
 	public string inputDevice;
+	
+	private static List<GameObject> booksTouched = new List<GameObject>();
+	[HideInInspector]
+	public bool manuallyRespawningBooks = false;
+	[HideInInspector]
+	public float currentManualBookRespawnTime;
 
 	private void Awake()
 	{
@@ -303,6 +317,20 @@ public class PlayerController : MonoBehaviour
 
 		//PLAYER STATE CHANGES//
 
+		if (manuallyRespawning)
+		{
+			currentManualRespawnTime -= Time.deltaTime;
+			if (currentManualRespawnTime < 0.0f)
+				isDead = true;
+		}
+
+		if (manuallyRespawningBooks)
+		{
+			currentManualBookRespawnTime -= Time.deltaTime;
+			if (currentManualBookRespawnTime < 0.0f)
+				RespawnAllBooks();
+		}
+
 		// Checks if the player is on fire
 		if (onFire)
 		{
@@ -356,6 +384,7 @@ public class PlayerController : MonoBehaviour
 		{
 			playerState = PlayerStates.Dead;
 			onFire = false;
+			manuallyRespawning = false;
 		}
 
 		//Checks if the player is dead and has started their respawn process.
@@ -537,6 +566,11 @@ public class PlayerController : MonoBehaviour
 			spellbook.transform.rotation = spellbookEquipPoint.rotation;
 			spellbook.GetComponent<Rigidbody>().isKinematic = true;
 			spellbook.GetComponent<SpellbookController>().playerHolding = this;
+
+			if (booksTouched.Contains(spellbook))
+			{
+				booksTouched.Remove(spellbook);
+			}
 		}
 	}
 
@@ -614,6 +648,9 @@ public class PlayerController : MonoBehaviour
 			spellbook.GetComponent<Rigidbody>().isKinematic = false;
 			spellbook.GetComponent<SpellbookController>().playerHolding = null;
 
+			if (!booksTouched.Contains(spellbook))
+				booksTouched.Add(spellbook);
+
 			playerElement = PlayerCurrentElement.None;
 			spellbook = null;
 		}
@@ -641,6 +678,17 @@ public class PlayerController : MonoBehaviour
 			fireParticles.SetActive(false);
 			chillParticles.SetActive(true);
 		}
+	}
+
+	public void RespawnAllBooks()
+	{
+		foreach(GameObject book in booksTouched)
+		{
+			SpellbookController spellbook = book.GetComponent<SpellbookController>();
+			if (spellbook)
+				spellbook.Respawn();
+		}
+		booksTouched.Clear();
 	}
 }
 
