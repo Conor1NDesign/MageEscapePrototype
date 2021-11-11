@@ -147,8 +147,6 @@ public class PlayerController : MonoBehaviour
 	public GameObject frostBeamPrefab;
 
 	[HideInInspector]
-	public bool rotationLockedBySpell = false;
-	[HideInInspector]
 	public bool tornadoActive = false;
 	[HideInInspector]
 	public GameObject tornado;
@@ -466,7 +464,7 @@ public class PlayerController : MonoBehaviour
 		{
 			animator.SetInteger("State", (int)playerState);
 			currentMoveSpeed = 0;
-			currentRotateSpeed = rotationLockedBySpell ? 0 : castingRotationSpeed;
+			currentRotateSpeed = castingRotationSpeed;
 		}
 
 		//Checks if the player is throwing their book
