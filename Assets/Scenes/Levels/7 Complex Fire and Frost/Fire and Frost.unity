@@ -3359,6 +3359,8 @@ MonoBehaviour:
   AntiMagicBarrier: []
   particles: {fileID: 258737749}
   NonEmmisive: {fileID: 0}
+  light: {fileID: 0}
+  putOut: {fileID: 0}
 --- !u!1001 &110961900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7624,6 +7626,8 @@ MonoBehaviour:
   AntiMagicBarrier: []
   particles: {fileID: 973578101}
   NonEmmisive: {fileID: 0}
+  light: {fileID: 0}
+  putOut: {fileID: 0}
 --- !u!1001 &275011883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9791,12 +9795,12 @@ MonoBehaviour:
   fireBallLoop: {fileID: 8300000, guid: 2b0ee840414e7b945964dd70842db149, type: 3}
   fireBall: {fileID: 8300000, guid: 8b66b6a2d332da54385cd30941df0e78, type: 3}
   flameThrowerLoop: {fileID: 8300000, guid: da8fb1357cbd6454cb06053a3f8fdb4a, type: 3}
-  WIP2: 0
-  WIP3: 0
-  WIP4: 0
-  WIP5: 0
-  WIP6: 0
-  WIP7: 0
+  IceBeam: {fileID: 0}
+  FrostWave: {fileID: 0}
+  Tornado: {fileID: 0}
+  PushingGust: {fileID: 0}
+  Boulder: {fileID: 0}
+  Platform: {fileID: 0}
 --- !u!1001 &337751852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28288,6 +28292,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1190166452}
     m_Modifications:
+    - target: {fileID: 3570265470537461476, guid: 206f8a4ddfe06e6428e2522576a9b627, type: 3}
+      propertyPath: m_Height
+      value: 1.5340228
+      objectReference: {fileID: 0}
+    - target: {fileID: 3570265470537461476, guid: 206f8a4ddfe06e6428e2522576a9b627, type: 3}
+      propertyPath: m_Center.x
+      value: -2.695154e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3570265470537461476, guid: 206f8a4ddfe06e6428e2522576a9b627, type: 3}
+      propertyPath: m_Center.y
+      value: 0.022011459
+      objectReference: {fileID: 0}
+    - target: {fileID: 3570265470537461476, guid: 206f8a4ddfe06e6428e2522576a9b627, type: 3}
+      propertyPath: m_Center.z
+      value: -1.5249693e-10
+      objectReference: {fileID: 0}
     - target: {fileID: 3570265470537461477, guid: 206f8a4ddfe06e6428e2522576a9b627, type: 3}
       propertyPath: m_Name
       value: Barrel (2)
@@ -32205,6 +32225,8 @@ MonoBehaviour:
   AntiMagicBarrier: []
   particles: {fileID: 1450777233}
   NonEmmisive: {fileID: 0}
+  light: {fileID: 0}
+  putOut: {fileID: 0}
 --- !u!1001 &1230511943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36993,6 +37015,8 @@ MonoBehaviour:
   AntiMagicBarrier: []
   particles: {fileID: 2026469599}
   NonEmmisive: {fileID: 0}
+  light: {fileID: 0}
+  putOut: {fileID: 0}
 --- !u!1001 &1422247698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55181,6 +55205,8 @@ MonoBehaviour:
   AntiMagicBarrier: []
   particles: {fileID: 824417329}
   NonEmmisive: {fileID: 0}
+  light: {fileID: 0}
+  putOut: {fileID: 0}
 --- !u!1001 &2070732396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56875,6 +56901,8 @@ MonoBehaviour:
   AntiMagicBarrier: []
   particles: {fileID: 1106814618}
   NonEmmisive: {fileID: 0}
+  light: {fileID: 0}
+  putOut: {fileID: 0}
 --- !u!1001 &2108727388
 PrefabInstance:
   m_ObjectHideFlags: 0
