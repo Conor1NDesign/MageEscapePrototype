@@ -47,6 +47,8 @@ public class Lever : Interactable
 					isactivated = false;
 				}
 			}
+			inactiveMesh.SetActive(true);
+			activeMesh.SetActive(false);
 		}
 	}
 }
