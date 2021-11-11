@@ -217,6 +217,8 @@ public class PlayerController : MonoBehaviour
 	[HideInInspector]
 	public float currentManualBookRespawnTime;
 
+	private bool isInteracting = false;
+
 	private void Awake()
 	{
 		//Finds the main camera on the level, used for movement and rotation directions.
@@ -481,6 +483,12 @@ public class PlayerController : MonoBehaviour
 		if (chilled)
 			currentMoveSpeed *= chillSpeedFactor;
 
+		if (isInteracting)
+		{
+			currentMoveSpeed = 0;
+			currentRotateSpeed = 0;
+		}
+
 		//PLAYER STATE CHECKS END//
 	}
 
@@ -510,11 +518,13 @@ public class PlayerController : MonoBehaviour
 			{
 				interactable.GetComponent<Lever>().isActive = true;
 				print("DOWN DOWN");
+				isInteracting = true;
 			}
 			else
 			{
 				interactable.GetComponent<Lever>().isActive = false;
 				print("UP UP");
+				isInteracting = true;
 			}
 		}
 	}
@@ -558,7 +568,7 @@ public class PlayerController : MonoBehaviour
 			}
 
 			// Equip a spellbook if there's one nearby
-			animator.Play("Player_Interaction");
+			//animator.Play("Player_Interaction");
 			spellbook = nearbySpellbook;
 
 			playerElement = spellbook.GetComponent<SpellbookController>().element;
@@ -691,6 +701,13 @@ public class PlayerController : MonoBehaviour
 				spellbook.Respawn();
 		}
 		booksTouched.Clear();
+	}
+
+	public void InteractionEnds()
+	{
+		currentMoveSpeed = defaultMoveSpeed;
+		currentRotateSpeed = rotateSpeed;
+		isInteracting = false;
 	}
 }
 

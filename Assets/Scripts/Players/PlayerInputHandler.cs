@@ -54,7 +54,11 @@ public class PlayerInputHandler : MonoBehaviour
                     if (context.performed)
                         playerController.InteractWithSpellbook(false);
                     else if (context.canceled)
+                    {
+                        if (playerController.spellbook != null && playerController.playerState == PlayerController.PlayerStates.Throwing)
+                            playerController.playerMesh.GetComponentInParent<CursedThrowScript>().inputEnded = true;
                         playerController.animator.speed = 1;
+                    }
                 }
             }
             else
@@ -62,7 +66,11 @@ public class PlayerInputHandler : MonoBehaviour
                 if (context.performed)
                     playerController.InteractWithSpellbook(false);
                 else if (context.canceled)
+                {
+                    if (playerController.spellbook != null && playerController.playerState == PlayerController.PlayerStates.Throwing)
+                        playerController.playerMesh.GetComponentInParent<CursedThrowScript>().inputEnded = true;
                     playerController.animator.speed = 1;
+                }
             }
 
         }
