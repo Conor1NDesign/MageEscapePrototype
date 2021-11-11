@@ -27,6 +27,7 @@ public class CursedThrowScript : MonoBehaviour
     public void ThrowBook()
     {
         thePlayer.InteractWithSpellbook(true);
+        inputEnded = false;
     }
 
     public void Interaction()
