@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 34287247}
   - component: {fileID: 34287246}
   - component: {fileID: 34287248}
+  - component: {fileID: 34287249}
   m_Layer: 0
   m_Name: MageEscape_Introduction
   m_TagString: Untagged
@@ -286,6 +287,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &34287249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34287245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142acaf89708b62478dfcc6f80db2eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 34287246}
 --- !u!1 &1057513813
 GameObject:
   m_ObjectHideFlags: 0
