@@ -505,6 +505,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (interactable != null)
 		{
+			animator.Play("Player_Interaction");
 			if (active)
 			{
 				interactable.GetComponent<Lever>().isActive = true;
@@ -557,6 +558,7 @@ public class PlayerController : MonoBehaviour
 			}
 
 			// Equip a spellbook if there's one nearby
+			animator.Play("Player_Interaction");
 			spellbook = nearbySpellbook;
 
 			playerElement = spellbook.GetComponent<SpellbookController>().element;
