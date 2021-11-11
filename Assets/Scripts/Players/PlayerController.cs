@@ -406,12 +406,31 @@ public class PlayerController : MonoBehaviour
 			currentMoveSpeed = defaultMoveSpeed;
 			currentRotateSpeed = rotateSpeed;
 			gravityMultiplier = defaultGravityMultiplier;
+			animator.speed = 1;
 		}
 
 		//Checks if the Player's state is 'Moving'.
 		if (playerState == PlayerStates.Moving)
 		{
 			animator.SetInteger("State", (int)playerState);
+			var tempAnimSpeedX = inputVector.x;
+			var tempAnimSpeedY = inputVector.y;
+
+			if (tempAnimSpeedX < 0)
+				tempAnimSpeedX = tempAnimSpeedX * -1;
+
+			if (tempAnimSpeedY < 0)
+				tempAnimSpeedY = tempAnimSpeedY * -1;
+
+			if (tempAnimSpeedX < tempAnimSpeedY)
+			{
+				animator.speed = tempAnimSpeedY;
+			}
+			else
+			{
+				animator.speed = tempAnimSpeedX;
+			}
+
 			currentMoveSpeed = defaultMoveSpeed;
 			currentRotateSpeed = rotateSpeed;
 			gravityMultiplier = defaultGravityMultiplier;
@@ -420,6 +439,7 @@ public class PlayerController : MonoBehaviour
 		//Checks if the Player's state is 'Falling'.
 		if (playerState == PlayerStates.Falling)
 		{
+			animator.speed = 1;
 			animator.SetInteger("State", (int)playerState);
 			currentMoveSpeed = airborneMoveSpeed;
 			currentRotateSpeed = rotateSpeed;
@@ -434,6 +454,7 @@ public class PlayerController : MonoBehaviour
 		//Checks if the Player's state is 'Floating'.
 		if (playerState == PlayerStates.Floating)
 		{
+			animator.speed = 1;
 			animator.SetInteger("State", (int)playerState);
 			currentMoveSpeed = airborneMoveSpeed;
 			currentRotateSpeed = rotateSpeed;
@@ -463,6 +484,7 @@ public class PlayerController : MonoBehaviour
 		//Checks if the Player's state is 'Casting'.
 		if (playerState == PlayerStates.Casting)
 		{
+			animator.speed = 1;
 			animator.SetInteger("State", (int)playerState);
 			currentMoveSpeed = 0;
 			currentRotateSpeed = castingRotationSpeed;
