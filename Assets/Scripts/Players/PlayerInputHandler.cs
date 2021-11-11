@@ -116,12 +116,12 @@ public class PlayerInputHandler : MonoBehaviour
 
             if (context.performed)
             {
-                playerController.Interact(true);
+                if (playerController.interactable.GetComponent<Lever>().isActive == false)
+                    playerController.Interact(true);
+                else if (playerController.interactable.GetComponent<Lever>().isActive == false)
+                    playerController.Interact(false);
             }
-            else
-            {
-                playerController.Interact(false);
-            }
+
         }
     }
 

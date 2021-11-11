@@ -205,7 +205,8 @@ public class PlayerController : MonoBehaviour
 	public SpellSounds AudioManager;
 
 	public Animator animator;
-	GameObject interactable;
+	[HideInInspector]
+	public GameObject interactable;
 
 	public string inputDevice;
 	
