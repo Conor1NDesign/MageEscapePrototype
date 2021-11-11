@@ -19,21 +19,26 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_7FF71854_Texture_1:
         m_Texture: {fileID: 2800000, guid: 54229532ade05a24c9a8aa2e397cfbaa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - AlphaClip: 1.1
+    - AlphaClip: -0.1
     - Vector1_1CC2900F: 0
     - Vector1_1D361C2D: 0
-    - Vector1_2351D42A: 0.3
+    - Vector1_2351D42A: 1
     - Vector1_36C9EB21: 0
-    - Vector1_681CC2A: 0.01
+    - Vector1_681CC2A: 0.001
     - Vector1_A08F47B5: 1
     - Vector1_C7A64D72: 0
     - Vector1_C9234AFD: 0
     - Vector1_E8D0CFD4: 0
     m_Colors:
-    - Color_40AF092E: {r: 0.37520537, g: 0, b: 0.5660378, a: 0}
+    - Color_40AF092E: {r: 0.40378588, g: 0, b: 0.574, a: 1}
+    - Vector2_3A386065: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
