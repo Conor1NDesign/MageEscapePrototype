@@ -90,7 +90,7 @@ public class SpellFunctions : MonoBehaviour
     {
 
         caster.AttachSpell(Instantiate(caster.gustPrefab));
-        caster.rotationLockedBySpell = true;
+        caster.rotationLockedBySpell = false;
         if (caster.AudioManager != null)
         {
             caster.attachedSpell.GetComponent<AudioSource>().clip = caster.AudioManager.PushingGust;
