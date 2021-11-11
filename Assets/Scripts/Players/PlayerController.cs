@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
 	public float throwStrength;
 	[Tooltip("The speed at which the throw strength grows to that maximum")]
 	public float throwStrengthGrowth = 1.0f;
-	private float currentThrowStrength;
+	public float currentThrowStrength;
 
 	[Header("Respawning Settings")]
 	[Tooltip("The amount of time (in seconds) it takes to respawn the player when they die.")]
