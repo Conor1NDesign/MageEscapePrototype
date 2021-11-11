@@ -5678,12 +5678,12 @@ MonoBehaviour:
   fireBallLoop: {fileID: 8300000, guid: 2b0ee840414e7b945964dd70842db149, type: 3}
   fireBall: {fileID: 8300000, guid: 8b66b6a2d332da54385cd30941df0e78, type: 3}
   flameThrowerLoop: {fileID: 8300000, guid: da8fb1357cbd6454cb06053a3f8fdb4a, type: 3}
-  WIP2: 0
-  WIP3: 0
-  WIP4: 0
-  WIP5: 0
-  WIP6: 0
-  WIP7: 0
+  IceBeam: {fileID: 0}
+  FrostWave: {fileID: 0}
+  Tornado: {fileID: 0}
+  PushingGust: {fileID: 0}
+  Boulder: {fileID: 0}
+  Platform: {fileID: 0}
 --- !u!1001 &1088322299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6403,6 +6403,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: movingPlatforms.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: AntiMagicBarrier.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d746a804eb3f08843996c07e083233d7, type: 3}
 --- !u!4 &1247812718 stripped
@@ -6547,6 +6555,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5affedb775b7747409df357035910160, type: 2}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: movingPlatforms.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: AntiMagicBarrier.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d746a804eb3f08843996c07e083233d7, type: 3}
 --- !u!1 &1305460508
@@ -7906,6 +7922,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1044412544209714949, guid: d746a804eb3f08843996c07e083233d7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: movingPlatforms.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364623084730492101, guid: d746a804eb3f08843996c07e083233d7, type: 3}
+      propertyPath: AntiMagicBarrier.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
