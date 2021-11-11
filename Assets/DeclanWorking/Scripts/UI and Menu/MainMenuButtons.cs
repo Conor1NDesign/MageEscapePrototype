@@ -9,8 +9,7 @@ public class MainMenuButtons : MonoBehaviour
 	public GameObject LevelSelectCanvas;
 	public GameObject ConfirmationCanvas;
 	public EventSystem eventSystem;
-	public GameObject[] firstSelectedButtons;
-	
+	public GameObject[] firstSelectedButtons;	
 	public void NewGame()
 	{
 		SceneManager.LoadScene(1);
@@ -47,12 +46,14 @@ public class MainMenuButtons : MonoBehaviour
 	{
 		MenuCanvas.SetActive(true);
 		OptionsCanvas.SetActive(false);
+		LevelSelectCanvas.SetActive(false);
 		eventSystem.SetSelectedGameObject(firstSelectedButtons[2]);
 		print("Back");
 	}
 
 	public void Exit()
 	{
+		MenuCanvas.SetActive(false);
 		ConfirmationCanvas.SetActive(true);
 		eventSystem.SetSelectedGameObject(firstSelectedButtons[3]);
 		print("Exit");
@@ -66,6 +67,7 @@ public class MainMenuButtons : MonoBehaviour
 
 	public void Cancel()
 	{
+		MenuCanvas.SetActive(true);
 		ConfirmationCanvas.SetActive(false);
 		eventSystem.SetSelectedGameObject(firstSelectedButtons[4]);
 		print("Cancel");
