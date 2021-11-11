@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Animations;
@@ -209,6 +210,12 @@ public class PlayerController : MonoBehaviour
 	GameObject interactable;
 
 	public string inputDevice;
+	
+	private static List<GameObject> booksTouched = new List<GameObject>();
+	[HideInInspector]
+	public bool manuallyRespawningBooks = false;
+	[HideInInspector]
+	public float currentManualBookRespawnTime;
 
 	private void Awake()
 	{
@@ -315,6 +322,13 @@ public class PlayerController : MonoBehaviour
 			currentManualRespawnTime -= Time.deltaTime;
 			if (currentManualRespawnTime < 0.0f)
 				isDead = true;
+		}
+
+		if (manuallyRespawningBooks)
+		{
+			currentManualBookRespawnTime -= Time.deltaTime;
+			if (currentManualBookRespawnTime < 0.0f)
+				RespawnAllBooks();
 		}
 
 		// Checks if the player is on fire
@@ -552,6 +566,11 @@ public class PlayerController : MonoBehaviour
 			spellbook.transform.rotation = spellbookEquipPoint.rotation;
 			spellbook.GetComponent<Rigidbody>().isKinematic = true;
 			spellbook.GetComponent<SpellbookController>().playerHolding = this;
+
+			if (booksTouched.Contains(spellbook))
+			{
+				booksTouched.Remove(spellbook);
+			}
 		}
 	}
 
@@ -629,6 +648,9 @@ public class PlayerController : MonoBehaviour
 			spellbook.GetComponent<Rigidbody>().isKinematic = false;
 			spellbook.GetComponent<SpellbookController>().playerHolding = null;
 
+			if (!booksTouched.Contains(spellbook))
+				booksTouched.Add(spellbook);
+
 			playerElement = PlayerCurrentElement.None;
 			spellbook = null;
 		}
@@ -656,6 +678,17 @@ public class PlayerController : MonoBehaviour
 			fireParticles.SetActive(false);
 			chillParticles.SetActive(true);
 		}
+	}
+
+	public void RespawnAllBooks()
+	{
+		foreach(GameObject book in booksTouched)
+		{
+			SpellbookController spellbook = book.GetComponent<SpellbookController>();
+			if (spellbook)
+				spellbook.Respawn();
+		}
+		booksTouched.Clear();
 	}
 }
 

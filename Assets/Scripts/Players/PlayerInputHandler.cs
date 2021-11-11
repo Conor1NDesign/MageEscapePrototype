@@ -191,16 +191,20 @@ public class PlayerInputHandler : MonoBehaviour
 				playerController.manuallyRespawning = true;
 			}
 			else if (context.canceled)
-			{
 				playerController.manuallyRespawning = false;
-			}
 		}
 	}
 
 	public void OnRespawnBooks(CallbackContext context) {
-		if (context.performed && playerController)
+		if (playerController)
 		{
-
+			if (context.performed)
+			{
+				playerController.currentManualBookRespawnTime = playerController.manualRespawnTime;
+				playerController.manuallyRespawningBooks = true;
+			}
+			if (context.canceled)
+				playerController.manuallyRespawningBooks = false;
 		}
 	}
 }
