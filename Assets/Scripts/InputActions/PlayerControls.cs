@@ -73,6 +73,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Respawn Player"",
+                    ""type"": ""Button"",
+                    ""id"": ""10cc7ffc-1dd2-4e0b-895f-273761f00822"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Respawn Books"",
+                    ""type"": ""Button"",
+                    ""id"": ""4dd72b3b-585b-46b1-8038-d5b85fc740e4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -306,6 +322,61 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""StartButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""70ddbdeb-b798-4e05-a9e2-bdbea4add19b"",
+                    ""path"": ""<Gamepad>/Start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""StartButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4926d479-2111-46c8-9b2e-234d3f44b734"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Respawn Player"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0586734f-effe-436d-82b6-a8e553617a20"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Respawn Player"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a177c125-2fdc-4313-9be4-6102ed18a44d"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Respawn Books"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7cbacbde-c3ba-4312-969b-0a7e7aa375f3"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Respawn Books"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -344,6 +415,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerMageControls_HardCast = m_PlayerMageControls.FindAction("Hard Cast", throwIfNotFound: true);
         m_PlayerMageControls_Interact = m_PlayerMageControls.FindAction("Interact", throwIfNotFound: true);
         m_PlayerMageControls_StartButton = m_PlayerMageControls.FindAction("StartButton", throwIfNotFound: true);
+        m_PlayerMageControls_RespawnPlayer = m_PlayerMageControls.FindAction("Respawn Player", throwIfNotFound: true);
+        m_PlayerMageControls_RespawnBooks = m_PlayerMageControls.FindAction("Respawn Books", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -400,6 +473,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerMageControls_HardCast;
     private readonly InputAction m_PlayerMageControls_Interact;
     private readonly InputAction m_PlayerMageControls_StartButton;
+    private readonly InputAction m_PlayerMageControls_RespawnPlayer;
+    private readonly InputAction m_PlayerMageControls_RespawnBooks;
     public struct PlayerMageControlsActions
     {
         private @PlayerControls m_Wrapper;
@@ -411,6 +486,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @HardCast => m_Wrapper.m_PlayerMageControls_HardCast;
         public InputAction @Interact => m_Wrapper.m_PlayerMageControls_Interact;
         public InputAction @StartButton => m_Wrapper.m_PlayerMageControls_StartButton;
+        public InputAction @RespawnPlayer => m_Wrapper.m_PlayerMageControls_RespawnPlayer;
+        public InputAction @RespawnBooks => m_Wrapper.m_PlayerMageControls_RespawnBooks;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMageControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -441,6 +518,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @StartButton.started -= m_Wrapper.m_PlayerMageControlsActionsCallbackInterface.OnStartButton;
                 @StartButton.performed -= m_Wrapper.m_PlayerMageControlsActionsCallbackInterface.OnStartButton;
                 @StartButton.canceled -= m_Wrapper.m_PlayerMageControlsActionsCallbackInterface.OnStartButton;
+                @RespawnPlayer.started -= m_Wrapper.m_PlayerMageControlsActionsCallbackInterface.OnRespawnPlayer;
+                @RespawnPlayer.performed -= m_Wrapper.m_PlayerMageControlsActionsCallbackInterface.OnRespawnPlayer;
+                @RespawnPlayer.canceled -= m_Wrapper.m_PlayerMageControlsActionsCallbackInterface.OnRespawnPlayer;
+                @RespawnBooks.started -= m_Wrapper.m_PlayerMageControlsActionsCallbackInterface.OnRespawnBooks;
+                @RespawnBooks.performed -= m_Wrapper.m_PlayerMageControlsActionsCallbackInterface.OnRespawnBooks;
+                @RespawnBooks.canceled -= m_Wrapper.m_PlayerMageControlsActionsCallbackInterface.OnRespawnBooks;
             }
             m_Wrapper.m_PlayerMageControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -466,6 +549,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @StartButton.started += instance.OnStartButton;
                 @StartButton.performed += instance.OnStartButton;
                 @StartButton.canceled += instance.OnStartButton;
+                @RespawnPlayer.started += instance.OnRespawnPlayer;
+                @RespawnPlayer.performed += instance.OnRespawnPlayer;
+                @RespawnPlayer.canceled += instance.OnRespawnPlayer;
+                @RespawnBooks.started += instance.OnRespawnBooks;
+                @RespawnBooks.performed += instance.OnRespawnBooks;
+                @RespawnBooks.canceled += instance.OnRespawnBooks;
             }
         }
     }
@@ -497,5 +586,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnHardCast(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnStartButton(InputAction.CallbackContext context);
+        void OnRespawnPlayer(InputAction.CallbackContext context);
+        void OnRespawnBooks(InputAction.CallbackContext context);
     }
 }
