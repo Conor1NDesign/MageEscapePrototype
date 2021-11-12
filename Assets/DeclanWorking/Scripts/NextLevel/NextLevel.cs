@@ -2,12 +2,11 @@
 using UnityEngine.SceneManagement;
 public class NextLevel : MonoBehaviour
 {
+	public LevelTransition transitionScript;
+
+
 	private void OnTriggerEnter(Collider other)
 	{
-		print("Vroop");
-		if (other.tag == "Player")
-		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
-		}
+		transitionScript.StartTransition();
 	}
 }

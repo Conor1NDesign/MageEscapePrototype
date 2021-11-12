@@ -26143,6 +26143,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 3785014384822090812, guid: 6c5ef45a62640a448831fd4de8a197e5, type: 3}
+      propertyPath: transitionScript
+      value: 
+      objectReference: {fileID: 1393757249}
     - target: {fileID: 4266326383456688836, guid: 6c5ef45a62640a448831fd4de8a197e5, type: 3}
       propertyPath: m_Size.y
       value: 3.8267102
@@ -30492,6 +30496,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb749de5ed9bb5a4ba97d8fb778b0c14, type: 3}
+--- !u!114 &1393757249 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5091319479486789746, guid: bb749de5ed9bb5a4ba97d8fb778b0c14, type: 3}
+  m_PrefabInstance: {fileID: 1393757248}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0482d4cb210062a4da68a85ad3ebaed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1396413835
 GameObject:
   m_ObjectHideFlags: 0
