@@ -39,7 +39,7 @@ public class LevelTransition : MonoBehaviour
         {
             var currentAlpha = levelTransitionImage.gameObject.GetComponent<Renderer>().sharedMaterial.GetFloat("AlphaClip");
             Debug.Log(currentAlpha);
-            currentAlpha -= transitionSpeed;
+            currentAlpha -= transitionSpeed * Time.deltaTime;
 
             levelTransitionImage.gameObject.GetComponent<Renderer>().sharedMaterial.SetFloat("AlphaClip", currentAlpha);
         }
@@ -47,7 +47,7 @@ public class LevelTransition : MonoBehaviour
         {
             var currentAlpha = levelTransitionImage.gameObject.GetComponent<Renderer>().sharedMaterial.GetFloat("AlphaClip");
 
-            currentAlpha += transitionSpeed;
+            currentAlpha += transitionSpeed * Time.deltaTime;
 
             levelTransitionImage.gameObject.GetComponent<Renderer>().sharedMaterial.SetFloat("AlphaClip", currentAlpha);
         }
