@@ -16,6 +16,8 @@ public class SpellBookUI : MonoBehaviour
 
 	public Sprite fKeyIcon;
 	public Sprite rKeyIcon;
+	public Sprite xKeyIcon;
+	public Sprite zKeyIcon;
 
 	public Image p1QCIcon;
 	public Image p1HCIcon;
@@ -27,6 +29,11 @@ public class SpellBookUI : MonoBehaviour
 	public Image p1HCCooldownMask;
 	public Image p2QCCooldownMask;
 	public Image p2HCCooldownMask;
+
+	public Image p1DPadLeft;
+	public Image p1DPadRight;
+	public Image p2DPadLeft;
+	public Image p2DPadRight;
 
 	private GameObject Canv;
 
@@ -97,12 +104,16 @@ public class SpellBookUI : MonoBehaviour
 		{
 			p1QCIcon.sprite = rKeyIcon;
 			p1HCIcon.sprite = fKeyIcon;
+			p1DPadLeft.sprite = xKeyIcon;
+			p1DPadRight.sprite = zKeyIcon;
 		}
 
 		if (p2.inputDevice == "Keyboard")
 		{
 			p2QCIcon.sprite = rKeyIcon;
 			p2HCIcon.sprite = fKeyIcon;
+			p2DPadLeft.sprite = xKeyIcon;
+			p2DPadRight.sprite = zKeyIcon;
 		}
 	}
 
