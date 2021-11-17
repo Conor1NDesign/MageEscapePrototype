@@ -7,17 +7,24 @@ public class Options : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public Slider slider;
+    public Slider sfxSlider;
+    public Slider musicSlider;
     void Start()
     {
-        slider.value = PlayerPrefs.GetFloat("Sound");
+        sfxSlider.value = PlayerPrefs.GetFloat("Sound");
+        musicSlider.value = PlayerPrefs.GetFloat("Music");
     }
 
     // Update is called once per frame
 
 
-    public void OnDrag()
+    public void OnDragSFX()
     {
-        PlayerPrefs.SetFloat("Sound", slider.value);
+        PlayerPrefs.SetFloat("Sound", sfxSlider.value);
+    }
+
+    public void OnDragMusic()
+    {
+        PlayerPrefs.SetFloat("Music", musicSlider.value);
     }
 }

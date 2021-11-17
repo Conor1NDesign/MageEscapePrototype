@@ -1253,7 +1253,7 @@ MonoBehaviour:
   AntiMagicBarrier: []
   particles: {fileID: 0}
   NonEmmisive: {fileID: 0}
-  light: {fileID: 0}
+  lightAudio: {fileID: 0}
   putOut: {fileID: 0}
 --- !u!65 &288773538
 BoxCollider:
@@ -1915,11 +1915,6 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2784767123521184375, guid: 4d713f1e80ec4894eb7877e86a1c1152, type: 3}
   m_PrefabInstance: {fileID: 1936461341}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &462825940 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4094194076815146810, guid: af0468904fb76b948b97a93195ae5834, type: 3}
-  m_PrefabInstance: {fileID: 1269757975}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &471501256
 GameObject:
@@ -2628,6 +2623,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2262527583553426391, guid: 8ac1555eb298cff41890ef20cc966bdb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Options
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938449968789130852, guid: 8ac1555eb298cff41890ef20cc966bdb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3938449969008880389, guid: 8ac1555eb298cff41890ef20cc966bdb, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -3183,6 +3186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5847939cebc0354409256c6ba96a7bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionScript: {fileID: 0}
 --- !u!4 &874711363 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6855115964645750354, guid: 65ff531837ddf13429b97451bcb4b57c, type: 3}
@@ -3864,6 +3868,12 @@ MonoBehaviour:
   playerElement: 0
   spellbook: {fileID: 0}
   nearbySpellbook: {fileID: 0}
+  onFire: 0
+  maxFireTime: 0
+  fireParticles: {fileID: 0}
+  chilled: 0
+  chillSpeedFactor: 0
+  chillParticles: {fileID: 0}
   defaultMoveSpeed: 10
   airborneMoveSpeed: 6
   rotateSpeed: 5
@@ -3874,8 +3884,12 @@ MonoBehaviour:
   gravityMultiplier: 0
   throwStrength: 10
   throwStrengthGrowth: 1
+  currentThrowStrength: 0
   respawnTime: 3
   currentSpawnPoint: {fileID: 0}
+  manualRespawnTime: 0
+  manuallyRespawning: 0
+  currentManualRespawnTime: 0
   isFloating: 0
   isDead: 0
   isHardCasting: 0
@@ -3889,7 +3903,6 @@ MonoBehaviour:
   boulderPrefab: {fileID: 0}
   frostWavePrefab: {fileID: 0}
   frostBeamPrefab: {fileID: 0}
-  rotationLockedBySpell: 0
   tornadoActive: 0
   tornado: {fileID: 0}
   boulder: {fileID: 0}
@@ -3898,7 +3911,7 @@ MonoBehaviour:
   tornadoTime: 0
   earthPlatformForwardness: 2
   playerMesh: {fileID: 0}
-  spellbookEquipPoint: {fileID: 462825940}
+  spellbookEquipPoint: {fileID: 0}
   spellAttachPoint: {fileID: 1804894136}
   attachedSpell: {fileID: 0}
   castType: 0
@@ -3912,7 +3925,10 @@ MonoBehaviour:
   useGravity: 1
   AudioManager: {fileID: 0}
   animator: {fileID: 0}
+  interactable: {fileID: 0}
   inputDevice: 
+  manuallyRespawningBooks: 0
+  currentManualBookRespawnTime: 0
 --- !u!143 &972170374
 CharacterController:
   m_ObjectHideFlags: 0
@@ -9669,6 +9685,8 @@ MonoBehaviour:
   EmptyIcon: {fileID: 21300000, guid: d853c7603172c5b49a4c1ff78d88fa3b, type: 3}
   fKeyIcon: {fileID: 0}
   rKeyIcon: {fileID: 0}
+  xKeyIcon: {fileID: 0}
+  zKeyIcon: {fileID: 0}
   p1QCIcon: {fileID: 0}
   p1HCIcon: {fileID: 0}
   p2QCIcon: {fileID: 0}
@@ -9677,6 +9695,10 @@ MonoBehaviour:
   p1HCCooldownMask: {fileID: 0}
   p2QCCooldownMask: {fileID: 0}
   p2HCCooldownMask: {fileID: 0}
+  p1DPadLeft: {fileID: 0}
+  p1DPadRight: {fileID: 0}
+  p2DPadLeft: {fileID: 0}
+  p2DPadRight: {fileID: 0}
 --- !u!4 &1944869496
 Transform:
   m_ObjectHideFlags: 0
@@ -9740,7 +9762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c17d533f502614cabae6ea0d00df14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: []
+  audioSource: []
   volume: 0
 --- !u!114 &2003035824 stripped
 MonoBehaviour:
