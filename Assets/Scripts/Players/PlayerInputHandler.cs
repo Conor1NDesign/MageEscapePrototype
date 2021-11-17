@@ -54,7 +54,11 @@ public class PlayerInputHandler : MonoBehaviour
                     if (context.performed)
                         playerController.InteractWithSpellbook(false);
                     else if (context.canceled)
+                    {
+                        if (playerController.spellbook != null && playerController.playerState == PlayerController.PlayerStates.Throwing)
+                            playerController.playerMesh.GetComponentInParent<CursedThrowScript>().inputEnded = true;
                         playerController.animator.speed = 1;
+                    }
                 }
             }
             else
@@ -62,7 +66,11 @@ public class PlayerInputHandler : MonoBehaviour
                 if (context.performed)
                     playerController.InteractWithSpellbook(false);
                 else if (context.canceled)
+                {
+                    if (playerController.spellbook != null && playerController.playerState == PlayerController.PlayerStates.Throwing)
+                        playerController.playerMesh.GetComponentInParent<CursedThrowScript>().inputEnded = true;
                     playerController.animator.speed = 1;
+                }
             }
 
         }
@@ -108,12 +116,15 @@ public class PlayerInputHandler : MonoBehaviour
 
             if (context.performed)
             {
-                playerController.Interact(true);
+                if (playerController.interactable != null)
+                {
+                    if (playerController.interactable.GetComponent<Lever>().isActive == false)
+                        playerController.Interact(true);
+                    else if (playerController.interactable.GetComponent<Lever>().isActive == false)
+                        playerController.Interact(false);
+                }
             }
-            else
-            {
-                playerController.Interact(false);
-            }
+
         }
     }
 
@@ -182,4 +193,29 @@ public class PlayerInputHandler : MonoBehaviour
             }
         }
     }
+
+	public void OnRespawnPlayer(CallbackContext context) {
+		if (playerController) {
+			if (context.performed)
+			{
+				playerController.currentManualRespawnTime = playerController.manualRespawnTime;
+				playerController.manuallyRespawning = true;
+			}
+			else if (context.canceled)
+				playerController.manuallyRespawning = false;
+		}
+	}
+
+	public void OnRespawnBooks(CallbackContext context) {
+		if (playerController)
+		{
+			if (context.performed)
+			{
+				playerController.currentManualBookRespawnTime = playerController.manualRespawnTime;
+				playerController.manuallyRespawningBooks = true;
+			}
+			if (context.canceled)
+				playerController.manuallyRespawningBooks = false;
+		}
+	}
 }

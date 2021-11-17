@@ -5,14 +5,14 @@ using UnityEngine;
 public class Audio : MonoBehaviour
 {
 
-    public AudioSource[] audio;
+    public AudioSource[] audioSource;
     public float volume;
     // Start is called before the first frame update
     void Start()
     {
-        audio = FindObjectsOfType<AudioSource>();
+        audioSource = FindObjectsOfType<AudioSource>();
         volume = PlayerPrefs.GetFloat("Sound");
-        foreach (var item in audio)
+        foreach (var item in audioSource)
         {
             item.volume = PlayerPrefs.GetFloat("Sound");
         }
@@ -32,7 +32,7 @@ public class Audio : MonoBehaviour
     public void UpdateSound()
     {
         print("Sounds Updated");
-        foreach (var item in audio)
+        foreach (var item in audioSource)
         {
             item.volume = PlayerPrefs.GetFloat("Sound");
         }

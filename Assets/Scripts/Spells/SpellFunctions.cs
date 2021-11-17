@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class SpellFunctions : MonoBehaviour
 {
@@ -90,7 +90,6 @@ public class SpellFunctions : MonoBehaviour
     {
 
         caster.AttachSpell(Instantiate(caster.gustPrefab));
-        caster.rotationLockedBySpell = true;
         if (caster.AudioManager != null)
         {
             caster.attachedSpell.GetComponent<AudioSource>().clip = caster.AudioManager.PushingGust;
@@ -219,8 +218,6 @@ public class SpellFunctions : MonoBehaviour
 
     static void PushingGustEnd(PlayerController caster)
     {
-
-        caster.rotationLockedBySpell = false;
         if (caster.playerIndex == 0)
         {
             GameObject.Find("Player 2").GetComponent<PlayerController>().useGravity = true;

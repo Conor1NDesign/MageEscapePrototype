@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Lever : Interactable
 {
@@ -7,12 +8,17 @@ public class Lever : Interactable
 	public bool isActive;
 	public List<MovingPlatform> movingPlatforms;
 	bool isactivated;
-	
+
+	public GameObject inactiveMesh;
+	public GameObject activeMesh;
+
 	void Update()
 	{
 
 		if (isActive)
 		{
+
+
 			foreach (var item in movingPlatforms)
 			{
 				if (IsResetSwitch)
@@ -24,8 +30,8 @@ public class Lever : Interactable
 					item.numberOfActiveSwitches++;
 				}
 
-
-
+				inactiveMesh.SetActive(false);
+				activeMesh.SetActive(true);
 			}
 		   
 			Activated(movingPlatforms);
@@ -41,6 +47,8 @@ public class Lever : Interactable
 					isactivated = false;
 				}
 			}
+			inactiveMesh.SetActive(true);
+			activeMesh.SetActive(false);
 		}
 	}
 }

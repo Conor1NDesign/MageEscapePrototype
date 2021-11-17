@@ -62,13 +62,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 1
-  movingPlatforms:
-  - {fileID: 0}
-  AntiMagicBarrier:
-  - {fileID: 0}
+  movingPlatforms: []
+  AntiMagicBarrier: []
   particles: {fileID: 2751526543652233045}
   NonEmmisive: {fileID: 2100000, guid: 7a644c683db1f79458512d6774ec6bec, type: 2}
-  light: {fileID: 8300000, guid: cb43e551a1506e94ab79c97ae10fbc0b, type: 3}
+  lightAudio: {fileID: 0}
   putOut: {fileID: 8300000, guid: 700a076eeb14c7d4cbe4dfad8e733076, type: 3}
 --- !u!54 &4551809649270057051
 Rigidbody:

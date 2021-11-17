@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Animations;
@@ -109,13 +110,20 @@ public class PlayerController : MonoBehaviour
 	public float throwStrength;
 	[Tooltip("The speed at which the throw strength grows to that maximum")]
 	public float throwStrengthGrowth = 1.0f;
-	private float currentThrowStrength;
+	public float currentThrowStrength;
 
 	[Header("Respawning Settings")]
 	[Tooltip("The amount of time (in seconds) it takes to respawn the player when they die.")]
 	public int respawnTime = 3;
 	[Tooltip("The current location that the player will respawn at, this value should only ever be a Starting Point or a Checkpoint's Transform.")]
 	public Transform currentSpawnPoint;
+	[Tooltip("The amount of time it takes to activate the manual respawn")]
+	public float manualRespawnTime;
+	[HideInInspector]
+	public bool manuallyRespawning = false;
+	[HideInInspector]
+	public float currentManualRespawnTime;
+
 
 	[Header("Checking Player State")]
 	[Tooltip("Used to check if the player is currently under the effects of a wind spell. Should be false if they are not.")]
@@ -138,8 +146,6 @@ public class PlayerController : MonoBehaviour
 	public GameObject frostWavePrefab;
 	public GameObject frostBeamPrefab;
 
-	[HideInInspector]
-	public bool rotationLockedBySpell = false;
 	[HideInInspector]
 	public bool tornadoActive = false;
 	[HideInInspector]
@@ -199,9 +205,18 @@ public class PlayerController : MonoBehaviour
 	public SpellSounds AudioManager;
 
 	public Animator animator;
-	GameObject interactable;
+	[HideInInspector]
+	public GameObject interactable;
 
 	public string inputDevice;
+	
+	private static List<GameObject> booksTouched = new List<GameObject>();
+	[HideInInspector]
+	public bool manuallyRespawningBooks = false;
+	[HideInInspector]
+	public float currentManualBookRespawnTime;
+
+	private bool isInteracting = false;
 
 	private void Awake()
 	{
@@ -303,6 +318,20 @@ public class PlayerController : MonoBehaviour
 
 		//PLAYER STATE CHANGES//
 
+		if (manuallyRespawning)
+		{
+			currentManualRespawnTime -= Time.deltaTime;
+			if (currentManualRespawnTime < 0.0f)
+				isDead = true;
+		}
+
+		if (manuallyRespawningBooks)
+		{
+			currentManualBookRespawnTime -= Time.deltaTime;
+			if (currentManualBookRespawnTime < 0.0f)
+				RespawnAllBooks();
+		}
+
 		// Checks if the player is on fire
 		if (onFire)
 		{
@@ -356,6 +385,7 @@ public class PlayerController : MonoBehaviour
 		{
 			playerState = PlayerStates.Dead;
 			onFire = false;
+			manuallyRespawning = false;
 		}
 
 		//Checks if the player is dead and has started their respawn process.
@@ -376,12 +406,31 @@ public class PlayerController : MonoBehaviour
 			currentMoveSpeed = defaultMoveSpeed;
 			currentRotateSpeed = rotateSpeed;
 			gravityMultiplier = defaultGravityMultiplier;
+			animator.speed = 1;
 		}
 
 		//Checks if the Player's state is 'Moving'.
 		if (playerState == PlayerStates.Moving)
 		{
 			animator.SetInteger("State", (int)playerState);
+			var tempAnimSpeedX = inputVector.x;
+			var tempAnimSpeedY = inputVector.y;
+
+			if (tempAnimSpeedX < 0)
+				tempAnimSpeedX = tempAnimSpeedX * -1;
+
+			if (tempAnimSpeedY < 0)
+				tempAnimSpeedY = tempAnimSpeedY * -1;
+
+			if (tempAnimSpeedX < tempAnimSpeedY)
+			{
+				animator.speed = tempAnimSpeedY;
+			}
+			else
+			{
+				animator.speed = tempAnimSpeedX;
+			}
+
 			currentMoveSpeed = defaultMoveSpeed;
 			currentRotateSpeed = rotateSpeed;
 			gravityMultiplier = defaultGravityMultiplier;
@@ -390,6 +439,7 @@ public class PlayerController : MonoBehaviour
 		//Checks if the Player's state is 'Falling'.
 		if (playerState == PlayerStates.Falling)
 		{
+			animator.speed = 1;
 			animator.SetInteger("State", (int)playerState);
 			currentMoveSpeed = airborneMoveSpeed;
 			currentRotateSpeed = rotateSpeed;
@@ -404,6 +454,7 @@ public class PlayerController : MonoBehaviour
 		//Checks if the Player's state is 'Floating'.
 		if (playerState == PlayerStates.Floating)
 		{
+			animator.speed = 1;
 			animator.SetInteger("State", (int)playerState);
 			currentMoveSpeed = airborneMoveSpeed;
 			currentRotateSpeed = rotateSpeed;
@@ -433,9 +484,10 @@ public class PlayerController : MonoBehaviour
 		//Checks if the Player's state is 'Casting'.
 		if (playerState == PlayerStates.Casting)
 		{
+			animator.speed = 1;
 			animator.SetInteger("State", (int)playerState);
 			currentMoveSpeed = 0;
-			currentRotateSpeed = rotationLockedBySpell ? 0 : castingRotationSpeed;
+			currentRotateSpeed = castingRotationSpeed;
 		}
 
 		//Checks if the player is throwing their book
@@ -451,6 +503,12 @@ public class PlayerController : MonoBehaviour
 
 		if (chilled)
 			currentMoveSpeed *= chillSpeedFactor;
+
+		if (isInteracting)
+		{
+			currentMoveSpeed = 0;
+			currentRotateSpeed = 0;
+		}
 
 		//PLAYER STATE CHECKS END//
 	}
@@ -476,15 +534,18 @@ public class PlayerController : MonoBehaviour
 	{
 		if (interactable != null)
 		{
+			animator.Play("Player_Interaction");
 			if (active)
 			{
 				interactable.GetComponent<Lever>().isActive = true;
 				print("DOWN DOWN");
+				isInteracting = true;
 			}
 			else
 			{
 				interactable.GetComponent<Lever>().isActive = false;
 				print("UP UP");
+				isInteracting = true;
 			}
 		}
 	}
@@ -528,6 +589,7 @@ public class PlayerController : MonoBehaviour
 			}
 
 			// Equip a spellbook if there's one nearby
+			//animator.Play("Player_Interaction");
 			spellbook = nearbySpellbook;
 
 			playerElement = spellbook.GetComponent<SpellbookController>().element;
@@ -537,6 +599,11 @@ public class PlayerController : MonoBehaviour
 			spellbook.transform.rotation = spellbookEquipPoint.rotation;
 			spellbook.GetComponent<Rigidbody>().isKinematic = true;
 			spellbook.GetComponent<SpellbookController>().playerHolding = this;
+
+			if (booksTouched.Contains(spellbook))
+			{
+				booksTouched.Remove(spellbook);
+			}
 		}
 	}
 
@@ -564,6 +631,10 @@ public class PlayerController : MonoBehaviour
 		if (collidedBook && collidedBook.CompareTag("Spellbook"))
 		{
 			nearbySpellbook = null;
+		}
+		if (interactable && other.CompareTag("Interactable"))
+		{
+			interactable = null;
 		}
 	}
 
@@ -610,6 +681,9 @@ public class PlayerController : MonoBehaviour
 			spellbook.GetComponent<Rigidbody>().isKinematic = false;
 			spellbook.GetComponent<SpellbookController>().playerHolding = null;
 
+			if (!booksTouched.Contains(spellbook))
+				booksTouched.Add(spellbook);
+
 			playerElement = PlayerCurrentElement.None;
 			spellbook = null;
 		}
@@ -637,6 +711,24 @@ public class PlayerController : MonoBehaviour
 			fireParticles.SetActive(false);
 			chillParticles.SetActive(true);
 		}
+	}
+
+	public void RespawnAllBooks()
+	{
+		foreach(GameObject book in booksTouched)
+		{
+			SpellbookController spellbook = book.GetComponent<SpellbookController>();
+			if (spellbook)
+				spellbook.Respawn();
+		}
+		booksTouched.Clear();
+	}
+
+	public void InteractionEnds()
+	{
+		currentMoveSpeed = defaultMoveSpeed;
+		currentRotateSpeed = rotateSpeed;
+		isInteracting = false;
 	}
 }
 

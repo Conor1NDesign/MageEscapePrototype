@@ -11,7 +11,7 @@ public class Sconce : Interactable
     public GameObject particles;
     public Material NonEmmisive;
 
-    public AudioClip light;
+    public AudioClip lightAudio;
     public AudioClip putOut;
     AudioSource al;
 
@@ -47,7 +47,7 @@ public class Sconce : Interactable
         {
             if (particles.gameObject.activeSelf == false)
             {
-                al.clip = light;
+                al.clip = lightAudio;
                 al.Play();
             }
 
