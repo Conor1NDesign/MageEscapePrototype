@@ -67,7 +67,7 @@ MonoBehaviour:
   AntiMagicBarrier:
   - {fileID: 0}
   particles: {fileID: 2751526543652233045}
-  NonEmmisive: {fileID: 0}
+  NonEmmisive: {fileID: 2100000, guid: 7a644c683db1f79458512d6774ec6bec, type: 2}
   light: {fileID: 8300000, guid: cb43e551a1506e94ab79c97ae10fbc0b, type: 3}
   putOut: {fileID: 8300000, guid: 700a076eeb14c7d4cbe4dfad8e733076, type: 3}
 --- !u!54 &4551809649270057051
@@ -107,9 +107,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -142,7 +142,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
