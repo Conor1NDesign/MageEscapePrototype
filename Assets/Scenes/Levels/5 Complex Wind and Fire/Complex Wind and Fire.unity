@@ -25877,6 +25877,10 @@ PrefabInstance:
       propertyPath: tornadoTargetPrefab
       value: 
       objectReference: {fileID: 4206366417786977483, guid: 9c158c7ea9cb0d546952a9ea33e267ac, type: 3}
+    - target: {fileID: 4007269434080722183, guid: af0468904fb76b948b97a93195ae5834, type: 3}
+      propertyPath: hardCastCooldown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4500845700833580964, guid: af0468904fb76b948b97a93195ae5834, type: 3}
       propertyPath: m_Name
       value: Player 1
@@ -71507,6 +71511,10 @@ PrefabInstance:
       propertyPath: tornadoTargetPrefab
       value: 
       objectReference: {fileID: 4206366417786977483, guid: 9c158c7ea9cb0d546952a9ea33e267ac, type: 3}
+    - target: {fileID: 434623743647819082, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
+      propertyPath: hardCastCooldown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1144634476236296169, guid: 99d6aeb2d438f6e4ca998dc9adf04774, type: 3}
       propertyPath: m_Name
       value: Player 2
